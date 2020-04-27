@@ -1,0 +1,125 @@
+body{
+    background-color: black;
+}
+button{
+    border-style: solid;
+    width: 19%;
+    padding-right: 10%;
+   padding-top: 10%;
+
+}
+button:hover{
+    cursor: pointer;
+}
+a{
+    width: 20%;
+    height: 20%;
+}
+#logo{
+    height: 10%;
+    width: 100%;
+
+}
+#img{
+    width: 5%;
+    height: 100%;
+    background-image: url(../imagens/logo_legal.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat ;
+    border: none;
+}
+.txtLogo{
+    height: 100%;
+    color: rgb(202, 191, 33);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+#txtDestaques{
+    width: 10%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: blueviolet;
+    text-transform: uppercase;
+    position: absolute;
+    top: 20%;
+    right: 45%;
+}
+#txtPromocoes{
+    width: 10%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: blueviolet;
+    text-transform: uppercase;
+    position: absolute;
+    top: 42%;
+    right: 45%;
+}
+#txtCategoria{
+    width: 10%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: blueviolet;
+    text-transform: uppercase;
+    position: absolute;
+    top: 70%;
+    right: 45%;
+}
+#Destaques{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    top:25%;
+    right: 15%;
+}
+#Promocoes{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    top:50%;
+    right: 15%;
+}
+#Categorias{
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    top:80%;
+    right: 15%;
+}
+#bolinha{
+    border-radius: 50%;
+    height: 2%;
+    width: 2%;
+    margin: 3%;
+}
+#menu{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.botaoMove{
+    width: 3%;
+    height: 3%;
+}
+.prev{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 1%;
+        width: auto;
+        padding: 1%;
+        margin-top: -1.75%;
+
+        transition: 0.6s ease
+}
+.next{
+    cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 1%;
+        width: auto;
+        padding: 1%;
+        margin-top: -1.75%;
+        transition: 0.6s ease;
+}  

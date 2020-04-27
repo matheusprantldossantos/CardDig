@@ -1,0 +1,72 @@
+#topo{
+    border: 2px solid blueviolet;
+    height:20%;
+    background-color: black;
+    width:100%;   
+    
+}
+#bt1{
+    background-color: red;
+    border: none;
+    width: 20%;
+    height: 20%;
+
+}
+#bt2{
+    color: solid sandybrown;
+    border: none;
+    width: 20%;
+    height: 20%;
+}
+#esq{
+    border: 2px solid blueviolet;
+    height: 100%;
+    width: 20%;
+    background-color: black;
+}
+#bte1{
+    background-color: black;
+    border-color: solid blueviolet;
+    width: 100%;
+    height: 10%;
+}
+#bte2{
+    color: solid sandybrown;
+    width: 100%;
+    height: 10%;
+}
+#bte3{
+    color: solid sandybrown;
+    width: 100%;
+    height: 10%;
+}
+#bte4{
+    color: solid sandybrown;
+    width: 100%;
+    height: 10%;
+}
+#bte5{
+    color: solid sandybrown;
+    margin: auto;
+    width: 100%;
+    height: 10%;
+}
+#meio{
+
+    border: 2px solid blueviolet;
+    background-color: black;
+    position: absolute;
+    top: 21.25%;
+    left: 20.5%;
+    width: 78.90%;
+    height: 97.60%;
+}
+#btm1{
+    color: sandybrown;
+    border: none;
+}
+#btm2{
+    color: sandybrown;
+    border: none;
+}
+
