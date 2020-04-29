@@ -29,7 +29,7 @@ body{
     color: #b8b8bb;
 }
 
-input[type = text]{
+input[type = text],[type = number]{
     width: 70%;
     height: 10%;
     border: solid 1px #b8b8bb;
@@ -37,17 +37,14 @@ input[type = text]{
     background-color: transparent;
     padding: 5px 10px 5px 10px;
     outline: none;
+    transition: 0.3s;
 }
 
-input[type = number]{
-    width: 70%;
-    height: 10%;
-    border: solid 1px #b8b8bb;
-    border-radius: 5px;
-    background-color: transparent;
-    padding: 5px 10px 5px 10px;
-    outline: none;
+input[type = text]:hover,[type = number]:hover{
+    border: solid 1px #f86ffd;
+    transition: .3s;
 }
+
 
 #nomeProd{
     position: absolute;
@@ -98,9 +95,13 @@ input[type = number]{
     transition: 0.2s;
 }
 
-#idMensagem{
+#mensagem{
     position: absolute;
-    top: 80%;
+    top: 90%;
     left: 50%;
     transform: translateX(-50%);
+    background-color: #01a31c;
+    border: solid 1px #01a31c;
+    border-radius: 5px;
+    color: #181a20;
 }
