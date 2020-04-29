@@ -1,4 +1,4 @@
-$(Document).ready(function(){
+$(new Document).ready(function(){
     $("#bBebidas").click(function(){
         fListaBebidas();
     });
@@ -9,14 +9,14 @@ function fListaBebidas(){
         type: "POST",
         dataType: "json",
         url: "../php/prodListar.php",
-        success : function(nome,preco){
+        success : function(info){
             var conteudo = "";
 
-            contudo+="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+            conteudo+="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
                     "<div id='linha2'>" + "</div>"
                     "<div id='subNome'>" + "Bebidas Quentes" + "</div>" +
-                    "<div id='nomeProd'>" + nome.nome + "</div>" +
-                    "<div id='descProd'>" + preco.preco + "</div>";
+                    "<div id='nomeProd'>" + info[0].preco + "</div>" +
+                    "<div id='descProd'>" + info[0].nome + "</div>";    
 
                     $("#divPedidos").html(conteudo);
         }

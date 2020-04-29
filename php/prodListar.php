@@ -31,11 +31,14 @@
 
     //select
 
-    $sql = "SELECT nome,preco  FROM produto WHERE categoria == 'bebidas'";
-    $result = mysqli_query($conn, $sql)
+    $sql = "SELECT nome,preco  FROM produto";
+    $result = mysqli_query($conn, $sql);
+    $cont = 0;
     if (mysqli_num_rows($result) > 0){
-        $nome = $row["nome"];
-        $preco = $row["preco"];
+        while($row = mysqli_fetch_assoc($result)){
+        $informacao[$cont]["preco"] = $row["preco"];
+        $informacao[$cont]["nome"] = $row["nome"];
+        }
     }
     else {
         echo "Erro executando SELECT: " . mysqli_error($conn);
@@ -43,6 +46,6 @@
     
     mysqli_close($conn);
 
-    echo json_encode($name,$preco);
+    echo json_encode($informacao);
 
 ?>
