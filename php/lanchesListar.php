@@ -1,12 +1,4 @@
-<?php
-
-    // valores do BD
-    $servername = "localhost: 3306";
-    $username = "grupoQualquer";
-    $passowrd = "senha_qualquer@1234";
-    $database = "cardapiodigital";
-
-    
+<?php    
     //valores do BD
     $servername = "localhost: 3306";
     $username = "grupoQualquer";
@@ -31,7 +23,7 @@
 
     //select
 
-    $sql = "SELECT nome,preco  FROM produto";
+    $sql = "SELECT nome,preco  FROM produto WHERE categoria = 'lanches'";
     $result = mysqli_query($conn, $sql);
     $cont = 0;
     $qnt = mysqli_num_rows($result);
@@ -39,7 +31,7 @@
         while($row = mysqli_fetch_assoc($result)){
         $informacao[$cont]["preco"] = $row["preco"];
         $informacao[$cont]["nome"] = $row["nome"];
-        $cont ++;
+        $cont++;
         }
     }
     else {
@@ -48,6 +40,6 @@
     
     mysqli_close($conn);
 
-    echo json_encode($informacao,$qnt);
+    echo json_encode($informacao, $qnt);
 
 ?>
