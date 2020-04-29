@@ -97,7 +97,51 @@ body{
     position: absolute;
     top: 5%;
     left: 3%;
-    font-size: 50px;
+    font-size: 60px;
     font-family: monospace;
     color: #d6d6d6;
+    font-weight: bold;
+}
+
+#linha2{
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    width: 95%;
+    height: 0.1%;
+    background-color: #d6d6d6b0; 
+}
+
+#subNome{
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    font-size: 35px;
+    font-family: bebas neue;
+    color: #eba243;
+}
+
+#nomeProd{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+/* #descBefore{
+    position: absolute;
+    left: -500;
+} */
+
+#descProd{
+    position: absolute;
+    top: 28%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+    transition: .3s;
 }
