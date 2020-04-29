@@ -54,7 +54,7 @@
     // insert
     $sql = "INSERT INTO produto (nome, preco, categoria, disponibilidade)
     VALUES ('$nome','$preco', '$categoria', '$disponibilidade')";
-    echo "<div class='w3-responsive w3-card-4'>";
+    echo "<div id='mensagem'>";
     if ($result = mysqli_query($conn, $sql)) {
         echo "Um registro adicionado!";
     } else {
