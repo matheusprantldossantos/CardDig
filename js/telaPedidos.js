@@ -1,18 +1,22 @@
 $(new Document).ready(function(){
     $("#bBebidas").click(function(){
-        $("#bBebidas").toggleClass("item_botao_after")
+        $("#bBebidas").toggleClass("item_botao_after");
         fListaBebidas();
     });
     $("#bPizza").click(function(){
+        $("#bBebidas").toggleClass("item_botao_after");
         fListaPizzas();
     });
     $("#bHamb").click(function(){
+        $("#bBebidas").toggleClass("item_botao_after");
         fListaHamburger();
     });
     $("#bSobremesa").click(function(){
+        $("#bBebidas").toggleClass("item_botao_after");
         fListaSobremesas();
     });
     $("#bLanche").click(function(){
+        $("#bBebidas").toggleClass("item_botao_after");
         fListaLanches();
     });
     

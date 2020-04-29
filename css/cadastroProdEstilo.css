@@ -97,3 +97,10 @@ input[type = number]{
     background-color: #ad08b3;
     transition: 0.2s;
 }
+
+#idMensagem{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
