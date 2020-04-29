@@ -47,7 +47,7 @@ if(isset($_POST["nome"])){
      mysqli_query($conn,'SET character_set_client=utf8');
      mysqli_query($conn,'SET character_set_results=utf8');
  
- // select
+ // insert
  $sql = "INSERT INTO produto (nome, preco, categoria, disponibilidade)
  VALUES ('$nome','$preco', '$categoria', '$disponibilidade')";
  echo "<div class='w3-responsive w3-card-4'>";
