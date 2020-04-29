@@ -1,0 +1,7 @@
+input{
+    display: block;
+}
+form{
+    height: 30%;
+    transform: translate(40%, 50%);
+}
