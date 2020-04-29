@@ -34,10 +34,12 @@
     $sql = "SELECT nome,preco  FROM produto";
     $result = mysqli_query($conn, $sql);
     $cont = 0;
+    $qnt = mysqli_num_rows($result);
     if (mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
         $informacao[$cont]["preco"] = $row["preco"];
         $informacao[$cont]["nome"] = $row["nome"];
+        $cont ++;
         }
     }
     else {
@@ -46,6 +48,6 @@
     
     mysqli_close($conn);
 
-    echo json_encode($informacao);
+    echo json_encode($informacao,$qnt);
 
 ?>

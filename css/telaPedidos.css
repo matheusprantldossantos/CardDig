@@ -9,6 +9,11 @@ body{
     width: 100%;
 }
 
+@font-face{
+    font-family: Bebas Neue;
+    src: url(../fontes/BebasNeue-Regular.eot);
+}
+
 
 #menuLat{
     position: fixed;
@@ -70,10 +75,20 @@ body{
     align-items: center;
     background-color: #393c4e;
     transition: .2s;
-    border-right:solid 7px #c20cc9;
 }
 
-.item_botao:hover{
+.item_botao_after{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    text-align: left;
+    padding-left: 23%;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    color: #d6d6d6;
+    outline: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     align-items: center;
     background-color: #393c4e;
     transition: .2s;
@@ -83,7 +98,6 @@ body{
 #bPedidos{
     width: 100%;
     height: 100%;
-    
 }
 
 #divPedidos{
@@ -117,27 +131,85 @@ body{
     top: 20%;
     left: 8%;
     font-size: 35px;
-    font-family: bebas neue;
+    font-family: Bebas Neue;
     color: #eba243;
 }
 
 #nomeProd{
     position: absolute;
-    top: 25%;
+    top: 27%;
     left: 10%;
     font-size: 18px;
     font-family: monospace;
     color: #d6d6d6;
 }
 
-/* #descBefore{
+#precoProd{
     position: absolute;
-    left: -500;
-} */
+    top: 30%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+    transition: .3s;
+}
 
-#descProd{
+
+#nomeProd2{
     position: absolute;
-    top: 28%;
+    top: 34%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+#precoProd2{
+    position: absolute;
+    top: 37%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+    transition: .3s;
+}
+
+
+#nomeProd3{
+    position: absolute;
+    top: 41%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+#precoProd3{
+    position: absolute;
+    top: 44%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+    transition: .3s;
+}
+
+
+#nomeProd4{
+    position: absolute;
+    top: 48%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+#precoProd4{
+    position: absolute;
+    top: 51%;
     left: 11%;
     font-size: 13px;
     font-style: italic;
