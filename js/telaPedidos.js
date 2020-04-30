@@ -1,22 +1,43 @@
 $(new Document).ready(function(){
     $("#bBebidas").click(function(){
         $("#bBebidas").toggleClass("item_botao_after");
+        $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+        $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
+        $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
+        $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaBebidas();
     });
     $("#bPizza").click(function(){
         $("#bPizza").toggleClass("item_botao_after");
+        $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+        $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
+        $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
+        $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaPizzas();
     });
     $("#bHamb").click(function(){
         $("#bHamb").toggleClass("item_botao_after");
+        $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+        $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+        $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
+        $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaHamburger();
     });
     $("#bSobremesa").click(function(){
         $("#bSobremesa").toggleClass("item_botao_after");
+        $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+        $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+        $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
+        $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaSobremesas();
     });
     $("#bLanche").click(function(){
-        $("#bLanches").toggleClass("item_botao_after");
+        $("#bLanche").toggleClass("item_botao_after");
+        $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+        $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+        $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
+        $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
+        
         fListaLanches();
     });
     
@@ -32,8 +53,8 @@ function fListaHamburger(){
             conteudo+="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo += "<div id='subNome'>" + "Carne" + "</div>";
-            conteudo +="<div id='nomeProd'>" + "Nome: "+ info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "Preço: " +  info[0].preco + "</div>";
+            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
+            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
 
                     $("#divPedidos").html(conteudo);
         }
@@ -50,8 +71,8 @@ function fListaLanches(){
             conteudo+="<div id='nomePag'>" + " LANCHES " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo += "<div id='subNome'>" + "Saudável" + "</div>";
-            conteudo +="<div id='nomeProd'>" + "Nome: "+ info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "Preço: " +  info[0].preco + "</div>";
+            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
+            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
 
                     $("#divPedidos").html(conteudo);
         }
@@ -68,8 +89,8 @@ function fListaPizzas(){
             conteudo+="<div id='nomePag'>" + " PIZZAS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo += "<div id='subNome'>" + "Salgadas" + "</div>";
-            conteudo +="<div id='nomeProd'>" + "Nome: "+ info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "Preço: " +  info[0].preco + "</div>";
+            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
+            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
 
                     $("#divPedidos").html(conteudo);
         }
@@ -106,8 +127,8 @@ function fListaSobremesas(){
             conteudo+="<div id='nomePag'>" + " SOBREMESAS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo += "<div id='subNome'>" + "Doces" + "</div>";
-            conteudo +="<div id='nomeProd'>" + "Nome: "+ info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "Preço: " +  info[0].preco + "</div>";
+            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
+            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
                     $("#divPedidos").html(conteudo);
         }
     });
