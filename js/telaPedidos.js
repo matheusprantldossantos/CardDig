@@ -82,23 +82,26 @@ function fListaHamburger(){
         type: "POST",
         dataType: "json",
         url: "../php/hamburguerListar.php",
-        success : function(info, c){
-        
+        success : function(info){
+            //console.log(JSON.stringify(info, ' ', null));
             var conteudo = "";
-
+            for(var i = 0; i < info.length; i++){
             conteudo +="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
                     "<div id='linha2'>" + "</div>";
-            conteudo +="<div id='subNome'>" + "Carne" + "</div>";
-            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
-            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>";
-            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + "</button>";
-            conteudo +="<div id='linha3'>" + "</div>";
+            conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
+            conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
+            conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>s";
+            conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            }
 
             $("#divPedidos").html(conteudo);
 
+        },
+        error: function (request, status, error) {
+            console.log(error);
         }
     });
 }
@@ -107,20 +110,21 @@ function fListaLanches(){
         type: "POST",
         dataType: "json",
         url: "../php/lanchesListar.php",
-        success : function(info, c){
+        success : function(info){
             var conteudo = "";
-
-            conteudo+="<div id='nomePag'>" + " LANCHES " + "</div>" +
+            for(var i = 0; i < info.length; i++){
+            conteudo +="<div id='nomePag'>" + " LANCHES " + "</div>" +
                     "<div id='linha2'>" + "</div>";
-            conteudo += "<div id='subNome'>" + "Saudável" + "</div>";
-            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
-            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>";
-            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<div id='linha3'>" + "</div>";
+            conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
+            conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
+            conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>s";
+            conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            }
 
-                    $("#divPedidos").html(conteudo);
+            $("#divPedidos").html(conteudo);
         }
     });
 }
@@ -129,18 +133,19 @@ function fListaPizzas(){
         type: "POST",
         dataType: "json",
         url: "../php/pizzaListar.php",
-        success : function(info, c){
+        success : function(info){
             var conteudo = "";
-
-            conteudo+="<div id='nomePag'>" + " PIZZAS " + "</div>" +
+            for(var i = 0; i < info.length; i++){
+            conteudo +="<div id='nomePag'>" + " PIZZA " + "</div>" +
                     "<div id='linha2'>" + "</div>";
-            conteudo += "<div id='subNome'>" + "Salgadas" + "</div>";
-            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
-            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>";
-            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<div id='linha3'>" + "</div>";
+            conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
+            conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
+            conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>s";
+            conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            }
 
                     $("#divPedidos").html(conteudo);
         }
@@ -151,21 +156,26 @@ function fListaBebidas(){
         type: "POST",
         dataType: "json",
         url: "../php/bebidaListar.php",
-        success : function(info, c){
+        success : function(info){
             var conteudo = "";
-
-            conteudo+="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+            for(var i = 0; i < info.length; i++){
+            conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
-            conteudo+="<div id='subNome'>" + "Bebidas Quentes" + "</div>"; 
-            conteudo+="<div id='nomeProd'>" + info[0].nome + "</div>"; 
-            conteudo+="<div id='precoProd'>" + info[0].preco + "</div>";   
-            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
+            conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
+            conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
             conteudo +="<div id='number'>" + "</div>";
-            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<div id='linha3'>" + "</div>";  
+            conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            }
             
             $("#divPedidos").html(conteudo);
+        },
+        error : function(){
+            console.log("aiai");
         }
+
     }); // ajax
 } // fLista
 function fListaSobremesas(){
@@ -173,18 +183,19 @@ function fListaSobremesas(){
         type: "POST",
         dataType: "json",
         url: "../php/sobremesasListar.php",
-        success : function(info, c){
+        success : function(info){
             var conteudo = "";
-
-            conteudo+="<div id='nomePag'>" + " SOBREMESAS " + "</div>" +
+            for(var i = 0; i < info.length; i++){
+            conteudo +="<div id='nomePag'>" + " SOBREMESAS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
-            conteudo += "<div id='subNome'>" + "Doces" + "</div>";
-            conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
-            conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
-            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
+            conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
+            conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
             conteudo +="<div id='number'>" + "</div>";
-            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<div id='linha3'>" + "</div>";
+            conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + + i.toString() + "'>" +"</button>";
+            }
                     
             $("#divPedidos").html(conteudo);
         }

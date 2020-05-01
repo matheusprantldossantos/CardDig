@@ -23,14 +23,14 @@
 
     //select
 
-    $sql = "SELECT nome,preco  FROM produto WHERE categoria = 'bebidas'";
+    $sql = "SELECT nome,preco,tipo_categoria  FROM produto WHERE categoria = 'bebidas'";
     $result = mysqli_query($conn, $sql);
     $cont = 0;
-    $qnt = mysqli_num_rows($result);
     if (mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
         $informacao[$cont]["preco"] = $row["preco"];
         $informacao[$cont]["nome"] = $row["nome"];
+        $informacao[$cont]["tipo_categoria"] = $row["tipo_categoria"];
         $cont++;
         }
     }
@@ -39,7 +39,6 @@
     }
     
     mysqli_close($conn);
-
-    echo json_encode($informacao, $qnt);
+    echo json_encode($informacao);
 
 ?>
