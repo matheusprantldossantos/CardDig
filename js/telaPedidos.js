@@ -7,6 +7,7 @@ $(new Document).ready(function(){
         $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaBebidas();
     });
+
     $("#bPizza").click(function(){
         $("#bPizza").toggleClass("item_botao_after");
         $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
@@ -15,6 +16,7 @@ $(new Document).ready(function(){
         $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaPizzas();
     });
+
     $("#bHamb").click(function(){
         $("#bHamb").toggleClass("item_botao_after");
         $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
@@ -23,6 +25,7 @@ $(new Document).ready(function(){
         $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaHamburger();
     });
+
     $("#bSobremesa").click(function(){
         $("#bSobremesa").toggleClass("item_botao_after");
         $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
@@ -31,6 +34,7 @@ $(new Document).ready(function(){
         $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
         fListaSobremesas();
     });
+
     $("#bLanche").click(function(){
         $("#bLanche").toggleClass("item_botao_after");
         $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
@@ -42,21 +46,48 @@ $(new Document).ready(function(){
     });
     
 });
+
+function diminuiNum(){
+    $("#bDiminuir").click(function(){
+        if(cont > 0){
+            cont = cont --;
+        }
+        else{
+            cont = 0;
+        }
+
+        return cont
+    });
+}
+
+function aumentaNum(){
+    $("#bAumentar").click(function(){
+        return cont = cont++;
+    });
+}
+
 function fListaHamburger(){
     $.ajax({
         type: "POST",
         dataType: "json",
         url: "../php/hamburguerListar.php",
         success : function(info, c){
+            
+            cont = 0;
+
             var conteudo = "";
 
             conteudo+="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
                     "<div id='linha2'>" + "</div>";
-            conteudo += "<div id='subNome'>" + "Carne" + "</div>";
+            conteudo +="<div id='subNome'>" + "Carne" + "</div>";
             conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
             conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<div id='linha3'>" + "</div>";
 
-                    $("#divPedidos").html(conteudo);
+            $("#divPedidos").html(conteudo);
         }
     });
 }
@@ -73,6 +104,10 @@ function fListaLanches(){
             conteudo += "<div id='subNome'>" + "Saudável" + "</div>";
             conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
             conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<div id='linha3'>" + "</div>";
 
                     $("#divPedidos").html(conteudo);
         }
@@ -91,6 +126,10 @@ function fListaPizzas(){
             conteudo += "<div id='subNome'>" + "Salgadas" + "</div>";
             conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
             conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
+            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<div id='linha3'>" + "</div>";
 
                     $("#divPedidos").html(conteudo);
         }
@@ -109,8 +148,10 @@ function fListaBebidas(){
             conteudo+="<div id='subNome'>" + "Bebidas Quentes" + "</div>"; 
             conteudo+="<div id='nomeProd'>" + info[0].nome + "</div>"; 
             conteudo+="<div id='precoProd'>" + info[0].preco + "</div>";   
-            conteudo+="<div id='nomeProd2'>" + info[1].nome + "</div>"; 
-            conteudo+="<div id='precoProd2'>" + info[1].preco + "</div>";  
+            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<div id='linha3'>" + "</div>";  
             
             $("#divPedidos").html(conteudo);
         }
@@ -129,7 +170,12 @@ function fListaSobremesas(){
             conteudo += "<div id='subNome'>" + "Doces" + "</div>";
             conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
             conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
-                    $("#divPedidos").html(conteudo);
+            conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
+            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<div id='linha3'>" + "</div>";
+                    
+            $("#divPedidos").html(conteudo);
         }
     });
 }

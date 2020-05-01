@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #262935;
+    background-color: #f8a5c2;
     height: 100%;
     width: 100%;
 }
@@ -17,7 +17,7 @@ body{
     width: 25%;
     height: 50%;
     background: #363844;
-    border-radius: 10px;
+    border-radius: 2px;
 }
 
 #titleF{
@@ -82,8 +82,8 @@ input[type = text]:hover,[type = number]:hover{
     width: 25%;
     height: 8%;
     border-radius: 5px;
-    border: solid 1px #c20cc9;
-    background-color: #c20cc9;
+    border: solid 1px #ff639a;
+    background-color: #ff639a;
     color: #cacaca;
     cursor: pointer;
     outline: none;
@@ -91,7 +91,7 @@ input[type = text]:hover,[type = number]:hover{
 }
 
 #bProduto:hover{
-    background-color: #ad08b3;
+    background-color: #fc518d;
     transition: 0.2s;
 }
 
