@@ -27,11 +27,14 @@ $(new Document).ready(function(){
     });
 
     $("#bDiminuir").click(function(){
-        
+        diminuiNum();
     });
 
     $("#bAumentar").click(function(){
-        
+        cont = 0;
+        cont = cont++;
+
+        $("#number").html("<div>" + cont +"</div>");
     });
 
     $("#bSobremesa").click(function(){
@@ -81,9 +84,9 @@ function fListaHamburger(){
         url: "../php/hamburguerListar.php",
         success : function(info, c){
         
-            var conteudo = " ";
+            var conteudo = "";
 
-            conteudo+="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
+            conteudo +="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo +="<div id='subNome'>" + "Carne" + "</div>";
             conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
@@ -95,6 +98,7 @@ function fListaHamburger(){
             conteudo +="<div id='linha3'>" + "</div>";
 
             $("#divPedidos").html(conteudo);
+
         }
     });
 }
