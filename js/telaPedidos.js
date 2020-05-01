@@ -26,6 +26,14 @@ $(new Document).ready(function(){
         fListaHamburger();
     });
 
+    $("#bDiminuir").click(function(){
+        
+    });
+
+    $("#bAumentar").click(function(){
+        
+    });
+
     $("#bSobremesa").click(function(){
         $("#bSobremesa").toggleClass("item_botao_after");
         $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
@@ -48,7 +56,7 @@ $(new Document).ready(function(){
 });
 
 function diminuiNum(){
-    $("#bDiminuir").click(function(){
+        cont = 0;
         if(cont > 0){
             cont = cont --;
         }
@@ -56,14 +64,14 @@ function diminuiNum(){
             cont = 0;
         }
 
-        return cont
-    });
+        $("#number").html(cont);
 }
 
 function aumentaNum(){
-    $("#bAumentar").click(function(){
-        return cont = cont++;
-    });
+        cont = 0;
+        cont = cont++;
+
+        $("#number").html(cont);
 }
 
 function fListaHamburger(){
@@ -72,10 +80,8 @@ function fListaHamburger(){
         dataType: "json",
         url: "../php/hamburguerListar.php",
         success : function(info, c){
-            
-            cont = 0;
-
-            var conteudo = "";
+        
+            var conteudo = " ";
 
             conteudo+="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
                     "<div id='linha2'>" + "</div>";
@@ -85,6 +91,7 @@ function fListaHamburger(){
             conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
             conteudo +="<div id='number'>" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + "</button>";
             conteudo +="<div id='linha3'>" + "</div>";
 
             $("#divPedidos").html(conteudo);
