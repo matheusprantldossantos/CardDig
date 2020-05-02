@@ -1,14 +1,18 @@
 $(new Document).ready(function(){
+    fListaHamburger();
+    $("#bHamb").toggleClass("item_botao_after");
+    $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+    $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+    $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
+    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
+    $("#bComb").removeClass("item_botao_after").addClass("item_botao");
+
     $("#bBebidas").click(function(){
         window.location.href = "../pages/Bebidas.html";
     });
 
     $("#bPizza").click(function(){
         window.location.href = "../pages/Pizza.html";
-    });
-
-    $("#bHamb").click(function(){
-        window.location.href = "../pages/Hamburguers.html";
     });
 
     $("#bSobremesa").click(function(){
@@ -18,31 +22,15 @@ $(new Document).ready(function(){
     $("#bLanche").click(function(){
         window.location.href = "../pages/Lanches.html";
     });
-
-/*    $("#bComb").click(function(){
-        $("#bComb").toggleClass("item_botao_after");
-        $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
-        $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
-        $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
-        $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
-        $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
-        
-        fListaComb();
-    }); 
-*/
-
-    
-    
 });
 
-
-/*
-function fListaComb(){
+function fListaHamburger(){
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "../php/Listar.php",
+        url: "../php/hamburguerListar.php",
         success : function(info){
+            //console.log(JSON.stringify(info, ' ', null));
 
             $(new Document).ready(function(){ 
                 let count = 0;
@@ -69,7 +57,7 @@ function fListaComb(){
 
             var conteudo = "";
             for(var i = 0; i < info.length; i++){
-            conteudo +="<div id='nomePag'>" + " COMBINAÇÕES " + "</div>" +
+            conteudo +="<div id='nomePag'>" + " HAMBURGUERS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
@@ -80,9 +68,12 @@ function fListaComb(){
             conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
             conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
-                    
+
             $("#divPedidos").html(conteudo);
+
+        },
+        error: function (request, status, error) {
+            console.log(error);
         }
     });
 }
-*/

@@ -186,6 +186,27 @@ body{
     transition: .3s;
 }
 
+#nomeProd2{
+    position: absolute;
+    top: 47%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    text-transform: capitalize;
+    color: #d6d6d6;
+}
+
+#precoProd2{
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+    transition: .3s;
+}
+
 
 .bContador{
     background: transparent;
@@ -274,3 +295,49 @@ body{
     width: 10%;
     height: 5%;
 }
+
+
+#linha_1{
+    position: absolute;
+    top: 45%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
+
+
+#bDiminuir2{
+    position: absolute;
+    top: 48%;
+    left: 70%;
+}
+
+#number2{
+    position: absolute;
+    top: 48%;
+    left: 74%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentar2{
+    position: absolute;
+    top: 48%;
+    left: 77%;
+}
+
+#bAdicionarP2{ /*provisório*/
+    position: absolute;
+    top: 47.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}
+

@@ -1,7 +1,11 @@
 $(new Document).ready(function(){
-    $("#bBebidas").click(function(){
-        window.location.href = "../pages/Bebidas.html";
-    });
+    fListaBebidas();
+    $("#bBebidas").toggleClass("item_botao_after");
+    $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+    $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
+    $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
+    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
+    $("#bComb").removeClass("item_botao_after").addClass("item_botao");
 
     $("#bPizza").click(function(){
         window.location.href = "../pages/Pizza.html";
@@ -18,43 +22,26 @@ $(new Document).ready(function(){
     $("#bLanche").click(function(){
         window.location.href = "../pages/Lanches.html";
     });
-
-/*    $("#bComb").click(function(){
-        $("#bComb").toggleClass("item_botao_after");
-        $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
-        $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
-        $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
-        $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
-        $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
-        
-        fListaComb();
-    }); 
-*/
-
-    
-    
 });
 
-
-/*
-function fListaComb(){
+function fListaBebidas(){
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "../php/Listar.php",
+        url: "../php/bebidaListar.php",
         success : function(info){
 
             $(new Document).ready(function(){ 
                 let count = 0;
                 console.log("documento pronto")
-                $("#bAumentar0").click(function(){
+                $("#bAumentar").click(function(){
                     console.log("clicou");
                     count ++;
             
                     $("#number0").html(count);
                 });    
 
-                $("#bDiminuir0").click(function(){
+                $("#bDiminuir").click(function(){
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
@@ -69,7 +56,7 @@ function fListaComb(){
 
             var conteudo = "";
             for(var i = 0; i < info.length; i++){
-            conteudo +="<div id='nomePag'>" + " COMBINAÇÕES " + "</div>" +
+            conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
@@ -80,9 +67,12 @@ function fListaComb(){
             conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
             conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
-                    
+            
             $("#divPedidos").html(conteudo);
+        },
+        error : function(){
+            console.log("aiai");
         }
-    });
-}
-*/
+
+    }); // ajax
+} // fLista
