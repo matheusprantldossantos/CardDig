@@ -29,13 +29,7 @@ $(new Document).ready(function(){
     $("#bDiminuir").click(function(){
         diminuiNum();
     });
-
-    $("#bAumentar").click(function(){
-        cont = 0;
-        cont = cont++;
-
-        $("#number").html("<div>" + cont +"</div>");
-    });
+    
 
     $("#bSobremesa").click(function(){
         $("#bSobremesa").toggleClass("item_botao_after");
@@ -130,7 +124,31 @@ function fListaPizzas(){
         dataType: "json",
         url: "../php/pizzaListar.php",
         success : function(info, c){
-            var conteudo = "";
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentar").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#number").html(count);
+                });    
+
+                $("#bDiminuir").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number").html(count);
+                }); 
+            });
+
+            let conteudo = "";
 
             conteudo+="<div id='nomePag'>" + " PIZZAS " + "</div>" +
                     "<div id='linha2'>" + "</div>";
@@ -138,11 +156,12 @@ function fListaPizzas(){
             conteudo +="<div id='nomeProd'>" + info[0].nome + "</div>";
             conteudo +="<div id='precoProd'>" + "R$ " +  info[0].preco + "</div>";
             conteudo +="<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<div id='number'>" + "0" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
             conteudo +="<div id='linha3'>" + "</div>";
 
-                    $("#divPedidos").html(conteudo);
+            $("#divPedidos").html(conteudo);
+
         }
     });
 }
