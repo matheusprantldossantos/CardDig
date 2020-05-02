@@ -76,7 +76,7 @@ input[type = text]:hover,[type = number]:hover{
 
 #bProduto{
     position: absolute;
-    top: 80%;
+    top: 90%;
     left: 50%;
     transform: translateX(-50%);
     width: 25%;
@@ -93,6 +93,12 @@ input[type = text]:hover,[type = number]:hover{
 #bProduto:hover{
     background-color: #fc518d;
     transition: 0.2s;
+}
+#tCategoriaProd{
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #mensagem{

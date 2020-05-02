@@ -23,23 +23,22 @@
 
     //select
 
-    $sql = "SELECT nome,preco  FROM produto WHERE categoria = 'hamburguer'";
+    $sql = "SELECT nome,preco,tipo_categoria   FROM produto WHERE categoria = 'hamburguer'";
     $result = mysqli_query($conn, $sql);
     $cont = 0;
-    $qnt = mysqli_num_rows($result);
     if (mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
         $informacao[$cont]["preco"] = $row["preco"];
         $informacao[$cont]["nome"] = $row["nome"];
+        $informacao[$cont]["tipo_categoria"] = $row["tipo_categoria"];
         $cont++;
         }
     }
     else {
         echo "Erro executando SELECT: " . mysqli_error($conn);
     }
-    
     mysqli_close($conn);
 
-    echo json_encode($informacao, $qnt);
+    echo json_encode($informacao);
 
 ?>

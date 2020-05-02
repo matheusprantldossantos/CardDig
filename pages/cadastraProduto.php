@@ -13,6 +13,7 @@
                 <input type="text" name="nome" id="nomeProd" placeholder="Nome do produto"> <br>
                 <input type="number" step="0.01" name="preco" id="precoProd" placeholder="Preco do produto"> <br>
                 <input type="text" name="categoria" id="categoriaProd" placeholder="Categoria do produto"> <br>
+                <input type="text" name="tipoCategoria" id="tCategoriaProd" placeholder="Especificação da categoria do produto"> <br>
                 <input type="number" name="disponibilidade" id="disponibilidadeProd"placeholder="Digite 0 ou 1"> <br>
                 <input type="submit" value="Inserir" id="bProduto"> <br>
                 <div id="mensagem"></div>
@@ -27,6 +28,7 @@
     $nome = $_POST["nome"];
     $preco = $_POST["preco"];
     $categoria = $_POST["categoria"];
+    $tipoCateogira = $_POST["tipoCategoria"];
     $disponibilidade = $_POST["disponibilidade"];
 
     //valores do BD
@@ -52,8 +54,11 @@
         mysqli_query($conn,'SET character_set_results=utf8');
     
     // insert
-    $sql = "INSERT INTO produto (nome, preco, categoria, disponibilidade)
-    VALUES ('$nome','$preco', '$categoria', '$disponibilidade')";
+    if($nome == "" || $preco == "" || $categoria == "" || $tipoCateogira == "" || $disponibilidade == ""){
+        
+    }
+    $sql = "INSERT INTO produto (nome, preco, categoria, disponibilidade,tipo_categoria)
+    VALUES ('$nome','$preco', '$categoria', '$disponibilidade','$tipoCateogira')";
     echo "<div id='mensagem'>";
     if ($result = mysqli_query($conn, $sql)) {
         echo "Um registro adicionado!";
