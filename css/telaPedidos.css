@@ -217,7 +217,7 @@ body{
     left: 77%;
 }
 
-#bAdicionarP{ /*provisório*/
+#bAdicionarP0{ /*provisório*/
     position: absolute;
     top: 27.5%;
     left: 82%;
@@ -231,7 +231,7 @@ body{
     height: 5%;
 }
 
-#linha3{
+#linha_0{
     position: absolute;
     top: 35%;
     left: 9%;
@@ -240,24 +240,37 @@ body{
     background-color: #2f3341; 
 }
 
+
 #bDiminuir1{
     position: absolute;
-    top: 42%;
-    left: 74%;
+    top: 38%;
+    left: 70%;
 }
 
 #number1{
     position: absolute;
     top: 38%;
-    left: 78%;
+    left: 74%;
     color: #d6d6d6;
     font-size: 25px;
 }
 
 #bAumentar1{
     position: absolute;
-    top: 42%;
-    left: 81%;
+    top: 38%;
+    left: 77%;
 }
 
-
+#bAdicionarP1{ /*provisório*/
+    position: absolute;
+    top: 37.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}

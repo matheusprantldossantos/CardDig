@@ -52,24 +52,6 @@ $(new Document).ready(function(){
     
 });
 
-function diminuiNum(){
-        cont = 0;
-        if(cont > 0){
-            cont = cont --;
-        }
-        else{
-            cont = 0;
-        }
-
-        $("#number").html(cont);
-}
-
-function aumentaNum(){
-        cont = 0;
-        cont = cont++;
-
-        $("#number").html(cont);
-}
 
 function fListaHamburger(){
     $.ajax({
@@ -78,6 +60,30 @@ function fListaHamburger(){
         url: "../php/hamburguerListar.php",
         success : function(info){
             //console.log(JSON.stringify(info, ' ', null));
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentar0").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#number0").html(count);
+                });    
+
+                $("#bDiminuir0").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number0").html(count);
+                }); 
+            });
+
             var conteudo = "";
             for(var i = 0; i < info.length; i++){
             conteudo +="<div id='nomePag'>" + " HAMBURGUER " + "</div>" +
@@ -86,9 +92,10 @@ function fListaHamburger(){
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
             conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
             conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>s";
+            conteudo +="<div id='number"+ i.toString() +"'>" + "0" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
+            conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
 
             $("#divPedidos").html(conteudo);
@@ -105,6 +112,30 @@ function fListaLanches(){
         dataType: "json",
         url: "../php/lanchesListar.php",
         success : function(info){
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentar").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#number0").html(count);
+                });    
+
+                $("#bDiminuir").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number0").html(count);
+                }); 
+            });
+
             var conteudo = "";
             for(var i = 0; i < info.length; i++){
             conteudo +="<div id='nomePag'>" + " LANCHES " + "</div>" +
@@ -113,9 +144,10 @@ function fListaLanches(){
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
             conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
             conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>s";
+            conteudo +="<div id='number"+ i.toString() +"'>" + "0" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
+            conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
 
             $("#divPedidos").html(conteudo);
@@ -136,7 +168,7 @@ function fListaPizzas(){
                     console.log("clicou");
                     count ++;
             
-                    $("#number").html(count);
+                    $("#number0").html(count);
                 });    
 
                 $("#bDiminuir").click(function(){
@@ -148,7 +180,7 @@ function fListaPizzas(){
                         count = 0;
                     }
             
-                    $("#number").html(count);
+                    $("#number0").html(count);
                 }); 
             });
 
@@ -161,10 +193,10 @@ function fListaPizzas(){
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
             conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
             conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "0" + "</div>";
+            conteudo +="<div id='number"+ i.toString() +"'>" + "0" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
-            conteudo +="<div id='linha3'>" + "</div>";
+            conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
+            conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
 
             $("#divPedidos").html(conteudo);
@@ -178,6 +210,30 @@ function fListaBebidas(){
         dataType: "json",
         url: "../php/bebidaListar.php",
         success : function(info){
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentar").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#number0").html(count);
+                });    
+
+                $("#bDiminuir").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number0").html(count);
+                }); 
+            });
+
             var conteudo = "";
             for(var i = 0; i < info.length; i++){
             conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
@@ -186,9 +242,10 @@ function fListaBebidas(){
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
             conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
             conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<div id='number"+ i.toString() +"'>" + "0" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + i.toString() + "'>" +"</button>";
+            conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
+            conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
             
             $("#divPedidos").html(conteudo);
@@ -205,6 +262,30 @@ function fListaSobremesas(){
         dataType: "json",
         url: "../php/sobremesasListar.php",
         success : function(info){
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentar0").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#number0").html(count);
+                });    
+
+                $("#bDiminuir0").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number0").html(count);
+                }); 
+            });
+
             var conteudo = "";
             for(var i = 0; i < info.length; i++){
             conteudo +="<div id='nomePag'>" + " SOBREMESAS " + "</div>" +
@@ -213,9 +294,10 @@ function fListaSobremesas(){
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
             conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
             conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number'>" + "</div>";
+            conteudo +="<div id='number"+ i.toString() +"'>" + "0" + "</div>";
             conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP'>" + "Adicionar" + + i.toString() + "'>" +"</button>";
+            conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
+            conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
             }
                     
             $("#divPedidos").html(conteudo);
