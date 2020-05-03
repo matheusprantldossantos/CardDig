@@ -14,9 +14,8 @@
                 <input type="number" step="0.01" name="preco" id="precoProd" placeholder="Preco do produto"> <br>
                 <input type="text" name="categoria" id="categoriaProd" placeholder="Categoria do produto"> <br>
                 <input type="text" name="tipoCategoria" id="tCategoriaProd" placeholder="Especificação da categoria do produto"> <br>
-                <input type="number" name="disponibilidade" id="disponibilidadeProd"placeholder="Digite 0 ou 1"> <br>
+                <input type="number" name="disponibilidade" id="disponibilidadeProd" placeholder="Digite 0 ou 1"> <br>
                 <input type="submit" value="Inserir" id="bProduto"> <br>
-                <div id="mensagem"></div>
             </form>
         </div>
     </body>

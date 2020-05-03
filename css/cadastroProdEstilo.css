@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #f8a5c2;
+    background-color: #262935;
     height: 100%;
     width: 100%;
 }
@@ -15,7 +15,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 25%;
-    height: 50%;
+    height: 55%;
     background: #363844;
     border-radius: 2px;
 }
@@ -45,6 +45,17 @@ input[type = text]:hover,[type = number]:hover{
     transition: .3s;
 }
 
+input[type = text]:focus,[type = number]:focus{
+    border: solid 1px #f86ffd;
+    transition: .3s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 #nomeProd{
     position: absolute;
@@ -55,35 +66,42 @@ input[type = text]:hover,[type = number]:hover{
 
 #precoProd{
     position: absolute;
-    top: 33%;
+    top: 32%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #categoriaProd{
     position: absolute;
-    top: 48%;
+    top: 46%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #disponibilidadeProd{
     position: absolute;
-    top: 63%;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#tCategoriaProd{
+    position: absolute;
+    top: 74%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #bProduto{
     position: absolute;
-    top: 90%;
+    top: 88%;
     left: 50%;
     transform: translateX(-50%);
     width: 25%;
     height: 8%;
     border-radius: 5px;
-    border: solid 1px #ff639a;
-    background-color: #ff639a;
+    border: solid 1px #D758B1;
+    background-color: #D758B1;
     color: #cacaca;
     cursor: pointer;
     outline: none;
@@ -94,20 +112,19 @@ input[type = text]:hover,[type = number]:hover{
     background-color: #fc518d;
     transition: 0.2s;
 }
-#tCategoriaProd{
-    position: absolute;
-    top: 77%;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 #mensagem{
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #01a31c;
-    border: solid 1px #01a31c;
+    width: 15%;
+    height: 3%;
+    background-color: #527c5b;
+    border: solid 1px #527c5b;
     border-radius: 5px;
-    color: #181a20;
+    color: #393a3d;
+    text-align: center;
+    padding-top: 0.3%;
 }
