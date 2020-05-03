@@ -22,6 +22,9 @@ $(new Document).ready(function(){
     $("#bLanche").click(function(){
         window.location.href = "../pages/Lanches.html";
     });
+    $("#bComb").click(function(){
+        window.location.href = "../pages/Combinações.html";
+    });
 });
 
 function fListaBebidas(){
