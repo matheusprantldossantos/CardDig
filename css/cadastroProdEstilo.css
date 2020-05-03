@@ -38,6 +38,7 @@ input[type = text],[type = number]{
     padding: 5px 10px 5px 10px;
     outline: none;
     transition: 0.3s;
+    color: #c4c4c4;
 }
 
 input[type = text]:hover,[type = number]:hover{
@@ -48,6 +49,7 @@ input[type = text]:hover,[type = number]:hover{
 input[type = text]:focus,[type = number]:focus{
     border: solid 1px #f86ffd;
     transition: .3s;
+    color: #c4c4c4;
 }
 
 input::-webkit-outer-spin-button,
