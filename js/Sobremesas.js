@@ -14,6 +14,9 @@ $(new Document).ready(function(){
     $("#bPizza").click(function(){
         window.location.href = "../pages/Pizza.html";
     });
+    $("#bComb").click(function(){
+        window.location.href = "../pages/Combinações.html";
+    });
 
     $("#bHamb").click(function(){
         window.location.href = "../pages/Hamburguers.html";

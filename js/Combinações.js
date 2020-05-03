@@ -1,11 +1,11 @@
 $(new Document).ready(function(){
-    fListaLanches();
-    $("#bLanche").toggleClass("item_botao_after");
-    $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
-    $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+    fListaCombinacoes();
+    $("#bComb").toggleClass("item_botao_after");
     $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
+    $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
+    $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
     $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
-    $("#bComb").removeClass("item_botao_after").addClass("item_botao");
+    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
 
     $("#bBebidas").click(function(){
         window.location.href = "../pages/Bebidas.html";
@@ -14,7 +14,6 @@ $(new Document).ready(function(){
     $("#bPizza").click(function(){
         window.location.href = "../pages/Pizza.html";
     });
-
     $("#bHamb").click(function(){
         window.location.href = "../pages/Hamburguers.html";
     });
@@ -22,18 +21,19 @@ $(new Document).ready(function(){
     $("#bSobremesa").click(function(){
         window.location.href = "../pages/Sobremesas.html";
     });
-    $("#bComb").click(function(){
-        window.location.href = "../pages/Combinações.html";
-    });
 
+    $("#bLanche").click(function(){
+        window.location.href = "../pages/Lanches.html";
+    });
 });
 
-function fListaLanches(){
+function fListaCombinacoes(){
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "../php/lanchesListar.php",
+        url: "../php/combinacoesListar.php",
         success : function(info){
+            //console.log(JSON.stringify(info, ' ', null));
 
             $(new Document).ready(function(){ 
                 let count = 0;
@@ -43,8 +43,7 @@ function fListaLanches(){
                     count ++;
             
                     $("#number0").html(count);
-                    
-                });
+                });    
 
                 $("#bDiminuir0").click(function(){
                     console.log("clicou menos");
@@ -60,9 +59,8 @@ function fListaLanches(){
             });
 
             var conteudo = "";
-
             for(var i = 0; i < info.length; i++){
-            conteudo +="<div id='nomePag'>" + " LANCHES " + "</div>" +
+            conteudo +="<div id='nomePag'>" + " COMBINAÇÕES " + "</div>" +
                     "<div id='linha2'>" + "</div>";
             conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
             conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
@@ -75,6 +73,10 @@ function fListaLanches(){
             }
 
             $("#divPedidos").html(conteudo);
+
+        },
+        error: function (request, status, error) {
+            console.log(error);
         }
     });
 }
