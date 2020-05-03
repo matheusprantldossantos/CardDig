@@ -177,9 +177,10 @@ function fListaPizzas(){
 
             var conteudo = "";
             let numSalg = 0;
+            let numDoces = 0;
 
             for(var i = 0; i < info.length; i++){
-                conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+                conteudo +="<div id='nomePag'>" + " PIZZAS " + "</div>" +
                         "<div id='linha2'>" + "</div>";
 
                 switch(info[i].tipo_categoria){
@@ -192,6 +193,18 @@ function fListaPizzas(){
                         conteudo +="<button class='bContador' id='bAumentarOne" + numSalg + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
                         conteudo +="<button id='bAdicionarOne" + numSalg + "'>" + "Adicionar" +"</button>";
                         conteudo +="<div id='linhaOne_" + numSalg + "'>" + "</div>";
+                        numSalg++;
+                        break;
+                    
+                    case 'doces':
+                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeTwo" + numDoces + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoTwo"+ numDoces +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numDoces + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberTwo"+ numDoces +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarTwo" + numDoces + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarTwo" + numDoces + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaTwo_" + numDoces + "'>" + "</div>";
                         numSalg++;
                         break;
 

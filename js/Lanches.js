@@ -181,7 +181,7 @@ function fListaLanches(){
             let numTapioca = 0
 
             for(var i = 0; i < info.length; i++){
-                conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+                conteudo +="<div id='nomePag'>" + " LANCHES " + "</div>" +
                         "<div id='linha2'>" + "</div>";
 
                 switch(info[i].tipo_categoria){
@@ -198,14 +198,14 @@ function fListaLanches(){
                         break;
                     
                     case 'tapioca':
-                        conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeOne" + numTapioca + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoOne"+ numTapioca +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirOne" + numTapioca + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberOne"+ numTapioca +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarOne" + numTapioca + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarOne" + numTapioca + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaOne_" + numTapioca + "'>" + "</div>";
+                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeTwo" + numTapioca + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoTwo"+ numTapioca +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numTapioca + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberTwo"+ numTapioca +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarTwo" + numTapioca + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarTwo" + numTapioca + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaTwo_" + numTapioca + "'>" + "</div>";
                         numTapioca++;
                         break;
 

@@ -276,8 +276,7 @@ body{
     height: 5%;
 }
 
-
-#linhaOne_1{
+#linhaOne_0{
     position: absolute;
     top: 45%;
     left: 9%;
@@ -411,6 +410,15 @@ body{
     height: 5%;
 }
 
+#linhaTwo_0{
+    position: absolute;
+    top: 70%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
+
 /* Segundo produto - Segunda categoria */
 
 #nomeTwo1{
@@ -468,6 +476,70 @@ body{
     height: 5%;
 }
 
+#linhaTwo_1{
+    position: absolute;
+    top: 80%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
 
+/* Teceiro produto - Segunda categoria */
+
+#nomeTwo2{
+    position: absolute;
+    top: 82%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    text-transform: capitalize;
+    color: #d6d6d6;
+}
+
+#precoTwo2{
+    position: absolute;
+    top: 85%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+
+#bDiminuirTwo2{
+    position: absolute;
+    top: 83%;
+    left: 70%;
+}
+
+#numberTwo2{
+    position: absolute;
+    top: 83%;
+    left: 74%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentarTwo2{
+    position: absolute;
+    top: 83%;
+    left: 77%;
+}
+
+#bAdicionarTwo2{ 
+    position: absolute;
+    top: 82.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}
 
 

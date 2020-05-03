@@ -181,7 +181,7 @@ function fListaHamburger(){
             let numVeg = 0;
 
             for(var i = 0; i < info.length; i++){
-                conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+                conteudo +="<div id='nomePag'>" + " HAMBURGUERS " + "</div>" +
                         "<div id='linha2'>" + "</div>";
 
                 switch(info[i].tipo_categoria){
@@ -198,14 +198,14 @@ function fListaHamburger(){
                         break;
 
                     case 'vegetariano':
-                        conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeOne" + numVeg + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoOne"+ numVeg +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirOne" + numVeg + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberOne"+ numVeg +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarOne" + numVeg + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarOne" + numVeg + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaOne_" + numVeg + "'>" + "</div>";
+                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeTwo" + numVeg + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoTwo"+ numVeg +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numVeg + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberTwo"+ numVeg +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarTwo" + numVeg + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarTwo" + numVeg + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaTwo_" + numVeg + "'>" + "</div>";
                         numVeg++;
                         break;    
                 }

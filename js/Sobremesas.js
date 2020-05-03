@@ -180,7 +180,7 @@ function fListaSobremesas(){
             let numSorv = 0;
 
             for(var i = 0; i < info.length; i++){
-                conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+                conteudo +="<div id='nomePag'>" + " SOBREMESAS " + "</div>" +
                         "<div id='linha2'>" + "</div>";
 
                 switch(info[i].tipo_categoria){
@@ -197,14 +197,14 @@ function fListaSobremesas(){
                         break;
 
                     case 'sorvetes':
-                        conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeOne" + numSorv + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoOne"+ numSorv +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirOne" + numSorv + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberOne"+ numSorv +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarOne" + numSorv + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarOne" + numSorv + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaOne_" + numSorv + "'>" + "</div>";
+                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeTwo" + numSorv + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoTwo"+ numSorv +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numSorv + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberTwo"+ numSorv +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarTwo" + numSorv + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarTwo" + numSorv + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaTwo_" + numSorv + "'>" + "</div>";
                         numSorv++;
                         break;    
                 }
