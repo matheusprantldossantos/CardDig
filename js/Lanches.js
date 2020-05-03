@@ -22,6 +22,9 @@ $(new Document).ready(function(){
     $("#bSobremesa").click(function(){
         window.location.href = "../pages/Sobremesas.html";
     });
+    $("#bComb").click(function(){
+        window.location.href = "../pages/Combinações.html";
+    });
 
 });
 
