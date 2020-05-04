@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Abr-2020 às 19:48
+-- Tempo de geração: 05-Maio-2020 às 00:45
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.2.29
 
@@ -39,8 +39,17 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `cozinheiro` (
   `idcozinheiro` int(11) NOT NULL,
-  `funcao` varchar(100) COLLATE latin1_spanish_ci NOT NULL
+  `funcao` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `email` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `cozinheiro`
+--
+
+INSERT INTO `cozinheiro` (`idcozinheiro`, `funcao`, `email`, `senha`) VALUES
+(1, '', 'cozinhaEmail@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -49,8 +58,17 @@ CREATE TABLE `cozinheiro` (
 --
 
 CREATE TABLE `dono` (
-  `iddono` int(11) NOT NULL
+  `iddono` int(11) NOT NULL,
+  `email` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `dono`
+--
+
+INSERT INTO `dono` (`iddono`, `email`, `senha`) VALUES
+(2, 'donoEmail@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -59,8 +77,17 @@ CREATE TABLE `dono` (
 --
 
 CREATE TABLE `garcom` (
-  `idgarcom` int(11) NOT NULL
+  `idgarcom` int(11) NOT NULL,
+  `email` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `garcom`
+--
+
+INSERT INTO `garcom` (`idgarcom`, `email`, `senha`) VALUES
+(1, 'garcomEmail@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -116,7 +143,8 @@ CREATE TABLE `item_produto` (
 
 CREATE TABLE `mesa` (
   `idmesa` int(11) NOT NULL,
-  `nome` varchar(120) COLLATE latin1_spanish_ci DEFAULT NULL
+  `nome` varchar(120) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `andamento` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -126,7 +154,8 @@ CREATE TABLE `mesa` (
 --
 
 CREATE TABLE `pedido` (
-  `comanda` int(11) NOT NULL
+  `comanda` int(11) NOT NULL,
+  `valor_total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -140,8 +169,31 @@ CREATE TABLE `produto` (
   `nome` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL,
   `preco` double DEFAULT NULL,
   `categoria` varchar(40) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `disponibilidade` tinyint(1) DEFAULT NULL
+  `disponibilidade` tinyint(1) DEFAULT NULL,
+  `descricao` varchar(120) COLLATE latin1_spanish_ci NOT NULL,
+  `tipo_categoria` varchar(40) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`idproduto`, `nome`, `preco`, `categoria`, `disponibilidade`, `descricao`, `tipo_categoria`) VALUES
+(7, 'pizza de calabreza', 35.2, 'pizzas', 1, '', 'salgadas'),
+(8, 'suco de morango', 10.5, 'bebidas', 0, '', 'sucos'),
+(9, 'pudim', 12.25, 'sobremesa', 1, '', 'doces'),
+(10, 'sanduiche de salada', 17, 'lanches', 1, '', 'sanduiches'),
+(12, 'coffee shot', 10.5, 'bebidas', 1, '', 'bebidas quentes'),
+(15, 'Pizza de peperonni', 27.9, 'pizza', 1, '', 'salgadas'),
+(16, 'Harburguer de costela', 34.5, 'hamburguer', 1, '', 'normais'),
+(17, 'suco de hortelã', 7.5, 'bebidas', 1, '', 'sucos'),
+(18, 'pizza portuguesa', 32.7, 'pizza', 1, '', 'salgadas'),
+(19, 'tapioca de frango', 12.25, 'lanches', 1, '', 'tapiocas'),
+(20, 'sorvete de chocolate', 5.51, 'sobremesa', 1, '', 'sorvetes'),
+(21, 'pizza de milho', 32.75, 'pizza', 1, '', 'salgadas'),
+(23, 'hamburguer de salda', 12, 'hamburguer', 1, '', 'vegetariano'),
+(24, '\"to com fome\" - quero carne', 31, 'combinações', 1, '', 'carnívoro'),
+(25, 'Hamburguer de alcatra', 30.75, 'hamburguer', 1, '', 'normais');
 
 -- --------------------------------------------------------
 
@@ -202,8 +254,7 @@ ALTER TABLE `item_modificado`
 -- Índices para tabela `item_pedido`
 --
 ALTER TABLE `item_pedido`
-  ADD PRIMARY KEY (`pedido_comanda`,`cliente_cpf`),
-  ADD KEY `fk_pedido_has_cliente_cliente1_idx` (`cliente_cpf`),
+  ADD PRIMARY KEY (`pedido_comanda`) USING BTREE,
   ADD KEY `fk_pedido_has_cliente_pedido1_idx` (`pedido_comanda`);
 
 --
@@ -246,19 +297,19 @@ ALTER TABLE `promocao`
 -- AUTO_INCREMENT de tabela `cozinheiro`
 --
 ALTER TABLE `cozinheiro`
-  MODIFY `idcozinheiro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcozinheiro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `dono`
 --
 ALTER TABLE `dono`
-  MODIFY `iddono` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `iddono` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `garcom`
 --
 ALTER TABLE `garcom`
-  MODIFY `idgarcom` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idgarcom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `mesa`
@@ -267,16 +318,10 @@ ALTER TABLE `mesa`
   MODIFY `idmesa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `pedido`
---
-ALTER TABLE `pedido`
-  MODIFY `comanda` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `promocao`
@@ -307,7 +352,6 @@ ALTER TABLE `item_modificado`
 -- Limitadores para a tabela `item_pedido`
 --
 ALTER TABLE `item_pedido`
-  ADD CONSTRAINT `fk_pedido_has_cliente_cliente1` FOREIGN KEY (`cliente_cpf`) REFERENCES `cliente` (`cpf`),
   ADD CONSTRAINT `fk_pedido_has_cliente_pedido1` FOREIGN KEY (`pedido_comanda`) REFERENCES `pedido` (`comanda`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
