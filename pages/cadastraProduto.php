@@ -9,7 +9,7 @@
     <body>
         <div id="cadastForm">
             <form method="POST">
-                <div id="titleF">Cadastrar</div>
+                <div id="titleF">Cadastrar Produto</div>
                 <input type="text" name="nome" id="nomeProd" placeholder="Nome do produto"> <br>
                 <input type="number" step="0.01" name="preco" id="precoProd" placeholder="Preco do produto"> <br>
                 <input type="text" name="categoria" id="categoriaProd" placeholder="Categoria do produto"> <br>
