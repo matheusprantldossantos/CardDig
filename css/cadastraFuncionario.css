@@ -9,13 +9,13 @@ body{
     width: 100%;
 }
 
-#cadastForm{
+#cadastraFormFunc{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 25%;
-    height: 55%;
+    height: 50%;
     background: #363844;
     border-radius: 2px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -24,12 +24,13 @@ body{
 #titleF{
     position: absolute;
     top: 4%;
-    left: 23%;
-    font-size: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
     color: #b8b8bb;
 }
 
-input[type = text],[type = number]{
+input[type = text],[type = password]{
     width: 70%;
     height: 10%;
     border: solid 1px #b8b8bb;
@@ -41,62 +42,57 @@ input[type = text],[type = number]{
     color: #c4c4c4;
 }
 
-input[type = text]:hover,[type = number]:hover{
+input[type = text]:hover,[type = password]:hover{
     border: solid 1px #ff85d0;
     transition: .3s;
 }
 
-input[type = text]:focus,[type = number]:focus{
+input[type = text]:focus,[type = password]:focus{
     border: solid 1px #f86ffd;
     transition: .3s;
     color: #c4c4c4;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-
-#nomeProd{
+#email{
     position: absolute;
-    top: 18%;
+    top: 22%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-#precoProd{
+#senha{
     position: absolute;
-    top: 32%;
+    top: 36%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-#categoriaProd{
+#confSenha{
     position: absolute;
-    top: 46%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-#disponibilidadeProd{
+#funcoes{
     position: absolute;
-    top: 60%;
+    top: 64%;
     left: 50%;
     transform: translateX(-50%);
+    width: 70%;
+    height: 10%;
+    border: none;
+    background-color: #464958;
+    outline: none;
+    cursor: pointer;
+    padding: 0 5px 0 5px;
+    color: #d6d6d6;
+    font-weight: bold;
 }
 
-#tCategoriaProd{
+input[type = submit]{
     position: absolute;
-    top: 74%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#bProduto{
-    position: absolute;
-    top: 88%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
     width: 25%;
@@ -107,26 +103,10 @@ input::-webkit-inner-spin-button {
     color: #c2c2c2;
     cursor: pointer;
     outline: none;
-    transition: 0.2s;
+    transition: 0.2s; 
 }
 
-#bProduto:hover{
+input[type = submit]:hover{
+    border: solid 1px #c44493;
     background-color: #c44493;
-    transition: 0.2s;
-}
-
-
-#mensagem{
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 15%;
-    height: 3%;
-    background-color: #527c5b;
-    border: solid 1px #527c5b;
-    border-radius: 5px;
-    color: #393a3d;
-    text-align: center;
-    padding-top: 0.3%;
 }

@@ -2,20 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/cadastraFuncionario.css">
         <link rel = "icon" type = "imagem/x-icon" href = "../imagens/logoEspartans.png"/> <!-- AQUI VAI COLOCAR O ÍCONE DO SITE -->
         <title>Spartans Food - Cadastro Produto</title>
     </head>
     <body>
         <div id="cadastraFormFunc">
             <form method="POST">
-                <div id="titleF">Cadastre-se</div>
-                <input type="text" name="email" id="email" placeholder="digite seu email"> <br>
+                <div id="titleF">Cadastrar</div>
+                <input type="text" name="email" id="email" placeholder="Digite seu email"> <br>
                 <input type="password" name="senha" id="senha" placeholder="Digite sua senha"> <br>
-                <input type="password" name="confSenha" id="confSenha" placeholder="Comfirme sua senha"> <br>
-                <select id="funções" name="funcoes">
-                    <option value="dono">Dono</option>
-                    <option value="garçom">Garçom</option>
-                    <option value="cozinha">Cozinha</option>
+                <input type="password" name="confSenha" id="confSenha" placeholder="Confirme sua senha"> <br>
+                <select id="funcoes" name="funcoes">
+                    <option class="opt" value="dono">Dono</option>
+                    <option class="opt" value="garçom">Garçom</option>
+                    <option class="opt" value="cozinha">Cozinha</option>
                 </select>
                 <input type="submit" name="submit"> 
             </form>

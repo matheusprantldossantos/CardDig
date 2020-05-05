@@ -35,17 +35,18 @@ function fListaCombinacoes(){
         success : function(info){
             //console.log(JSON.stringify(info, ' ', null));
 
+            // Primeira categoria
             $(new Document).ready(function(){ 
                 let count = 0;
                 console.log("documento pronto")
-                $("#bAumentar0").click(function(){
+                $("#bAumentarOne0").click(function(){
                     console.log("clicou");
                     count ++;
             
-                    $("#number0").html(count);
+                    $("#numberOne0").html(count);
                 });    
 
-                $("#bDiminuir0").click(function(){
+                $("#bDiminuirOne0").click(function(){
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
@@ -54,29 +55,165 @@ function fListaCombinacoes(){
                         count = 0;
                     }
             
-                    $("#number0").html(count);
+                    $("#numberOne0").html(count);
                 }); 
             });
 
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarOne1").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#numberOne1").html(count);
+                });    
+
+                $("#bDiminuirOne1").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberOne1").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarOne2").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#numberOne2").html(count);
+                });    
+
+                $("#bDiminuirOne2").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberOne2").html(count);
+                });
+            });
+
+            // Segunda Categoria
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo0").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#numberTwo0").html(count);
+                });    
+
+                $("#bDiminuirTwo0").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo0").html(count);
+                }); 
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo1").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#numberTwo1").html(count);
+                });    
+
+                $("#bDiminuirTwo1").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo1").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo2").click(function(){
+                    console.log("clicou");
+                    count ++;
+            
+                    $("#numberTwo2").html(count);
+                });    
+
+                $("#bDiminuirTwo2").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo2").html(count);
+                });
+            });
+
+
             var conteudo = "";
+            let numCarn = 0;
+            let numVeg = 0
+
             for(var i = 0; i < info.length; i++){
-            conteudo +="<div id='nomePag'>" + " COMBINAÇÕES " + "</div>" +
-                    "<div id='linha2'>" + "</div>";
-            conteudo +="<div id='subNome'>" + info[i].tipo_categoria + "</div>";
-            conteudo +="<div id='nomeProd" + i.toString() + "'>" + info[i].nome + "</div>";
-            conteudo +="<div id='precoProd"+ i.toString() +"'>" + "R$ " +  info[i].preco + "</div>";
-            conteudo +="<button class='bContador' id='bDiminuir" + i.toString() + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-            conteudo +="<div id='number"+ i.toString() +"'>" + "0" + "</div>";
-            conteudo +="<button class='bContador' id='bAumentar" + i.toString() + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-            conteudo +="<button id='bAdicionarP" + i.toString() + "'>" + "Adicionar" +"</button>";
-            conteudo +="<div id='linha_" + i.toString() + "'>" + "</div>";
+                conteudo +="<div id='nomePag'>" + " COMBINAÇÕES " + "</div>" +
+                        "<div id='linha2'>" + "</div>";
+
+                switch(info[i].tipo_categoria){
+                    case 'carnívoro':
+                        conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeOne" + numCarn + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoOne"+ numCarn +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirOne" + numCarn + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberOne"+ numCarn +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarOne" + numCarn + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarOne" + numCarn + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaOne_" + numCarn + "'>" + "</div>";
+                        numCarn++;
+                        break;
+                    
+                    case 'vegetarianos':
+                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeTwo" + numVeg + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoTwo"+ numVeg +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numVeg + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberTwo"+ numVeg +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarTwo" + numVeg + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarTwo" + numVeg + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaTwo_" + numVeg + "'>" + "</div>";
+                        numVeg++;
+                        break;
+
+                }
             }
-
+            
             $("#divPedidos").html(conteudo);
-
-        },
-        error: function (request, status, error) {
-            console.log(error);
         }
     });
 }

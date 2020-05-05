@@ -5,8 +5,6 @@
 
 body{
     background-color: #262935;
-    height: 100%;
-    width: 100%;
 }
 
 #barraMenu{
@@ -53,33 +51,45 @@ body{
     font-weight: bold;
 }
 
-.banner{
+#prom1{
     position: absolute;
     top: 15%;
+    left: 5%;
+    background-color: #d6d6d6;
+    width: 50%;
+    height: 50%;
+    border: none;
+}
+
+#prom2{
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    background-color: #d6d6d6;
+    width: 38%;
+    height: 24%;
+    border: none;
+}
+
+#prom3{
+    position: absolute;
+    top: 41%;
+    right: 5%;
+    background-color: #d6d6d6;
+    width: 38%;
+    height: 24%;
+    border: none;
+}
+
+#montarPedido{
+    position: absolute;
+    top: 72%;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 40%;
-    margin: 0 auto;
-    border: none;
-    animation: slide 3s infinite;
-    animation-direction: alternate;
+    width: 50%;
+    height: 30%;
+    background-color: #333333;
 }
-
-@keyframes slide{
-    0%, 30%{
-        background-image: url(../imagens/banner1.png);
-    }
-
-    35%, 65%{
-        background-image: url(../imagens/banner2.png);
-    }
-
-    70%, 100%{
-        background-image: url(../imagens/banner3.png);
-    }
-}
-
 
 .bCateg{
     background-color: #1d2029;
@@ -99,28 +109,28 @@ body{
 
 #bCombina{
     position: absolute;
-    top: 70%;
+    top: 110%;
     left: 30%;
     transform: translateX(-50%);
 }
 
 #bLanches{
     position: absolute;
-    top: 70%;
+    top: 110%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #bPizzas{
     position: absolute;
-    top: 70%;
+    top: 110%;
     left: 70%;
     transform: translateX(-50%);
 }
 
 #bHamb{
     position: absolute;
-    top: 95%;
+    top: 135%;
     left: 30%;
     margin-bottom: 5%;
     transform: translateX(-50%);
@@ -128,7 +138,7 @@ body{
 
 #bBebida{
     position: absolute;
-    top: 95%;
+    top: 135%;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 5%;
@@ -136,7 +146,7 @@ body{
 
 #bSobrem{
     position: absolute;
-    top: 95%;
+    top: 135%;
     left: 70%;
     transform: translateX(-50%);
     margin-bottom: 5%;
