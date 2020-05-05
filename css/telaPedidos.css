@@ -11,7 +11,7 @@ body{
 
 @font-face{
     font-family: Bebas Neue;
-    src: url(../fontes/BebasNeue-Regular.eot);
+    src: url(../fontes/BebasNeue-Regular.otf);
 }
 
 
@@ -120,7 +120,7 @@ body{
     top: 5%;
     left: 3%;
     font-size: 60px;
-    font-family: monospace;
+    font-family: Bebas Neue;
     color: #d6d6d6;
     font-weight: bold;
 }

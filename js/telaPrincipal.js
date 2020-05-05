@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#bCombina").click(function(){
-        window.location.href = "../pages/.html";
+        window.location.href = "../pages/Combinações.html";
     });
 
     $("#bLanches").click(function(){
