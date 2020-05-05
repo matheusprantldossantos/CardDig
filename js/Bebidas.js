@@ -1,4 +1,4 @@
-$(new Document).ready(function(){
+$(document).ready(function(){
     fListaBebidas();
     $("#bBebidas").toggleClass("item_botao_after");
     $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
@@ -25,6 +25,7 @@ $(new Document).ready(function(){
     $("#bComb").click(function(){
         window.location.href = "../pages/Combinações.html";
     });
+   
 });
 
 function fListaBebidas(){
@@ -187,7 +188,7 @@ function fListaBebidas(){
                 switch(info[i].tipo_categoria){
                     case 'bebidas quentes':
                         conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeOne" + numBebida + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='nomeOne" + numBebida + "'"+"name='"+ info[i].nome + "'>" + info[i].nome + "</div>";
                         conteudo +="<div id='precoOne"+ numBebida +"'>" + "R$ " +  info[i].preco + "</div>";
                         conteudo +="<button class='bContador' id='bDiminuirOne" + numBebida + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
                         conteudo +="<div id='numberOne"+ numBebida +"'>" + "0" + "</div>";
@@ -213,6 +214,45 @@ function fListaBebidas(){
             }
             
             $("#divPedidos").html(conteudo);
+            $(new Document).ready(function(){
+                $("#bAdicionarOne0").click(function(){
+                    criaPedido("0", "One");
+                });
+                $("#bAdicionarOne1").click(function(){
+                    criaPedido("1", "One");
+                });
+                $("#bAdicionarOne2").click(function(){
+                    criaPedido("2", "One");
+                });
+                $("#bAdicionarOne3").click(function(){
+                    criaPedido("3", "One");
+                });
+                $("#bAdicionarOne4").click(function(){
+                    criaPedido("4", "One");
+                });
+                $("#bAdicionarOne5").click(function(){
+                    criaPedido("5", "One");
+                });
+                $("#bAdicionarTwo0").click(function(){
+                    criaPedido("0", "Two");
+                });
+                $("#bAdicionarTwo1").click(function(){
+                    criaPedido("1", "Two");
+                });
+                $("#bAdicionarTwo2").click(function(){
+                    criaPedido("2", "Two");
+                });
+                $("#bAdicionarTwo3").click(function(){
+                    criaPedido("3", "Two");
+                });
+                $("#bAdicionarTwo4").click(function(){
+                    criaPedido("4", "Two");
+                });
+                $("#bAdicionarTwo5").click(function(){
+                    criaPedido("5", "Two");
+                });
+            });
+            
         },
         error : function(){
             console.log("aiai");
@@ -220,3 +260,21 @@ function fListaBebidas(){
 
     }); // ajax
 } // fLista
+function criaPedido(position, location){
+    console.log("Olá");
+$.ajax({
+    type: "POST",
+    dataType: "json",
+    url: "../php/criaPedidos.php",
+    data:
+    {
+        ajax_name : $("div#nome"+location+position).text()
+    },
+    success : function(info){
+        console.log("Olá mundo!");
+    },
+    error: function(){
+        console.log("tchau mundo")
+    }
+    });
+}
