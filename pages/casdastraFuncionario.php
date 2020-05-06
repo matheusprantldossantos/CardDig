@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/cadastraFuncionario.css">
         <link rel = "icon" type = "imagem/x-icon" href = "../imagens/logoEspartans.png"/> <!-- AQUI VAI COLOCAR O ÍCONE DO SITE -->
-        <title>Spartans Food - Cadastro Produto</title>
+        <title>Spartans Food - Cadastro Funcionário</title>
     </head>
     <body>
         <div id="cadastraFormFunc">

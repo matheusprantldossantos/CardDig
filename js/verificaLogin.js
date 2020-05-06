@@ -14,9 +14,9 @@ function confirma(){
         success : function(info){
             console.log("chegou ate aqui");
             var erro = "cadastro incorreto";
-            if(usuario == "" || senha == ""){
-                $mensagem = "<div id='mensagens'> Setores não preenchidos</div>";
-                $("#mensagens").html($mensagem);
+            if(usuario == " " || senha == " "){
+                $mensagem = "<div id='mensagens'> Campos não preenchidos </div>";
+                $("#mensgErro").html($mensagem);
             }
             for(var i = 0; i < info.length; i++){
                 if(info[i].senha == senha && info[i].email == usuario){
@@ -24,8 +24,8 @@ function confirma(){
                     window.location.href = "../pages/telaAlteraItens.html";
                 }
             }
-            $mensagem = "<div id='mensagens'> Login não aotenticado </div>";
-            $("#mensagens").html($mensagem);
+            $mensagem = "<div id='mensagens'>Login não autenticado</div>";
+            $("#mensgErro").html($mensagem);
         }
     });
 }

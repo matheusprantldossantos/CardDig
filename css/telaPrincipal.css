@@ -119,8 +119,11 @@ body{
     transform: translateX(-50%);
     width: 50%;
     height: 30%;
-    background-color: #333333;
+    background: transparent;
     border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
 }
 
 #titleCateg{
@@ -137,6 +140,7 @@ body{
     outline: none;
     cursor: pointer;
     transition: .4s;
+    opacity: 75%;
 }
 
 
