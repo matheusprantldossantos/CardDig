@@ -261,20 +261,21 @@ function fListaBebidas(){
     }); // ajax
 } // fLista
 function criaPedido(position, location){
-    console.log("Olá");
+    $muda = 16;
 $.ajax({
     type: "POST",
     dataType: "json",
     url: "../php/criaPedidos.php",
     data:
-    {
-        ajax_name : $("div#nome"+location+position).text()
+    {  
+        ajax_name : $("div#nome"+location+position).text(),
+        ajax_quantidade : $("div#number"+location+position).text()
     },
     success : function(info){
-        console.log("Olá mundo!");
+        console.log("olá mundo");
     },
-    error: function(){
-        console.log("tchau mundo")
+    error: function(info){
+        console.log("tchau mundo");
     }
     });
 }

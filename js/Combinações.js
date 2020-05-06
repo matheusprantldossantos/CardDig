@@ -212,8 +212,69 @@ function fListaCombinacoes(){
 
                 }
             }
-            
             $("#divPedidos").html(conteudo);
+            $(new Document).ready(function(){
+                $("#bAdicionarOne0").click(function(){
+                    criaPedido("0", "One");
+                });
+                $("#bAdicionarOne1").click(function(){
+                    criaPedido("1", "One");
+                });
+                $("#bAdicionarOne2").click(function(){
+                    criaPedido("2", "One");
+                });
+                $("#bAdicionarOne3").click(function(){
+                    criaPedido("3", "One");
+                });
+                $("#bAdicionarOne4").click(function(){
+                    criaPedido("4", "One");
+                });
+                $("#bAdicionarOne5").click(function(){
+                    criaPedido("5", "One");
+                });
+                $("#bAdicionarTwo0").click(function(){
+                    criaPedido("0", "Two");
+                });
+                $("#bAdicionarTwo1").click(function(){
+                    criaPedido("1", "Two");
+                });
+                $("#bAdicionarTwo2").click(function(){
+                    criaPedido("2", "Two");
+                });
+                $("#bAdicionarTwo3").click(function(){
+                    criaPedido("3", "Two");
+                });
+                $("#bAdicionarTwo4").click(function(){
+                    criaPedido("4", "Two");
+                });
+                $("#bAdicionarTwo5").click(function(){
+                    criaPedido("5", "Two");
+                });
+            });
+            
+        },
+        error : function(){
+            console.log("aiai");
         }
+
+    }); // ajax
+} // fLista
+function criaPedido(position, location){
+    $muda = 16;
+$.ajax({
+    type: "POST",
+    dataType: "json",
+    url: "../php/criaPedidos.php",
+    data:
+    {  
+        ajax_name : $("div#nome"+location+position).text(),
+        ajax_quantidade : $("div#number"+location+position).text()
+    },
+    success : function(info){
+        console.log("olá mundo");
+    },
+    error: function(info){
+        console.log("tchau mundo");
+    }
     });
 }
