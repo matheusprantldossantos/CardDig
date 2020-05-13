@@ -61,7 +61,14 @@
         }
     }
     $teste = sizeof($produtos);
+    for($i = 0; $i < sizeof($produtos); $i++){
+        for($j = 0; $j < sizeof($informacao); $j++){
+            if(intval($produtos[$i]["idProd"]) == intval($informacao[$j]["idItemProd"])){
+                $informacao[$j]["valorProduto"] = floatval($produtos[$i]["precoProduto"]);
+            }
+        }
+    }
     mysqli_close($conn);
-    echo json_encode($teste);
+    echo json_encode($informacao);
 
 ?>
