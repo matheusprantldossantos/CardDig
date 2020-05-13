@@ -149,7 +149,7 @@ body{
     color: #f1b15f;
 }
 
-/* Priemiro produto - Primeira categoria */
+/* Primeiro produto - Primeira categoria */
 #nomeOne0{
     position: absolute;
     top: 27%;
@@ -170,7 +170,6 @@ body{
     color: #d6d6d6;
 }
 
-
 #bDiminuirOne0{
     position: absolute;
     top: 28%;
@@ -181,14 +180,6 @@ body{
     position: absolute;
     top: 28%;
     left: 74%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
-#numAlt{
-    position: absolute;
-    top: 28%;
-    left: 73%;
     color: #d6d6d6;
     font-size: 25px;
 }

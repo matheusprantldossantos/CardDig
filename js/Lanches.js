@@ -239,6 +239,7 @@ function fListaLanches(){
                 }
             }
             $("#divPedidos").html(conteudo);
+            
             $(new Document).ready(function(){
                 $("#bAdicionarOne0").click(function(){
                     criaPedido("0", "One");

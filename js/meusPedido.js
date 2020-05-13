@@ -37,6 +37,7 @@ function listaPedidos() {
         url: "../php/pedidosListar.php",
         success : function(info){
             console.log(info);
+
             // Primeira categoria
             $(new Document).ready(function(){ 
                 let count = 0;
@@ -61,199 +62,27 @@ function listaPedidos() {
                 }); 
             });
 
-            $(new Document).ready(function(){ 
-                let count = 0;
-                console.log("documento pronto")
-                $("#bAumentarOne1").click(function(){
-                    console.log("clicou");
-                    count ++;
+
+            conteudo += "<div id='nomePag'>" + "MEUS PEDIDOS" + "</div>";
+            conteudo += "<div id='linha2'>" + "</div>";
+            conteudo += "<div class='subtitles' id='titleProd'>" + "Produto" + "</div>";
+            conteudo += "<div class='subtitles' id='titlePrec'>" + "Preço Unit" + "</div>";
+            conteudo += "<div class='subtitles' id='titleQuant'>" + "Quantidade" + "</div>";
+            conteudo += "<div class='subtitles' id='titleSub'>" + "SubTotal" + "</div>";
+            conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
             
-                    $("#numberOne1").html(count);
-                });    
-
-                $("#bDiminuirOne1").click(function(){
-                    console.log("clicou menos");
-                    if(count > 0){
-                        count--;
-                    }
-                    else{
-                        count = 0;
-                    }
-            
-                    $("#numberOne1").html(count);
-                });
-            });
-
-            $(new Document).ready(function(){ 
-                let count = 0;
-                console.log("documento pronto")
-                $("#bAumentarOne2").click(function(){
-                    console.log("clicou");
-                    count ++;
-            
-                    $("#numberOne2").html(count);
-                });    
-
-                $("#bDiminuirOne2").click(function(){
-                    console.log("clicou menos");
-                    if(count > 0){
-                        count--;
-                    }
-                    else{
-                        count = 0;
-                    }
-            
-                    $("#numberOne2").html(count);
-                });
-            });
-
-            // Segunda Categoria
-
-            $(new Document).ready(function(){ 
-                let count = 0;
-                console.log("documento pronto")
-                $("#bAumentarTwo0").click(function(){
-                    console.log("clicou");
-                    count ++;
-            
-                    $("#numberTwo0").html(count);
-                });    
-
-                $("#bDiminuirTwo0").click(function(){
-                    console.log("clicou menos");
-                    if(count > 0){
-                        count--;
-                    }
-                    else{
-                        count = 0;
-                    }
-            
-                    $("#numberTwo0").html(count);
-                }); 
-            });
-
-            $(new Document).ready(function(){ 
-                let count = 0;
-                console.log("documento pronto")
-                $("#bAumentarTwo1").click(function(){
-                    console.log("clicou");
-                    count ++;
-            
-                    $("#numberTwo1").html(count);
-                });    
-
-                $("#bDiminuirTwo1").click(function(){
-                    console.log("clicou menos");
-                    if(count > 0){
-                        count--;
-                    }
-                    else{
-                        count = 0;
-                    }
-            
-                    $("#numberTwo1").html(count);
-                });
-            });
-
-            $(new Document).ready(function(){ 
-                let count = 0;
-                console.log("documento pronto")
-                $("#bAumentarTwo2").click(function(){
-                    console.log("clicou");
-                    count ++;
-            
-                    $("#numberTwo2").html(count);
-                });    
-
-                $("#bDiminuirTwo2").click(function(){
-                    console.log("clicou menos");
-                    if(count > 0){
-                        count--;
-                    }
-                    else{
-                        count = 0;
-                    }
-            
-                    $("#numberTwo2").html(count);
-                });
-            });
-
-            var conteudo = "";
-            let numSalg = 0;
-            let numDoces = 0;
-
             for(var i = 0; i < info.length; i++){
-                conteudo +="<div id='nomePag'>" + " PIZZAS " + "</div>" +
-                        "<div id='linha2'>" + "</div>";
-
-                switch(info[i].tipo_categoria){
-                    case 'salgadas':
-                        conteudo +="<div id='subNome0'>" + "Seus pedidos" + "</div>";
-                        conteudo +="<div id='nomeOne" + numSalg + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoOne"+ numSalg +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirOne" + numSalg + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberOne"+ numSalg +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarOne" + numSalg + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarOne" + numSalg + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaOne_" + numSalg + "'>" + "</div>";
-                        numSalg++;
-                        break;
-                    
-                    case 'doces':
-                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeTwo" + numDoces + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoTwo"+ numDoces +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numDoces + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberTwo"+ numDoces +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarTwo" + numDoces + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarTwo" + numDoces + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaTwo_" + numDoces + "'>" + "</div>";
-                        numSalg++;
-                        break;
-
-                }
+            conteudo += "<div id='nameProd'>" + "Pizza de Calabresa" + "</div>";
+            conteudo += "<div id='procUnit'>" + + "</div>";
+            conteudo += "<button class='bContador' id='bDiminuirOne0'>" + "<i class='fas fa-minus'></i>" + "</button>";
+            conteudo += "<div id='numberOne0'>" + + "</div>";
+            conteudo += "<button class='bContador' id='bAumentarOne0'>" + "<i class='fas fa-plus'></i>" + "</button>";
+            conteudo += "<div id='precTot'>" + + "</div>";
+            conteudo += "<div id='iconLix'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
+            conteudo += "<div id='linhaPed'>" + "</div>";
             }
             
             $("#divPedidos").html(conteudo);
-            $(new Document).ready(function(){
-                $("#bAdicionarOne0").click(function(){
-                    criaPedido("0", "One");
-                });
-                $("#bAdicionarOne1").click(function(){
-                    criaPedido("1", "One");
-                });
-                $("#bAdicionarOne2").click(function(){
-                    criaPedido("2", "One");
-                });
-                $("#bAdicionarOne3").click(function(){
-                    criaPedido("3", "One");
-                });
-                $("#bAdicionarOne4").click(function(){
-                    criaPedido("4", "One");
-                });
-                $("#bAdicionarOne5").click(function(){
-                    criaPedido("5", "One");
-                });
-                $("#bAdicionarTwo0").click(function(){
-                    criaPedido("0", "Two");
-                });
-                $("#bAdicionarTwo1").click(function(){
-                    criaPedido("1", "Two");
-                });
-                $("#bAdicionarTwo2").click(function(){
-                    criaPedido("2", "Two");
-                });
-                $("#bAdicionarTwo3").click(function(){
-                    criaPedido("3", "Two");
-                });
-                $("#bAdicionarTwo4").click(function(){
-                    criaPedido("4", "Two");
-                });
-                $("#bAdicionarTwo5").click(function(){
-                    criaPedido("5", "Two");
-                });
-            });
-            
         },
         error : function(){
             console.log("aiai");
