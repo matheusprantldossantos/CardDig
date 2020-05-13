@@ -43,8 +43,12 @@ function fListaBebidas(){
                 let count = 0;
                 console.log("documento pronto")
                 $("#bAumentarOne0").click(function(){
-                    console.log("clicou");
+                    console.log("clicou" + count);
                     count ++;
+
+                    if (count >= 10){
+                        count = 10;
+                    }
             
                     $("#numberOne0").html(count);
                 });    
@@ -68,6 +72,10 @@ function fListaBebidas(){
                 $("#bAumentarOne1").click(function(){
                     console.log("clicou");
                     count ++;
+
+                    if (count >= 10){
+                        count = 10;
+                    } 
             
                     $("#numberOne1").html(count);
                 });    
@@ -91,6 +99,10 @@ function fListaBebidas(){
                 $("#bAumentarOne2").click(function(){
                     console.log("clicou");
                     count ++;
+
+                    if (count >= 10){
+                        count = 10;
+                    } 
             
                     $("#numberOne2").html(count);
                 });    
@@ -116,6 +128,10 @@ function fListaBebidas(){
                 $("#bAumentarTwo0").click(function(){
                     console.log("clicou");
                     count ++;
+
+                    if (count >= 10){
+                        count = 10;
+                    } 
             
                     $("#numberTwo0").html(count);
                 });    
@@ -139,6 +155,10 @@ function fListaBebidas(){
                 $("#bAumentarTwo1").click(function(){
                     console.log("clicou");
                     count ++;
+
+                    if (count >= 10){
+                        count = 10;
+                    } 
             
                     $("#numberTwo1").html(count);
                 });    
@@ -162,6 +182,10 @@ function fListaBebidas(){
                 $("#bAumentarTwo2").click(function(){
                     console.log("clicou");
                     count ++;
+
+                    if (count >= 10){
+                        count = 10;
+                    } 
             
                     $("#numberTwo2").html(count);
                 });    
