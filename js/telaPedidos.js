@@ -21,4 +21,7 @@ $(new Document).ready(function(){
     $("#bComb").click(function(){
         window.location.href = "../pages/Combinações.html";
     });
+    $("#bPedidos").click(function() {
+        window.location.href = "../pages/meusPedidos.html";
+    });
 });

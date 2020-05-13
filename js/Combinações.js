@@ -250,6 +250,9 @@ function fListaCombinacoes(){
                 $("#bAdicionarTwo5").click(function(){
                     criaPedido("5", "Two");
                 });
+                $("#bPedidos").click(function() {
+                    window.location.href = "../pages/meusPedidos.html";
+                });
             });
             
         },

@@ -25,6 +25,9 @@ $(new Document).ready(function(){
     $("#bLanche").click(function(){
         window.location.href = "../pages/Lanches.html";
     });
+    $("#bPedidos").click(function() {
+        window.location.href = "../pages/meusPedidos.html";
+    });
 });
 
 function fListaSobremesas(){

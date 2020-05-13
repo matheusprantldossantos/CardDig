@@ -1,11 +1,15 @@
-$(document).ready(function(){
-    fListaBebidas();
-    $("#bBebidas").toggleClass("item_botao_after");
+$(new Document).ready(function(){
+    listaPedidos();
+    $("#bPedidos").toggleClass("item_botao_after");
+    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
     $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
+    $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
     $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
     $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
-    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
     $("#bComb").removeClass("item_botao_after").addClass("item_botao");
+    $("#bBebidas").click(function(){
+        window.location.href = "../pages/Bebidas.html";
+    });
 
     $("#bPizza").click(function(){
         window.location.href = "../pages/Pizza.html";
@@ -18,26 +22,21 @@ $(document).ready(function(){
     $("#bSobremesa").click(function(){
         window.location.href = "../pages/Sobremesas.html";
     });
-
-    $("#bLanche").click(function(){
-        window.location.href = "../pages/Lanches.html";
-    });
     $("#bComb").click(function(){
         window.location.href = "../pages/Combinações.html";
     });
     $("#bPedidos").click(function() {
         window.location.href = "../pages/meusPedidos.html";
     });
-   
-});
 
-function fListaBebidas(){
+});
+function listaPedidos() {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "../php/bebidaListar.php",
+        url: "../php/pedidosListar.php",
         success : function(info){
-
+            console.log(info);
             // Primeira categoria
             $(new Document).ready(function(){ 
                 let count = 0;
@@ -179,40 +178,39 @@ function fListaBebidas(){
                 });
             });
 
-
             var conteudo = "";
-            let numBebida = 0;
-            let numSuco = 0;
+            let numSalg = 0;
+            let numDoces = 0;
 
             for(var i = 0; i < info.length; i++){
-                conteudo +="<div id='nomePag'>" + " BEBIDAS " + "</div>" +
+                conteudo +="<div id='nomePag'>" + " PIZZAS " + "</div>" +
                         "<div id='linha2'>" + "</div>";
 
                 switch(info[i].tipo_categoria){
-                    case 'bebidas quentes':
-                        conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeOne" + numBebida + "'"+"name='"+ info[i].nome + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoOne"+ numBebida +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirOne" + numBebida + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberOne"+ numBebida +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarOne" + numBebida + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarOne" + numBebida + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaOne_" + numBebida + "'>" + "</div>";
-                        numBebida++;
+                    case 'salgadas':
+                        conteudo +="<div id='subNome0'>" + "Seus pedidos" + "</div>";
+                        conteudo +="<div id='nomeOne" + numSalg + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoOne"+ numSalg +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirOne" + numSalg + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberOne"+ numSalg +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarOne" + numSalg + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarOne" + numSalg + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaOne_" + numSalg + "'>" + "</div>";
+                        numSalg++;
+                        break;
+                    
+                    case 'doces':
+                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='nomeTwo" + numDoces + "'>" + info[i].nome + "</div>";
+                        conteudo +="<div id='precoTwo"+ numDoces +"'>" + "R$ " +  info[i].preco + "</div>";
+                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numDoces + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
+                        conteudo +="<div id='numberTwo"+ numDoces +"'>" + "0" + "</div>";
+                        conteudo +="<button class='bContador' id='bAumentarTwo" + numDoces + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
+                        conteudo +="<button id='bAdicionarTwo" + numDoces + "'>" + "Adicionar" +"</button>";
+                        conteudo +="<div id='linhaTwo_" + numDoces + "'>" + "</div>";
+                        numSalg++;
                         break;
 
-                    case 'sucos':
-                        console.log("sucos funcionou");
-                        conteudo +="<div id='subNome1'>" + info[i].tipo_categoria + "</div>";
-                        conteudo +="<div id='nomeTwo" + numSuco + "'>" + info[i].nome + "</div>";
-                        conteudo +="<div id='precoTwo"+ numSuco +"'>" + "R$ " +  info[i].preco + "</div>";
-                        conteudo +="<button class='bContador' id='bDiminuirTwo" + numSuco + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";
-                        conteudo +="<div id='numberTwo"+ numSuco +"'>" + "0" + "</div>";
-                        conteudo +="<button class='bContador' id='bAumentarTwo" + numSuco + "'>" + "<i class='fas fa-plus'>" + "</i>" + "</button>";
-                        conteudo +="<button id='bAdicionarTwo" + numSuco + "'>" + "Adicionar" +"</button>";
-                        conteudo +="<div id='linhaTwo_" + numSuco + "'>" + "</div>";
-                        numSuco++;
-                        break;
                 }
             }
             
@@ -263,22 +261,3 @@ function fListaBebidas(){
 
     }); // ajax
 } // fLista
-function criaPedido(position, location){
-    $muda = 16;
-$.ajax({
-    type: "POST",
-    dataType: "json",
-    url: "../php/criaPedidos.php",
-    data:
-    {  
-        ajax_name : $("div#nome"+location+position).text(),
-        ajax_quantidade : $("div#number"+location+position).text()
-    },
-    success : function(info){
-        console.log("olá mundo");
-    },
-    error: function(info){
-        console.log("tchau mundo");
-    }
-    });
-}

@@ -58,7 +58,7 @@
         else{
             $verdade = "false2";
         }
-        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto) VALUES ('$comanda', '$idproduto')";
+        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto) VALUES ('$comanda', '$idproduto', '$nomeProd')";
         if($resultItemProduto =  mysqli_query($conn, $sqlItemProduto)){
             $verdade = "Ids adiconados no item de produto";
         }
@@ -104,14 +104,16 @@
             if($idAtual == $idproduto){
                 $verdade = "id já existe";
             }
-            $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto) VALUES ('$comanda', '$idAtual')";
+            else{
+            $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto) VALUES ('$comanda', '$idproduto', '$nomeProd')";
             if($resultItemProduto = mysqli_query($conn, $sqlItemProduto)){
                 $verdade = "novo id cadastrado";
+                }
             }
         }
 
     }
     mysqli_close($conn);
-    echo json_encode("Foi");
+    echo json_encode($idproduto);
 
 ?>
