@@ -15,6 +15,10 @@ $(new Document).ready(function(){
         window.location.href = "../pages/Pizza.html";
     });
 
+    $("#bLanche").click(function(){
+        window.location.href = "../pages/Lanches.html";
+    });
+
     $("#bHamb").click(function(){
         window.location.href = "../pages/Hamburguers.html";
     });
@@ -38,18 +42,23 @@ function listaPedidos() {
         success : function(info){
             console.log(info);
 
-            // Primeira categoria
+            // Primeiro Produto
             $(new Document).ready(function(){ 
                 let count = 0;
                 console.log("documento pronto")
-                $("#bAumentarOne0").click(function(){
+
+                $("#bAumentar0").click(function(){
                     console.log("clicou");
                     count ++;
-            
-                    $("#numberOne0").html(count);
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+
+                    $("#number0").html(count);
                 });    
 
-                $("#bDiminuirOne0").click(function(){
+                $("#bDiminuir0").click(function(){
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
@@ -58,10 +67,119 @@ function listaPedidos() {
                         count = 0;
                     }
             
-                    $("#numberOne0").html(count);
+                    $("#number0").html(count);
+                });
+            });
+                
+            // Segundo Produto
+            $(new Document).ready(function(){ 
+                let count = 0;
+                $("#bAumentar1").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+
+                    $("#number1").html(count);
+                });    
+
+                $("#bDiminuir1").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number1").html(count);
                 }); 
             });
 
+            //Terceiro Produto
+            $(new Document).ready(function(){ 
+                let count = 0;
+                $("#bAumentar2").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+
+                    $("#number2").html(count);
+                });    
+
+                $("#bDiminuir2").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number2").html(count);
+                });
+            });
+
+            //Quarto Produto
+            $(new Document).ready(function(){ 
+                let count = 0;
+                $("#bAumentar3").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+
+                    $("#number3").html(count);
+                });    
+
+                $("#bDiminuir3").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number3").html(count);
+                });
+            });
+
+            //Quinto Produto
+            $(new Document).ready(function(){ 
+                let count = 0;
+                $("#bAumentar4").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+
+                    $("#number4").html(count);
+                });    
+
+                $("#bDiminuir4").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#number4").html(count);
+                });
+            });
+
+            var conteudo = "";
 
             conteudo += "<div id='nomePag'>" + "MEUS PEDIDOS" + "</div>";
             conteudo += "<div id='linha2'>" + "</div>";
@@ -72,14 +190,14 @@ function listaPedidos() {
             conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
             
             for(var i = 0; i < info.length; i++){
-            conteudo += "<div id='nameProd'>" + "Pizza de Calabresa" + "</div>";
-            conteudo += "<div id='procUnit'>" + + "</div>";
-            conteudo += "<button class='bContador' id='bDiminuirOne0'>" + "<i class='fas fa-minus'></i>" + "</button>";
-            conteudo += "<div id='numberOne0'>" + + "</div>";
-            conteudo += "<button class='bContador' id='bAumentarOne0'>" + "<i class='fas fa-plus'></i>" + "</button>";
-            conteudo += "<div id='precTot'>" + + "</div>";
-            conteudo += "<div id='iconLix'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
-            conteudo += "<div id='linhaPed'>" + "</div>";
+                conteudo += "<div id='nameProd" + i +"'>" + info[i].nomeProd + "</div>";
+                conteudo += "<div id='procUnit" + i +"'>" + info[i].valorProduto + "</div>";
+                conteudo += "<button class='bContador' id='bDiminuir" + i +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
+                conteudo += "<div id='number" + i +"'>" + "0" + "</div>";
+                conteudo += "<button class='bContador' id='bAumentar" + i +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
+                conteudo += "<div id='precSub" + i +"'>" + "0" + "</div>";
+                conteudo += "<div id='iconLix" + i +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
+                conteudo += "<div id='linhaPed" + i +"'>" + "</div>";
             }
             
             $("#divPedidos").html(conteudo);
@@ -90,3 +208,4 @@ function listaPedidos() {
 
     }); // ajax
 } // fLista
+
