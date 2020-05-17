@@ -79,7 +79,8 @@ input[type = text]:focus,[type = password]:focus{
     border: solid 1px #d858a7;
     background-color: #d858a7;
     cursor: pointer;
-    transition: 0.2s; 
+    transition: 0.2s;
+    outline: none; 
 }
 
 #bEntrar:hover{
@@ -99,7 +100,8 @@ input[type = text]:focus,[type = password]:focus{
     border: solid 1px #c9c8c8;
     background-color: #c9c8c8;
     cursor: pointer;
-    transition: 0.2s; 
+    transition: 0.2s;
+    outline: none; 
 }
 
 #bCancelar:hover{

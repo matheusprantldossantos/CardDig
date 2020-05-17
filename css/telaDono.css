@@ -1,0 +1,76 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #e0e0e0;
+    height: 125%;
+    width: 100%;
+}
+
+@font-face{
+    font-family: Bebas Neue;
+    src: url(../fontes/BebasNeue-Regular.otf);
+}
+
+#msgPrinc{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: #1f1f1f;
+}
+
+.categorias{
+    border: solid 1px #1f1f1f;
+    background: transparent;
+    width: 18%;
+    height: 40%;
+    border-radius: 2%;
+    outline: none;
+    cursor: pointer;
+}
+
+#categ1{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+#categ2{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#categ3{
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+#categ4{
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+#categ5{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#categ6{
+    position: absolute;
+    top: 75%;
+    left: 70%;
+    transform: translateX(-50%);
+}
