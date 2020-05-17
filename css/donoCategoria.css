@@ -1,0 +1,145 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #e0e0e0;
+    height: 100%;
+    width: 100%;
+}
+
+@font-face{
+    font-family: Jaguar;
+    src: url(../fontes/JAGUAR.ttf);
+}
+
+#titleCateg{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-family: Jaguar;
+    font-size: 45px;
+    color: #1f1f1f;
+}
+
+#linha{
+    position: absolute;
+    top: 13%;
+    left: 3%;
+    background-color: #ff7ab8;
+    width: 90%;
+    height: 0.3%;
+}
+
+/* Subtitulos das colunas */
+
+.columnTitle{
+    font-size: 20px;
+    font-family: monospace;
+    color: #1f1f1f;
+}
+
+#nome{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+
+#preco{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+
+#tipoCateg{
+    position: absolute;
+    top: 25%;
+    left: 48%;
+}
+
+#editar{
+    position: absolute;
+    top: 25%;
+    left: 61%;
+}
+
+#Excluir{
+    position: absolute;
+    top: 25%;
+    left: 68%;
+}
+
+/* Produtos */
+
+.produtos{
+    font-size: 15px;
+    color: #414141;
+}
+
+#prodNom{
+    position: absolute;
+    top: 33.5%;
+    left: 5%;
+}
+
+#prodPre{
+    position: absolute;
+    top: 33.5%;
+    left: 35.5%;
+}
+
+#prodTip{
+    position: absolute;
+    top: 33.5%;
+    left: 48%;
+}
+
+.buttEdit{
+    background-color: #b4b4b4;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 2px;
+    color: #292929;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+
+#prodEdit{
+    position: absolute;
+    top: 32%;
+    left: 62%;
+}
+
+.buttExc{
+    background-color: #ff4655;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: #e2e2e2e5;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+
+#prodExc{
+    position: absolute;
+    top: 32%;
+    left: 69%;
+}
+
+.linhaProd{
+    width: 70%;
+    height: 0.1%;
+    background-color: #cacaca;
+}
+
+#line{
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}

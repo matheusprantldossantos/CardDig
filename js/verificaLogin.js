@@ -21,7 +21,7 @@ function confirma(){
             for(var i = 0; i < info.length; i++){
                 if(info[i].senha == senha && info[i].email == usuario){
                     erro = "Ok";
-                    window.location.href = "../pages/telaAlteraItens.html";
+                    window.location.href = "../pages/telaPrincFuncionarios.html";
                 }
             }
             $mensagem = "<div id='mensagens'>Login não autenticado</div>";
