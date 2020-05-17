@@ -213,7 +213,7 @@ function fListaLanches(){
 
                 switch(info[i].tipo_categoria){
                     case 'sanduiches':
-                        conteudo +="<div id='subNome0'>" + info[i].tipo_categoria + "</div>";
+                        conteudo +="<div id='subNome0'>" + info[i]. tipo_categoria + "</div>";
                         conteudo +="<div id='nomeOne" + numSand + "'>" + info[i].nome + "</div>";
                         conteudo +="<div id='precoOne"+ numSand +"'>" + "R$ " +  info[i].preco + "</div>";
                         conteudo +="<button class='bContador' id='bDiminuirOne" + numSand + "'>" +"<i class='fas fa-minus'>" + "</i>" + "</button>";

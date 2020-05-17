@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Maio-2020 às 00:45
+-- Tempo de geração: 17-Maio-2020 às 03:45
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.2.29
 
@@ -30,6 +30,25 @@ SET time_zone = "+00:00";
 CREATE TABLE `cliente` (
   `cpf` varchar(12) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `conjunto`
+--
+
+CREATE TABLE `conjunto` (
+  `idConjunto` int(100) NOT NULL,
+  `comandaMesa` int(100) NOT NULL,
+  `indexMesa` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `conjunto`
+--
+
+INSERT INTO `conjunto` (`idConjunto`, `comandaMesa`, `indexMesa`) VALUES
+(1, 12, 3);
 
 -- --------------------------------------------------------
 
@@ -68,7 +87,8 @@ CREATE TABLE `dono` (
 --
 
 INSERT INTO `dono` (`iddono`, `email`, `senha`) VALUES
-(2, 'donoEmail@gmail.com', '1234');
+(2, 'donoEmail@gmail.com', '1234'),
+(3, 'donoDeRestaurante@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -124,6 +144,13 @@ CREATE TABLE `item_pedido` (
   `quantidade` varchar(45) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
+--
+-- Extraindo dados da tabela `item_pedido`
+--
+
+INSERT INTO `item_pedido` (`pedido_comanda`, `cliente_cpf`, `quantidade`) VALUES
+(12, '', '2');
+
 -- --------------------------------------------------------
 
 --
@@ -131,9 +158,19 @@ CREATE TABLE `item_pedido` (
 --
 
 CREATE TABLE `item_produto` (
-  `pedido_comanda` int(11) NOT NULL,
-  `produto_idproduto` int(11) NOT NULL
+  `pedido_comanda` int(200) NOT NULL,
+  `produto_idproduto` int(11) NOT NULL,
+  `nome_produto` varchar(80) COLLATE latin1_spanish_ci NOT NULL,
+  `indexMesa` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `item_produto`
+--
+
+INSERT INTO `item_produto` (`pedido_comanda`, `produto_idproduto`, `nome_produto`, `indexMesa`) VALUES
+(12, 18, 'pizza portuguesa', 3),
+(12, 24, '\"to com fome\" - quero carne', 3);
 
 -- --------------------------------------------------------
 
@@ -142,10 +179,17 @@ CREATE TABLE `item_produto` (
 --
 
 CREATE TABLE `mesa` (
-  `idmesa` int(11) NOT NULL,
+  `idmesa` int(100) NOT NULL,
   `nome` varchar(120) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `andamento` tinyint(1) NOT NULL
+  `andamento` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `mesa`
+--
+
+INSERT INTO `mesa` (`idmesa`, `nome`, `andamento`) VALUES
+(3, 'Mesa do meio ao lado da janela', 1);
 
 -- --------------------------------------------------------
 
@@ -154,9 +198,17 @@ CREATE TABLE `mesa` (
 --
 
 CREATE TABLE `pedido` (
-  `comanda` int(11) NOT NULL,
-  `valor_total` double NOT NULL
+  `comanda` int(200) NOT NULL,
+  `valor_total` double NOT NULL,
+  `indexMesa` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `pedido`
+--
+
+INSERT INTO `pedido` (`comanda`, `valor_total`, `indexMesa`) VALUES
+(12, 63.7, 3);
 
 -- --------------------------------------------------------
 
@@ -193,7 +245,8 @@ INSERT INTO `produto` (`idproduto`, `nome`, `preco`, `categoria`, `disponibilida
 (21, 'pizza de milho', 32.75, 'pizza', 1, '', 'salgadas'),
 (23, 'hamburguer de salda', 12, 'hamburguer', 1, '', 'vegetariano'),
 (24, '\"to com fome\" - quero carne', 31, 'combinações', 1, '', 'carnívoro'),
-(25, 'Hamburguer de alcatra', 30.75, 'hamburguer', 1, '', 'normais');
+(25, 'Hamburguer de alcatra', 30.75, 'hamburguer', 1, '', 'normais'),
+(27, 'pizza de frango', 14.5, 'pizza', 1, '', 'salgada');
 
 -- --------------------------------------------------------
 
@@ -215,6 +268,13 @@ CREATE TABLE `promocao` (
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`cpf`);
+
+--
+-- Índices para tabela `conjunto`
+--
+ALTER TABLE `conjunto`
+  ADD PRIMARY KEY (`idConjunto`),
+  ADD KEY `conjuntoMesa` (`indexMesa`);
 
 --
 -- Índices para tabela `cozinheiro`
@@ -263,7 +323,8 @@ ALTER TABLE `item_pedido`
 ALTER TABLE `item_produto`
   ADD PRIMARY KEY (`pedido_comanda`,`produto_idproduto`),
   ADD KEY `fk_pedido_has_produto_produto1_idx` (`produto_idproduto`),
-  ADD KEY `fk_pedido_has_produto_pedido_idx` (`pedido_comanda`);
+  ADD KEY `fk_pedido_has_produto_pedido_idx` (`pedido_comanda`),
+  ADD KEY `mesaItemPedido` (`indexMesa`);
 
 --
 -- Índices para tabela `mesa`
@@ -275,7 +336,8 @@ ALTER TABLE `mesa`
 -- Índices para tabela `pedido`
 --
 ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`comanda`);
+  ADD PRIMARY KEY (`comanda`),
+  ADD KEY `mesaPedido` (`indexMesa`);
 
 --
 -- Índices para tabela `produto`
@@ -294,6 +356,12 @@ ALTER TABLE `promocao`
 --
 
 --
+-- AUTO_INCREMENT de tabela `conjunto`
+--
+ALTER TABLE `conjunto`
+  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de tabela `cozinheiro`
 --
 ALTER TABLE `cozinheiro`
@@ -303,7 +371,7 @@ ALTER TABLE `cozinheiro`
 -- AUTO_INCREMENT de tabela `dono`
 --
 ALTER TABLE `dono`
-  MODIFY `iddono` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `iddono` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `garcom`
@@ -315,13 +383,13 @@ ALTER TABLE `garcom`
 -- AUTO_INCREMENT de tabela `mesa`
 --
 ALTER TABLE `mesa`
-  MODIFY `idmesa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idmesa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `promocao`
@@ -332,6 +400,12 @@ ALTER TABLE `promocao`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `conjunto`
+--
+ALTER TABLE `conjunto`
+  ADD CONSTRAINT `conjuntoMesa` FOREIGN KEY (`indexMesa`) REFERENCES `mesa` (`idmesa`);
 
 --
 -- Limitadores para a tabela `item_mesa`
@@ -359,7 +433,14 @@ ALTER TABLE `item_pedido`
 --
 ALTER TABLE `item_produto`
   ADD CONSTRAINT `fk_pedido_has_produto_pedido` FOREIGN KEY (`pedido_comanda`) REFERENCES `pedido` (`comanda`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pedido_has_produto_produto1` FOREIGN KEY (`produto_idproduto`) REFERENCES `produto` (`idproduto`);
+  ADD CONSTRAINT `fk_pedido_has_produto_produto1` FOREIGN KEY (`produto_idproduto`) REFERENCES `produto` (`idproduto`),
+  ADD CONSTRAINT `mesaItemPedido` FOREIGN KEY (`indexMesa`) REFERENCES `mesa` (`idmesa`);
+
+--
+-- Limitadores para a tabela `pedido`
+--
+ALTER TABLE `pedido`
+  ADD CONSTRAINT `mesaPedido` FOREIGN KEY (`indexMesa`) REFERENCES `mesa` (`idmesa`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
