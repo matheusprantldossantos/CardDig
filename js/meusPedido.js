@@ -32,8 +32,24 @@ $(new Document).ready(function(){
     $("#bPedidos").click(function() {
         window.location.href = "../pages/meusPedidos.html";
     });
-
+    $("#finalizaPedido").click(function(){
+        encerraPedido();
+    });
 });
+function encerraPedido(){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/RemoveFK.php",
+        success: function(estado){
+            console.log(estado);
+            window.location.href = "../pages/telaPrincipal.html";
+        },
+        error: function(estado){
+            console.log(estado);
+        }
+    });
+}
 function listaPedidos() {
     $.ajax({
         type: "POST",

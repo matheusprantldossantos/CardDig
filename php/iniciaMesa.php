@@ -3,12 +3,13 @@
     $comandaAtual = intval($_POST["ajax_comanda"]);
     $contadorLoop = intval($_POST["ajax_contador"]);
     $verdade = "";
+
     $servername = "localhost: 3306";
     $username = "grupoQualquer";
     $passowrd = "senha_qualquer@1234";
     $database = "cardapiodigital";
 
-    // cria conexao
+    // cria conexaox
     $conn = mysqli_connect($servername, $username, $passowrd, $database);
 
     //verifica conexão
@@ -23,7 +24,7 @@
     mysqli_query($conn,'SET character_set_connection=utf8');
     mysqli_query($conn,'SET character_set_client=utf8');
     mysqli_query($conn,'SET character_set_results=utf8');
-    if($contadorLoop == 0){
+
         $sqlMesa = "SELECT idmesa FROM mesa WHERE nome = '$nomeMesa'";
         if($resultMesa = mysqli_query($conn, $sqlMesa)){
             $verdade = "funfou o query";
@@ -61,10 +62,6 @@
     }
     else{
         $verdade = "nao funfou o query";
-    }
-    }
-    else{
-        $verdade = "batatinha";
     }
    
     mysqli_close($conn);  

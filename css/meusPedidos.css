@@ -486,3 +486,13 @@ body{
     height: 0.1%;
     background-color: #2f3341; 
 }
+#finalizaPedido{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    background-color: goldenrod;
+}
+#finalizaPedido:hover{
+    cursor: pointer;
+    background-color: red;
+}
