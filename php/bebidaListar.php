@@ -23,7 +23,7 @@
 
     //select
 
-    $sql = "SELECT nome,preco,tipo_categoria  FROM produto WHERE categoria = 'bebidas'";
+    $sql = "SELECT nome,preco,categoria,tipo_categoria  FROM produto WHERE categoria = 'bebidas'";
     $result = mysqli_query($conn, $sql);
     $cont = 0;
     if (mysqli_num_rows($result) > 0){
@@ -31,6 +31,7 @@
         $informacao[$cont]["preco"] = $row["preco"];
         $informacao[$cont]["nome"] = $row["nome"];
         $informacao[$cont]["tipo_categoria"] = $row["tipo_categoria"];
+        $informacao[$cont]["categoria"] = $row["categoria"];
         $cont++;
         }
     }

@@ -1,0 +1,375 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #e0e0e0;
+    height: 100%;
+    width: 100%;
+}
+
+@font-face{
+    font-family: Jaguar;
+    src: url(../fontes/JAGUAR.ttf);
+}
+
+#titleCateg{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-family: Jaguar;
+    font-size: 45px;
+    color: #1f1f1f;
+}
+
+#linha{
+    position: absolute;
+    top: 13%;
+    left: 3%;
+    background-color: #ff7ab8;
+    width: 90%;
+    height: 0.3%;
+}
+
+/* Subtitulos das colunas */
+
+.columnTitle{
+    font-size: 20px;
+    font-family: monospace;
+    color: #1f1f1f;
+}
+
+#nome{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+
+#preco{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+
+#tipoCateg{
+    position: absolute;
+    top: 25%;
+    left: 48%;
+}
+
+#editar{
+    position: absolute;
+    top: 25%;
+    left: 61%;
+}
+
+#Excluir{
+    position: absolute;
+    top: 25%;
+    left: 68%;
+}
+
+/* Produto estilo */
+
+.produtos{
+    font-size: 15px;
+    color: #414141;
+}
+
+.buttEdit{
+    background-color: #b4b4b4;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 2px;
+    color: #292929;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+
+.buttExc{
+    background-color: #ff4655;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: #e2e2e2e5;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+
+.linhaProd{
+    width: 70%;
+    height: 0.1%;
+    background-color: #cacaca;
+}
+
+/* Produto 1 */
+
+#prodNom0{
+    position: absolute;
+    top: 33.5%;
+    left: 5%;
+}
+
+#prodPre0{
+    position: absolute;
+    top: 33.5%;
+    left: 35.2%;
+}
+
+#prodTip0{
+    position: absolute;
+    top: 33.5%;
+    left: 48%;
+}
+
+#prodEdit0{
+    position: absolute;
+    top: 32%;
+    left: 62%;
+}
+
+#prodExc0{
+    position: absolute;
+    top: 32%;
+    left: 69%;
+}
+
+#line0{
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}
+
+/* Produto 2 */
+
+#prodNom1{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+
+#prodPre1{
+    position: absolute;
+    top: 45%;
+    left: 35.2%;
+}
+
+#prodTip1{
+    position: absolute;
+    top: 45%;
+    left: 48%;
+}
+
+#prodEdit1{
+    position: absolute;
+    top: 43.5%;
+    left: 62%;
+}
+
+#prodExc1{
+    position: absolute;
+    top: 43.5%;
+    left: 69%;
+}
+
+#line1{
+    position: absolute;
+    top: 51.5%;
+    left: 5%;
+}
+
+/* Produto 3 */
+
+#prodNom2{
+    position: absolute;
+    top: 56.5%;
+    left: 5%;
+}
+
+#prodPre2{
+    position: absolute;
+    top: 56.5%;
+    left: 35.2%;
+}
+
+#prodTip2{
+    position: absolute;
+    top: 56.5%;
+    left: 48%;
+}
+
+#prodEdit2{
+    position: absolute;
+    top: 55%;
+    left: 62%;
+}
+
+#prodExc2{
+    position: absolute;
+    top: 55%;
+    left: 69%;
+}
+
+#line2{
+    position: absolute;
+    top: 63%;
+    left: 5%;
+}
+
+/* Produto 4 */
+
+#prodNom3{
+    position: absolute;
+    top: 68%;
+    left: 5%;
+}
+
+#prodPre3{
+    position: absolute;
+    top: 68%;
+    left: 35.2%;
+}
+
+#prodTip3{
+    position: absolute;
+    top: 68%;
+    left: 48%;
+}
+
+#prodEdit3{
+    position: absolute;
+    top: 66.5%;
+    left: 62%;
+}
+
+#prodExc3{
+    position: absolute;
+    top: 66.5%;
+    left: 69%;
+}
+
+#line3{
+    position: absolute;
+    top: 74.5%;
+    left: 5%;
+}
+
+/* Produto 5 */
+
+#prodNom4{
+    position: absolute;
+    top: 79.5%;
+    left: 5%;
+}
+
+#prodPre4{
+    position: absolute;
+    top: 79.5%;
+    left: 35.2%;
+}
+
+#prodTip4{
+    position: absolute;
+    top: 79.5%;
+    left: 48%;
+}
+
+#prodEdit4{
+    position: absolute;
+    top: 78%;
+    left: 62%;
+}
+
+#prodExc4{
+    position: absolute;
+    top: 78%;
+    left: 69%;
+}
+
+#line4{
+    position: absolute;
+    top: 86%;
+    left: 5%;
+}
+
+/* Produto 6 */
+
+#prodNom5{
+    position: absolute;
+    top: 91%;
+    left: 5%;
+}
+
+#prodPre5{
+    position: absolute;
+    top: 91%;
+    left: 35.2%;
+}
+
+#prodTip5{
+    position: absolute;
+    top: 91%;
+    left: 48%;
+}
+
+#prodEdit5{
+    position: absolute;
+    top: 89.5%;
+    left: 62%;
+}
+
+#prodExc5{
+    position: absolute;
+    top: 89.5%;
+    left: 69%;
+}
+
+#line5{
+    position: absolute;
+    top: 97.5%;
+    left: 5%;
+}
+
+/* Produto 7 */
+
+#prodNom6{
+    position: absolute;
+    top: 102.5%;
+    left: 5%;
+}
+
+#prodPre6{
+    position: absolute;
+    top: 102.5%;
+    left: 35.2%;
+}
+
+#prodTip6{
+    position: absolute;
+    top: 102.5%;
+    left: 48%;
+}
+
+#prodEdit6{
+    position: absolute;
+    top: 101%;
+    left: 62%;
+}
+
+#prodExc6{
+    position: absolute;
+    top: 101%;
+    left: 69%;
+}
+
+#line6{
+    position: absolute;
+    top: 109%;
+    left: 5%;
+}
