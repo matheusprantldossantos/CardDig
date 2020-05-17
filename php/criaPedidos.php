@@ -75,8 +75,16 @@
         if($resultItemProduto =  mysqli_query($conn, $sqlItemProduto)){
             $verdade = "Ids adiconados no item de produto";
         }
+        
     }
     else{
+        $sqlComanda = "SELECT comanda FROM  pedido";
+        $result = mysqli_query($conn, $sqlComanda);
+        while($row = mysqli_fetch_assoc($result)){
+            $ultimaComanda = intval($row["comanda"]);
+        }
+        if($ultimaComanda == $comanda){
+
         $sqlPedido = "SELECT valor_total FROM pedido WHERE comanda = '$comanda'";
         $sqlItemPedido = "SELECT quantidade FROM item_pedido WHERE pedido_comanda = '$comanda'";
         $sqlItemProduto = "SELECT produto_idproduto FROM item_produto WHERE pedido_comanda = '$comanda'";
@@ -125,8 +133,30 @@
                 }
             }
         }
-
     }
+    else{
+        $verdade2 = "sem nada";
+        $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa) VALUES ('$comanda', '$precoPrimeio','$idmesa')";
+        if($result = mysqli_query($conn, $sqlPedido)){
+            $verdade = "true";
+        }
+        else{
+            $verdade = "false";
+        }
+        $sqlItemPedido = "INSERT INTO item_pedido (pedido_comanda, quantidade) VALUES ('$comanda', '$quantidadeProd')";
+        if($result = mysqli_query($conn, $sqlItemPedido)){
+            $verdade = "true2";
+        }
+        else{
+            $verdade = "false2";
+        }
+        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)
+        VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa')";
+        if($resultItemProduto =  mysqli_query($conn, $sqlItemProduto)){
+            $verdade = "Ids adiconados no item de produto";
+        }
+    }
+}
     mysqli_close($conn);
     echo json_encode($verdade);
 
