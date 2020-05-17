@@ -37,14 +37,26 @@
             $cont++;
         }
     }
-    $comanda = 0;
+    $sqlConjunto = "SELECT indexMesa, idConjunto, comandaMesa FROM  conjunto";
+    $resultConjunto = mysqli_query($conn, $sqlConjunto);
+    $cont = 0;
+    if (mysqli_num_rows($resultConjunto) > 0){
+        while($row = mysqli_fetch_assoc($resultConjunto)){
+            $infoConjunto[$cont]["indexMesa"] = $row["indexMesa"];
+            $infoConjunto[$cont]["comandaMesa"] = $row["comandaMesa"];
+            $cont++;
+        }
+    }
+    $idmesa = intval($infoConjunto[0]["indexMesa"]);
+    $comanda = intval($infoConjunto[0]["comandaMesa"]);
     $sqlComanda = "SELECT comanda FROM  pedido";
     $result = mysqli_query($conn, $sqlComanda);
     $precoPrimeio = floatval($infoProd[0]["preco"]);
     $idproduto = intval($infoProd[0]["idproduto"]);
     $precoPrimeio = $precoPrimeio * $quantidadeProd;
     if(mysqli_num_rows($result) == 0){
-        $sqlPedido = "INSERT INTO pedido (comanda, valor_total) VALUES ('$comanda', '$precoPrimeio')";
+        $verdade2 = "sem nada";
+        $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa) VALUES ('$comanda', '$precoPrimeio','$idmesa')";
         if($result = mysqli_query($conn, $sqlPedido)){
             $verdade = "true";
         }
@@ -58,7 +70,8 @@
         else{
             $verdade = "false2";
         }
-        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto) VALUES ('$comanda', '$idproduto', '$nomeProd')";
+        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)
+        VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa')";
         if($resultItemProduto =  mysqli_query($conn, $sqlItemProduto)){
             $verdade = "Ids adiconados no item de produto";
         }
@@ -105,7 +118,8 @@
                 $verdade = "id já existe";
             }
             else{
-            $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto) VALUES ('$comanda', '$idproduto', '$nomeProd')";
+            $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)
+            VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa')";
             if($resultItemProduto = mysqli_query($conn, $sqlItemProduto)){
                 $verdade = "novo id cadastrado";
                 }
@@ -114,6 +128,6 @@
 
     }
     mysqli_close($conn);
-    echo json_encode($idproduto);
+    echo json_encode($verdade);
 
 ?>
