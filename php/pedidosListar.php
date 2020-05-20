@@ -59,27 +59,36 @@
     }
     $informacaoCopia = [];
     $listaDados = [];
+    $comandasProds = [];
     $contador = -1;
+    $pula = 1;
     foreach($informacao as $lista){
         $contador++;
         foreach($lista as $valores){
-            array_push($listaDados, $valores);
-            $informacaoCopia["valores"] = $listaDados;
+            if($pula % 4 == 0){
+                array_push($comandasProds, $valores);
+                $informacaoCopia["valores"] = $comandasProds;
+                $pula++;
+            }
+            else{
+                $pula++;
+            }
         }
     }
     $especicacaoProdId = [];
     $especicacaoProdPreco = [];
     $produtoCopia = [];
-    $somador = -1;
+    $somador = 0;
 
     foreach($produtos as $gerais){
-        $somador++;
         foreach($gerais as $interno){
         if($somador % 2 == 0){
             array_push($especicacaoProdPreco, $interno);
+            $somador++;
         }
         else{
             array_push($especicacaoProdId, $interno);
+            $somador++;
         }
         }
     }
