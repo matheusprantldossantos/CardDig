@@ -218,7 +218,7 @@ function listaPedidos() {
             
             $("#divPedidos").html(conteudo);
         },
-        error : function(){
+        error : function(info){
             console.log("aiai");
         }
 

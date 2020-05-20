@@ -1,4 +1,4 @@
-<?php    
+<?php   
     //valores do BD
     $servername = "localhost: 3306";
     $username = "grupoQualquer";
@@ -36,7 +36,7 @@
     else {
         echo "Erro executando SELECT: " . mysqli_error($conn);
     }
-    $comandaAtual = $informacao[0]["comanda"];
+    $comandaAtual = $informacao[count($informacao) - 1]["comanda"];
     $sqlItemPedido = "SELECT nome_produto, produto_idproduto  FROM item_produto WHERE pedido_comanda = '$comandaAtual'";
     $resultItemPedido = mysqli_query($conn, $sqlItemPedido);
     $c = 0;
@@ -47,27 +47,60 @@
             $c++;
         }
     }
-    else {
-        echo "Erro executando SELECT: " . mysqli_error($conn);
-    }
     $sqlPrecoProd = "SELECT preco, idproduto FROM produto";
     $resultProduto = mysqli_query($conn, $sqlPrecoProd);
-    $indicador = 0;
+    $cont = 0;
     if (mysqli_num_rows($resultProduto) > 0){
         while($row = mysqli_fetch_assoc($resultProduto)){
-        $produtos[$indicador]["precoProduto"] = $row["preco"];
-        $produtos[$indicador]["idProd"] = $row["idproduto"];
-        $indicador++;
+        $produtos[$cont]["precoProduto"] = $row["preco"];
+        $produtos[$cont]["idProd"] = $row["idproduto"];
+        $cont++;
         }
     }
-    $teste = sizeof($produtos);
-    for($i = 0; $i < sizeof($produtos); $i++){
-        for($j = 0; $j < sizeof($informacao); $j++){
-            if(intval($produtos[$i]["idProd"]) == intval($informacao[$j]["idItemProd"])){
-                $informacao[$j]["valorProduto"] = floatval($produtos[$i]["precoProduto"]);
+    $informacaoCopia = [];
+    $listaDados = [];
+    $contador = -1;
+    foreach($informacao as $lista){
+        $contador++;
+        foreach($lista as $valores){
+            array_push($listaDados, $valores);
+            $informacaoCopia["valores"] = $listaDados;
+        }
+    }
+    $especicacaoProdId = [];
+    $especicacaoProdPreco = [];
+    $produtoCopia = [];
+    $somador = -1;
+
+    foreach($produtos as $gerais){
+        $somador++;
+        foreach($gerais as $interno){
+        if($somador % 2 == 0){
+            array_push($especicacaoProdPreco, $interno);
+        }
+        else{
+            array_push($especicacaoProdId, $interno);
+        }
+        }
+    }
+    $posicao = 0;
+    $retorno = 0;
+    $produtoCopia["id"] = $especicacaoProdId;
+    $produtoCopia["Preco"] = $especicacaoProdPreco;
+    for($i = 0; $i < count($informacaoCopia["valores"]); $i++){
+        for($j = 0; $j < count($produtoCopia["id"]); $j++){
+            if($retorno > 1){
+                $a = "continua";
+            }
+            else if($produtoCopia["id"][$j] == $informacaoCopia["valores"][$i]){
+                $informacao[$posicao]["valorProduto"] = $produtoCopia["Preco"][$j];
+                $retorno++;
+                $posicao++;
             }
         }
     }
+    
+    
     mysqli_close($conn);
     echo json_encode($informacao);
 
