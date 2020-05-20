@@ -287,20 +287,20 @@ function fListaHamburger(){
 } // fLista
 function criaPedido(position, location){
     $muda = 16;
-$.ajax({
-    type: "POST",
-    dataType: "json",
-    url: "../php/criaPedidos.php",
-    data:
-    {  
-        ajax_name : $("div#nome"+location+position).text(),
-        ajax_quantidade : $("div#number"+location+position).text()
-    },
-    success : function(info){
-        console.log("olá mundo");
-    },
-    error: function(info){
-        console.log("tchau mundo");
-    }
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/criaPedidos.php",
+        data:
+        {  
+            ajax_name : $("div#nome"+location+position).text(),
+            ajax_quantidade : $("div#number"+location+position).text()
+        },
+        success : function(info){
+            console.log("olá mundo");
+        },
+        error: function(info){
+            console.log("tchau mundo");
+        }
     });
 }
