@@ -10,15 +10,25 @@ body{
 }
 
 @font-face{
+    font-family: Bebas neue;
+    src: url(../fontes/BebasNeue-Regular.otf);
+}
+
+@font-face{
     font-family: Jaguar;
     src: url(../fontes/JAGUAR.ttf);
+}
+
+@font-face{
+    font-family: blank;
+    src: url(../fontes/blank-Regular.otf);
 }
 
 #titleCateg{
     position: absolute;
     top: 5%;
     left: 3%;
-    font-family: Jaguar;
+    font-family: blank;
     font-size: 45px;
     color: #1f1f1f;
 }
@@ -38,6 +48,7 @@ body{
     font-size: 20px;
     font-family: monospace;
     color: #1f1f1f;
+    font-weight: bold;
 }
 
 #nome{
