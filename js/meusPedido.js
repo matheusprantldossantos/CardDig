@@ -206,8 +206,8 @@ function listaPedidos() {
             conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
             
             for(var i = 0; i < info.length; i++){
-                conteudo += "<div id='nameProd" + i +"'>" + info[i].nomeProd + "</div>";
-                conteudo += "<div id='procUnit" + i +"'>" + info[i].valorProduto + "</div>";
+                conteudo += "<div id='nameProd" + i +"'>" + info[i].nomeProd +"</div>";
+                conteudo += "<div id='procUnit" + i +"'>" + info[i].valorProduto + " R$" + "</div>";
                 conteudo += "<button class='bContador' id='bDiminuir" + i +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
                 conteudo += "<div id='number" + i +"'>" + "0" + "</div>";
                 conteudo += "<button class='bContador' id='bAumentar" + i +"'>" + "<i class='fas fa-plus'></i>" + "</button>";

@@ -1,12 +1,4 @@
 <?php
-
-    // valores do BD
-    $servername = "localhost: 3306";
-    $username = "grupoQualquer";
-    $passowrd = "senha_qualquer@1234";
-    $database = "cardapiodigital";
-
-    
     //valores do BD
     $servername = "localhost: 3306";
     $username = "grupoQualquer";
@@ -31,14 +23,14 @@
 
     //select
 
-    $sql = "SELECT email,senha FROM dono UNION SELECT email,senha FROM garcom UNION SELECT email,senha FROM cozinheiro";
+    $sql = "SELECT email,senha,iddono FROM dono UNION SELECT email,senha,idgarcom FROM garcom UNION SELECT email,senha,idcozinheiro FROM cozinheiro";
     $result = mysqli_query($conn, $sql);
     $cont = 0;
-    $qnt = mysqli_num_rows($result);
     if (mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
         $informacao[$cont]["email"] = $row["email"];
         $informacao[$cont]["senha"] = $row["senha"];
+        $informacao[$cont]["id"] = $row["iddono"];
         $cont ++;
         }
     }
