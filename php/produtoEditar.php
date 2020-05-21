@@ -1,4 +1,11 @@
 <?php
+
+    $id = $_POST["ajax_idproduto"];
+    $nome = $_POST["ajax_nome"];
+    $preco = $_POST["ajax_preco"];
+    $disp = $_POST["ajax_disp"];
+    $tipo = $_POST["ajax_tipo"];    
+
     //valores do BD
     $servername = "localhost: 3306";
     $username = "grupoQualquer";
@@ -10,8 +17,7 @@
 
     //verifica conexão
     if(!$conn){
-        echo "</table>";
-        echo "</div>";
+        $retorno = "não conectou";
         die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
     }
     // configuração de acentuções da lingua portuguesa
@@ -21,25 +27,17 @@
         mysqli_query($conn,'SET character_set_client=utf8');
         mysqli_query($conn,'SET character_set_results=utf8');
 
-    //select
-
-    $sql = "SELECT idproduto,nome,preco,tipo_categoria  FROM produto WHERE categoria = 'bebidas'";
-    $result = mysqli_query($conn, $sql);
-    $cont = 0;
-    if (mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_assoc($result)){
-        $informacao[$cont]["preco"] = $row["preco"];
-        $informacao[$cont]["nome"] = $row["nome"];
-        $informacao[$cont]["tipo_categoria"] = $row["tipo_categoria"];
-        $informacao[$cont]["idproduto"] = $row["idproduto"];
-        $cont++;
-        }
-    }
-    else {
-        echo "Erro executando SELECT: " . mysqli_error($conn);
-    }
+    // Atualiza os produtos
     
-    mysqli_close($conn);
-    echo json_encode($informacao);
+    $sql = "UPDATE produto SET nome = '$nome', preco = '$preco', disponibilidade = '$disp', tipo_categoria = '$tipo' WHERE idproduto = '$id' ";
 
+    if ($result = mysqli_query($conn, $sql)) {
+        $retorno = "Um registro alterado!";
+    } 
+    else {
+    echo "Erro executando UPDATE: " . mysqli_error($conn);
+
+    mysqli_close($conn);
+    echo json_encode($retorno);
+}
 ?>

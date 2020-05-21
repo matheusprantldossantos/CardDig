@@ -24,7 +24,64 @@ function fListarCategoria(){
             
             $("#listar").html(conteudo);
 
+            // Botões para Editar
+            $(new Document).ready(function(){
+                $("#prodEdit0").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[0].nome);
+
+                    
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                    });
             
+                    
+                    $(new Document).ready(function(){
+                        $("#bSalvar").click(function(){
+                            var nomeEdit = $("#nomeProduto").val();
+                            var precoEdit = $("#precoProduto").val();
+                            var dispEdit = $("#dispProduto").val();
+                            var tipoEdit = $("#tipoProduto").val();
+                            editarProduto(info[0].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                            $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                            $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        });
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit1").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[1].nome);
+
+                    
+                    
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                    });
+                     
+                    
+                    $(new Document).ready(function(){
+                        $("#bSalvar").click(function(){
+                            var nomeEdit = $("#nomeProduto").val();
+                            var precoEdit = $("#precoProduto").val();
+                            var dispEdit = $("#dispProduto").val();
+                            var tipoEdit = $("#tipoProduto").val();
+                            editarProduto(info[1].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                            $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                            $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        });
+                    });
+                });
+            });
+
+
+            // Botões para Excluir
             $(new Document).ready(function(){
                 $("#prodExc0").click(function(){
                     excluirProduto(info[0].nome);
@@ -100,5 +157,45 @@ function excluirProduto(nome){
         error : function(){
             console.log("n deu")
         }
+    });
+}
+
+function listarInfo(nome){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/produtoEspListar.php",
+        data:{
+            ajax_nome: nome
+        },
+        success : function(info){
+            console.log("funcionou")
+            $("#nomeProduto").val(info.nome);
+            $("#precoProduto").val(info.preco);
+            $("#dispProduto").val(info.disponibilidade);
+            $("#tipoProduto").val(info.tipo_categoria);
+        },
+        error : function(){
+            console.log("não funcionou")
+        }
+    });
+}
+
+function editarProduto(id, nome, preco, disp, tipo){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/produtoEditar.php",
+        data:{
+            ajax_idproduto: id,
+            ajax_nome: nome,
+            ajax_preco: preco,
+            ajax_disp: disp,
+            ajax_tipo: tipo
+        },
+        success : function(retorno){
+            console.log(retorno);
+        }
+
     });
 }
