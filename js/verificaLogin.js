@@ -1,8 +1,8 @@
 $(new Document).ready(function(){
     $("#bEntrar").click(function(){
         confirma();
-        var funcao = verificaUsuario();
-        console.log(funcao);
+        pegaResultdo();
+
     });
 });
 function updateAtividade(id, func){
@@ -42,7 +42,7 @@ async function verificaUsuario(){
     },
     error: function(){
         console.log("Nao achou a funcao");
-        return false;
+        return "Sem funcao";
     }
     });
     return funcaoAtual;
@@ -55,16 +55,28 @@ function confirma(){
         type: "POST",
         dataType: "json",
         url: "../php/listaCadastrados.php",
-        success : function(info){
+        success : async function(info){
             console.log("chegou ate aqui");
-            var erro = "cadastro incorreto";
             if(usuario == " " || senha == " "){
                 $mensagem = "<div id='mensagens'> Campos não preenchidos </div>";
                 $("#mensgErro").html($mensagem);
             }
             for(var i = 0; i < info.length; i++){
                 if(info[i].senha == senha && info[i].email == usuario){
-                    console.log("OK");
+                    const hierarquiaFunc = await verificaUsuario();
+                    updateAtividade(info[i].id, hierarquiaFunc);
+                    if(hierarquiaFunc == "dono"){
+                        window.location.href = "../pages/telaDono.html";
+                    }
+                    else if(hierarquiaFunc == "garcom"){
+                        window.location.href = "../pages/telaGarcom.html";
+                    }
+                    else if(hierarquiaFunc == "cozinheiro"){
+                        window.location.href = "../pages/telaCozinha.html";
+                    }
+                    else{
+                        console.log("Sem func");
+                    }
                 }
             }
             $mensagem = "<div id='mensagens'>Login não autenticado</div>";

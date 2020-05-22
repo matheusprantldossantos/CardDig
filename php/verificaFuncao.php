@@ -36,11 +36,11 @@
 
       //verificando se é cozinheiro
       $sqlCozinheiro = "SELECT idcozinheiro FROM cozinheiro WHERE email = '$email'";
-      $resultCozinheiro= mysqli_query($conn, $sqlCozinheiro);
+      $resultCozinheiro = mysqli_query($conn, $sqlCozinheiro);
       $c = 0;
       if(mysqli_num_rows($resultCozinheiro) > 0){
           while($row = mysqli_fetch_assoc($resultCozinheiro)){
-              $$dadosFunc[$c]["id"] = $row["idcozinheiro"];
+              $dadosFunc[$c]["id"] = $row["idcozinheiro"];
               $dadosFunc[$c]["funcao"] = "cozinheiro";
               $c++;
           }

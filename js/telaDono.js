@@ -22,4 +22,26 @@ $(new Document).ready(function(){
     $("#categ6").click(function(){
         window.location.href = "../pages/donoSobremesas.html";
     });
+    
+    $("#logout").click(function(){
+        tornaInativo();
+        window.location.href = "../pages/login.html";
+    });
 });
+function tornaInativo(){
+    const func = "dono";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/mudaInatividade.php",
+        data: {
+            ajax_func : func
+        },
+        success : function(condicao){
+            console.log(condicao);
+        },
+        error: function(condicao){
+            console.log(condicao);
+        }
+    });
+}

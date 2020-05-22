@@ -3,6 +3,10 @@ $(new Document).ready(function(){
     $("#confQnt").click(function(){
         criaComandas();
     });
+    $("#logout").click(() =>{
+         tornaInativo();
+         window.location.href = "../pages/login.html";
+    });
 
 });
 function criaComandas(){
@@ -59,4 +63,21 @@ function criaMesa(){
     else{
         $("#mensagem").text("Preencha todos os campos");
     }
+}
+function tornaInativo(){
+    const func = "garcom";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/mudaInatividade.php",
+        data: {
+            ajax_func : func
+        },
+        success : function(condicao){
+            console.log(condicao);
+        },
+        error: function(condicao){
+            console.log(condicao);
+        }
+    });
 }
