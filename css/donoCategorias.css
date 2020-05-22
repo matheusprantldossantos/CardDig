@@ -42,7 +42,6 @@ body{
     height: 0.3%;
 }
 
-
 /* Subtitulos das colunas */
 
 .columnTitle{
@@ -386,6 +385,7 @@ body{
     left: 5%;
 }
 
+
 /* Janela Editar Produtos */
 
 .pagEditar{
@@ -509,11 +509,13 @@ input[type=number] {
     text-decoration: none;
     transition: .2s;
     font-weight: bold;
+    color: #e2e2e2;
 }
 
 #bSalvar:hover{
     background-color: #fc6aae;
     transition: .2s;
+    color: #d1d1d1;
 }
 
 .styleCont{

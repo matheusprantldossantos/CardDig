@@ -24,6 +24,213 @@ function fListarCategoria(){
 
             $("#listar").html(conteudo);
 
+            // Botões para Editar
+            $(new Document).ready(function(){
+                $("#prodEdit0").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[0].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[0].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#bSalvar").off("click");
+                        $("#bprodEdit0").off("click");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit1").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[1].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[1].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit2").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[2].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[2].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit3").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[3].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[3].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit4").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[4].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[4].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit5").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[5].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[5].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodEdit6").click(function(){
+                    $("#janelaEdit").toggleClass("pagEditarAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfo(info[6].nome);
+
+                    $("#bSalvar").click(function(){
+                        var nomeEdit = $("#nomeProduto").val();
+                        var precoEdit = $("#precoProduto").val();
+                        var dispEdit = $("#dispProduto").val();
+                        var tipoEdit = $("#tipoProduto").val();
+                        editarProduto(info[6].idproduto,nomeEdit,precoEdit,dispEdit,tipoEdit);
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bFechar").click(function(){
+                        $("#janelaEdit").removeClass("pagEditarAfter").addClass("pagEditar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            // Botões para Excluir
             $(new Document).ready(function(){
                 $("#prodExc0").click(function(){
                     excluirProduto(info[0].nome);
@@ -100,5 +307,45 @@ function excluirProduto(nome){
         error : function(){
             console.log("n deu")
         }
+    });
+}
+
+function listarInfo(nome){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/produtoEspListar.php",
+        data:{
+            ajax_nome: nome
+        },
+        success : function(info){
+            console.log("funcionou")
+            $("#nomeProduto").val(info.nome);
+            $("#precoProduto").val(info.preco);
+            $("#dispProduto").val(info.disponibilidade);
+            $("#tipoProduto").val(info.tipo_categoria);
+        },
+        error : function(){
+            console.log("não funcionou")
+        }
+    });
+}
+
+function editarProduto(id, nome, preco, disp, tipo){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/produtoEditar.php",
+        data:{
+            ajax_idproduto: id,
+            ajax_nome: nome,
+            ajax_preco: preco,
+            ajax_disp: disp,
+            ajax_tipo: tipo
+        },
+        success : function(retorno){
+            console.log(retorno);
+        }
+
     });
 }

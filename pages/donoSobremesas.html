@@ -10,14 +10,23 @@
         <meta http-equiv="Cache-control" content="no-cache">
     </head>
     <body>
-        <div id="listar">
-
+        <div id="container" class="styleCont">
+            <div id="linha"></div>
+            <div class="columnTitle" id="nome">Produto</div>
+            <div class="columnTitle" id="preco">Preço</div>
+            <div class="columnTitle" id="tipoCateg">Tipo</div>
+            <div class="columnTitle" id="editar">Editar</div>
+            <div class="columnTitle" id="excluir">Excluir</div>
+            <div id="listar"></div>
         </div>
-        <div id="linha"></div>
-        <div class="columnTitle" id="nome">Produto</div>
-        <div class="columnTitle" id="preco">Preço</div>
-        <div class="columnTitle" id="tipoCateg">Tipo</div>
-        <div class="columnTitle" id="editar">Editar</div>
-        <div class="columnTitle" id="excluir">Excluir</div>
+        <div id="janelaEdit" class="pagEditar">
+            <button id="bFechar"><i class="far fa-times-circle"></i></button>
+            <div id="titlePag">Editar Produto</div>
+            <input class="inputEdit" id="nomeProduto" type="text" value="" placeholder="Nome"> 
+            <input class="inputEdit" id="precoProduto" type="text" value ="" placeholder="Preço"> 
+            <input class="inputEdit" id="dispProduto" type="number" value="" placeholder="Disponibilidade"> 
+            <input class="inputEdit" id="tipoProduto" type="text" value="" placeholder="Tipo do Produto"> 
+            <button id="bSalvar">Salvar</button>
+        </div>
     </body>
 </html>
