@@ -70,6 +70,7 @@
         else{
             $verdade = "false2";
         }
+        //Mudar insercao aqui tbm\\
         $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)
         VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa')";
         if($resultItemProduto =  mysqli_query($conn, $sqlItemProduto)){
@@ -92,7 +93,6 @@
             $valor_total = mysqli_fetch_assoc($resultPedido);
             $precoCorreto = $valor_total['valor_total'];
             $precoNum = floatval($precoCorreto);
-            $testeNum = $precoNum;
             $precoNum += $precoPrimeio;
             $sqlPedido = "UPDATE pedido SET valor_total = '$precoNum' WHERE comanda = '$comanda'";
             if($resultPedido = mysqli_query($conn, $sqlPedido)){
@@ -124,6 +124,16 @@
             $idAtual = $verificaId['produto_idproduto'];
             if($idAtual == $idproduto){
                 $verdade = "id já existe";
+                $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idproduto'";
+                $resultItemProduto = mysqli_query($conn, $sqlItemProduto);
+                $verificaQnt = mysqli_fetch_assoc($resultItemProduto);
+                $quantidadeAtual = $verificaQnt['quantidade'];
+                $quantidadeAtual = intval($quantidadeAtual);
+                $quantidadeAtual++;
+                $sqlItemProduto = "UPDATE item_produto SET quantidade = '$quantidadeAtual' WHERE produto_idproduto = '$idproduto'";
+               if($resultItemProduto = mysqli_query($conn, $sqlItemProduto)){
+                    $verdade = "quantidade alterada";
+               }
             }
             else{
             $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)

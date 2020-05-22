@@ -102,7 +102,15 @@
                 $a = "continua";
             }
             else if($produtoCopia["id"][$j] == $informacaoCopia["valores"][$i]){
+                $idproduto = $produtoCopia["id"][$j];
+                $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idproduto'";
+                $resultItemProduto = mysqli_query($conn, $sqlItemProduto);
+                $verificaQnt = mysqli_fetch_assoc($resultItemProduto);
+                $quantidadeAtual = $verificaQnt['quantidade'];
+                $quantidadeAtual = intval($quantidadeAtual);
                 $informacao[$posicao]["valorProduto"] = $produtoCopia["Preco"][$j];
+                $informacao[$posicao]["subTotal"] = ($produtoCopia["Preco"][$j] * $quantidadeAtual);
+                $informacao[$posicao]["quantidade"] = $quantidadeAtual; 
                 $retorno++;
                 $posicao++;
             }
