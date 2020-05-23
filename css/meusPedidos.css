@@ -161,6 +161,11 @@ body{
     left: 85%;
 }
 
+.prodElem{
+    color: #7c7a7a;
+    font-size: 15px;
+}
+
 .bContador{
     background: transparent;
     border: solid 2px #eba243;
@@ -171,33 +176,40 @@ body{
     padding: 0.4%;
 }
 
+.iconsLixeira{
+    background-color: #ff4655;
+    border: none;
+    border-radius: 5px;
+    color: #e2e2e2e5;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    padding: .8%;
+}
+
 /* Produto 1 */
 
 #nameProd0{
     position: absolute;
     top: 34%;
     left: 5%;
-    color: #7c7a7a;
-    font-size: 15px;
 }
 
 #procUnit0{
     position: absolute;
     top: 34%;
     left: 37%;
-    color: #7c7a7a;
-    font-size: 15px;
 }
 
 #bDiminuir0{
     position: absolute;
-    top: 34%;
+    top: 33.5%;
     left: 55.5%;
 }
 
 #number0{
     position: absolute;
-    top: 34%;
+    top: 33.5%;
     left: 58.8%;
     color: #d6d6d6;
     font-size: 25px;
@@ -205,29 +217,25 @@ body{
 
 #bAumentar0{
     position: absolute;
-    top: 34%;
+    top: 33.5%;
     left: 60.8%;
 }
 
 #precSub0{
     position: absolute;
     top: 34%;
-    left: 74.2%;
-    color: #7c7a7a;
-    font-size: 15px;
+    left: 73.5%;
 }
 
 #iconLix0{
     position: absolute;
-    top: 34%;
-    left: 87.3%;
-    color: #7c7a7a;
-    font-size: 20px;
+    top: 32.5%;
+    left: 86.3%;
 }
 
 #linhaPed0{
     position: absolute;
-    top: 42%;
+    top: 41.5%;
     left: 4%;
     width: 90%;
     height: 0.1%;
@@ -255,13 +263,13 @@ body{
 
 #bDiminuir1{
     position: absolute;
-    top: 46%;
+    top: 45.5%;
     left: 55.5%;
 }
 
 #number1{
     position: absolute;
-    top: 46%;
+    top: 45.5%;
     left: 58.8%;
     color: #d6d6d6;
     font-size: 25px;
@@ -269,29 +277,27 @@ body{
 
 #bAumentar1{
     position: absolute;
-    top: 46%;
+    top: 45.5%;
     left: 60.8%;
 }
 
 #precSub1{
     position: absolute;
     top: 46%;
-    left: 74.2%;
+    left: 73.5%;
     color: #7c7a7a;
     font-size: 15px;
 }
 
 #iconLix1{
     position: absolute;
-    top: 46%;
-    left: 87.3%;
-    color: #7c7a7a;
-    font-size: 20px;
+    top: 44.5%;
+    left: 86.3%;
 }
 
 #linhaPed1{
     position: absolute;
-    top: 54%;
+    top: 52.5%;
     left: 4%;
     width: 90%;
     height: 0.1%;
@@ -302,7 +308,7 @@ body{
 
 #nameProd2{
     position: absolute;
-    top: 58%;
+    top: 57%;
     left: 5%;
     color: #7c7a7a;
     font-size: 15px;
@@ -310,7 +316,7 @@ body{
 
 #procUnit2{
     position: absolute;
-    top: 58%;
+    top: 57%;
     left: 37%;
     color: #7c7a7a;
     font-size: 15px;
@@ -318,13 +324,13 @@ body{
 
 #bDiminuir2{
     position: absolute;
-    top: 58%;
+    top: 56.5%;
     left: 55.5%;
 }
 
 #number2{
     position: absolute;
-    top: 58%;
+    top: 56.5%;
     left: 58.8%;
     color: #d6d6d6;
     font-size: 25px;
@@ -332,29 +338,27 @@ body{
 
 #bAumentar2{
     position: absolute;
-    top: 58%;
+    top: 56.5%;
     left: 60.8%;
 }
 
 #precSub2{
     position: absolute;
-    top: 58%;
-    left: 74.2%;
+    top: 57%;
+    left: 73.5%;
     color: #7c7a7a;
     font-size: 15px;
 }
 
 #iconLix2{
     position: absolute;
-    top: 58%;
-    left: 87.3%;
-    color: #7c7a7a;
-    font-size: 20px;
+    top: 55.5%;
+    left: 86.3%;
 }
 
 #linhaPed2{
     position: absolute;
-    top: 66%;
+    top: 63.5%;
     left: 4%;
     width: 90%;
     height: 0.1%;
@@ -365,7 +369,7 @@ body{
 
 #nameProd3{
     position: absolute;
-    top: 70%;
+    top: 68%;
     left: 5%;
     color: #7c7a7a;
     font-size: 15px;
@@ -373,7 +377,7 @@ body{
 
 #procUnit3{
     position: absolute;
-    top: 70%;
+    top: 68%;
     left: 37%;
     color: #7c7a7a;
     font-size: 15px;
@@ -381,13 +385,13 @@ body{
 
 #bDiminuir3{
     position: absolute;
-    top: 70%;
+    top: 67.5%;
     left: 55.5%;
 }
 
 #number3{
     position: absolute;
-    top: 70%;
+    top: 67.5%;
     left: 58.8%;
     color: #d6d6d6;
     font-size: 25px;
@@ -395,97 +399,36 @@ body{
 
 #bAumentar3{
     position: absolute;
-    top: 70%;
+    top: 67.5%;
     left: 60.8%;
 }
 
 #precSub3{
     position: absolute;
-    top: 70%;
-    left: 74.2%;
+    top: 68%;
+    left: 73.5%;
     color: #7c7a7a;
     font-size: 15px;
 }
 
 #iconLix3{
     position: absolute;
-    top: 70%;
-    left: 87.3%;
-    color: #7c7a7a;
-    font-size: 20px;
+    top: 66.5%;
+    left: 86.3%;
 }
 
 #linhaPed3{
     position: absolute;
-    top: 78%;
+    top: 74.5%;
     left: 4%;
     width: 90%;
     height: 0.1%;
     background-color: #2f3341; 
 }
 
-/* Produto 5 */
 
-#nameProd4{
-    position: absolute;
-    top: 82%;
-    left: 5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
+/* Botões abaixo da Lista */
 
-#procUnit4{
-    position: absolute;
-    top: 82%;
-    left: 37%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#bDiminuir4{
-    position: absolute;
-    top: 82%;
-    left: 55.5%;
-}
-
-#number4{
-    position: absolute;
-    top: 82%;
-    left: 58.8%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
-#bAumentar4{
-    position: absolute;
-    top: 82%;
-    left: 60.8%;
-}
-
-#precSub4{
-    position: absolute;
-    top: 82%;
-    left: 74.2%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#iconLix4{
-    position: absolute;
-    top: 82%;
-    left: 87.3%;
-    color: #7c7a7a;
-    font-size: 20px;
-}
-
-#linhaPed4{
-    position: absolute;
-    top: 86%;
-    left: 4%;
-    width: 90%;
-    height: 0.1%;
-    background-color: #2f3341; 
-}
 #finalizaPedido{
     position: absolute;
     top: 80%;

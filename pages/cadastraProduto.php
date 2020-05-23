@@ -24,47 +24,49 @@
 <?php
     if(isset($_POST["nome"])){
     
-    $nome = $_POST["nome"];
-    $preco = $_POST["preco"];
-    $categoria = $_POST["categoria"];
-    $tipoCateogira = $_POST["tipoCategoria"];
-    $disponibilidade = $_POST["disponibilidade"];
+        $nome = $_POST["nome"];
+        $preco = $_POST["preco"];
+        $categoria = $_POST["categoria"];
+        $tipoCateogira = $_POST["tipoCategoria"];
+        $disponibilidade = $_POST["disponibilidade"];
 
-    //valores do BD
-    $servername = "localhost: 3306";
-    $username = "grupoQualquer";
-    $passowrd = "senha_qualquer@1234";
-    $database = "cardapiodigital";
+        //valores do BD
+        $servername = "localhost: 3306";
+        $username = "grupoQualquer";
+        $passowrd = "senha_qualquer@1234";
+        $database = "cardapiodigital";
 
-    // cria conexao
-    $conn = mysqli_connect($servername, $username, $passowrd, $database);
+        // cria conexao
+        $conn = mysqli_connect($servername, $username, $passowrd, $database);
 
-    //verifica conexão
-    if(!$conn){
-        echo "</table>";
-        echo "</div>";
-        die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
-    }
-    // configuração de acentuções da lingua portuguesa
-        mysqli_query($conn,"SET NAMES 'utf8'");
-        mysqli_query($conn,"SET NAMES 'utf8'");
-        mysqli_query($conn,'SET character_set_connection=utf8');
-        mysqli_query($conn,'SET character_set_client=utf8');
-        mysqli_query($conn,'SET character_set_results=utf8');
-    
-    // insert
-    if($nome == "" || $preco == "" || $categoria == "" || $tipoCateogira == "" || $disponibilidade == ""){
+        //verifica conexão
+        if(!$conn){
+            die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
+        }
+        // configuração de acentuções da lingua portuguesa
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,'SET character_set_connection=utf8');
+            mysqli_query($conn,'SET character_set_client=utf8');
+            mysqli_query($conn,'SET character_set_results=utf8');
         
-    }
-    $sql = "INSERT INTO produto (nome, preco, categoria, disponibilidade,tipo_categoria)
-    VALUES ('$nome','$preco', '$categoria', '$disponibilidade','$tipoCateogira')";
-    echo "<div id='mensagem'>";
-    if ($result = mysqli_query($conn, $sql)) {
-        echo "Um registro adicionado!";
-    } else {
-        echo "Erro executando INSERT: " . mysqli_error($conn);
-    }
-    echo "</div>";
-    mysqli_close($conn);
+        // insert
+        if($nome == " " || $preco == "" || $categoria == "" || $tipoCateogira == "" || $disponibilidade == ""){
+            echo "<div id='errorMensagem'>";
+            echo "Campos não preenchidos!";
+            echo "</div>";
+        }
+        else{
+            $sql = "INSERT INTO produto (nome, preco, categoria, disponibilidade,tipo_categoria)
+            VALUES ('$nome','$preco', '$categoria', '$disponibilidade','$tipoCateogira')";
+            echo "<div id='mensagem'>";
+            if ($result = mysqli_query($conn, $sql)) {
+                echo "Um registro adicionado!";
+            } else {
+                echo "Erro executando INSERT: " . mysqli_error($conn);
+            }
+            echo "</div>";
+
+        }
     }
 ?>

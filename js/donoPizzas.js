@@ -1,5 +1,9 @@
 $(document).ready(function(){
     fListarCategoria();
+
+    $("#bAdicionar").click(function(){
+        window.location.href = "../pages/cadastraProduto.php";
+    });
 });
 
 function fListarCategoria(){
@@ -20,6 +24,30 @@ function fListarCategoria(){
                 conteudo += "<button class='buttEdit' id='prodEdit"+ i +"'>" + "<i class='far fa-edit'></i>" + "</button>";
                 conteudo += "<button class='buttExc' id='prodExc"+ i +"'>" + "<i class='far fa-trash-alt'></i>" + "</button>";
                 conteudo += "<div class='linhaProd' id='line"+ i +"'>" + "</div>";
+
+                if(i == 0){
+                    $("#bAdicionar").css({"position":"absolute","top":"45%","left":"5%","visibility":"visible"});
+                }
+
+                else if(i == 1){
+                    $("#bAdicionar").css({"position":"absolute","top":"56.5%","left":"5%","visibility":"visible"});
+                }
+
+                else if(i == 2){
+                    $("#bAdicionar").css({"position":"absolute","top":"68%","left":"5%","visibility":"visible"});
+                }
+
+                else if(i == 3){
+                    $("#bAdicionar").css({"position":"absolute","top":"79.5%","left":"5%","visibility":"visible"});
+                }
+
+                else if(i == 4){
+                    $("#bAdicionar").css({"position":"absolute","top":"91%","left":"5%","visibility":"visible"});
+                }
+
+                else if(i == 5){
+                    $("#bAdicionar").css({"position":"absolute","top":"102.5%","left":"5%","visibility":"visible"});
+                }
             }
             
             $("#listar").html(conteudo);
