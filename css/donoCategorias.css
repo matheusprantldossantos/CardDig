@@ -46,39 +46,47 @@ body{
 
 .columnTitle{
     font-size: 20px;
-    font-family: monospace;
-    color: #1f1f1f;
-    font-weight: bold;
+    font-family: blank;
+    color: #e0e0e0;
+    background-color: #1f1f1f;
+    padding: .5%;
 }
 
 #nome{
     position: absolute;
     top: 25%;
-    left: 5%;
+    left: 4.5%;
+    width: 29.4%;
 }
 
 #preco{
     position: absolute;
     top: 25%;
     left: 35%;
+    width: 11.9%;
 }
 
 #tipoCateg{
     position: absolute;
     top: 25%;
     left: 48%;
+    width: 11.9%;
 }
 
 #editar{
     position: absolute;
     top: 25%;
     left: 61%;
+    width: 4.9%;
+    text-align: center;
 }
 
 #Excluir{
     position: absolute;
     top: 25%;
-    left: 68%;
+    left: 67%;
+    width: 4.9%;
+    text-align: center;
 }
 
 /* Produto estilo */
@@ -114,7 +122,7 @@ body{
 }
 
 .linhaProd{
-    width: 70%;
+    width: 68%;
     height: 0.1%;
     background-color: #cacaca;
 }
@@ -130,25 +138,25 @@ body{
 #prodPre0{
     position: absolute;
     top: 33.5%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip0{
     position: absolute;
     top: 33.5%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit0{
     position: absolute;
     top: 32%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc0{
     position: absolute;
     top: 32%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line0{
@@ -168,25 +176,25 @@ body{
 #prodPre1{
     position: absolute;
     top: 45%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip1{
     position: absolute;
     top: 45%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit1{
     position: absolute;
     top: 43.5%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc1{
     position: absolute;
     top: 43.5%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line1{
@@ -206,25 +214,25 @@ body{
 #prodPre2{
     position: absolute;
     top: 56.5%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip2{
     position: absolute;
     top: 56.5%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit2{
     position: absolute;
     top: 55%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc2{
     position: absolute;
     top: 55%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line2{
@@ -244,25 +252,25 @@ body{
 #prodPre3{
     position: absolute;
     top: 68%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip3{
     position: absolute;
     top: 68%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit3{
     position: absolute;
     top: 66.5%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc3{
     position: absolute;
     top: 66.5%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line3{
@@ -282,25 +290,25 @@ body{
 #prodPre4{
     position: absolute;
     top: 79.5%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip4{
     position: absolute;
     top: 79.5%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit4{
     position: absolute;
     top: 78%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc4{
     position: absolute;
     top: 78%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line4{
@@ -320,25 +328,25 @@ body{
 #prodPre5{
     position: absolute;
     top: 91%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip5{
     position: absolute;
     top: 91%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit5{
     position: absolute;
     top: 89.5%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc5{
     position: absolute;
     top: 89.5%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line5{
@@ -358,25 +366,25 @@ body{
 #prodPre6{
     position: absolute;
     top: 102.5%;
-    left: 35.2%;
+    left: 35.5%;
 }
 
 #prodTip6{
     position: absolute;
     top: 102.5%;
-    left: 48%;
+    left: 48.5%;
 }
 
 #prodEdit6{
     position: absolute;
     top: 101%;
-    left: 62%;
+    left: 62.8%;
 }
 
 #prodExc6{
     position: absolute;
     top: 101%;
-    left: 69%;
+    left: 68.8%;
 }
 
 #line6{
@@ -385,6 +393,19 @@ body{
     left: 5%;
 }
 
+#bAdicionar{
+    visibility: hidden;
+    background-color: #383838;
+    color: #e0e0e0;
+    width: 10%;
+    height: 5%;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 3%;
+    transition: .3s;
+}
 
 /* Janela Editar Produtos */
 

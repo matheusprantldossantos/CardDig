@@ -243,14 +243,15 @@ function listaPedidos() {
             conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
             var prods = 2;
             
-            for(var i = 0; i < info.length - 2 ; i++){
-                conteudo += "<div id='nameProd" + i +"'>" + info[prods].nomeProd +"</div>";
-                conteudo += "<div id='procUnit" + i +"'>" + info[prods].valorProduto + " R$" + "</div>";
+
+            for(var i = 0; i < info.length; i++){
+                conteudo += "<div class='prodElem' id='nameProd" + i +"'>" + info[i].nomeProd +"</div>";
+                conteudo += "<div class='prodElem' id='procUnit" + i +"'>" + info[i].valorProduto + " R$" + "</div>";
                 conteudo += "<button class='bContador' id='bDiminuir" + i +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
                 conteudo += "<div id='number" + i +"'>" + info[prods].quantidade + "</div>";
                 conteudo += "<button class='bContador' id='bAumentar" + i +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
-                conteudo += "<div id='precSub" + i +"'>" + info[prods].subTotal + "</div>";
-                conteudo += "<div id='iconLix" + i +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
+                conteudo += "<div class='prodElem' id='precSub" + i +"'>" + info[i].subTotal + "</div>";
+                conteudo += "<div class='iconsLixeira' id='iconLix" + i +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
                 conteudo += "<div id='linhaPed" + i +"'>" + "</div>";
                 prods++;
             }

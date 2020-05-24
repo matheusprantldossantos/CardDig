@@ -116,6 +116,7 @@ input[type=number] {
 
 #bProduto:hover{
     background-color: #c44493;
+    border: solid 1px #c44493;
     transition: 0.2s;
 }
 
@@ -129,7 +130,22 @@ input[type=number] {
     background-color: #527c5b;
     border: solid 1px #527c5b;
     border-radius: 5px;
-    color: #393a3d;
+    color: #8b8b8b;
+    text-align: center;
+    padding-top: 0.3%;
+}
+
+#errorMensagem{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15%;
+    height: 3%;
+    background-color: #da372c;
+    border: solid 1px #da372c;
+    border-radius: 5px;
+    color: #8b8b8b;
     text-align: center;
     padding-top: 0.3%;
 }
