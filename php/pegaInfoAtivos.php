@@ -70,6 +70,17 @@
                         $position = 0;
                         $listaNomes = [];
                         $listaQuantidades = [];
+                        array_push($listaNomes, $row["nome_produto"]);
+                        array_push($listaQuantidades, $row["quantidade"]);
+                        $itens[$location] = array(
+                            "nomeMesa" => $coisas["nome"],
+                            "comanda" => $row["pedido_comanda"],
+                            "infos" => array(
+                                "nome" => $listaNomes,
+                                "quantidade" => $listaQuantidades
+                            )
+                        );
+                        $position++;
                     }
                 }
             }
