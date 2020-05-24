@@ -1,7 +1,6 @@
 $(new Document).ready(function(){
     $("#bEntrar").click(function(){
         confirma();
-        pegaResultdo();
 
     });
 });

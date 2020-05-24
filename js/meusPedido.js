@@ -77,7 +77,7 @@ function listaPedidos() {
 
             // Primeiro Produto
             $(new Document).ready(function(){ 
-                let count = info[0].quantidade;
+                let count = info[2].quantidade;
                 console.log("documento pronto")
 
                 $("#bAumentar0").click(function(){
@@ -88,7 +88,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[0].idItemProd, count);
+                        mudaQuantidade(info[2].idItemProd, count);
                     }
 
                     $("#number0").html(count);
@@ -98,7 +98,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[0].idItemProd, count);
+                        mudaQuantidade(info[2].idItemProd, count);
                     }
                     else{
                         count = 0;
@@ -110,7 +110,7 @@ function listaPedidos() {
                 
             // Segundo Produto
             $(new Document).ready(function(){ 
-                let count = info[1].quantidade;
+                let count = info[3].quantidade;
                 $("#bAumentar1").click(function(){
                     console.log("clicou");
                     count ++;
@@ -119,7 +119,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[1].idItemProd, count);
+                        mudaQuantidade(info[3].idItemProd, count);
                     }
 
                     $("#number1").html(count);
@@ -129,7 +129,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[1].idItemProd, count);
+                        mudaQuantidade(info[3].idItemProd, count);
                     }
                     else{
                         count = 0;
@@ -141,7 +141,7 @@ function listaPedidos() {
 
             //Terceiro Produto
             $(new Document).ready(function(){ 
-                let count = info[2].quantidade;
+                let count = info[4].quantidade;
                 $("#bAumentar2").click(function(){
                     console.log("clicou");
                     count ++;
@@ -150,7 +150,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[2].idItemProd, count);
+                        mudaQuantidade(info[4].idItemProd, count);
                     }
 
                     $("#number2").html(count);
@@ -160,7 +160,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[2].idItemProd, count);
+                        mudaQuantidade(info[4].idItemProd, count);
                     }
                     else{
                         count = 0;
@@ -172,7 +172,7 @@ function listaPedidos() {
 
             //Quarto Produto
             $(new Document).ready(function(){ 
-                let count = info[3].quantidade;
+                let count = info[5].quantidade;
                 $("#bAumentar3").click(function(){
                     console.log("clicou");
                     count ++;
@@ -181,7 +181,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[3].idItemProd, count);
+                        mudaQuantidade(info[5].idItemProd, count);
                     }
 
                     $("#number3").html(count);
@@ -191,7 +191,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[3].idItemProd, count);
+                        mudaQuantidade(info[5].idItemProd, count);
                     }
                     else{
                         count = 0;
@@ -203,7 +203,7 @@ function listaPedidos() {
 
             //Quinto Produto
             $(new Document).ready(function(){ 
-                let count = info[4].quantidade;
+                let count = info[6].quantidade;
                 $("#bAumentar4").click(function(){
                     console.log("clicou");
                     count ++;
@@ -212,7 +212,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[4].idItemProd, count);
+                        mudaQuantidade(info[6].idItemProd, count);
                     }
 
                     $("#number4").html(count);
@@ -222,7 +222,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[4].idItemProd, count);
+                        mudaQuantidade(info[6].idItemProd, count);
                     }
                     else{
                         count = 0;
@@ -241,16 +241,18 @@ function listaPedidos() {
             conteudo += "<div class='subtitles' id='titleQuant'>" + "Quantidade" + "</div>";
             conteudo += "<div class='subtitles' id='titleSub'>" + "SubTotal" + "</div>";
             conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
+            var prods = 2;
             
-            for(var i = 0; i < info.length; i++){
-                conteudo += "<div id='nameProd" + i +"'>" + info[i].nomeProd +"</div>";
-                conteudo += "<div id='procUnit" + i +"'>" + info[i].valorProduto + " R$" + "</div>";
+            for(var i = 0; i < info.length - 2 ; i++){
+                conteudo += "<div id='nameProd" + i +"'>" + info[prods].nomeProd +"</div>";
+                conteudo += "<div id='procUnit" + i +"'>" + info[prods].valorProduto + " R$" + "</div>";
                 conteudo += "<button class='bContador' id='bDiminuir" + i +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
-                conteudo += "<div id='number" + i +"'>" + info[i].quantidade + "</div>";
+                conteudo += "<div id='number" + i +"'>" + info[prods].quantidade + "</div>";
                 conteudo += "<button class='bContador' id='bAumentar" + i +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
-                conteudo += "<div id='precSub" + i +"'>" + info[i].subTotal + "</div>";
+                conteudo += "<div id='precSub" + i +"'>" + info[prods].subTotal + "</div>";
                 conteudo += "<div id='iconLix" + i +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
                 conteudo += "<div id='linhaPed" + i +"'>" + "</div>";
+                prods++;
             }
             
             $("#divPedidos").html(conteudo);

@@ -39,7 +39,7 @@
     $comandaAtual = $informacao[count($informacao) - 1]["comanda"];
     $sqlItemPedido = "SELECT nome_produto, produto_idproduto  FROM item_produto WHERE pedido_comanda = '$comandaAtual'";
     $resultItemPedido = mysqli_query($conn, $sqlItemPedido);
-    $c = 0;
+    $c = $cont;
     if(mysqli_num_rows($resultItemPedido) > 0){
         while($row = mysqli_fetch_assoc($resultItemPedido)){
             $informacao[$c]["nomeProd"] = $row["nome_produto"];
@@ -57,6 +57,7 @@
         $cont++;
         }
     }
+    
     $informacaoCopia = [];
     $listaDados = [];
     $comandasProds = [];
@@ -65,7 +66,10 @@
     foreach($informacao as $lista){
         $contador++;
         foreach($lista as $valores){
-            if($pula % 4 == 0){
+            if($contador <= 1){
+                $contador++;
+            }
+            else if($pula % 2 == 0){
                 array_push($comandasProds, $valores);
                 $informacaoCopia["valores"] = $comandasProds;
                 $pula++;
@@ -75,6 +79,7 @@
             }
         }
     }
+
     $especicacaoProdId = [];
     $especicacaoProdPreco = [];
     $produtoCopia = [];
@@ -92,13 +97,13 @@
         }
         }
     }
-    $posicao = 0;
+    $posicao = 2;
     $retorno = 0;
     $produtoCopia["id"] = $especicacaoProdId;
     $produtoCopia["Preco"] = $especicacaoProdPreco;
     for($i = 0; $i < count($informacaoCopia["valores"]); $i++){
         for($j = 0; $j < count($produtoCopia["id"]); $j++){
-            if($retorno > 1){
+            if($retorno > 10){
                 $a = "continua";
             }
             else if($produtoCopia["id"][$j] == $informacaoCopia["valores"][$i]){
@@ -116,7 +121,6 @@
             }
         }
     }
-    
     
     mysqli_close($conn);
     echo json_encode($informacao);
