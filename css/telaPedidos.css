@@ -275,10 +275,10 @@ body{
     left: 9%;
     width: 85%;
     height: 0.1%;
-    background-color: #2f3341; 
+    background-color: #2f3341;
 }
 
-/* Terceiro produto - Primeira categoria*/
+/* Terceiro produto - Primeira categoria */
 
 #nomeOne2{
     position: absolute;
@@ -335,6 +335,146 @@ body{
     height: 5%;
 }
 
+#linhaOne_2{
+    position: absolute;
+    top: 55%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341;
+}
+
+/* Quarto produto - Primeira Categoria */
+
+#nomeOne3{
+    position: absolute;
+    top: 57%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    text-transform: capitalize;
+    color: #d6d6d6;
+}
+
+#precoOne3{
+    position: absolute;
+    top: 60%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+
+#bDiminuirOne3{
+    position: absolute;
+    top: 58%;
+    left: 70%;
+}
+
+#numberOne3{
+    position: absolute;
+    top: 58%;
+    left: 74%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentarOne3{
+    position: absolute;
+    top: 58%;
+    left: 77%;
+}
+
+#bAdicionarOne3{ 
+    position: absolute;
+    top: 57.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}
+
+#linhaOne_3{
+    position: absolute;
+    top: 65%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
+
+/* Quinto produto - Primeira Categoria */
+
+#nomeOne4{
+    position: absolute;
+    top: 67%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    text-transform: capitalize;
+    color: #d6d6d6;
+}
+
+#precoOne4{
+    position: absolute;
+    top: 70%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+
+#bDiminuirOne4{
+    position: absolute;
+    top: 68%;
+    left: 70%;
+}
+
+#numberOne4{
+    position: absolute;
+    top: 68%;
+    left: 74%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentarOne4{
+    position: absolute;
+    top: 68%;
+    left: 77%;
+}
+
+#bAdicionarOne4{ 
+    position: absolute;
+    top: 67.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}
+
+#linhaOne_4{
+    position: absolute;
+    top: 75%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
 
 /* Elementos da segunda categoria */
 
@@ -409,7 +549,7 @@ body{
     left: 9%;
     width: 85%;
     height: 0.1%;
-    background-color: #2f3341; 
+    background-color: #2f3341;
 }
 
 /* Segundo produto - Segunda categoria */
@@ -533,6 +673,147 @@ body{
     outline: none;
     width: 10%;
     height: 5%;
+}
+
+#linhaTwo_2{
+    position: absolute;
+    top: 90%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
+
+/* Quarto produto - Segunda categoria */
+
+#nomeTwo3{
+    position: absolute;
+    top: 92%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    text-transform: capitalize;
+    color: #d6d6d6;
+}
+
+#precoTwo3{
+    position: absolute;
+    top: 95%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+
+#bDiminuirTwo3{
+    position: absolute;
+    top: 93%;
+    left: 70%;
+}
+
+#numberTwo3{
+    position: absolute;
+    top: 93%;
+    left: 74%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentarTwo3{
+    position: absolute;
+    top: 93%;
+    left: 77%;
+}
+
+#bAdicionarTwo3{ 
+    position: absolute;
+    top: 92.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}
+
+#linhaTwo_3{
+    position: absolute;
+    top: 100%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
+}
+
+/* Quinto produto - Segunda categoria */
+
+#nomeTwo4{
+    position: absolute;
+    top: 102%;
+    left: 10%;
+    font-size: 18px;
+    font-family: monospace;
+    text-transform: capitalize;
+    color: #d6d6d6;
+}
+
+#precoTwo4{
+    position: absolute;
+    top: 105%;
+    left: 11%;
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    color: #d6d6d6;
+}
+
+
+#bDiminuirTwo4{
+    position: absolute;
+    top: 103%;
+    left: 70%;
+}
+
+#numberTwo4{
+    position: absolute;
+    top: 103%;
+    left: 74%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentarTwo4{
+    position: absolute;
+    top: 103%;
+    left: 77%;
+}
+
+#bAdicionarTwo4{ 
+    position: absolute;
+    top: 102.5%;
+    left: 82%;
+    background-color: #ca862e;
+    border: solid 2px #ca862e;
+    color: #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    width: 10%;
+    height: 5%;
+}
+
+#linhaTwo_4{
+    position: absolute;
+    top: 110%;
+    left: 9%;
+    width: 85%;
+    height: 0.1%;
+    background-color: #2f3341; 
 }
 
 
