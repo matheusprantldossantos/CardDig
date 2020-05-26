@@ -55,6 +55,13 @@
         else{
             $estado = "nao deletou o primeiro";
         }
+        $sqlConjunto = "ALTER TABLE conjunto ADD CONSTRAINT conjuntoMesa FOREIGN KEY (indexMesa) REFERENCES mesa(idmesa) ON DELETE RESTRICT ON UPDATE RESTRICT";
+        if($result = mysqli_query($conn, $sqlConjunto)){
+            $estado = "Retornou a foreign key";
+        }
+        else{
+            $estado = "Não retornou a foreign key";
+        }
         mysqli_close($conn);
         echo json_encode($estado);
 ?>
