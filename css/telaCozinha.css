@@ -1,0 +1,119 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face{
+    font-family: Bebas neue;
+    src: url(../fontes/BebasNeue-Regular.otf);
+}
+
+#mesaDiv{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    background-color: #1f1f1f;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 15%;
+    height: 5%;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+#text{
+    position: relative;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%,-50%);
+    display: inline;
+    font-weight: bold;
+}
+
+#iconSeta{
+    position: relative;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%,-50%);
+    margin-left: 55%;
+    display: inline;
+    transition: .2s;
+}
+
+.fas fa-caret-left{
+    position: relative;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%,-50%);
+    margin-left: 55%;
+    display: inline;
+    transition: .2s;
+}
+
+.iconGira{
+    transform: rotate(-90deg);
+    transition: .2s;
+}
+
+/*  */
+
+#comd{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+.comanda{
+    width: 15%;
+    height: 0%;
+    background-color: #d3d2d2;
+    border-radius: 5px;
+    transition: .4s;
+    visibility: hidden;
+}
+
+.comandaAfter{
+    width: 15%;
+    height: 40%;
+    background-color: #d3d2d2;
+    border-radius: 5px;
+    transition: .3s;
+    visibility: visible;
+}
+
+/* Estilo dos elementos */
+
+.nomeC{
+    font-weight: bold;
+    font-family: Bebas neue;
+    font-size: 20px;
+}
+
+.produtos{
+    color: #464545;
+}
+
+#numComanda{
+    position: relative;
+    top: 8%;
+    left: 6%;
+}
+
+#listPed0{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+#listPed1{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
