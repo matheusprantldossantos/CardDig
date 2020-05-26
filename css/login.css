@@ -29,6 +29,9 @@ body{
     font-size: 35px;
     color: #b8b8bb;
 }
+.ErroEmail[type = text]{
+    border: solid 1px red;
+}
 
 input[type = text],[type = password]{
     width: 70%;

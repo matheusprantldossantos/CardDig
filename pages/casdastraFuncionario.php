@@ -58,6 +58,11 @@
     if($email == "" || $senha == "" || $confSenha == "" || $func == ""){
         echo "Preencha todos os campos";
     }
+    $letra = "@";
+    $possui = strpos($email, $letra);
+    if(!$possui){
+        echo "Preencha os campos corretamente";
+    }
     else if($senha != $confSenha){
         echo "Preencha os campos corretamente";
     }
@@ -71,7 +76,7 @@
                 VALUES ('$email', '$senha')";
     }
     else{
-        $sql = "INSERT INTO cozinheiro (email, senha)
+        $sql = "INSERT INTO cozinheiro (email, senha    )
         VALUES ('$email', '$senha')";
     }
     if ($result = mysqli_query($conn, $sql)) {

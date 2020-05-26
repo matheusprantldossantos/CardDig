@@ -56,9 +56,22 @@ function confirma(){
         url: "../php/listaCadastrados.php",
         success : async function(info){
             console.log("chegou ate aqui");
-            if(usuario == " " || senha == " "){
+            if(usuario == "" || senha == ""){
                 $mensagem = "<div id='mensagens'> Campos não preenchidos </div>";
                 $("#mensgErro").html($mensagem);
+                return 0;
+            }
+            var verificador = true;
+            for(var j = 0; j < usuario.length; j++){
+                if(usuario[j] == '@'){
+                    verificador = false;
+                }
+            }
+            if(verificador){
+                $("#iEmail").addClass("ErroEmail");
+                $mensagem = "<div id='mensagens'> Campo preenchido incorretamente </div>";
+                $("#mensgErro").html($mensagem);
+                return 0;
             }
             for(var i = 0; i < info.length; i++){
                 if(info[i].senha == senha && info[i].email == usuario){
