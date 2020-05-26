@@ -45,9 +45,9 @@ function fListaSobremesas(){
                     console.log("clicou" + count);
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberOne0").html(count);
                 });    
@@ -72,8 +72,8 @@ function fListaSobremesas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
+                    if (count >= 9){
+                        count = 9;
                     } 
             
                     $("#numberOne1").html(count);
@@ -99,9 +99,9 @@ function fListaSobremesas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberOne2").html(count);
                 });    
@@ -119,6 +119,60 @@ function fListaSobremesas(){
                 });
             });
 
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarOne3").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    } 
+            
+                    $("#numberOne3").html(count);
+                });    
+
+                $("#bDiminuirOne3").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberOne3").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarOne4").click(function(){
+                    console.log("clicou");
+                    count ++;
+    
+                    if (count >= 9){
+                        count = 9;
+                    }
+                
+                    $("#numberOne4").html(count);
+                });    
+    
+                $("#bDiminuirOne4").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+                
+                    $("#numberOne4").html(count);
+                });
+            });
+
             // Segunda Categoria
 
             $(new Document).ready(function(){ 
@@ -128,9 +182,9 @@ function fListaSobremesas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberTwo0").html(count);
                 });    
@@ -155,9 +209,9 @@ function fListaSobremesas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberTwo1").html(count);
                 });    
@@ -182,9 +236,9 @@ function fListaSobremesas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberTwo2").html(count);
                 });    
@@ -199,6 +253,60 @@ function fListaSobremesas(){
                     }
             
                     $("#numberTwo2").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo3").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+            
+                    $("#numberTwo3").html(count);
+                });    
+
+                $("#bDiminuirTwo3").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo3").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo4").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+            
+                    $("#numberTwo4").html(count);
+                });    
+
+                $("#bDiminuirTwo4").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo4").html(count);
                 });
             });
 
@@ -238,6 +346,52 @@ function fListaSobremesas(){
             }
             
             $("#divPedidos").html(conteudo);
+
+            // Primeira categoria verificação dos itens
+            if(numDoce == 1){
+                $("#linhaOne_0").css({"visibility":"hidden"});
+            }
+            
+            else if(numDoce == 2){
+                $("#linhaOne_1").css({"visibility":"hidden"});
+            }
+
+            else if(numDoce == 3){
+                $("#linhaOne_2").css({"visibility":"hidden"});
+            }
+
+            else if(numDoce == 4){
+                $("#linhaOne_3").css({"visibility":"hidden"});
+                arrumaPosition(numDoce,numSorv);
+            }
+
+            else if(numDoce == 5){
+                $("#linhaOne_4").css({"visibility":"hidden"});
+                arrumaPosition(numDoce,numSorv);
+            }
+            
+            // Segunda categoria verificação dos itens
+            if(numSorv == 1){
+                $("#linhaTwo_0").css({"visibility":"hidden"});
+            }
+
+            else if(numSorv == 2){
+                $("#linhaTwo_1").css({"visibility":"hidden"});
+            }
+
+            else if(numSorv == 3){
+                $("#linhaTwo_2").css({"visibility":"hidden"});
+            }
+
+            else if(numSorv == 4){
+                $("#linhaTwo_3").css({"visibility":"hidden"});
+            }
+
+            else if(numSorv == 5){
+                $("#linhaTwo_4").css({"visibility":"hidden"});
+            }
+
+            // Botões Adicionar
             $(new Document).ready(function(){
                 $("#bAdicionarOne0").click(function(){
                     criaPedido("0", "One");
@@ -302,4 +456,45 @@ $.ajax({
         console.log("tchau mundo");
     }
     });
+}
+
+function arrumaPosition(PrimCateg,SegCateg){
+
+    if(PrimCateg == 4){
+        let aumenta = 10;
+
+        for(var i = 0; i < SegCateg; i++){
+            if(i == 0){
+                $("#subNome1").css({"position":"absolute","top": 55 + aumenta + "%","left":"8%"});
+            }
+            $("#nomeTwo" + i).css({"position":"absolute","top": 62 + aumenta + "%","left":"10%"});
+            $("#precoTwo" + i).css({"position":"absolute","top": 65 + aumenta + "%","left":"11%"});
+            $("#bDiminuirTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"70%"});
+            $("#numberTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"74%"});
+            $("#bAumentarTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"77%"});
+            $("#bAdicionarTwo" + i).css({"position":"absolute","top": 62.5 + aumenta + "%","left":"82%"});
+            $("#linhaTwo_" + i).css({"position":"absolute","top": 70 + aumenta + "%","left":"9%","visibility":"visible"});
+
+            aumenta = aumenta + 10;
+        }
+    } 
+    
+    else if(PrimCateg == 5){
+        let aumenta = 20;
+
+        for(var i = 0; i < SegCateg; i++){
+            if(i == 0){
+                $("#subNome1").css({"position":"absolute","top": 55 + aumenta + "%","left":"8%"});
+            }
+            $("#nomeTwo" + i).css({"position":"absolute","top": 62 + aumenta + "%","left":"10%"});
+            $("#precoTwo" + i).css({"position":"absolute","top": 65 + aumenta + "%","left":"11%"});
+            $("#bDiminuirTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"70%"});
+            $("#numberTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"74%"});
+            $("#bAumentarTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"77%"});
+            $("#bAdicionarTwo" + i).css({"position":"absolute","top": 62.5 + aumenta + "%","left":"82%"});
+            $("#linhaTwo_" + i).css({"position":"absolute","top": 70 + aumenta + "%","left":"9%","visibility":"visible"});
+
+            aumenta = aumenta + 10;
+        }
+    }
 }

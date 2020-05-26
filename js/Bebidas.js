@@ -46,8 +46,8 @@ function fListaBebidas(){
                     console.log("clicou" + count);
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
+                    if (count >= 9){
+                        count = 9;
                     }
             
                     $("#numberOne0").html(count);
@@ -73,8 +73,8 @@ function fListaBebidas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
+                    if (count >= 9){
+                        count = 9;
                     } 
             
                     $("#numberOne1").html(count);
@@ -100,9 +100,9 @@ function fListaBebidas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberOne2").html(count);
                 });    
@@ -120,6 +120,61 @@ function fListaBebidas(){
                 });
             });
 
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarOne3").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    } 
+            
+                    $("#numberOne3").html(count);
+                });    
+
+                $("#bDiminuirOne3").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberOne3").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarOne4").click(function(){
+                    console.log("clicou");
+                    count ++;
+    
+                    if (count >= 9){
+                        count = 9;
+                    }
+                
+                    $("#numberOne4").html(count);
+                });    
+    
+                $("#bDiminuirOne4").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+                
+                    $("#numberOne4").html(count);
+                });
+
+            });
+
             // Segunda Categoria
 
             $(new Document).ready(function(){ 
@@ -129,9 +184,9 @@ function fListaBebidas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberTwo0").html(count);
                 });    
@@ -156,9 +211,9 @@ function fListaBebidas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberTwo1").html(count);
                 });    
@@ -183,9 +238,9 @@ function fListaBebidas(){
                     console.log("clicou");
                     count ++;
 
-                    if (count >= 10){
-                        count = 10;
-                    } 
+                    if (count >= 9){
+                        count = 9;
+                    }
             
                     $("#numberTwo2").html(count);
                 });    
@@ -200,6 +255,60 @@ function fListaBebidas(){
                     }
             
                     $("#numberTwo2").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo3").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+            
+                    $("#numberTwo3").html(count);
+                });    
+
+                $("#bDiminuirTwo3").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo3").html(count);
+                });
+            });
+
+            $(new Document).ready(function(){ 
+                let count = 0;
+                console.log("documento pronto")
+                $("#bAumentarTwo4").click(function(){
+                    console.log("clicou");
+                    count ++;
+
+                    if (count >= 9){
+                        count = 9;
+                    }
+            
+                    $("#numberTwo4").html(count);
+                });    
+
+                $("#bDiminuirTwo4").click(function(){
+                    console.log("clicou menos");
+                    if(count > 0){
+                        count--;
+                    }
+                    else{
+                        count = 0;
+                    }
+            
+                    $("#numberTwo4").html(count);
                 });
             });
 
@@ -260,11 +369,13 @@ function fListaBebidas(){
             }
 
             else if(numBebida == 4){
-                arrumaProdutos_One(numSuco);
+                $("#linhaOne_3").css({"visibility":"hidden"});
+                arrumaPosition(numBebida,numSuco);
             }
 
             else if(numBebida == 5){
-                arrumaProdutos_Two(numSuco);
+                $("#linhaOne_4").css({"visibility":"hidden"});
+                arrumaPosition(numBebida,numSuco);
             }
             
             // Segunda categoria verificação dos itens
@@ -358,213 +469,43 @@ $.ajax({
 }
 
 
-function arrumaProdutos_Two(numSuco){
-    $("#linhaOne_4").css({"visibility":"hidden"});
-    $("#subNome1").css({"position":"absolute","top":"75%","left":"8%"});
-    $("#nomeTwo0").css({"position":"absolute","top":"82%","left":"10%"});
-    $("#precoTwo0").css({"position":"absolute","top":"85%","left":"11%"});
-    $("#bDiminuirTwo0").css({"position":"absolute","top":"83%","left":"70%"});
-    $("#numberTwo0").css({"position":"absolute","top":"83%","left":"74%"});
-    $("#bAumentarTwo0").css({"position":"absolute","top":"83%","left":"77%"});
-    $("#bAdicionarTwo0").css({"position":"absolute","top":"82.5%","left":"82%"});
-    $("#linhaTwo_0").css({"position":"absolute","top":"90%","left":"9%","visibility":"hidden"});
-    
-    if(numSuco == 2){
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"100%","left":"9%","visibility":"hidden"});
-    }
-    else if(numSuco == 3) {
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"100%","left":"9%","visibility":"visible"});
-        // Terceiro produto
-        $("#nomeTwo2").css({"position":"absolute","top":"102%","left":"10%"});
-        $("#precoTwo2").css({"position":"absolute","top":"105%","left":"11%"});
-        $("#bDiminuirTwo2").css({"position":"absolute","top":"103%","left":"70%"});
-        $("#numberTwo2").css({"position":"absolute","top":"103%","left":"74%"});
-        $("#bAumentarTwo2").css({"position":"absolute","top":"103%","left":"77%"});
-        $("#bAdicionarTwo2").css({"position":"absolute","top":"102.5%","left":"82%"});
-        $("#linhaTwo_2").css({"position":"absolute","top":"110%","left":"9%","visibility":"hidden"});   
-    }
-    else if(numSuco == 4){
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"100%","left":"9%","visibility":"visible"});
-        // Terceiro produto
-        $("#nomeTwo2").css({"position":"absolute","top":"102%","left":"10%"});
-        $("#precoTwo2").css({"position":"absolute","top":"105%","left":"11%"});
-        $("#bDiminuirTwo2").css({"position":"absolute","top":"103%","left":"70%"});
-        $("#numberTwo2").css({"position":"absolute","top":"103%","left":"74%"});
-        $("#bAumentarTwo2").css({"position":"absolute","top":"103%","left":"77%"});
-        $("#bAdicionarTwo2").css({"position":"absolute","top":"102.5%","left":"82%"});
-        $("#linhaTwo_2").css({"position":"absolute","top":"110%","left":"9%","visibility":"visible"});
-        // Quarto produto
-        $("#nomeTwo3").css({"position":"absolute","top":"112%","left":"10%"});
-        $("#precoTwo3").css({"position":"absolute","top":"115%","left":"11%"});
-        $("#bDiminuirTwo3").css({"position":"absolute","top":"113%","left":"70%"});
-        $("#numberTwo3").css({"position":"absolute","top":"113%","left":"74%"});
-        $("#bAumentarTwo3").css({"position":"absolute","top":"113%","left":"77%"});
-        $("#bAdicionarTwo3").css({"position":"absolute","top":"112.5%","left":"82%"});
-        $("#linhaTwo_3").css({"position":"absolute","top":"120%","left":"9%","visibility":"hidden"});
-    } 
-    else if(numSuco == 5){
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"100%","left":"9%","visibility":"visible"});
-        // Terceiro produto
-        $("#nomeTwo2").css({"position":"absolute","top":"102%","left":"10%"});
-        $("#precoTwo2").css({"position":"absolute","top":"105%","left":"11%"});
-        $("#bDiminuirTwo2").css({"position":"absolute","top":"103%","left":"70%"});
-        $("#numberTwo2").css({"position":"absolute","top":"103%","left":"74%"});
-        $("#bAumentarTwo2").css({"position":"absolute","top":"103%","left":"77%"});
-        $("#bAdicionarTwo2").css({"position":"absolute","top":"102.5%","left":"82%"});
-        $("#linhaTwo_2").css({"position":"absolute","top":"110%","left":"9%","visibility":"visible"});
-        // Quarto produto
-        $("#nomeTwo3").css({"position":"absolute","top":"112%","left":"10%"});
-        $("#precoTwo3").css({"position":"absolute","top":"115%","left":"11%"});
-        $("#bDiminuirTwo3").css({"position":"absolute","top":"113%","left":"70%"});
-        $("#numberTwo3").css({"position":"absolute","top":"113%","left":"74%"});
-        $("#bAumentarTwo3").css({"position":"absolute","top":"113%","left":"77%"});
-        $("#bAdicionarTwo3").css({"position":"absolute","top":"112.5%","left":"82%"});
-        $("#linhaTwo_3").css({"position":"absolute","top":"120%","left":"9%","visibility":"visible"});
-        // Quinto produto
-        $("#nomeTwo4").css({"position":"absolute","top":"122%","left":"10%"});
-        $("#precoTwo4").css({"position":"absolute","top":"125%","left":"11%"});
-        $("#bDiminuirTwo4").css({"position":"absolute","top":"123%","left":"70%"});
-        $("#numberTwo4").css({"position":"absolute","top":"123%","left":"74%"});
-        $("#bAumentarTwo4").css({"position":"absolute","top":"123%","left":"77%"});
-        $("#bAdicionarTwo4").css({"position":"absolute","top":"122.5%","left":"82%"});
-        $("#linhaTwo_4").css({"position":"absolute","top":"130%","left":"9%","visibility":"hidden"});
-    }   
-}
+function arrumaPosition(PrimCateg,SegCateg){
 
+    if(PrimCateg == 4){
+        let aumenta = 10;
 
-function arrumaProdutos_One(numSuco){
-    $("#linhaOne_3").css({"visibility":"hidden"});
-    $("#subNome1").css({"position":"absolute","top":"65%","left":"8%"});
-    $("#nomeTwo0").css({"position":"absolute","top":"72%","left":"10%"});
-    $("#precoTwo0").css({"position":"absolute","top":"75%","left":"11%"});
-    $("#bDiminuirTwo0").css({"position":"absolute","top":"73%","left":"70%"});
-    $("#numberTwo0").css({"position":"absolute","top":"73%","left":"74%"});
-    $("#bAumentarTwo0").css({"position":"absolute","top":"73%","left":"77%"});
-    $("#bAdicionarTwo0").css({"position":"absolute","top":"72.5%","left":"82%"});
-    $("#linhaTwo_0").css({"position":"absolute","top":"80%","left":"9%","visibility":"hidden"});
-    
-    if(numSuco == 2){
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"82%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"85%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"83%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"83%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"83%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"82.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"90%","left":"9%","visibility":"hidden"});
-    }
-    else if(numSuco == 3) {
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"82%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"85%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"83%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"83%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"83%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"82.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"90%","left":"9%","visibility":"visible"});
-        // Terceiro produto
-        $("#nomeTwo2").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo2").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo2").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo2").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo2").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo2").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_2").css({"position":"absolute","top":"100%","left":"9%","visibility":"hidden"});   
-    }
-    else if(numSuco == 4){
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"82%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"85%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"83%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"83%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"83%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"82.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"90%","left":"9%","visibility":"visible"});
-        // Terceiro produto
-        $("#nomeTwo2").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo2").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo2").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo2").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo2").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo2").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_2").css({"position":"absolute","top":"100%","left":"9%","visibility":"visible"});
-        // Quarto produto
-        $("#nomeTwo3").css({"position":"absolute","top":"102%","left":"10%"});
-        $("#precoTwo3").css({"position":"absolute","top":"105%","left":"11%"});
-        $("#bDiminuirTwo3").css({"position":"absolute","top":"103%","left":"70%"});
-        $("#numberTwo3").css({"position":"absolute","top":"103%","left":"74%"});
-        $("#bAumentarTwo3").css({"position":"absolute","top":"103%","left":"77%"});
-        $("#bAdicionarTwo3").css({"position":"absolute","top":"102.5%","left":"82%"});
-        $("#linhaTwo_3").css({"position":"absolute","top":"110%","left":"9%","visibility":"hidden"});
+        for(var i = 0; i < SegCateg; i++){
+            if(i == 0){
+                $("#subNome1").css({"position":"absolute","top": 55 + aumenta + "%","left":"8%"});
+            }
+            $("#nomeTwo" + i).css({"position":"absolute","top": 62 + aumenta + "%","left":"10%"});
+            $("#precoTwo" + i).css({"position":"absolute","top": 65 + aumenta + "%","left":"11%"});
+            $("#bDiminuirTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"70%"});
+            $("#numberTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"74%"});
+            $("#bAumentarTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"77%"});
+            $("#bAdicionarTwo" + i).css({"position":"absolute","top": 62.5 + aumenta + "%","left":"82%"});
+            $("#linhaTwo_" + i).css({"position":"absolute","top": 70 + aumenta + "%","left":"9%","visibility":"visible"});
+
+            aumenta = aumenta + 10;
+        }
     } 
-    else if(numSuco == 5){
-        // Segundo produto
-        $("#linhaTwo_0").css({"visibility":"visible"})
-        $("#nomeTwo1").css({"position":"absolute","top":"82%","left":"10%"});
-        $("#precoTwo1").css({"position":"absolute","top":"85%","left":"11%"});
-        $("#bDiminuirTwo1").css({"position":"absolute","top":"83%","left":"70%"});
-        $("#numberTwo1").css({"position":"absolute","top":"83%","left":"74%"});
-        $("#bAumentarTwo1").css({"position":"absolute","top":"83%","left":"77%"});
-        $("#bAdicionarTwo1").css({"position":"absolute","top":"82.5%","left":"82%"});
-        $("#linhaTwo_1").css({"position":"absolute","top":"90%","left":"9%","visibility":"visible"});
-        // Terceiro produto
-        $("#nomeTwo2").css({"position":"absolute","top":"92%","left":"10%"});
-        $("#precoTwo2").css({"position":"absolute","top":"95%","left":"11%"});
-        $("#bDiminuirTwo2").css({"position":"absolute","top":"93%","left":"70%"});
-        $("#numberTwo2").css({"position":"absolute","top":"93%","left":"74%"});
-        $("#bAumentarTwo2").css({"position":"absolute","top":"93%","left":"77%"});
-        $("#bAdicionarTwo2").css({"position":"absolute","top":"92.5%","left":"82%"});
-        $("#linhaTwo_2").css({"position":"absolute","top":"100%","left":"9%","visibility":"visible"});
-        // Quarto produto
-        $("#nomeTwo3").css({"position":"absolute","top":"102%","left":"10%"});
-        $("#precoTwo3").css({"position":"absolute","top":"105%","left":"11%"});
-        $("#bDiminuirTwo3").css({"position":"absolute","top":"103%","left":"70%"});
-        $("#numberTwo3").css({"position":"absolute","top":"103%","left":"74%"});
-        $("#bAumentarTwo3").css({"position":"absolute","top":"103%","left":"77%"});
-        $("#bAdicionarTwo3").css({"position":"absolute","top":"102.5%","left":"82%"});
-        $("#linhaTwo_3").css({"position":"absolute","top":"110%","left":"9%","visibility":"visible"});
-        // Quinto produto
-        $("#nomeTwo4").css({"position":"absolute","top":"112%","left":"10%"});
-        $("#precoTwo4").css({"position":"absolute","top":"115%","left":"11%"});
-        $("#bDiminuirTwo4").css({"position":"absolute","top":"113%","left":"70%"});
-        $("#numberTwo4").css({"position":"absolute","top":"113%","left":"74%"});
-        $("#bAumentarTwo4").css({"position":"absolute","top":"113%","left":"77%"});
-        $("#bAdicionarTwo4").css({"position":"absolute","top":"112.5%","left":"82%"});
-        $("#linhaTwo_4").css({"position":"absolute","top":"120%","left":"9%","visibility":"hidden"});
-    }   
+    
+    else if(PrimCateg == 5){
+        let aumenta = 20;
+
+        for(var i = 0; i < SegCateg; i++){
+            if(i == 0){
+                $("#subNome1").css({"position":"absolute","top": 55 + aumenta + "%","left":"8%"});
+            }
+            $("#nomeTwo" + i).css({"position":"absolute","top": 62 + aumenta + "%","left":"10%"});
+            $("#precoTwo" + i).css({"position":"absolute","top": 65 + aumenta + "%","left":"11%"});
+            $("#bDiminuirTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"70%"});
+            $("#numberTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"74%"});
+            $("#bAumentarTwo" + i).css({"position":"absolute","top": 63 + aumenta + "%","left":"77%"});
+            $("#bAdicionarTwo" + i).css({"position":"absolute","top": 62.5 + aumenta + "%","left":"82%"});
+            $("#linhaTwo_" + i).css({"position":"absolute","top": 70 + aumenta + "%","left":"9%","visibility":"visible"});
+
+            aumenta = aumenta + 10;
+        }
+    }
 }

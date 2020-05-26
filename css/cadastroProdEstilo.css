@@ -130,7 +130,7 @@ input[type=number] {
     background-color: #527c5b;
     border: solid 1px #527c5b;
     border-radius: 5px;
-    color: #8b8b8b;
+    color: rgb(63, 63, 63);
     text-align: center;
     padding-top: 0.3%;
 }

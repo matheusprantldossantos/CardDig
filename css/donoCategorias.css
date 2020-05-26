@@ -5,8 +5,6 @@
 
 body{
     background-color: #e0e0e0;
-    height: 100%;
-    width: 100%;
 }
 
 @font-face{
@@ -46,7 +44,7 @@ body{
 
 .columnTitle{
     font-size: 20px;
-    font-family: blank;
+    font-family: Jaguar;
     color: #e0e0e0;
     background-color: #1f1f1f;
     padding: .5%;
@@ -126,6 +124,7 @@ body{
     height: 0.1%;
     background-color: #cacaca;
 }
+
 
 /* Produto 1 */
 
@@ -393,6 +392,121 @@ body{
     left: 5%;
 }
 
+/* Produto 8 */
+
+#prodNom7{
+    position: absolute;
+    top: 114%;
+    left: 5%;
+}
+
+#prodPre7{
+    position: absolute;
+    top: 114%;
+    left: 35.5%;
+}
+
+#prodTip7{
+    position: absolute;
+    top: 114%;
+    left: 48.5%;
+}
+
+#prodEdit7{
+    position: absolute;
+    top: 112.5%;
+    left: 62.8%;
+}
+
+#prodExc7{
+    position: absolute;
+    top: 112.5%;
+    left: 68.8%;
+}
+
+#line7{
+    position: absolute;
+    top: 120.5%;
+    left: 5%;
+}
+
+/* Produto 9 */
+
+#prodNom8{
+    position: absolute;
+    top: 125.5%;
+    left: 5%;
+}
+
+#prodPre8{
+    position: absolute;
+    top: 125.5%;
+    left: 35.5%;
+}
+
+#prodTip8{
+    position: absolute;
+    top: 125.5%;
+    left: 48.5%;
+}
+
+#prodEdit8{
+    position: absolute;
+    top: 124%;
+    left: 62.8%;
+}
+
+#prodExc8{
+    position: absolute;
+    top: 124%;
+    left: 68.8%;
+}
+
+#line8{
+    position: absolute;
+    top: 132%;
+    left: 5%;
+}
+
+/* Produto 10 */
+
+#prodNom9{
+    position: absolute;
+    top: 137%;
+    left: 5%;
+}
+
+#prodPre9{
+    position: absolute;
+    top: 137%;
+    left: 35.5%;
+}
+
+#prodTip9{
+    position: absolute;
+    top: 137%;
+    left: 48.5%;
+}
+
+#prodEdit9{
+    position: absolute;
+    top: 135.5%;
+    left: 62.8%;
+}
+
+#prodExc9{
+    position: absolute;
+    top: 135.5%;
+    left: 68.8%;
+}
+
+#line9{
+    position: absolute;
+    top: 143.5%;
+    left: 5%;
+}
+
+/* */
 #bAdicionar{
     visibility: hidden;
     background-color: #383838;
