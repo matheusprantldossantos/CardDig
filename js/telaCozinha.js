@@ -1,4 +1,5 @@
 $(new Document).ready(function(){
+    listaMesas();
     $("#logout").click(() =>{
         tornaInativo();
         window.location.href = "../pages/login.html";

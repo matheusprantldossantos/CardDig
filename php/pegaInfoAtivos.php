@@ -86,6 +86,34 @@
             }
         }
     }
+    $x = 0;
+    for($l = 0; $l < count($itens); $l++){
+        if($l == 0){
+            $itens[$l]["quantidadeComandas"] = 1;
+            foreach($itens[$l]["infos"] as $parts){
+                $x = count($parts);
+                $itens[$l]["qntNomes"] = $x;
+                $itens[$l]["qntQuantidade"] = $x;
+            }
+        }
+        else if($itens[$l - 1]["nomeMesa"] == $itens[$l]["nomeMesa"]){
+            $itens[$l - 1]["quantidadeComandas"] += 1;
+            foreach($itens[$l]["infos"] as $parts){
+                $x = count($parts);
+                $itens[$l - 1]["qntNomes"] += $x;
+                $itens[$l - 1]["qntQuantidade"] += $x;
+            }
+        }
+        else{
+            $itens[$l]["quantidadeComandas"] = 1;
+            foreach($itens[$l]["infos"] as $parts){
+                $x = count($parts);
+                $itens[$l]["qntNomes"] = $x;
+                $itens[$l]["qntQuantidade"] = $x;
+            }
+        }
+    }
+    
     mysqli_close($conn);
     echo json_encode($itens);
 ?>
