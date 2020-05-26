@@ -1,13 +1,18 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/telaGarcom.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="../js/jquery-3.4.1.js"></script>
         <script src="../js/criaMesa.js"></script>
     </head>
     <body>
-        <button id="logout"> Sair </button>
-        <input type="number" id="quantidade" placeholder="Quantidade de comanda: " >
-        <button id="confQnt">Confirmar quantidade</button>
+        <button id="logout"><i class="fas fa-power-off"></i></button>
+        <div id="cadastro">
+            <div id="titleDiv">Cadastro da Mesa</div>
+            <input type="number" id="quantidade" placeholder="Quantidade de comanda" >
+            <button id="confQnt">Confirmar</button>
+        </div>
         <div id="conteudo"></div>
     </body>
 </html>

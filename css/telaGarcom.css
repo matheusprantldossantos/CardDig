@@ -1,0 +1,190 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face{
+    font-family: Bebas neue;
+    src: url(../fontes/BebasNeue-Regular.otf);
+}
+
+@font-face{
+    font-family: blank;
+    src: url(../fontes/blank-Regular.otf);
+}
+
+#logout{
+    position: absolute;
+    top: 5%;
+    left: 95%;
+    transform: translate(-50%,-50%);
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+    background-color: #ff4655;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 3px;
+    opacity: 0.1;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+}
+
+#logout:hover{
+    opacity: 0.8;
+    transition: .3s;
+}
+
+/* Primeira Janela */
+#cadastro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #363844;
+    width: 25%;
+    height: 30%;
+    border-radius: 2px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: visible;
+}
+
+#titleDiv{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: #e0e0e0;
+}
+
+input{
+    width: 70%;
+    height: 38px;
+    border: solid 1px #b8b8bb;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 5px 10px 5px 10px;
+    outline: none;
+    transition: 0.3s;
+    color: #c4c4c4;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+#quantidade{
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#confQnt{
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 15%;
+    border: none;
+    border-radius: 3px;
+    background-color: #d858a7;
+    color: #e0e0e0;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Segunda Janela */
+
+#conteudo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #363844;
+    width: 25%;
+    height: 35%;
+    border-radius: 2px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: hidden;
+}
+
+#bVoltar{
+    position: absolute;
+    top: 25px;
+    left: 8%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: #e0e0e0;
+    opacity: .5;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#bVoltar:hover{
+    opacity: 1;
+    transition: .2s;
+}
+
+#titleAfter{
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: #e0e0e0;
+}
+
+.comd{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#nomeMesa{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#textCom{
+    position: absolute;
+    top: 128px;
+    left: 25%;
+    transform: translateX(-50%);
+    color: #e0e0e0;
+    font-family: Bebas neue;
+    font-size: 20px;
+}
+
+#cadastraMesa{
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    background-color: #d858a7;
+    color: #e0e0e0;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
