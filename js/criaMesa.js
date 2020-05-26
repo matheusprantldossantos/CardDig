@@ -1,7 +1,10 @@
 $(new Document).ready(function(){
 
     $("#confQnt").click(function(){
+        $("#cadastro").css({"visibility":"hidden"});
         criaComandas();
+        $("#conteudo").css({"visibility":"visible"});
+
     });
     $("#logout").click(() =>{
          tornaInativo();
@@ -9,23 +12,62 @@ $(new Document).ready(function(){
     });
 
 });
+
+
 function criaComandas(){
     let quantidade = $("#quantidade").val();
     var inputs = "";
-    inputs += "<input type='text' name='nome' id='nomeMesa' placeholder='Indentificador da mesa'>";
-    inputs += "<button id='cadastraMesa'>Cadastrar mesa</button>";
-    inputs += "<button id='enviaPedidos'>Enviar pedidos</button>";
+    var aumPosit = 0;
+    var aumDiv = 0;
+
+    inputs += "<div id='titleAfter'>Cadastro da Mesa</div>";
+    inputs += "<div id='bVoltar'><i class='fas fa-chevron-left'></i></div>";
+    inputs += "<input type='text' name='nome' id='nomeMesa' placeholder='Nome da mesa'>";
+    inputs += "<button id='cadastraMesa'>Cadastrar</button>";
+    inputs += "<div id='textCom'>Comanda(s)</div>";
     for(let i = 0; i < parseInt(quantidade); i++){
-        inputs += "<input type='number' id='comanda"+ i + "'placeholder='Digite a comanda: '>";
+        inputs += "<input type='number' class='comd' id='comanda"+ i + "'placeholder='Digite a comanda'>";
     }
     inputs += "<div id='mensagem'></div>";
+
     $("#conteudo").html(inputs);
+
+    // Arruma position 
+    for(let i = 0; i < parseInt(quantidade); i++){
+        if(i == 0 || i == 1){
+            $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
+            $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
+            $("#conteudo").css({"height": 35 + aumDiv + "%"});
+        }
+        else if(i >= 2 && i <= 4){
+            $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
+            $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
+            $("#conteudo").css({"height": 35 + aumDiv + "%"});
+            $("#conteudo").css({"padding-bottom":"30px"});
+        }
+        else if(i >= 5){
+            $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
+            $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
+            $("#conteudo").css({"height": 35 + aumDiv + "%"});
+            $("#conteudo").css({"padding-bottom":"70px"});
+        }
+        aumPosit = aumPosit + 50;
+        aumDiv = aumDiv + 5;
+    }
+
     $(new Document).ready(function(){
         $("#cadastraMesa").click(function(){
             criaMesa();
         });
     });
+
+    $(new Document).ready(function(){
+        $("#bVoltar").click(function(){
+            location.reload(true);
+        });
+    });
 }
+
 function criaMesa(){
     var nomeMesa = $("#nomeMesa").val();
     let comanda = [];
@@ -64,6 +106,7 @@ function criaMesa(){
         $("#mensagem").text("Preencha todos os campos");
     }
 }
+
 function tornaInativo(){
     const func = "garcom";
     $.ajax({
