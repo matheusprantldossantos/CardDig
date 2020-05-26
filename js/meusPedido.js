@@ -42,6 +42,7 @@ function encerraPedido(){
         dataType: "json",
         url: "../php/RemoveFK.php",
         success: function(estado){
+            console.log("a");
             console.log(estado);
             window.location.href = "../pages/telaPrincipal.html";
         },
@@ -241,19 +242,21 @@ function listaPedidos() {
             conteudo += "<div class='subtitles' id='titleQuant'>" + "Quantidade" + "</div>";
             conteudo += "<div class='subtitles' id='titleSub'>" + "SubTotal" + "</div>";
             conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
-            var prods = 2;
+            var prods = info[0].qntComanda;
+            var infos = 2;
             
 
-            for(var i = 0; i < info.length; i++){
+            for(var i = 0; i < info.length - info[0].qntComanda ; i++){
                 conteudo += "<div class='prodElem' id='nameProd" + i +"'>" + info[prods].nomeProd +"</div>";
-                conteudo += "<div class='prodElem' id='procUnit" + i +"'>" + info[prods].valorProduto + " R$" + "</div>";
+                conteudo += "<div class='prodElem' id='procUnit" + i +"'>" + info[infos].valorProduto + " R$" + "</div>";
                 conteudo += "<button class='bContador' id='bDiminuir" + i +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
-                conteudo += "<div id='number" + i +"'>" + info[prods].quantidade + "</div>";
+                conteudo += "<div id='number" + i +"'>" + info[infos].quantidade + "</div>";
                 conteudo += "<button class='bContador' id='bAumentar" + i +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
-                conteudo += "<div class='prodElem' id='precSub" + i +"'>" + info[prods].subTotal + "</div>";
+                conteudo += "<div class='prodElem' id='precSub" + i +"'>" + info[infos].subTotal + "</div>";
                 conteudo += "<div class='iconsLixeira' id='iconLix" + i +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
                 conteudo += "<div id='linhaPed" + i +"'>" + "</div>";
                 prods++;
+                infos++;
             }
             
             $("#divPedidos").html(conteudo);

@@ -1,4 +1,4 @@
-<?php   
+<?php
     //valores do BD
     $servername = "localhost: 3306";
     $username = "grupoQualquer";
@@ -121,7 +121,8 @@
             }
         }
     }
-    
+    $qualquer = array_count_values(array_column($informacao, "comanda"));
+    $informacao[0]["qntComanda"] = count($qualquer);
     mysqli_close($conn);
     echo json_encode($informacao);
 
