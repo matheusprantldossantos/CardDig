@@ -100,8 +100,8 @@
             $itens[$l - 1]["quantidadeComandas"] += 1;
             foreach($itens[$l]["infos"] as $parts){
                 $x = count($parts);
-                $itens[$l - 1]["qntNomes"] += $x;
-                $itens[$l - 1]["qntQuantidade"] += $x;
+                $itens[$l]["qntNomes"] = $x;
+                $itens[$l]["qntQuantidade"] = $x;
             }
         }
         else{
