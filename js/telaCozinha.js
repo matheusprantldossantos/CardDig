@@ -70,11 +70,15 @@ function listaMesas(){
                 $("#mesaDiv0").click(()=>{
                     $("#icon0").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[0]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -85,11 +89,15 @@ function listaMesas(){
                 $("#mesaDiv1").click(()=>{
                     $("#icon1").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[1]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -100,11 +108,15 @@ function listaMesas(){
                 $("#mesaDiv2").click(()=>{
                     $("#icon2").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[2]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -115,11 +127,15 @@ function listaMesas(){
                 $("#mesaDiv3").click(()=>{
                     $("#icon3").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[3]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -130,11 +146,15 @@ function listaMesas(){
                 $("#mesaDiv4").click(()=>{
                     $("#icon4").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[4]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -145,11 +165,15 @@ function listaMesas(){
                 $("#mesaDiv5").click(()=>{
                     $("#icon5").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[5]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -160,11 +184,15 @@ function listaMesas(){
                 $("#mesaDiv6").click(()=>{
                     $("#icon6").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[6]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -175,11 +203,15 @@ function listaMesas(){
                 $("#mesaDiv7").click(()=>{
                     $("#icon7").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[7]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -190,11 +222,15 @@ function listaMesas(){
                 $("#mesaDiv8").click(()=>{
                     $("#icon8").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[8]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
@@ -205,11 +241,15 @@ function listaMesas(){
                 $("#mesaDiv9").click(()=>{
                     $("#icon9").toggleClass("iconGira");
                     var conteudo = "";
+                    let contadorProd = 0;
+                    let contadorComandas = 0; 
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[9]].nomeMesa == info[i].nomeMesa){
                             conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                contadorProd++;
                             }
                         }
                     }
