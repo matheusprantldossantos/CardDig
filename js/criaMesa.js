@@ -72,6 +72,10 @@ function criaMesa(){
     var nomeMesa = $("#nomeMesa").val();
     let comanda = [];
     let quantidade = $("#quantidade").val();
+    if(quantidade == ""){
+        $("#mensagem").text("Preencha todos os campos");
+        return 0;
+    }
     for(let k = 0; k < parseInt(quantidade); k++){
         comanda[k] = $("#comanda"+k).val();
     }
