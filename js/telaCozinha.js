@@ -9,7 +9,9 @@ $(new Document).ready(function(){
         $("#icon").toggleClass("iconGira");
         $("#comd").toggleClass("comandaAfter");
     })
+    
 });
+
 function listaMesas(){
     $.ajax({
         type : "POST",
@@ -26,6 +28,11 @@ function listaMesas(){
                 }
             }
             $("#mesas").html(conteudo);
+
+            for(let i = 0; i < info.quantidadeComandas; i++){
+
+            }
+
         },
         error : ()=>{
             console.log("Nao foi possivel listar");
@@ -49,3 +56,4 @@ function tornaInativo(){
         }
     });
 }
+
