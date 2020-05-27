@@ -35,10 +35,7 @@ body{
     outline: none;
 }
 
-#mesaDiv{
-    position: absolute;
-    top: 20%;
-    left: 20%;
+.mesas{
     background-color: #1f1f1f;
     border-radius: 3px;
     border: none;
@@ -85,10 +82,13 @@ body{
 
 /* Comanda (Efeito) */
 
-.comanda{
+#comd0{
     position: absolute;
     top: 20%;
-    left: 20%;
+    left: 5%;
+}
+
+.comanda0{
     width: 20%;
     height: 0%;
     background-color: #d3d2d2;
@@ -98,10 +98,7 @@ body{
     visibility: hidden;
 }
 
-.comandaAfter{
-    position: absolute;
-    top: 25%;
-    left: 20%;
+.comandaAfter0{
     width: 20%;
     height: 50%;
     background-color: #d3d2d2;
@@ -114,6 +111,7 @@ body{
 /* Estilo dos elementos */
 
 .nomeC{
+    color: #1f1f1f;
     font-weight: bold;
     font-family: Bebas neue;
     font-size: 20px;
@@ -123,36 +121,35 @@ body{
     color: #464545;
 }
 
-
-#numComanda0{
+#numComanda{
     position: relative;
     top: 0%;
     left: 0%;
     padding: 6% 0 0 5%;
 }
 
-#listPed0{
+#listPed{
     position: absolute;
     top: 0%;
     left: 0%;
     padding: 15% 12% 3% 10%;
 }
 
-#listPed1{
+#listPed{
     position: absolute;
     top: 0%;
     left: 0%;
     padding: 24% 12% 3% 10%;
 }
 
-#listPed2{
+#listPed{
     position: absolute;
     top: 0%;
     left: 0%;
     padding: 33% 12% 3% 10%;
 }
 
-#listPed3{
+#listPed{
     position: absolute;
     top: 0%;
     left: 0%;
@@ -160,7 +157,7 @@ body{
 }
 
 /* Comanda 2 */ 
-#numComanda1{
+#numComanda{
     position: absolute;
     top: 0%;
     left: 0%;
@@ -195,7 +192,7 @@ body{
     padding: 91% 12% 3% 10%;
 }
 
-#bFinalizar{
+#bFinalizar0{
     position: absolute;
     top: 80%;
     left: 50%;
@@ -209,5 +206,5 @@ body{
     font-weight: bold;
     cursor: pointer;
     outline: none;
-    margin-top: 10%;
+    margin-top: 0%;
 }

@@ -4,11 +4,6 @@ $(new Document).ready(function(){
         tornaInativo();
         window.location.href = "../pages/login.html";
     });
-
-    $("#mesaDiv").click(function(){
-        $("#icon").toggleClass("iconGira");
-        $("#comd").toggleClass("comandaAfter");
-    })
     
 });
 
@@ -21,21 +16,78 @@ function listaMesas(){
             let conteudo = "";
             for(let i = 0; i < info.length; i++){
                 if(i == 0){
-                    conteudo += "<button id='mesaDiv" + i + "'>";
+                    conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
                     conteudo += "<div id='text'>" + info[i].nomeMesa + "</div>";
-                    conteudo += "<div id='iconSeta' class='iconGira'><i id='icon' class='fas fa-caret-left'></i></div>";
-                    conteudo += "<div id='comd" + i + "' class='comanda'></div>";
+                    conteudo += "<div id='iconSeta" + i + "' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
                 else if(info[i].nomeMesa != info[i - 1].nomeMesa){
-                    conteudo += "<button id='mesaDiv" + i + "'>";
+                    conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
                     conteudo += "<div id='text'>" + info[i].nomeMesa + "</div>";
-                    conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
-                    conteudo += "<div id='comd" + i + "' class='comanda'></div>";
+                    conteudo += "<div id='iconSeta" + i + "' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
+                    conteudo += "<div id='comd" + i + "' class='comanda" + i + "'></div>";
                     conteudo += "</button>";
                 }
             }
             $("#mesas").html(conteudo);
+
+
+            var posiçãoDiv = 20;
+            var posiçãoTop = 50;
+            for(let i = 0; i < info.length; i++){
+                if(i == 0){
+                    $("#mesaDiv" + i).css({"position":"absolute","top":"20%","left": "5%"});
+                }
+                else if(info[i].nomeMesa != info[i - 1].nomeMesa){
+                    if(i > 0 && i <= 2){
+                        $("#mesaDiv" + i).css({"position":"absolute","top":"20%","left": 5 + posiçãoDiv + "%"});
+                        posiçãoDiv += 20;
+                    }
+                    else if(i >= 3 && i <= 5){
+                        if(i == 3){
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": "5%"});
+                            posiçãoDiv = 20;
+                        }
+                        else if(i == 4){
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoDiv += 20;
+                        }
+                        else{
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoTop += 50;
+                        }
+                    }
+                    else if(i >= 6 && i <= 8){
+                        if(i == 6){
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": "5%"});
+                            posiçãoDiv = 20;
+                        }
+                        else if(i == 7){
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoDiv += 20;
+                        }
+                        else{
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoTop += 50;
+                        }
+                    }
+                    else if(i >= 9 && i <= 11){
+                        if(i == 9){
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": "5%"});
+                            posiçãoDiv = 20;
+                        }
+                        else if(i == 10){
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoDiv += 20;
+                        }
+                        else{
+                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoTop += 50;
+                        }
+                    }
+                }
+            }
+
             let count = 0;
             let indexesMesas = [];
             for(let l = 0; l < info.length; l++){
@@ -65,16 +117,20 @@ function listaMesas(){
                     }
                 }
             }
+
             console.log(indexesMesas);
             $(new Document).ready(() => {
                 $("#mesaDiv0").click(()=>{
                     $("#icon0").toggleClass("iconGira");
+
                     var conteudo = "";
                     let contadorProd = 0;
                     let contadorComandas = 0
+
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[0]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div id='comd" + i + "' class='comanda" + i + "'>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -82,10 +138,45 @@ function listaMesas(){
                             }
                         }
                     }
+
                     conteudo += "<button id='bFinalizar0'>Finalizar</button>";
-                    $("#comd0").html(conteudo);
-                    $("#comd0").toggleClass("comandaAfter");
+                    conteudo += "</div>";
+                    $("#divComandas").html(conteudo);
+
+
+                    var count = 0
+                    var mudaCom = 0;
+                    var mudaPosProd = 0;
+                    for(let i = 0; i < info.length; i++){
+                        if(info[indexesMesas[0]].nomeMesa == info[i].nomeMesa){
+                            if(contadorComandas == 2){
+                                if(mudaCom == 0){
+                                    $("#comd0").css({"position":"absolute","top":"25%","left":"5%"});
+                                    $("#comd0").toggleClass("comandaAfter0");
+                    
+                                    $("#numComanda" + i).css({"position":"relative","top":"0%","left":"0%","padding-top":"6%","padding-left":"5%"});
+                                    for(let j = 0; j < info[mudaCom].infos.nome.length; j++){
+                                        mudaPosProd += 9;
+                                        $("#listPed" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%"});
+                                    }
+                                    mudaCom++;
+                                }
+                            
+                                else if(mudaCom == 1){
+                                    $("#numComanda" + i).css({"position":"relative","top":"0%","left":"0%","padding-top": 4 + mudaPosProd + "%","padding-left":"5%"});
+                                    mudaPosProd = mudaPosProd + 4;
+                                    for(let j = 0; j < info[mudaCom].infos.nome.length; j++){
+                                        mudaPosProd += 9;
+                                        $("#listPed" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%"});
+                                    }
+                                    mudaCom++;
+                                }
+                            }
+                        }   
+                    }
                 });
+            
+            
                 $("#mesaDiv1").click(()=>{
                     $("#icon1").toggleClass("iconGira");
                     var conteudo = "";
@@ -93,7 +184,7 @@ function listaMesas(){
                     let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[1]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -105,6 +196,7 @@ function listaMesas(){
                     $("#comd1").html(conteudo);
                     $("#comd1").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv2").click(()=>{
                     $("#icon2").toggleClass("iconGira");
                     var conteudo = "";
@@ -112,7 +204,7 @@ function listaMesas(){
                     let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[2]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -124,6 +216,7 @@ function listaMesas(){
                     $("#comd2").html(conteudo);
                     $("#comd2").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv3").click(()=>{
                     $("#icon3").toggleClass("iconGira");
                     var conteudo = "";
@@ -131,7 +224,7 @@ function listaMesas(){
                     let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[3]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -143,6 +236,7 @@ function listaMesas(){
                     $("#comd3").html(conteudo);
                     $("#comd3").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv4").click(()=>{
                     $("#icon4").toggleClass("iconGira");
                     var conteudo = "";
@@ -150,7 +244,7 @@ function listaMesas(){
                     let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[4]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -162,6 +256,7 @@ function listaMesas(){
                     $("#comd4").html(conteudo);
                     $("#comd4").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv5").click(()=>{
                     $("#icon5").toggleClass("iconGira");
                     var conteudo = "";
@@ -169,7 +264,7 @@ function listaMesas(){
                     let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[5]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -181,6 +276,7 @@ function listaMesas(){
                     $("#comd5").html(conteudo);
                     $("#comd5").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv6").click(()=>{
                     $("#icon6").toggleClass("iconGira");
                     var conteudo = "";
@@ -188,7 +284,7 @@ function listaMesas(){
                     let contadorComandas = 0
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[6]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -200,6 +296,7 @@ function listaMesas(){
                     $("#comd6").html(conteudo);
                     $("#comd6").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv7").click(()=>{
                     $("#icon7").toggleClass("iconGira");
                     var conteudo = "";
@@ -207,7 +304,7 @@ function listaMesas(){
                     let contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[7]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -219,6 +316,7 @@ function listaMesas(){
                     $("#comd7").html(conteudo);
                     $("#comd7").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv8").click(()=>{
                     $("#icon8").toggleClass("iconGira");
                     var conteudo = "";
@@ -226,7 +324,7 @@ function listaMesas(){
                     contadorComandas = 0;
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[8]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
@@ -238,6 +336,7 @@ function listaMesas(){
                     $("#comd8").html(conteudo);
                     $("#comd8").toggleClass("comandaAfter");
                 });
+
                 $("#mesaDiv9").click(()=>{
                     $("#icon9").toggleClass("iconGira");
                     var conteudo = "";
@@ -245,7 +344,7 @@ function listaMesas(){
                     let contadorComandas = 0; 
                     for(let i = 0; i < info.length; i++){
                         if(info[indexesMesas[9]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda0'>"+ info[i].comanda +"</div>";
+                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
                                 conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
