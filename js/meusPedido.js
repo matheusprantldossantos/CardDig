@@ -246,7 +246,7 @@ function listaPedidos() {
             var infos = 2;
             
 
-            for(var i = 0; i < info.length - info[0].qntComanda ; i++){
+            for(var i = 0; i < info.length - 2; i++){
                 conteudo += "<div class='prodElem' id='nameProd" + i +"'>" + info[prods].nomeProd +"</div>";
                 conteudo += "<div class='prodElem' id='procUnit" + i +"'>" + info[infos].valorProduto + " R$" + "</div>";
                 conteudo += "<button class='bContador' id='bDiminuir" + i +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
@@ -255,8 +255,10 @@ function listaPedidos() {
                 conteudo += "<div class='prodElem' id='precSub" + i +"'>" + info[infos].subTotal + "</div>";
                 conteudo += "<div class='iconsLixeira' id='iconLix" + i +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
                 conteudo += "<div id='linhaPed" + i +"'>" + "</div>";
-                prods++;
-                infos++;
+                if(infos != info.length - 1){
+                    infos++;
+                    prods++;
+                }
             }
             
             $("#divPedidos").html(conteudo);
