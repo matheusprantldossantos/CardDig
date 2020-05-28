@@ -133,7 +133,12 @@ function listaMesas(){
                             conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                             contadorComandas++;
                             for(let j = 0; j < info[i].infos.nome.length; j++){
-                                conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                if(i == 0){
+                                    conteudo += "<div class='produtos' id='listPedOne" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                }
+                                else if(i == 1){
+                                    conteudo += "<div class='produtos' id='listPedTwo" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                }
                                 contadorProd++;
                             }
                         }
@@ -152,22 +157,35 @@ function listaMesas(){
                             if(contadorComandas == 2){
                                 if(mudaCom == 0){
                                     $("#comd0").css({"position":"absolute","top":"25%","left":"5%"});
-                                    $("#comd0").toggleClass("comandaAfter0");
+                                    $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
                     
-                                    $("#numComanda" + i).css({"position":"relative","top":"0%","left":"0%","padding-top":"6%","padding-left":"5%"});
+                                    $("#numComanda" + i).css({"position":"relative","top":"0%","left":"0%","padding-top":"6%","padding-left":"5%","padding-bottom":"0%","padding-right":"0%"});
                                     for(let j = 0; j < info[mudaCom].infos.nome.length; j++){
                                         mudaPosProd += 9;
-                                        $("#listPed" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%"});
+                                        if(j == 0){
+                                            $("#listPedOne" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        }
+                                        else{
+                                            $("#listPedOne" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        }
                                     }
+                                    mudaPosProd = mudaPosProd + 6;
                                     mudaCom++;
                                 }
                             
                                 else if(mudaCom == 1){
-                                    $("#numComanda" + i).css({"position":"relative","top":"0%","left":"0%","padding-top": 4 + mudaPosProd + "%","padding-left":"5%"});
-                                    mudaPosProd = mudaPosProd + 4;
+                                    if(contadorProd == 2){
+                                        $("#numComanda" + i).css({"position":"relative","top":"0%","left":"0%","padding-top": 2 + mudaPosProd + "%","padding-left":"5%","padding-bottom":"0%","padding-right":"0%"});
+                                        mudaPosProd = mudaPosProd + 2;
+                                    }
                                     for(let j = 0; j < info[mudaCom].infos.nome.length; j++){
                                         mudaPosProd += 9;
-                                        $("#listPed" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%"});
+                                        if(j == 0){
+                                            $("#listPedTwo" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 13 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        }
+                                        else{
+                                            $("#listPedTwo" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        }
                                     }
                                     mudaCom++;
                                 }

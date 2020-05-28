@@ -365,71 +365,242 @@ function fListarCategoria(){
             // Botões para Excluir
             $(new Document).ready(function(){
                 $("#prodExc0").click(function(){
-                    excluirProduto(info[0].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[0].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
                 });
             });
             
             $(new Document).ready(function(){
                 $("#prodExc1").click(function(){
-                    excluirProduto(info[1].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[1].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc2").click(function(){
-                    excluirProduto(info[2].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[2].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc3").click(function(){
-                    excluirProduto(info[3].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[3].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc4").click(function(){
-                    excluirProduto(info[4].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[4].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc5").click(function(){
-                    excluirProduto(info[5].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[5].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc6").click(function(){
-                    excluirProduto(info[6].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[6].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc7").click(function(){
-                    excluirProduto(info[7].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[7].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc8").click(function(){
-                    excluirProduto(info[8].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[8].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 
             $(new Document).ready(function(){
                 $("#prodExc9").click(function(){
-                    excluirProduto(info[9].nome);
-                    location.reload(true);
+                    $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        excluirProduto(info[9].nome);
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaExcluir").removeClass("pagExcluirAfter").addClass("pagExcluir");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
 

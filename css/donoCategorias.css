@@ -529,7 +529,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 35%;
-    height: 50%;
+    height: 60%;
     background-color: #e2e2e2;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -544,7 +544,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 35%;
-    height: 50%;
+    height: 60%;
     background-color: #e2e2e2;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -578,11 +578,18 @@ body{
     left: 50%;
     transform: translateX(-50%);
     font-size: 35px;
+    font-family: blank;
+    font-weight: bold;
+}
+
+.idInput{
+    color: #1f1f1f;
+    font-family: blank;
 }
 
 .inputEdit{
     width: 60%;
-    height: 10%;
+    height: 8%;
     outline: none;
     border: solid 1px #1f1f1f;
     border-radius: 2px;
@@ -601,37 +608,65 @@ input[type=number] {
 
 }
 
-#nomeProduto{
+#subNome{
     position: absolute;
     top: 25%;
+    left: 24%;
+    transform: translateX(-50%);
+}
+
+#nomeProduto{
+    position: absolute;
+    top: 29%;
     left: 50%;
+    transform: translateX(-50%);
+}
+
+#subPre{
+    position: absolute;
+    top: 39%;
+    left: 24%;
     transform: translateX(-50%);
 }
 
 #precoProduto{
     position: absolute;
-    top: 37%;
+    top: 43%;
     left: 50%;
+    transform: translateX(-50%);
+}
+
+#subDisp{
+    position: absolute;
+    top: 54%;
+    left: 28.4%;
     transform: translateX(-50%);
 }
 
 #dispProduto{
     position: absolute;
-    top: 49%;
+    top: 58%;
     left: 50%;
+    transform: translateX(-50%);
+}
+
+#subTip{
+    position: absolute;
+    top: 68%;
+    left: 23%;
     transform: translateX(-50%);
 }
 
 #tipoProduto{
     position: absolute;
-    top: 61%;
+    top: 72%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #bSalvar{
     position: absolute;
-    top: 79%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%);
     outline:none;
@@ -639,7 +674,7 @@ input[type=number] {
     border-radius: 2px;
     background-color: #ff7ab8;
     width: 20%;
-    height: 9%;
+    height: 7%;
     cursor: pointer;
     text-decoration: none;
     transition: .2s;
@@ -665,4 +700,74 @@ input[type=number] {
     transition: 0.5s;
     width: 100%;
     height: 100%;
+}
+
+/* Janela de Confirmar Exclusão */
+
+.pagExcluir{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 22%;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.pagExcluirAfter{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 22%;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#mensagemConf{
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+}
+
+#bConfirmar{
+    position: absolute;
+    top: 60%;
+    left: 36%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 17%;
+    border: none;
+    border-radius: 3px;
+    color: #e0e0e0;
+    background-color: #fc6aae;
+    cursor: pointer;
+    outline: none;
+}
+
+#bCancelar{
+    position: absolute;
+    top: 60%;
+    left: 64%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 17%;
+    border: none;
+    border-radius: 3px;
+    color: #1f1f1f;
+    background-color: #b4b4b4;
+    cursor: pointer;
+    outline: none;
 }
