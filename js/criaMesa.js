@@ -22,49 +22,63 @@ function criaComandas(){
 
     inputs += "<div id='titleAfter'>Cadastro da Mesa</div>";
     inputs += "<div id='bVoltar'><i class='fas fa-chevron-left'></i></div>";
-    inputs += "<input type='text' name='nome' id='nomeMesa' placeholder='Nome da mesa'>";
-    inputs += "<button id='cadastraMesa'>Cadastrar</button>";
-    inputs += "<div id='textCom'>Comanda(s)</div>";
-    for(let i = 0; i < parseInt(quantidade); i++){
-        inputs += "<input type='number' class='comd' id='comanda"+ i + "'placeholder='Digite a comanda'>";
-    }
-    inputs += "<div id='mensagem'></div>";
+    $.ajax({
+        
+        type: "POST",
+        dataType: "json",
+        url: "../php/pegaMesas.php",
+        success : function(condicao){
+            console.log("listou as mesas");
+            inputs += "<select id='nomeMesa' name='funcoes'>";
+            condicao.forEach(element => {
+                inputs += "<option value='" + element + "'>" + element +"</option>"
+            });
+            inputs += "</select>";
+            inputs += "<button id='cadastraMesa'>Cadastrar</button>";
+            inputs += "<div id='textCom'>Comanda(s)</div>";
+            for(let i = 0; i < parseInt(quantidade); i++){
+                inputs += "<input type='number' class='comd' id='comanda"+ i + "'placeholder='Digite a comanda'>";
+            }
+            inputs += "<div id='mensagem'></div>";
+            $("#conteudo").html(inputs);
+            // Arruma position 
+            for(let i = 0; i < parseInt(quantidade); i++){
+                if(i == 0 || i == 1){
+                    $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
+                    $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
+                    $("#conteudo").css({"height": 35 + aumDiv + "%"});
+                }
+                else if(i >= 2 && i <= 4){
+                    $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
+                    $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
+                    $("#conteudo").css({"height": 35 + aumDiv + "%"});
+                    $("#conteudo").css({"padding-bottom":"30px"});
+                }
+                else if(i >= 5){
+                    $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
+                    $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
+                    $("#conteudo").css({"height": 35 + aumDiv + "%"});
+                    $("#conteudo").css({"padding-bottom":"70px"});
+                }
+                aumPosit = aumPosit + 50;
+                aumDiv = aumDiv + 5;
+            }
 
-    $("#conteudo").html(inputs);
+            $(new Document).ready(function(){
+                $("#cadastraMesa").click(function(){
+                    criaMesa();
+                });
+            });
 
-    // Arruma position 
-    for(let i = 0; i < parseInt(quantidade); i++){
-        if(i == 0 || i == 1){
-            $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
-            $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
-            $("#conteudo").css({"height": 35 + aumDiv + "%"});
+            $(new Document).ready(function(){
+                $("#bVoltar").click(function(){
+                    location.reload(true);
+                });
+            });
+        },
+        error: function(condicao){
+            console.log("Nao foi possivel listar as mesa");
         }
-        else if(i >= 2 && i <= 4){
-            $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
-            $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
-            $("#conteudo").css({"height": 35 + aumDiv + "%"});
-            $("#conteudo").css({"padding-bottom":"30px"});
-        }
-        else if(i >= 5){
-            $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
-            $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
-            $("#conteudo").css({"height": 35 + aumDiv + "%"});
-            $("#conteudo").css({"padding-bottom":"70px"});
-        }
-        aumPosit = aumPosit + 50;
-        aumDiv = aumDiv + 5;
-    }
-
-    $(new Document).ready(function(){
-        $("#cadastraMesa").click(function(){
-            criaMesa();
-        });
-    });
-
-    $(new Document).ready(function(){
-        $("#bVoltar").click(function(){
-            location.reload(true);
-        });
     });
 }
 
