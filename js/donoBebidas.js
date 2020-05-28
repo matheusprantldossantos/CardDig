@@ -591,7 +591,7 @@ function fListarCategoria(){
                         $("#container").removeClass("styleContAfter").addClass("styleCont");
                         setTimeout(function() {
                             location.reload(true);
-                        }, 350);
+                        }, 300);
                     });
 
                     $("#bCancelar").click(function(){
@@ -599,7 +599,7 @@ function fListarCategoria(){
                         $("#container").removeClass("styleContAfter").addClass("styleCont");
                         setTimeout(function() {
                             location.reload(true);
-                        }, 350);
+                        }, 300);
                     });
                 });
             });

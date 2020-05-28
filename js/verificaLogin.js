@@ -59,6 +59,8 @@ function confirma(){
             if(usuario == "" || senha == ""){
                 $mensagem = "<div id='mensagens'> Campos não preenchidos </div>";
                 $("#mensgErro").html($mensagem);
+                $("#mensagens").css({"width":"13%"});
+
                 return 0;
             }
             var verificador = true;
@@ -71,6 +73,8 @@ function confirma(){
                 $("#iEmail").addClass("ErroEmail");
                 $mensagem = "<div id='mensagens'> Campo preenchido incorretamente </div>";
                 $("#mensgErro").html($mensagem);
+                $("#mensagens").css({"width":"16%"});
+
                 return 0;
             }
             for(var i = 0; i < info.length; i++){

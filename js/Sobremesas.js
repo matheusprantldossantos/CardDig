@@ -394,40 +394,268 @@ function fListaSobremesas(){
             // Botões Adicionar
             $(new Document).ready(function(){
                 $("#bAdicionarOne0").click(function(){
-                    criaPedido("0", "One");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("0", "One");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
                 });
+
                 $("#bAdicionarOne1").click(function(){
-                    criaPedido("1", "One");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("1", "One");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarOne2").click(function(){
-                    criaPedido("2", "One");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("2", "One");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarOne3").click(function(){
-                    criaPedido("3", "One");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("3", "One");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarOne4").click(function(){
-                    criaPedido("4", "One");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("4", "One");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarOne5").click(function(){
-                    criaPedido("5", "One");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("5", "One");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+                
                 $("#bAdicionarTwo0").click(function(){
-                    criaPedido("0", "Two");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("0", "Two");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarTwo1").click(function(){
-                    criaPedido("1", "Two");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("1", "Two");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarTwo2").click(function(){
-                    criaPedido("2", "Two");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("2", "Two");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarTwo3").click(function(){
-                    criaPedido("3", "Two");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("3", "Two");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarTwo4").click(function(){
-                    criaPedido("4", "Two");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("4", "Two");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
+
                 $("#bAdicionarTwo5").click(function(){
-                    criaPedido("5", "Two");
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido("5", "Two");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
                 });
             });
             

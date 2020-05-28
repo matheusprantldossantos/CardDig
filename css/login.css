@@ -29,7 +29,8 @@ body{
     font-size: 35px;
     color: #b8b8bb;
 }
-.ErroEmail[type = text]{
+
+.ErroEmail{
     border: solid 1px red;
 }
 

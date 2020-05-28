@@ -816,4 +816,89 @@ body{
     background-color: #2f3341; 
 }
 
+/* Blur da tela */
 
+.styleCont{
+    filter: blur(0px);
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+}
+
+.styleContAfter{
+    filter: blur(20px);
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+}
+
+/* Janela de confirmação */
+
+.styConfirmar{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 22%;
+    background-color: #1d1e25;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.styConfirmarAfter{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 22%;
+    background-color: #1d1e25;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#divPergunta{
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    transform: translateX(-47%);
+    font-size: 20px;
+    color: #e2e2e2;
+}
+
+#bConfirmar{
+    position: absolute;
+    top: 60%;
+    left: 36%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 17%;
+    border: none;
+    border-radius: 3px;
+    color: #1f1f1f;
+    background-color: #ca862e;
+    cursor: pointer;
+    outline: none;
+}
+
+#bCancelar{
+    position: absolute;
+    top: 60%;
+    left: 64%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 17%;
+    border: none;
+    border-radius: 3px;
+    color: #1f1f1f;
+    background-color: #b4b4b4;
+    cursor: pointer;
+    outline: none;
+}
