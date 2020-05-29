@@ -29,7 +29,7 @@ function criaComandas(){
         url: "../php/pegaMesas.php",
         success : function(condicao){
             console.log("listou as mesas");
-            inputs += "<select id='nomeMesa' name='funcoes'>";
+            inputs += "<select class='mesas' id='nomeMesa' name='funcoes'>";
             condicao.forEach(element => {
                 inputs += "<option value='" + element + "'>" + element +"</option>"
             });

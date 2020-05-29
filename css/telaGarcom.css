@@ -156,6 +156,17 @@ input[type=number] {
     transform: translateX(-50%);
 }
 
+.mesas{
+    width: 70%;
+    height: 38px;
+    padding: 5px 10px 5px 10px;
+    outline: none;
+    background-color: #464958;
+    border: none;
+    border-radius: 3px;
+    color: #c4c4c4;
+}
+
 #nomeMesa{
     position: absolute;
     top: 70px;
