@@ -27,8 +27,12 @@
     $sqlPedidos = "SELECT comanda, valor_total  FROM pedido";
     $result = mysqli_query($conn, $sqlPedidos);
     $cont = 0;
+    $contW = 0;
+    $antecessor = $contW;
     if (mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
+        $nomeLista = [];
+        $idProdutoLista = [];
         $informacao[$cont]["comanda"] = $row["comanda"];
         $informacao[$cont]["valor_total"] = $row["valor_total"];
         $comandaAtual = $row["comanda"];
@@ -46,6 +50,8 @@
         }
         $cont++;
         }
+        $antecessor = $contW;
+        $contW++;
     }
     else {
         echo "Erro executando SELECT: " . mysqli_error($conn);
@@ -78,13 +84,12 @@
         }
     }
     //Precisa verificar se mudou a comanda
-    $listaPrecosFinal = array();
+    $cont = 0;
     for($i = 0; $i < count($especicacaoProdId); $i++){
         for($j = 0; $j < count($informacao); $j++){
             for($k = 0; $k < count($informacao[$j]["infos"]["idProduto"]); $k++){
                 if($especicacaoProdId[$i] == $informacao[$j]["infos"]["idProduto"][$k]){
-                        array_push($listaPrecosFinal, $especicacaoProdPreco[$i]);
-                        $informacao[$j]["infos"]["precos"] = $listaPrecosFinal;
+                        $informacao[$j]["infos"]["precos"][$k] = $especicacaoProdPreco[$i];
                         $idAtual =  $especicacaoProdId[$i];
                         $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idAtual'";
                         $resultItemProduto = mysqli_query($conn, $sqlItemProduto);
