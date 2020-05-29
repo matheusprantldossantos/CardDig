@@ -22,7 +22,8 @@
         mysqli_query($conn,'SET character_set_results=utf8');
 
     //select
-
+    $nomeLista = [];
+    $idProdutoLista = [];
     $sqlPedidos = "SELECT comanda, valor_total  FROM pedido";
     $result = mysqli_query($conn, $sqlPedidos);
     $cont = 0;
@@ -30,22 +31,24 @@
         while($row = mysqli_fetch_assoc($result)){
         $informacao[$cont]["comanda"] = $row["comanda"];
         $informacao[$cont]["valor_total"] = $row["valor_total"];
+        $comandaAtual = $row["comanda"];
+        $sqlItemPedido = "SELECT nome_produto, produto_idproduto  FROM item_produto WHERE pedido_comanda = '$comandaAtual'";
+        $resultItemPedido = mysqli_query($conn, $sqlItemPedido);
+        if(mysqli_num_rows($resultItemPedido) > 0){
+            while($row = mysqli_fetch_assoc($resultItemPedido)){
+                array_push($nomeLista ,$row["nome_produto"]);
+                array_push($idProdutoLista ,$row["produto_idproduto"]);
+                $informacao[$cont]["infos"] = array(
+                    "nome" => $nomeLista,
+                    "idProduto" => $idProdutoLista
+                );
+            }
+        }
         $cont++;
         }
     }
     else {
         echo "Erro executando SELECT: " . mysqli_error($conn);
-    }
-    $comandaAtual = $informacao[count($informacao) - 1]["comanda"];
-    $sqlItemPedido = "SELECT nome_produto, produto_idproduto  FROM item_produto WHERE pedido_comanda = '$comandaAtual'";
-    $resultItemPedido = mysqli_query($conn, $sqlItemPedido);
-    $c = $cont;
-    if(mysqli_num_rows($resultItemPedido) > 0){
-        while($row = mysqli_fetch_assoc($resultItemPedido)){
-            $informacao[$c]["nomeProd"] = $row["nome_produto"];
-            $informacao[$c]["idItemProd"] = $row["produto_idproduto"];
-            $c++;
-        }
     }
     $sqlPrecoProd = "SELECT preco, idproduto FROM produto";
     $resultProduto = mysqli_query($conn, $sqlPrecoProd);
@@ -58,31 +61,8 @@
         }
     }
     
-    $informacaoCopia = [];
-    $listaDados = [];
-    $comandasProds = [];
-    $contador = -1;
-    $pula = 1;
-    foreach($informacao as $lista){
-        $contador++;
-        foreach($lista as $valores){
-            if($contador <= 1){
-                $contador++;
-            }
-            else if($pula % 2 == 0){
-                array_push($comandasProds, $valores);
-                $informacaoCopia["valores"] = $comandasProds;
-                $pula++;
-            }
-            else{
-                $pula++;
-            }
-        }
-    }
-
     $especicacaoProdId = [];
     $especicacaoProdPreco = [];
-    $produtoCopia = [];
     $somador = 0;
 
     foreach($produtos as $gerais){
@@ -97,32 +77,25 @@
         }
         }
     }
-    $posicao = 2;
-    $retorno = 0;
-    $produtoCopia["id"] = $especicacaoProdId;
-    $produtoCopia["Preco"] = $especicacaoProdPreco;
-    for($i = 0; $i < count($informacaoCopia["valores"]); $i++){
-        for($j = 0; $j < count($produtoCopia["id"]); $j++){
-            if($retorno > 10){
-                $a = "continua";
-            }
-            else if($produtoCopia["id"][$j] == $informacaoCopia["valores"][$i]){
-                $idproduto = $produtoCopia["id"][$j];
-                $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idproduto'";
-                $resultItemProduto = mysqli_query($conn, $sqlItemProduto);
-                $verificaQnt = mysqli_fetch_assoc($resultItemProduto);
-                $quantidadeAtual = $verificaQnt['quantidade'];
-                $quantidadeAtual = intval($quantidadeAtual);
-                $informacao[$posicao]["valorProduto"] = $produtoCopia["Preco"][$j];
-                $informacao[$posicao]["subTotal"] = ($produtoCopia["Preco"][$j] * $quantidadeAtual);
-                $informacao[$posicao]["quantidade"] = $quantidadeAtual; 
-                $retorno++;
-                $posicao++;
+    $listaPrecosFinal = array();
+    for($i = 0; $i < count($especicacaoProdId); $i++){
+        for($j = 0; $j < count($informacao); $j++){
+            for($k = 0; $k < count($informacao[$j]["infos"]["idProduto"]); $k++){
+                if($especicacaoProdId[$i] == $informacao[$j]["infos"]["idProduto"][$k]){
+                        array_push($listaPrecosFinal, $especicacaoProdPreco[$i]);
+                        $informacao[$j]["infos"]["precos"] = $listaPrecosFinal;
+                        $idAtual =  $especicacaoProdId[$i];
+                        $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idAtual'";
+                        $resultItemProduto = mysqli_query($conn, $sqlItemProduto);
+                        $verificaQnt = mysqli_fetch_assoc($resultItemProduto);
+                        $quantidadeAtual = $verificaQnt['quantidade'];
+                        $quantidadeAtual = intval($quantidadeAtual);
+                        $informacao[$j]["infos"]["subTotal"][$k] = ($especicacaoProdPreco[$i] * $quantidadeAtual);
+                        $informacao[$j]["infos"]["quantidade"][$k] = $quantidadeAtual;
+                }
             }
         }
     }
-    $qualquer = array_count_values(array_column($informacao, "comanda"));
-    $informacao[0]["qntComanda"] = count($qualquer);
     mysqli_close($conn);
     echo json_encode($informacao);
 

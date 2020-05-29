@@ -668,14 +668,16 @@ function fListaPizzas(){
     }); // ajax
 } // fLista
 function criaPedido(position, location){
+    let quantidadeAtual = $("div#number"+location+position).text();
+    let nomeAtual = $("div#nome"+location+position).text();
 $.ajax({
     type: "POST",
     dataType: "json",
     url: "../php/criaPedidos.php",
     data:
     {  
-        ajax_name : $("div#nome"+location+position).text(),
-        ajax_quantidade : $("div#number"+location+position).text()
+        ajax_quantidade : quantidadeAtual,
+        ajax_name : nomeAtual
     },
     success : function(info){
         console.log("olá mundo");

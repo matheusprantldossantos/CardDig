@@ -3,7 +3,7 @@
     $quantidadeProd = $_POST["ajax_quantidade"];
     $quantidadeProd = intval($quantidadeProd);
     if($quantidadeProd == 0){
-        $quantidadeProd = $quantidadeProd + 1;
+        $quantidadeProd = 1;
     }
     //valores do BD
     $servername = "localhost: 3306";
@@ -71,8 +71,8 @@
             $verdade = "false2";
         }
         //Mudar insercao aqui tbm\\
-        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)
-        VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa')";
+        $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa, quantidade)
+        VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa', '$quantidadeProd')";
         if($resultItemProduto =  mysqli_query($conn, $sqlItemProduto)){
             $verdade = "Ids adiconados no item de produto";
         }
@@ -84,6 +84,7 @@
         while($row = mysqli_fetch_assoc($result)){
             $ultimaComanda = intval($row["comanda"]);
         }
+        //Com apenas um pedido
         if($ultimaComanda == $comanda){
 
         $sqlPedido = "SELECT valor_total FROM pedido WHERE comanda = '$comanda'";
@@ -120,24 +121,27 @@
             }
         }
         if($resultItemProduto = mysqli_query($conn, $sqlItemProduto)){
-            $verificaId = mysqli_fetch_assoc($resultItemProduto);
-            $idAtual = $verificaId['produto_idproduto'];
-            if($idAtual == $idproduto){
+            $flag = false;
+            while($verificaId = mysqli_fetch_assoc($resultItemProduto)){
+                $idAtual = $verificaId['produto_idproduto'];
+                if($idAtual == $idproduto){
+                $flag = true;
                 $verdade = "id já existe";
                 $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idproduto'";
                 $resultItemProduto = mysqli_query($conn, $sqlItemProduto);
                 $verificaQnt = mysqli_fetch_assoc($resultItemProduto);
                 $quantidadeAtual = $verificaQnt['quantidade'];
                 $quantidadeAtual = intval($quantidadeAtual);
-                $quantidadeAtual++;
+                $quantidadeAtual += $quantidadeProd;
                 $sqlItemProduto = "UPDATE item_produto SET quantidade = '$quantidadeAtual' WHERE produto_idproduto = '$idproduto'";
                if($resultItemProduto = mysqli_query($conn, $sqlItemProduto)){
                     $verdade = "quantidade alterada";
-               }
+                    }
+                }
             }
-            else{
-            $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa)
-            VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa')";
+            if($flag == false){
+            $sqlItemProduto = "INSERT INTO item_produto (pedido_comanda, produto_idproduto, nome_produto, indexMesa, quantidade)
+            VALUES ('$comanda', '$idproduto', '$nomeProd', '$idmesa', '$quantidadeProd')";
             if($resultItemProduto = mysqli_query($conn, $sqlItemProduto)){
                 $verdade = "novo id cadastrado";
                 }
@@ -145,6 +149,7 @@
         }
     }
     else{
+        //mais de um pedido;
         $verdade2 = "sem nada";
         $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa) VALUES ('$comanda', '$precoPrimeio','$idmesa')";
         if($result = mysqli_query($conn, $sqlPedido)){
