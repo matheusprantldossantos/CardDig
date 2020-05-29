@@ -33,12 +33,17 @@
             }
         }
     }
+    
     $position = 0;
     $location = 0;
     $listaNomes = [];
     $listaQuantidades = [];
     $anterior = $position;
     $verdade = "";
+    $listaNomesMesa = array();
+    foreach($mesa as $itensMesas){
+        array_push($listaNomesMesa, $itensMesas["nome"]);
+    }
     
     foreach($mesa as $coisas){
         $idDasMesas = $coisas["id"];
@@ -50,7 +55,7 @@
                         array_push($listaNomes, $row["nome_produto"]);
                         array_push($listaQuantidades, $row["quantidade"]);
                         $itens[$location] = array(
-                            "nomeMesa" => $coisas["nome"],
+                            "nomeMesa" => $listaNomesMesa[$location],
                             "comanda" => $row["pedido_comanda"],
                             "infos" => array(
                                 "nome" => $listaNomes,
@@ -65,6 +70,7 @@
                             $itens[$location]["infos"]["nome"] = $listaNomes;
                             $itens[$location]["infos"]["quantidade"] = $listaQuantidades;
                     }
+                    // mudou de comanda
                     else{
                         $location++;
                         $position = 0;
@@ -73,7 +79,7 @@
                         array_push($listaNomes, $row["nome_produto"]);
                         array_push($listaQuantidades, $row["quantidade"]);
                         $itens[$location] = array(
-                            "nomeMesa" => $coisas["nome"],
+                            "nomeMesa" => $listaNomesMesa[$location],
                             "comanda" => $row["pedido_comanda"],
                             "infos" => array(
                                 "nome" => $listaNomes,
@@ -113,7 +119,6 @@
             }
         }
     }
-    
     mysqli_close($conn);
     echo json_encode($itens);
 ?>

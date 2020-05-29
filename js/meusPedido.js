@@ -242,16 +242,18 @@ function listaPedidos() {
             conteudo += "<div class='subtitles' id='titleQuant'>" + "Quantidade" + "</div>";
             conteudo += "<div class='subtitles' id='titleSub'>" + "SubTotal" + "</div>";
             conteudo += "<div class='subtitles' id='titleExc'>" + "Excluir" + "</div>";
-            
-            for(let j = 0; j < info[info.length - 1].infos.nome.length; j++){
-                conteudo += "<div class='prodElem' id='nameProd" + j +"'>" + info[info.length - 1].infos.nome[j] +"</div>";
-                conteudo += "<div class='prodElem' id='procUnit" + j +"'>" + info[info.length - 1].infos.precos[j] + " R$" + "</div>";
-                conteudo += "<button class='bContador' id='bDiminuir" + j +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
-                conteudo += "<div id='number" + j +"'>" + info[info.length - 1].infos.quantidade[j] + "</div>";
-                conteudo += "<button class='bContador' id='bAumentar" + j +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
-                conteudo += "<div class='prodElem' id='precSub" + j +"'>" + info[info.length - 1].infos.subTotal[j] + "</div>";
-                conteudo += "<div class='iconsLixeira' id='iconLix" + j +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
-                conteudo += "<div id='linhaPed" + j +"'>" + "</div>";
+            //Deia o for ser animal
+            for(let i = 0; i < 1; i++){
+                for(let j = 0; j < info[info.length - 1].infos.nome.length; j++){
+                    conteudo += "<div class='prodElem' id='nameProd" + j +"'>" + info[info.length - 1].infos.nome[j] +"</div>";
+                    conteudo += "<div class='prodElem' id='procUnit" + j +"'>" + info[info.length - 1].infos.precos[j] + " R$" + "</div>";
+                    conteudo += "<button class='bContador' id='bDiminuir" + j +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
+                    conteudo += "<div id='number" + j +"'>" + info[info.length - 1].infos.quantidade[j] + "</div>";
+                    conteudo += "<button class='bContador' id='bAumentar" + j +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
+                    conteudo += "<div class='prodElem' id='precSub" + j +"'>" + info[info.length - 1].infos.subTotal[j] + "</div>";
+                    conteudo += "<div class='iconsLixeira' id='iconLix" + j +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
+                    conteudo += "<div id='linhaPed" + j +"'>" + "</div>";
+                }
             }
     
             $("#divPedidos").html(conteudo);

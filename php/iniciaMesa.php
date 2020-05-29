@@ -36,6 +36,10 @@
         if($result = mysqli_query($conn, $sql)){
             $verdade = "funfou";
         }
+        $sqlMesa = "UPDATE mesa SET andamento = 1 WHERE idmesa = $idMesaAtual";
+        if($resultMesa = mysqli_query($conn, $sqlMesa)){
+            $verdade = "funfou 2";
+        }
         }
     }
    

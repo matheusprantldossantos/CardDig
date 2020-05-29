@@ -249,7 +249,7 @@ function listaMesas(){
                 });
 
             });
-/*
+
             $(new Document).ready(() => {
                 var a = 0;
                 $("#mesaDiv1").click(()=>{
@@ -531,8 +531,6 @@ function listaMesas(){
                     $("#comd9").html(conteudo);
                     $("#comd9").toggleClass("comandaAfter");
                 });
-            });
-*/
         },
         error : ()=>{
             console.log("Nao foi possivel listar");

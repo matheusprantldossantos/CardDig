@@ -77,6 +77,7 @@
         }
         }
     }
+    //Precisa verificar se mudou a comanda
     $listaPrecosFinal = array();
     for($i = 0; $i < count($especicacaoProdId); $i++){
         for($j = 0; $j < count($informacao); $j++){
