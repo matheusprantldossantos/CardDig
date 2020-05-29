@@ -1,4 +1,5 @@
 $(new Document).ready(function(){
+    pegaNome();
     $("#categ1").click(function(){
         window.location.href = "../pages/donoCombinações.html";
     });
@@ -39,6 +40,26 @@ function tornaInativo(){
         },
         success : function(condicao){
             console.log(condicao);
+        },
+        error: function(condicao){
+            console.log(condicao);
+        }
+    });
+}
+function pegaNome(){
+    const func = "dono";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/comprimenta.php",
+        data: {
+            ajax_func : func
+        },
+        success : function(condicao){
+            console.log(condicao);
+            let nome = condicao;
+            nome = nome.split(" ");
+            $("#nome").html("Seja bem vinda "+nome[0]+"!");
         },
         error: function(condicao){
             console.log(condicao);
