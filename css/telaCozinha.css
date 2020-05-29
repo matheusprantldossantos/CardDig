@@ -12,6 +12,16 @@ body{
     src: url(../fontes/BebasNeue-Regular.otf);
 }
 
+@font-face{
+    font-family: blank;
+    src: url(../fontes/blank-Regular.otf);
+}
+
+@font-face{
+    font-family: jaguar;
+    src: url(../fontes/JAGUAR.ttf);
+}
+
 #menu{
     position: absolute;
     top: 0%;
@@ -22,6 +32,16 @@ body{
     box-shadow: 0px 0px 5px 3px #5f5f5fb2;
 }
 
+#titlePag{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #e0e0e0;
+    font-family: Bebas neue;
+    font-size: 30px;
+}
+
 #logout{
     position: relative;
     top: 50%;
@@ -30,10 +50,13 @@ body{
     background: transparent;
     border: none;
     color: #e0e0e0;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
     outline: none;
 }
+
+/* Mesas  (div preta) */
 
 .mesas{
     background-color: #1f1f1f;
@@ -55,6 +78,18 @@ body{
     font-weight: bold;
 }
 
+/* Seta da div (Animação) */
+
+.iconGira{
+    transform: rotate(0deg);
+    transition: .2s;
+}
+
+.iconGiraAfter{
+    transform: rotate(-90deg);
+    transition: .2s;
+}
+
 #iconSeta{
     position: relative;
     top: 50%;
@@ -65,33 +100,16 @@ body{
     transition: .2s;
 }
 
-.fas fa-caret-left{
-    position: relative;
-    top: 50%;
-    left: 0%;
-    transform: translate(-50%,-50%);
-    margin-left: 55%;
-    display: inline;
-    transition: .2s;
-}
 
-.iconGira{
-    transform: rotate(-90deg);
-    transition: .2s;
-}
-
-/* Comanda (Efeito) */
-
-#comd0{
-    position: absolute;
-    top: 20%;
-    left: 5%;
-}
+/* Comanda ( div branca - Efeito) */
 
 .comanda0{
+    position: absolute;
+    top: 25%;
+    left: 5%;
     width: 20%;
     height: 0%;
-    background-color: #d3d2d2;
+    background-color: #c7c5c5;
     border-radius: 5px;
     transition: 0.4s;
     opacity: 0;
@@ -99,9 +117,36 @@ body{
 }
 
 .comandaAfter0{
+    position: absolute;
+    top: 25%;
+    left: 5%;
     width: 20%;
-    height: 30%;
-    background-color: #d3d2d2;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.comanda1{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 20%;
+    height: 0%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.comandaAfter1{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 20%;
+    background-color: #c7c5c5;
     border-radius: 5px;
     transition: 0.4s;
     opacity: 1;
@@ -207,4 +252,25 @@ body{
     cursor: pointer;
     outline: none;
     margin-top: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+
+#bFinalizar1{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 30px;
+    border: none;
+    background-color: #ff4655;
+    color: #e0e0e0;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-top: 0%;
+    opacity: 1;
+    visibility: visible;
 }
