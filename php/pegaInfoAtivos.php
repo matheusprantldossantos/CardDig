@@ -47,7 +47,7 @@
     
     foreach($mesa as $coisas){
         $idDasMesas = $coisas["id"];
-        $sqlItemPedido = "SELECT pedido_comanda, nome_produto, quantidade FROM item_produto WHERE indexMesa = '$idDasMesas'";
+        $sqlItemPedido = "SELECT pedido_comanda, nome_produto, quantidade FROM item_produto WHERE indexMesa = '$idDasMesas' and andamento = '1'";
         if($resultItem = mysqli_query($conn, $sqlItemPedido)){
             if(mysqli_num_rows($resultItem) > 0){
                 while($row = mysqli_fetch_assoc($resultItem)){

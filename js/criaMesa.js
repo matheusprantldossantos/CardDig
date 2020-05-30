@@ -1,5 +1,5 @@
 $(new Document).ready(function(){
-
+    pegaNome();
     $("#confQnt").click(function(){
         $("#cadastro").css({"visibility":"hidden"});
         criaComandas();
@@ -136,6 +136,26 @@ function tornaInativo(){
         },
         success : function(condicao){
             console.log(condicao);
+        },
+        error: function(condicao){
+            console.log(condicao);
+        }
+    });
+}
+function pegaNome(){
+    const func = "garcom";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/comprimenta.php",
+        data: {
+            ajax_func : func
+        },
+        success : function(condicao){
+            console.log(condicao);
+            let nome = condicao;
+            nome = nome.split(" ");
+            $("#nome").html("Seja bem vinda(o) "+nome[0]+"!");
         },
         error: function(condicao){
             console.log(condicao);
