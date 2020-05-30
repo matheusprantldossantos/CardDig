@@ -1,4 +1,7 @@
 $(new Document).ready(function(){
+    $("#titlePag").removeClass("bTitle").addClass("bTitleAfter");
+    $("#titlePag2").removeClass("bTitleAfter").addClass("bTitle");
+    
     pegaNome();
     $("#confQnt").click(function(){
         $("#cadastro").css({"visibility":"hidden"});
@@ -9,6 +12,10 @@ $(new Document).ready(function(){
     $("#logout").click(() =>{
          tornaInativo();
          window.location.href = "../pages/login.html";
+    });
+
+    $("#titlePag2").click(function(){
+        window.location.href = "../pages/mesasEnviar.html";
     });
 
 });
@@ -142,6 +149,7 @@ function tornaInativo(){
         }
     });
 }
+
 function pegaNome(){
     const func = "garcom";
     $.ajax({
@@ -155,7 +163,7 @@ function pegaNome(){
             console.log(condicao);
             let nome = condicao;
             nome = nome.split(" ");
-            $("#nome").html("Seja bem vinda(o) "+nome[0]+"!");
+            $("#nome").html(nome[0].toUpperCase());
         },
         error: function(condicao){
             console.log(condicao);

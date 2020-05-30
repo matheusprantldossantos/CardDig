@@ -15,7 +15,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 25%;
-    height: 50%;
+    height: 55%;
     background: #363844;
     border-radius: 2px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -32,7 +32,7 @@ body{
 
 input[type = text],[type = password]{
     width: 70%;
-    height: 10%;
+    height: 9%;
     border: solid 1px #b8b8bb;
     border-radius: 3px;
     background-color: transparent;
@@ -53,34 +53,41 @@ input[type = text]:focus,[type = password]:focus{
     color: #c4c4c4;
 }
 
+#nome{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #email{
     position: absolute;
-    top: 22%;
+    top: 32%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #senha{
     position: absolute;
-    top: 36%;
+    top: 44%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #confSenha{
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #funcoes{
     position: absolute;
-    top: 64%;
+    top: 68%;
     left: 50%;
     transform: translateX(-50%);
     width: 70%;
-    height: 10%;
+    height: 9%;
     border: none;
     background-color: #464958;
     outline: none;
@@ -90,12 +97,12 @@ input[type = text]:focus,[type = password]:focus{
     font-weight: bold;
 }
 
-input[type = submit]{
+#bConfirmar{
     position: absolute;
-    top: 80%;
-    left: 50%;
+    top: 84%;
+    left: 32%;
     transform: translateX(-50%);
-    width: 25%;
+    width: 34%;
     height: 8%;
     border-radius: 3px;
     border: solid 1px #d858a7;
@@ -106,7 +113,59 @@ input[type = submit]{
     transition: 0.2s; 
 }
 
-input[type = submit]:hover{
+#bConfirmar:hover{
     border: solid 1px #c44493;
     background-color: #c44493;
+}
+
+#bVoltar{
+    position: absolute;
+    top: 84%;
+    left: 68%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 8%;
+    border-radius: 2px;
+    color: #262935;
+    border: solid 1px #c9c8c8;
+    background-color: #c9c8c8;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none; 
+}
+
+
+#bVoltar:hover{
+    border: solid 1px #adadad;
+    background-color: #adadad;
+}
+
+a{
+    color: #262935;
+    text-decoration: none;
+    background: transparent;
+}
+
+#msg{
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3db95a;
+    border-radius: 3px;
+    color: #363844;
+    text-align: center;
+    padding: 0.3% 0.5%;
+}
+
+#msgErro{
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d14141;
+    border-radius: 3px;
+    color: #b6b6b6;
+    text-align: center;
+    padding: 0.3% 0.5%;
 }

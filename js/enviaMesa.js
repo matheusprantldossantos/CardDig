@@ -1,5 +1,12 @@
 $(new Document).ready(function(){
+    $("#titlePag").removeClass("bTitleAfter").addClass("bTitle");
+    $("#titlePag2").removeClass("bTitle").addClass("bTitleAfter");
+    pegaNome();
     listaMesasEnvio();
+
+    $("#titlePag").click(function(){
+        window.location.href = "../pages/telaGarcom.html";
+    });
 });
 function listaMesasEnvio(){
     $.ajax({
@@ -165,6 +172,7 @@ function listaMesasEnvio(){
         }
     });
 }
+
 function alteraTermino(position){
     let nomeMesa = $("div#andamento"+position).text(); 
     $.ajax({
@@ -179,6 +187,27 @@ function alteraTermino(position){
         },
         error : ()=>{
             console.log("Não foi possível alterar a mesa")
+        }
+    });
+}
+
+function pegaNome(){
+    const func = "garcom";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/comprimenta.php",
+        data: {
+            ajax_func : func
+        },
+        success : function(condicao){
+            console.log(condicao);
+            let nome = condicao;
+            nome = nome.split(" ");
+            $("#nome").html(nome[0].toUpperCase());
+        },
+        error: function(condicao){
+            console.log(condicao);
         }
     });
 }

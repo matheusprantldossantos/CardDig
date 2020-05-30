@@ -92,7 +92,7 @@ input[type = text]:focus,[type = password]:focus{
     background-color: #c44493;
 }
 
-#bCancelar{
+#bCadastrar{
     position: absolute;
     top: 75%;
     left: 68%;
@@ -100,7 +100,7 @@ input[type = text]:focus,[type = password]:focus{
     width: 34%;
     height: 12%;
     border-radius: 2px;
-    color: #6d6d6d;
+    color: #5c5c5c;
     border: solid 1px #c9c8c8;
     background-color: #c9c8c8;
     cursor: pointer;
@@ -108,7 +108,7 @@ input[type = text]:focus,[type = password]:focus{
     outline: none; 
 }
 
-#bCancelar:hover{
+#bCadastrar:hover{
     border: solid 1px #adadad;
     background-color: #adadad;
 }

@@ -126,10 +126,10 @@ input[type=number] {
     transform: translateX(-50%);
     width: 15%;
     height: 3%;
-    background-color: #527c5b;
-    border: solid 1px #527c5b;
+    background-color: #3db95a;
+    border: solid 1px #3db95a;
     border-radius: 5px;
-    color: rgb(63, 63, 63);
+    color: #363844;
     text-align: center;
     padding-top: 0.3%;
 }
@@ -144,7 +144,7 @@ input[type=number] {
     background-color: #da372c;
     border: solid 1px #da372c;
     border-radius: 5px;
-    color: #8b8b8b;
+    color: #b6b6b6;
     text-align: center;
     padding-top: 0.3%;
 }

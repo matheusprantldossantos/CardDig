@@ -1,8 +1,12 @@
 $(new Document).ready(function(){
     $("#bEntrar").click(function(){
         confirma();
-
     });
+
+    $("#bCadastrar").click(function(){
+        window.location.href = "../pages/casdastraFuncionario.php";
+    });
+
 });
 function updateAtividade(id, func){
     var idFunc = id;
