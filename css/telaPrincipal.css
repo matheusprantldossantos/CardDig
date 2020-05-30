@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #262935;
+    background-color: #1d1f29;
 }
 
 @font-face{
@@ -12,179 +12,128 @@ body{
     src: url(../fontes/JAGUAR.ttf);
 }
 
-#barraMenu{
-    position: relative;
+@font-face{
+    font-family: bebas neue;
+    src: url(../fontes/BebasNeue-Regular.otf);
+}
+
+.divsBack{
+    width: 100%;
+    height: 60%;
+    margin-top: 0%;
+}
+
+#divIntro{
+    position: absolute;
     top: 0%;
     left: 0%;
+    display: block;
     width: 100%;
-    height: 10%;
-    background-color: #16171b;
-    color: #b3b3b3;
+    height: 80%;
+    background-image: url(../imagens/something.png);
+    opacity: 0.1;
 }
 
-
-
-#logoCard{
+#divProm{
     position: absolute;
-    top: 50%;
+    top: 80%;
+    left: 0%;
+    border-bottom: solid 5px #fc6abf;
+}
+
+#divCategorias{
+    position: absolute;
+    top: 140%;
+    left: 0%;
+    border: none;
+}
+
+#textCateg{
+    position: absolute;
+    top: 0%;
     left: 50%;
-    transform:translate(-50%,-50%);
-    width: 12%;
-    height: 90%;
-}
-
-#facebook{
-    position: absolute;
-    top: 50%;
-    left: 83%;
-    transform: translateY(-50%);
-}
-
-#instagram{
-    position: absolute;
-    top: 50%;
-    left: 84.5%;
-    transform: translateY(-50%);
-}
-
-#nomeRedes{
-    position: absolute;
-    top: 50%;
-    left: 85.7%;
-    transform: translateY(-50%);
-    font-family: monospace;
-    font-weight: bold;
-}
-
-.titles{
+    transform: translateX(-50%);
+    background-color: #fc6abf;
+    color: #e0e0e0;
+    width: 10%;
+    height: 9%;
+    font-family: bebas neue;
     font-size: 25px;
-    color: #b3b3b3;
-    width: 80%;
-    font-family: Jaguar;
-    border-bottom:solid 1px #f878c3;
-    padding: 0 0 5px 0;
+    text-align: center;
+    padding-top: 1%;
 }
 
-#titleProm{
+.categ{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+#imagem1{
     position: absolute;
-    top: 22%;
-    left: 10%;
-}
-
-.promo{
-    background-color: #d6d6d6;
-    width: 24%;
-    height: 22%;
-    border: none;
-    border-radius: 4px;
-    opacity: 75%;
-}
-
-.promo img{
-    width: 100%;
-    height: 100%;
-}
-
-#prom1{
-    position: absolute;
-    top: 32%;
+    top: 35%;
     left: 25%;
     transform: translateX(-50%);
+    border: solid 3px #e0e0e0;
+    width: 18%;
+    height: 60%;
+    border-radius: 10px;
 }
 
-#prom2{
+#imagem2{
     position: absolute;
-    top: 32%;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
+    border: solid 3px #e0e0e0;
+    width: 18%;
+    height: 60%;
+    border-radius: 10px;
 }
 
-#prom3{
+#imagem3{
     position: absolute;
-    top: 32%;
+    top: 35%;
     left: 75%;
     transform: translateX(-50%);
+    border: solid 3px #e0e0e0;
+    width: 18%;
+    height: 60%;
+    border-radius: 10px;
 }
 
-#titleAlm{
+#imagem4{
     position: absolute;
-    top: 75%;
-    left: 10%;
-}
-
-#montarPedido{
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 30%;
-    background: transparent;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    outline: none;
-}
-
-#titleCateg{
-    position: absolute;
-    top: 130%;
-    left: 10%;
-}
-
-.bCateg{
-    background-color: #1d2029;
-    width: 24%;
-    height: 28%;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: .4s;
-    opacity: 75%;
-}
-
-
-#bCombina{
-    position: absolute;
-    top: 140%;
+    top: 105%;
     left: 25%;
     transform: translateX(-50%);
-}
-
-#bLanches{
-    position: absolute;
-    top: 140%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#bPizzas{
-    position: absolute;
-    top: 140%;
-    left: 75%;
-    transform: translateX(-50%);
-}
-
-#bHamb{
-    position: absolute;
-    top: 170%;
-    left: 25%;
-    margin-bottom: 5%;
-    transform: translateX(-50%);
-}
-
-#bBebida{
-    position: absolute;
-    top: 170%;
-    left: 50%;
-    transform: translateX(-50%);
+    border: solid 3px #e0e0e0;
+    width: 18%;
+    height: 60%;
+    border-radius: 10px;
     margin-bottom: 5%;
 }
 
-#bSobrem{
+#imagem5{
     position: absolute;
-    top: 170%;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid 3px #e0e0e0;
+    width: 18%;
+    height: 60%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+#imagem6{
+    position: absolute;
+    top: 105%;
     left: 75%;
     transform: translateX(-50%);
+    border: solid 3px #e0e0e0;
+    width: 18%;
+    height: 60%;
+    border-radius: 10px;
     margin-bottom: 5%;
 }
