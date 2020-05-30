@@ -20,7 +20,7 @@
     mysqli_query($conn,'SET character_set_connection=utf8');
     mysqli_query($conn,'SET character_set_client=utf8');
     mysqli_query($conn,'SET character_set_results=utf8');
-    $sqlMesa = "SELECT idmesa, nome FROM mesa WHERE andamento = 1";
+    $sqlMesa = "SELECT idmesa, nome FROM mesa WHERE terminado = '0'";
 
     $cont = 0;
     if($resultMesa = mysqli_query($conn, $sqlMesa)){
@@ -44,12 +44,12 @@
     foreach($mesa as $itensMesas){
         array_push($listaNomesMesa, $itensMesas["nome"]);
     }
-    
     foreach($mesa as $coisas){
         $idDasMesas = $coisas["id"];
         $sqlItemPedido = "SELECT pedido_comanda, nome_produto, quantidade FROM item_produto WHERE indexMesa = '$idDasMesas' and andamento = '1'";
         if($resultItem = mysqli_query($conn, $sqlItemPedido)){
             if(mysqli_num_rows($resultItem) > 0){
+                $verdade = "Achou2";
                 while($row = mysqli_fetch_assoc($resultItem)){
                     if($position == 0){
                         array_push($listaNomes, $row["nome_produto"]);
@@ -92,6 +92,7 @@
             }
         }
     }
+    
     $x = 0;
     for($l = 0; $l < count($itens); $l++){
         if($l == 0){
@@ -119,6 +120,7 @@
             }
         }
     }
+    
     mysqli_close($conn);
     echo json_encode($itens);
 ?>
