@@ -14,7 +14,7 @@
                 <input type="password" name="senha" id="senha" placeholder="Digite sua senha"> <br>
                 <input type="password" name="confSenha" id="confSenha" placeholder="Confirme sua senha"> <br>
                 <select id="funcoes" name="funcoes">
-                    <option class="opt" value="dono">Dono</option>
+                    <option id="tp" class="opt" value="dono">Dono</option>
                     <option class="opt" value="garçom">Garçom</option>
                     <option class="opt" value="cozinha">Cozinha</option>
                 </select>

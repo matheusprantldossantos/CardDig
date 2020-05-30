@@ -174,7 +174,12 @@ function listaMesas(){
                         conteudo += "</div>";
                         $("#divComandas0").html(conteudo);
 
-                        if(contadorComandas == 1){
+                        if(contadorProd <= 3 && contadorComandas == 1){
+                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
+                            $(".comandaAfter0").css({"height":"22%"});
+                            $("#bFinalizar0").css({"margin-top":"0%"});
+                        }
+                        else if(contadorProd == 4 && contadorComandas == 1){
                             $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
                             $(".comandaAfter0").css({"height":"26%"});
                             $("#bFinalizar0").css({"margin-top":"0%"});
@@ -211,10 +216,17 @@ function listaMesas(){
                             $(".comandaAfter0").css({"height":"78%"});
                             $("#bFinalizar0").css({"margin-top":"25%"});
                         }
+                        /* Comanda 4 */
                         else if(contadorComandas == 4){
                             $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
                             $(".comandaAfter0").css({"height":"104%"});
                             $("#bFinalizar0").css({"margin-top":"40%"});
+                        }
+                        /* Comanda 5 */
+                        else if(contadorComandas == 5){
+                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
+                            $(".comandaAfter0").css({"height":"130%"});
+                            $("#bFinalizar0").css({"margin-top":"50%"});
                         }
 
                         var count = 0
@@ -358,11 +370,18 @@ function listaMesas(){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
                             $(".comandaAfter1").css({"height":"78%"});
                             $("#bFinalizar1").css({"margin-top":"25%"});
-                        }
+                        } 
+                        /* Comanda 4 */
                         else if(contadorComandas == 4){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
                             $(".comandaAfter1").css({"height":"104%"});
                             $("#bFinalizar1").css({"margin-top":"40%"});
+                        }
+                        /* Comanda 5 */
+                        else if(contadorComandas == 5){
+                            $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
+                            $(".comandaAfter1").css({"height":"130%"});
+                            $("#bFinalizar1").css({"margin-top":"50%"});
                         }
                         
 
@@ -508,10 +527,17 @@ function listaMesas(){
                             $(".comandaAfter2").css({"height":"78%"});
                             $("#bFinalizar2").css({"margin-top":"25%"});
                         }
+                        /* Comanda 4 */
                         else if(contadorComandas == 4){
                             $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
                             $(".comandaAfter2").css({"height":"104%"});
                             $("#bFinalizar2").css({"margin-top":"40%"});
+                        }
+                        /* Comanda 5 */
+                        else if(contadorComandas == 5){
+                            $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
+                            $(".comandaAfter2").css({"height":"130%"});
+                            $("#bFinalizar2").css({"margin-top":"50%"});
                         }
                         
 
