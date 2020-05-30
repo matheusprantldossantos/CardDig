@@ -172,6 +172,7 @@
         }
     }
 }
+    $a = 0;
     mysqli_close($conn);
     echo json_encode($verdade);
 
