@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Maio-2020 às 03:45
+-- Tempo de geração: 30-Maio-2020 às 18:42
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.2.29
 
@@ -24,31 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cliente`
---
-
-CREATE TABLE `cliente` (
-  `cpf` varchar(12) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `conjunto`
 --
 
 CREATE TABLE `conjunto` (
   `idConjunto` int(100) NOT NULL,
   `comandaMesa` int(100) NOT NULL,
-  `indexMesa` int(100) NOT NULL
+  `indexMesa` int(100) NOT NULL,
+  `cpfPedido` varchar(11) COLLATE latin1_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Extraindo dados da tabela `conjunto`
---
-
-INSERT INTO `conjunto` (`idConjunto`, `comandaMesa`, `indexMesa`) VALUES
-(1, 12, 3);
 
 -- --------------------------------------------------------
 
@@ -60,15 +44,17 @@ CREATE TABLE `cozinheiro` (
   `idcozinheiro` int(11) NOT NULL,
   `funcao` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `email` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
-  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL
+  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `ativo` tinyint(4) NOT NULL DEFAULT 0,
+  `nome` varchar(50) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `cozinheiro`
 --
 
-INSERT INTO `cozinheiro` (`idcozinheiro`, `funcao`, `email`, `senha`) VALUES
-(1, '', 'cozinhaEmail@gmail.com', '1234');
+INSERT INTO `cozinheiro` (`idcozinheiro`, `funcao`, `email`, `senha`, `ativo`, `nome`) VALUES
+(1, '', 'cozinhaEmail@gmail.com', '1234', 0, 'Antônio Martins da Silva');
 
 -- --------------------------------------------------------
 
@@ -79,16 +65,17 @@ INSERT INTO `cozinheiro` (`idcozinheiro`, `funcao`, `email`, `senha`) VALUES
 CREATE TABLE `dono` (
   `iddono` int(11) NOT NULL,
   `email` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
-  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL
+  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `ativo` tinyint(4) NOT NULL DEFAULT 0,
+  `nome` varchar(50) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `dono`
 --
 
-INSERT INTO `dono` (`iddono`, `email`, `senha`) VALUES
-(2, 'donoEmail@gmail.com', '1234'),
-(3, 'donoDeRestaurante@gmail.com', '1234');
+INSERT INTO `dono` (`iddono`, `email`, `senha`, `ativo`, `nome`) VALUES
+(2, 'donoEmail@gmail.com', '1234', 0, 'Juliana Pereira Paes');
 
 -- --------------------------------------------------------
 
@@ -99,15 +86,17 @@ INSERT INTO `dono` (`iddono`, `email`, `senha`) VALUES
 CREATE TABLE `garcom` (
   `idgarcom` int(11) NOT NULL,
   `email` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
-  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL
+  `senha` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `ativo` tinyint(4) NOT NULL DEFAULT 0,
+  `nome` varchar(50) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `garcom`
 --
 
-INSERT INTO `garcom` (`idgarcom`, `email`, `senha`) VALUES
-(1, 'garcomEmail@gmail.com', '1234');
+INSERT INTO `garcom` (`idgarcom`, `email`, `senha`, `ativo`, `nome`) VALUES
+(1, 'garcomEmail@gmail.com', '1234', 1, 'Robison Tilira Jr');
 
 -- --------------------------------------------------------
 
@@ -149,7 +138,7 @@ CREATE TABLE `item_pedido` (
 --
 
 INSERT INTO `item_pedido` (`pedido_comanda`, `cliente_cpf`, `quantidade`) VALUES
-(12, '', '2');
+(7, '', '2');
 
 -- --------------------------------------------------------
 
@@ -161,16 +150,18 @@ CREATE TABLE `item_produto` (
   `pedido_comanda` int(200) NOT NULL,
   `produto_idproduto` int(11) NOT NULL,
   `nome_produto` varchar(80) COLLATE latin1_spanish_ci NOT NULL,
-  `indexMesa` int(100) NOT NULL
+  `indexMesa` int(100) NOT NULL,
+  `quantidade` int(11) NOT NULL DEFAULT 1,
+  `andamento` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `item_produto`
 --
 
-INSERT INTO `item_produto` (`pedido_comanda`, `produto_idproduto`, `nome_produto`, `indexMesa`) VALUES
-(12, 18, 'pizza portuguesa', 3),
-(12, 24, '\"to com fome\" - quero carne', 3);
+INSERT INTO `item_produto` (`pedido_comanda`, `produto_idproduto`, `nome_produto`, `indexMesa`, `quantidade`, `andamento`) VALUES
+(7, 8, 'suco de morango', 10, 1, 1),
+(7, 18, 'pizza portuguesa', 10, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -181,15 +172,28 @@ INSERT INTO `item_produto` (`pedido_comanda`, `produto_idproduto`, `nome_produto
 CREATE TABLE `mesa` (
   `idmesa` int(100) NOT NULL,
   `nome` varchar(120) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `andamento` tinyint(1) NOT NULL DEFAULT 1
+  `andamento` tinyint(1) NOT NULL DEFAULT 1,
+  `terminado` int(11) NOT NULL DEFAULT 1,
+  `indexGarcom` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `mesa`
 --
 
-INSERT INTO `mesa` (`idmesa`, `nome`, `andamento`) VALUES
-(3, 'Mesa do meio ao lado da janela', 1);
+INSERT INTO `mesa` (`idmesa`, `nome`, `andamento`, `terminado`, `indexGarcom`) VALUES
+(10, 'Frente janela', 0, 0, NULL),
+(12, 'Meio janela', 0, 1, NULL),
+(13, 'Fundo janela', 0, 1, NULL),
+(14, 'Frente escada', 0, 1, NULL),
+(15, 'Meio escada', 0, 1, NULL),
+(16, 'Fundo escada', 0, 1, NULL),
+(17, 'Fundo meio', 0, 1, NULL),
+(18, 'Fora fundo', 0, 1, NULL),
+(19, 'Fora meio', 0, 1, NULL),
+(20, 'Fora frente', 0, 1, NULL),
+(21, 'Frente direita', 0, 1, NULL),
+(22, 'Frente esquerda', 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -200,15 +204,16 @@ INSERT INTO `mesa` (`idmesa`, `nome`, `andamento`) VALUES
 CREATE TABLE `pedido` (
   `comanda` int(200) NOT NULL,
   `valor_total` double NOT NULL,
-  `indexMesa` int(100) NOT NULL
+  `indexMesa` int(100) NOT NULL,
+  `cpf` varchar(11) COLLATE latin1_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `pedido`
 --
 
-INSERT INTO `pedido` (`comanda`, `valor_total`, `indexMesa`) VALUES
-(12, 63.7, 3);
+INSERT INTO `pedido` (`comanda`, `valor_total`, `indexMesa`, `cpf`) VALUES
+(7, 43.2, 10, NULL);
 
 -- --------------------------------------------------------
 
@@ -262,12 +267,6 @@ CREATE TABLE `promocao` (
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices para tabela `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`cpf`);
 
 --
 -- Índices para tabela `conjunto`
@@ -330,7 +329,8 @@ ALTER TABLE `item_produto`
 -- Índices para tabela `mesa`
 --
 ALTER TABLE `mesa`
-  ADD PRIMARY KEY (`idmesa`);
+  ADD PRIMARY KEY (`idmesa`),
+  ADD KEY `garcomMesa` (`indexGarcom`);
 
 --
 -- Índices para tabela `pedido`
@@ -359,7 +359,7 @@ ALTER TABLE `promocao`
 -- AUTO_INCREMENT de tabela `conjunto`
 --
 ALTER TABLE `conjunto`
-  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `cozinheiro`
@@ -383,7 +383,7 @@ ALTER TABLE `garcom`
 -- AUTO_INCREMENT de tabela `mesa`
 --
 ALTER TABLE `mesa`
-  MODIFY `idmesa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idmesa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
@@ -435,6 +435,12 @@ ALTER TABLE `item_produto`
   ADD CONSTRAINT `fk_pedido_has_produto_pedido` FOREIGN KEY (`pedido_comanda`) REFERENCES `pedido` (`comanda`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_pedido_has_produto_produto1` FOREIGN KEY (`produto_idproduto`) REFERENCES `produto` (`idproduto`),
   ADD CONSTRAINT `mesaItemPedido` FOREIGN KEY (`indexMesa`) REFERENCES `mesa` (`idmesa`);
+
+--
+-- Limitadores para a tabela `mesa`
+--
+ALTER TABLE `mesa`
+  ADD CONSTRAINT `garcomMesa` FOREIGN KEY (`indexGarcom`) REFERENCES `garcom` (`idgarcom`);
 
 --
 -- Limitadores para a tabela `pedido`
