@@ -26,6 +26,11 @@
     if($result = mysqli_query($conn, $sql)){
         $retorno = "Alterou o estado de terminado";
     }
+    $sql = "UPDATE mesa SET andamento = 0 WHERE nome = '$nomeBusca'";
+    if($result = mysqli_query($conn, $sql)){
+        $retorno = "Alterou o andamento";
+    }
+
     mysqli_close($conn);
     echo json_encode($retorno);
 ?>

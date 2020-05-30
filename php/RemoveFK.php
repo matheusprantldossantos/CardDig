@@ -40,7 +40,7 @@
                 $menor = $ids[$i]["idConjunto"]; 
             }
         }
-
+        
         $sqlConjunto = "ALTER TABLE conjunto DROP FOREIGN KEY conjuntoMesa";
         if($result = mysqli_query($conn, $sqlConjunto)){
             $estado = "Conjunto sem FK";

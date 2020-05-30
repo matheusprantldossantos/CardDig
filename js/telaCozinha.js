@@ -18,13 +18,13 @@ function listaMesas(){
             for(let i = 0; i < info.length; i++){
                 if(i == 0){
                     conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
-                    conteudo += "<div id='text'>" + info[i].nomeMesa + "</div>";
+                    conteudo += "<div id='text" + i + "'>" + info[i].nomeMesa + "</div>";
                     conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
                 else if(info[i].nomeMesa != info[i - 1].nomeMesa){
                     conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
-                    conteudo += "<div id='text'>" + info[i].nomeMesa + "</div>";
+                    conteudo += "<div id='text" + i + "'>" + info[i].nomeMesa + "</div>";
                     conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
@@ -287,7 +287,12 @@ function listaMesas(){
                         $("#bFinalizar0").css({"position":"absolute","top":"0%","margin-top":"0%","transition":"0.4s","visibility":"hidden"});
                     }
 
-                    a++
+                    a++;
+                    $(new Document).ready(function(){
+                        $("#bFinalizar0").click(function(){
+                            encerraMesa("0");
+                        });
+                    });
                 });
 
             });
@@ -333,7 +338,6 @@ function listaMesas(){
                         conteudo += "<button class='butFinal' id='bFinalizar1'>Finalizar</button>";
                         conteudo += "</div>";
                         $("#divComandas1").html(conteudo);
-
                         if(contadorComandas == 1){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
                             $(".comandaAfter1").css({"height":"26%"});
@@ -442,10 +446,13 @@ function listaMesas(){
                         $("#comd1").removeClass("comandaAfter1").addClass("comanda1");
                         $("#bFinalizar1").css({"position":"absolute","top":"0%","margin-top":"0%","transition":"0.4s","visibility":"hidden"});
                     }
-
-                    a++
+                    $(new Document).ready(function(){
+                        $("#bFinalizar1").click(function(){
+                            encerraMesa("1");
+                        });
+                    });
+                    a++;
                 });
-
             });
 
 
@@ -598,10 +605,13 @@ function listaMesas(){
                         $("#comd2").removeClass("comandaAfter2").addClass("comanda2");
                         $("#bFinalizar2").css({"position":"absolute","top":"0%","margin-top":"0%","transition":"0.4s","visibility":"hidden"});
                     }
-
-                    a++
+                    $(new Document).ready(function(){
+                        $("#bFinalizar2").click(function(){
+                            encerraMesa("2");
+                        });
+                    });
+                    a++;
                 });
-
             });
 
 /*
@@ -745,8 +755,10 @@ function listaMesas(){
                     $("#comd9").html(conteudo);
                     $("#comd9").toggleClass("comandaAfter");
                 });
-
+                
 */
+           
+               
         },
         error : ()=>{
             console.log("Nao foi possivel listar");
@@ -787,6 +799,23 @@ function pegaNome(){
         },
         error: function(condicao){
             console.log(condicao);
+        }
+    });
+}
+function encerraMesa(position){
+    let nomeMesa = $("div#text"+position).text(); 
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/encerraMesas.php",
+        data : {
+            ajax_nome : nomeMesa
+        },
+        success : (info)=>{
+            console.log(info);
+        },
+        error : ()=>{
+            console.log("Não foi possível alterar a mesa");
         }
     });
 }
