@@ -43,7 +43,7 @@ body{
 /* Subtitulos das colunas */
 
 .columnTitle{
-    font-size: 20px;
+    font-size: 19px;
     font-family: Jaguar;
     color: #e0e0e0;
     background-color: #1f1f1f;
@@ -79,10 +79,18 @@ body{
     text-align: center;
 }
 
-#Excluir{
+#promo{
     position: absolute;
     top: 25%;
     left: 67%;
+    width: 5.9%;
+    text-align: center;
+}
+
+#Excluir{
+    position: absolute;
+    top: 25%;
+    left: 74%;
     width: 4.9%;
     text-align: center;
 }
@@ -104,6 +112,19 @@ body{
     color: #292929;
     cursor: pointer;
     font-size: 20px;
+    outline: none;
+}
+
+.buttPromo{
+    background-color: #e778cf;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 2px;
+    color: #e2e2e2e5;
+    cursor: pointer;
+    font-size: 15px;
     outline: none;
 }
 
@@ -152,10 +173,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo0{
+    position: absolute;
+    top: 32%;
+    left: 69.5%;
+}
+
 #prodExc0{
     position: absolute;
     top: 32%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line0{
@@ -190,10 +217,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo1{
+    position: absolute;
+    top: 43.5%;
+    left: 69.5%;
+}
+
 #prodExc1{
     position: absolute;
     top: 43.5%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line1{
@@ -228,10 +261,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo2{
+    position: absolute;
+    top: 55%;
+    left: 69.5%;
+}
+
 #prodExc2{
     position: absolute;
     top: 55%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line2{
@@ -266,10 +305,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo3{
+    position: absolute;
+    top: 66.5%;
+    left: 69.5%;
+}
+
 #prodExc3{
     position: absolute;
     top: 66.5%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line3{
@@ -304,10 +349,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo4{
+    position: absolute;
+    top: 78%;
+    left: 69.5%;
+}
+
 #prodExc4{
     position: absolute;
     top: 78%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line4{
@@ -342,10 +393,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo5{
+    position: absolute;
+    top: 89.5%;
+    left: 69.5%;
+}
+
 #prodExc5{
     position: absolute;
     top: 89.5%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line5{
@@ -380,10 +437,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo6{
+    position: absolute;
+    top: 101%;
+    left: 69.5%;
+}
+
 #prodExc6{
     position: absolute;
     top: 101%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line6{
@@ -418,10 +481,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo7{
+    position: absolute;
+    top: 112.5%;
+    left: 69.5%;
+}
+
 #prodExc7{
     position: absolute;
     top: 112.5%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line7{
@@ -456,10 +525,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo8{
+    position: absolute;
+    top: 124%;
+    left: 69.5%;
+}
+
 #prodExc8{
     position: absolute;
     top: 124%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line8{
@@ -494,10 +569,16 @@ body{
     left: 62.8%;
 }
 
+#prodPromo9{
+    position: absolute;
+    top: 135.5%;
+    left: 69.5%;
+}
+
 #prodExc9{
     position: absolute;
     top: 135.5%;
-    left: 68.8%;
+    left: 75.8%;
 }
 
 #line9{
