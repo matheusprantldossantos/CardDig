@@ -113,6 +113,27 @@ input[type = text]:focus,[type = password]:focus{
     background-color: #adadad;
 }
 
+#bVoltar{
+    position: absolute;
+    top: 75%;
+    left: 68%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 12%;
+    border-radius: 2px;
+    color: #5c5c5c;
+    border: solid 1px #c9c8c8;
+    background-color: #c9c8c8;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none; 
+}
+
+#bVoltar:hover{
+    border: solid 1px #adadad;
+    background-color: #adadad;
+}
+
 #mensagens{
     position: absolute;
     top: 72%;

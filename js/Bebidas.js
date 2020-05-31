@@ -40,7 +40,7 @@ $(document).ready(function(){
         $("#setaAlert").removeClass("seta").addClass("setaAfter");
 
         $("#bSim").click(function(){
-            window.location.href = "../pages/login.html";
+            window.location.href = "../pages/loginEnviaMesas.html";
         });
 
         $("#bNao").click(function(){

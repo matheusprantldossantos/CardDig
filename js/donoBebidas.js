@@ -3,6 +3,10 @@ $(document).ready(function(){
     $("#bAdicionar").click(function(){
         window.location.href = "../pages/cadastraProduto.php";
     });
+
+    $("#bBack").click(function(){
+        window.location.href = "../pages/telaDono.html";
+    });
 });
 
 function fListarCategoria(){

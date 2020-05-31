@@ -7,6 +7,10 @@ $(new Document).ready(function(){
         window.location.href = "../pages/casdastraFuncionario.php";
     });
 
+    $("#bVoltar").click(function(){
+        window.location.href = "../pages/meusPedidos.html";
+    });
+
 });
 function updateAtividade(id, func){
     var idFunc = id;

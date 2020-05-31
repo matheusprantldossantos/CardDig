@@ -22,9 +22,32 @@ body{
     src: url(../fontes/blank-Regular.otf);
 }
 
+#bBack{
+    cursor: pointer;
+}
+
+#iconBack{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    color: #1f1f1f;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#textBack{
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    font-size: 15px;
+    color: #1f1f1f;
+    font-family: blank;
+    display: inline-block;
+}
+
 #titleCateg{
     position: absolute;
-    top: 5%;
+    top: 11%;
     left: 3%;
     font-family: blank;
     font-size: 45px;
@@ -33,7 +56,7 @@ body{
 
 #linha{
     position: absolute;
-    top: 13%;
+    top: 18%;
     left: 3%;
     background-color: #ff7ab8;
     width: 90%;
@@ -636,8 +659,8 @@ body{
 
 #bFechar{
     position: absolute;
-    top: 4%;
-    left: 92%;
+    top: 5%;
+    left: 90%;
     color: #353535;
     font-size: 30px;
     border: none;
@@ -769,6 +792,8 @@ input[type=number] {
     color: #d1d1d1;
 }
 
+/* Blur container */
+
 .styleCont{
     filter: blur(0px);
     transition: 0.5s;
@@ -781,6 +806,144 @@ input[type=number] {
     transition: 0.5s;
     width: 100%;
     height: 100%;
+}
+
+/* Janela de Promoções */
+
+.pagPromo{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 35%;
+    height: 50%;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.pagPromoAfter{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 35%;
+    height: 50%;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#bFecharPromo{
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    color: #353535;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    opacity: 0.3;
+    transition: .3s;
+    outline: none;
+}
+
+#bFecharPromo:hover{
+    opacity: 1;
+    transition: .3s;
+    cursor: pointer;
+}
+
+#titlePagPromo{
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    font-family: blank;
+    font-weight: bold;
+}
+
+.inputEdit{
+    width: 60%;
+    height: 10%;
+    outline: none;
+    border: solid 1px #1f1f1f;
+    border-radius: 2px;
+    color: #1f1f1f;
+    background: transparent;
+    padding: 2%;
+}
+
+#promoNome{
+    position: absolute;
+    top: 24%;
+    left: 24%;
+    transform: translateX(-50%);
+}
+
+#nomeProdutoPromo{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#promoPre{
+    position: absolute;
+    top: 44%;
+    left: 24%;
+    transform: translateX(-50%);
+}
+
+#precoProdutoPromo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#promoProm{
+    position: absolute;
+    top: 65%;
+    left: 26%;
+    transform: translateX(-50%);
+}
+
+#valorProdutoPromo{
+    position: absolute;
+    top: 71%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#bSalvarPromo{
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    transform: translateX(-50%);
+    outline:none;
+    border: none;
+    border-radius: 2px;
+    background-color: #ff7ab8;
+    width: 20%;
+    height: 9%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s;
+    font-weight: bold;
+    color: #e2e2e2;
+}
+
+#bSalvarPromo:hover{
+    background-color: #fc6aae;
+    transition: .2s;
+    color: #d1d1d1;
 }
 
 /* Janela de Confirmar Exclusão */
