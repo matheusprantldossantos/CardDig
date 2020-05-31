@@ -363,7 +363,200 @@ function fListarCategoria(){
             });
 
 
-            // Botões para Excluir
+
+            // Botões para Promoção  -------------------------------------------------------------------------
+            $(new Document).ready(function(){
+                $("#prodPromo0").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[0].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo1").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[1].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo2").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[2].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo3").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[3].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo4").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[4].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo5").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[5].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo6").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[6].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo7").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[7].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo8").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[8].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+            $(new Document).ready(function(){
+                $("#prodPromo9").click(function(){
+                    $("#janelaPromo").toggleClass("pagPromoAfter");
+                    $("#container").toggleClass("styleContAfter");
+                    listarInfoPromo(info[9].nome);
+
+                    $("#bSalvarPromo").click(function(){
+                    });
+
+                    $("#bFecharPromo").click(function(){
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+            });
+
+
+            // Botões para Excluir -------------------------------------------------------------------------
             $(new Document).ready(function(){
                 $("#prodExc0").click(function(){
                     $("#janelaExcluir").removeClass("pagExcluir").addClass("pagExcluirAfter");
@@ -648,6 +841,25 @@ function listarInfo(nome){
             $("#precoProduto").val(info.preco);
             $("#dispProduto").val(info.disponibilidade);
             $("#tipoProduto").val(info.tipo_categoria);
+        },
+        error : function(){
+            console.log("não funcionou")
+        }
+    });
+}
+
+function listarInfoPromo(nome){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/produtoEspListar.php",
+        data:{
+            ajax_nome: nome
+        },
+        success : function(info){
+            console.log("funcionou")
+            $("#nomeProdutoPromo").val(info.nome);
+            $("#precoProdutoPromo").val(info.preco);
         },
         error : function(){
             console.log("não funcionou")
