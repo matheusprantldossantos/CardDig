@@ -118,7 +118,7 @@ function criaMesa(){
                 ajax_contador : i
             },
             success : function(info){
-                $("#mensagem").text(info);
+                window.location.href = "../pages/telaPrincipal.html";
             },
             error: function(info){
                 $("#mensagem").text("Php nao funcionou");

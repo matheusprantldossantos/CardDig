@@ -782,6 +782,7 @@ function tornaInativo(){
         }
     });
 }
+
 function pegaNome(){
     const func = "cozinheiro";
     $.ajax({
@@ -795,13 +796,14 @@ function pegaNome(){
             console.log(condicao);
             let nome = condicao;
             nome = nome.split(" ");
-            $("#nome").html("Seja bem vinda(o) "+nome[0]+"!");
+            $("#nome").html(nome[0].toUpperCase());
         },
         error: function(condicao){
             console.log(condicao);
         }
     });
 }
+
 function encerraMesa(position){
     let nomeMesa = $("div#text"+position).text(); 
     $.ajax({
@@ -819,4 +821,6 @@ function encerraMesa(position){
         }
     });
 }
+
+
 

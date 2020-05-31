@@ -20,7 +20,7 @@
                     <option class="opt" value="cozinha">Cozinha</option>
                 </select>
                 <button id="bConfirmar" name="submit">Confirmar</button>
-                <button id="bVoltar" name="voltar"><a href="login.html">Voltar</button>
+                <button id="bVoltar" name="voltar"><a href="login.html">Voltar</a></button>
             </form>
         </div>
     </body>

@@ -46,6 +46,7 @@ function tornaInativo(){
         }
     });
 }
+
 function pegaNome(){
     const func = "dono";
     $.ajax({

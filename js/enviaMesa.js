@@ -8,163 +8,336 @@ $(new Document).ready(function(){
         window.location.href = "../pages/telaGarcom.html";
     });
 });
+
 function listaMesasEnvio(){
     $.ajax({
         type: "POST",
         dataType: "json",
         url: "../php/listaMesaEnvio.php",
         success : function(info){   
-            let conteudo = "";
+            let mesa = "";
             for(let i = 0; i < info.length; i++){
-                conteudo += "<div id='andamento" + i + "'>" + info[i].nome + "</div>";
-                conteudo += "<button id='bMesa" + i + "'> </button>";
+                mesa += "<div class='divMesas' id='lista"+ i +"'>" + "</div>";
             }
-            $("#lista").html(conteudo);
+
+            $("#mesas").html(mesa);
+
+            let conteudo = "";
+            var somaPosit = 0;
+            for(let i = 0; i < info.length; i++){
+                conteudo += "<div class='nomeMesas' id='andamento" + i + "'>" + info[i].nome + "</div>";
+                conteudo += "<button class='butEnviar' id='bMesa" + i + "'> Enviar </button>";
+
+                $("#lista" + i).html(conteudo);
+
+                if(i < 4){
+                    $("#lista" + i).css({"position":"absolute","top":"25%","left": 15 + somaPosit + "%","transform":"translateX(-50%)"});
+                    somaPosit += 19;
+                }
+            }
+
             $(new Document).ready(function(){
                 $("#bMesa0").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto0'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma0'> Sim </button>";
-                    conteudo += "<button id='bNega0'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma0").click(function(){
-                            alteraTermino("0");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("0");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
                 });
+            
                 $("#bMesa1").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto1'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma1'> Sim </button>";
-                    conteudo += "<button id='bNega1'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma1").click(function(){
-                            alteraTermino("1");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("1");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa2").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto2'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma2'> Sim </button>";
-                    conteudo += "<button id='bNega2'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma2").click(function(){
-                            alteraTermino("2");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("2");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa3").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto3'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma3'> Sim </button>";
-                    conteudo += "<button id='bNega3'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma3").click(function(){
-                            alteraTermino("3");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("3");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa4").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto4'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma4'> Sim </button>";
-                    conteudo += "<button id='bNega4'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma4").click(function(){
-                            alteraTermino("4");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("4");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa5").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto5'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma5'> Sim </button>";
-                    conteudo += "<button id='bNega5'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma5").click(function(){
-                            alteraTermino("5");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("5");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa6").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto6'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma6'> Sim </button>";
-                    conteudo += "<button id='bNega6'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma6").click(function(){
-                            alteraTermino("6");
-                        });
+                   $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("6");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa7").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto7'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma7'> Sim </button>";
-                    conteudo += "<button id='bNega7'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma7").click(function(){
-                            alteraTermino("7");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("7");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa8").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto8'> Você quer enviar essa mesa para a cozinha? </div>";
-                    conteudo += "<button id='bConfirma8'> Sim </button>";
-                    conteudo += "<button id='bNega8'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma8").click(function(){
-                            alteraTermino("8");
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("8");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa9").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto9'> Você quer enviar essa mesa para a cozinha? </div>"
-                    conteudo += "<button id='bConfirma9'> Sim </button>";
-                    conteudo += "<button id='bNega9'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma9").click(function(){
-                            alteraTermino("9")
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("9");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa10").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto10'> Você quer enviar essa mesa para a cozinha? </div>"
-                    conteudo += "<button id='bConfirma10'> Sim </button>";
-                    conteudo += "<button id='bNega10'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma10").click(function(){
-                            alteraTermino("10")
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("10");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+
                 $("#bMesa11").click(function(){
-                    let conteudo = "";
-                    conteudo += "<div id='texto11'> Você quer enviar essa mesa para a cozinha? </div>"
-                    conteudo += "<button id='bConfirma11'> Sim </button>";
-                    conteudo += "<button id='bNega11'> Não </button>";
-                    $("#confirma").html(conteudo);
-                    $(new Document).ready(function(){
-                        $("#bConfirma11").click(function(){
-                            alteraTermino("11")
-                        });
+                    $("#confirma").removeClass("divConf").addClass("divConfAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+                    
+                    $("#bConfirma").click(function(){
+                        alteraTermino("11");
+
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    
+                    $("#bNega").click(function(){
+                        console.log("funcionou");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        $("#confirma").removeClass("divConfAfter").addClass("divConf");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
                 });
+                
             });
         },
         error : function(){

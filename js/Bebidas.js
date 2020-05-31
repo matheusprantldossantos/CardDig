@@ -28,6 +28,10 @@ $(document).ready(function(){
     $("#bPedidos").click(function() {
         window.location.href = "../pages/meusPedidos.html";
     });
+
+    $("#voltarPrinc").click(function() {
+        window.location.href = "../pages/telaPrincipal.html";
+    });
    
 });
 

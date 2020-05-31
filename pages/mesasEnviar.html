@@ -9,14 +9,20 @@
         <title>Spartans Food - Garçom</title>
     </head>
     <body>
-        <div id="menu">
-            <div id="user"><i class="far fa-user"></i></div>
-            <div id="nome"></div>
-            <button class="bTitle" id="titlePag">CRIA MESA</button>
-            <button class="bTitle" id="titlePag2">ENVIA MESA</button>
-            <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
+        <div id="container" class="styleCont">
+            <div id="menu">
+                <div id="user"><i class="far fa-user"></i></div>
+                <div id="nome"></div>
+                <button class="bTitle" id="titlePag">CRIA MESA</button>
+                <button class="bTitle" id="titlePag2">ENVIA MESA</button>
+                <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+            <div id="mesas"></div>
         </div>
-        <div id="lista"></div>
-        <div id="confirma"></div>
+        <div id="confirma" class="divConf">
+            <div id='texto'> Deseja enviar para cozinha? </div>
+            <button id='bConfirma'> Sim </button>
+            <button id='bNega'> Não </button>
+        </div>
     </body>
 </html>

@@ -29,6 +29,10 @@ $(new Document).ready(function(){
         window.location.href = "../pages/meusPedidos.html";
     });
 
+    $("#voltarPrinc").click(function() {
+        window.location.href = "../pages/telaPrincipal.html";
+    });
+
 });
 
 function fListaLanches(){
