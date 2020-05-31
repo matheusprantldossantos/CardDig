@@ -503,3 +503,124 @@ body{
     background-color: #ca812e;
     transition: .3s;
 }
+
+/* Efeito Blur Container */
+
+.styleCont{
+    filter: blur(0px);
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+}
+
+.styleContAfter{
+    filter: blur(20px);
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+}
+
+/* Janela para mudar tela */
+
+.styleMudar{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 22%;
+    background-color: #1d1e25;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.styleMudarAfter{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 22%;
+    background-color: #1d1e25;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#textMudar2{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding-top: 10%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    color: #e2e2e2;
+}
+
+#bSim{
+    position: absolute;
+    top: 60%;
+    left: 36%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 17%;
+    border: none;
+    border-radius: 3px;
+    color: #1f1f1f;
+    background-color: #ca862e;
+    cursor: pointer;
+    outline: none;
+}
+
+#bNao{
+    position: absolute;
+    top: 60%;
+    left: 64%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 17%;
+    border: none;
+    border-radius: 3px;
+    color: #1f1f1f;
+    background-color: #b4b4b4;
+    cursor: pointer;
+    outline: none;
+}
+
+.alerta{
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5% 1%;
+    border-radius: 3px;
+    font-family: Bebas neue;
+    color: #1f1f1f;
+    background-color: #d6b968;
+    opacity: 0;
+    transition: .5s;
+    visibility: hidden;
+}
+
+.alertaAfter{
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5% 1%;
+    border-radius: 3px;
+    font-family: Bebas neue;
+    color: #1f1f1f;
+    background-color: #d6b968;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.24);
+    opacity: 1;
+    transition: .5s;
+    visibility: visible;
+}

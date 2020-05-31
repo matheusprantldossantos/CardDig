@@ -277,6 +277,9 @@ input[type=number] {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    border: none;
     color: #e0e0e0;
     font-family: Bebas neue;
     font-size: 25px;
