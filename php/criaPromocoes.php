@@ -1,7 +1,7 @@
 <?php
-    $nomeDoProd = "pudim";
-    $categoriaProd = "sobremesa";
-    $porcentagem = 20;
+    $nomeDoProd = $_POST["ajax_nome"];
+    $categoriaProd = $_POST["ajax_categoria"];
+    $porcentagem = $_POST["ajax_porcentagem"];
 
      //valores do BD
      $servername = "localhost: 3306";
@@ -77,7 +77,7 @@
     VALUES ('$donoAtual', '$idProdAtual', '$idPromAtual', '$valorNovo', '$nomeDoProd', '$categoriaProd')";
     if(mysqli_query($conn, $sqlItemModificado)){
         $verdade = "Criado item modificado";
-    }
+    }ajax_porcentagem
     mysqli_close($conn);
     echo json_encode($verdade);
 ?>
