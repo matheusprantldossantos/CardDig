@@ -36,7 +36,7 @@
     else{
         $verdade = "Não chegou";
     }
-    $idProd = $produto[0]["id"];
+    $idProd = $produto[count($produto) - 1]["id"];
     $sqlItemProdPega = "SELECT pedido_comanda, quantidade FROM item_produto WHERE produto_idproduto = '$idProd'";
     $pos = 0;
     if($resultItemProdPega = mysqli_query($conn, $sqlItemProdPega)){
@@ -48,7 +48,7 @@
             }
         }
     }
-    $comandaAtual = $itemProd[0]["comanda"];
+    $comandaAtual = $itemProd[count($produto) - 1]["comanda"];
     $sqlItemPedPega = "SELECT quantidade FROM item_pedido WHERE pedido_comanda = '$comandaAtual'";
     $cont = 0;
     if($resultItemPedPega = mysqli_query($conn, $sqlItemPedPega)){
@@ -69,7 +69,7 @@
             }
         }
     }
-    $novoPreco = $pedido[0]["valor"] - ($produto[0]["preco"] * $itemProd[0]["quantidade"]);
+    $novoPreco = $pedido[count($pedido) - 1]["valor"] - ($produto[count($produto) - 1]["preco"] * $itemProd[count($itemProd) - 1]["quantidade"]);
     $novaQnt = $itemPed[0]["quantidade"] - $itemProd[0]["quantidade"];
 
     $sqlUpdatePed = "UPDATE pedido SET valor_total = '$novoPreco' WHERE comanda = '$comandaAtual'";

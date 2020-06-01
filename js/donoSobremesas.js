@@ -30,6 +30,7 @@ function fListarCategoria(){
                 conteudo += "<button class='buttExc' id='prodExc"+ i +"'>" + "<i class='far fa-trash-alt'></i>" + "</button>";
                 conteudo += "<div class='linhaProd' id='line"+ i +"'>" + "</div>";
 
+                
                 if(i == 0){
                     $("#bAdicionar").css({"position":"absolute","top":"45%","left":"5%","visibility":"visible"});
                 }
@@ -375,6 +376,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[0].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[0].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -394,6 +396,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[1].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[1].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -413,6 +416,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[2].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[2].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -432,6 +436,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[3].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[3].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -451,6 +456,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[4].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[5].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -470,6 +476,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[5].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[5].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -489,6 +496,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[6].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[6].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -508,6 +516,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[7].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[7].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -527,6 +536,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[8].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[8].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -546,6 +556,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[9].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[9].nome, "sobremesa");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -889,4 +900,24 @@ function editarProduto(id, nome, preco, disp, tipo){
         }
 
     });
+}
+function criaPromocao(nome, categoria){
+    let porcentagem = parseInt($("#valorProdutoPromo").val()); 
+    console.log("Ah");
+    /*$.ajax({
+        type : "POST",
+        dataType : "json",
+        url : "../php/criaPromocoes.php",
+        data : {
+            ajax_nome : nome,
+            ajax_categoria : categoria,
+            ajax_porcentagem : porcentagem
+        },
+        success : (resultado) =>{
+            console.log(resultado);
+        },
+        error : () =>{
+            console.log("Cria porcent");
+        }
+    });*/
 }

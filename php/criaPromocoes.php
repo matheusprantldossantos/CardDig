@@ -37,7 +37,7 @@
             }
         }
     }
-    $idProdAtual = $produto[0]["id"];
+    $idProdAtual = $produto[count($produto) - 1]["id"];
     $sqlPromocao = "INSERT INTO promocao (porcentagem, idProdEsp) VALUES ('$porcentagem', '$idProdAtual')";
     if(mysqli_query($conn, $sqlPromocao)){
         $verdade = "Insecao nas promocoes feita";
@@ -69,15 +69,15 @@
             }
         }
     }
-    $valorNovo = $produto[0]["preco"] - (($promocao[0]["porcentagem"] * $produto[0]["preco"]) / 100.0);
-    $donoAtual = $dono[0];
-    $categoria = $produto[0]["categoria"];
-    $idPromAtual = $promocao[0]["idProm"];
+    $valorNovo = $produto[count($produto) - 1]["preco"] - (($promocao[count($promocao) - 1]["porcentagem"] * $produto[count($produto) - 1]["preco"]) / 100.0);
+    $donoAtual = $dono[count($dono) - 1];
+    $categoria = $produto[count($produto) - 1]["categoria"];
+    $idPromAtual = $promocao[count($idProdAtual) - 1]["idProm"];
     $sqlItemModificado = "INSERT INTO item_modificado (dono_iddono, produto_idproduto, promocao_idpromocao, valorAtual, nome, categoria)
     VALUES ('$donoAtual', '$idProdAtual', '$idPromAtual', '$valorNovo', '$nomeDoProd', '$categoriaProd')";
     if(mysqli_query($conn, $sqlItemModificado)){
         $verdade = "Criado item modificado";
     }
     mysqli_close($conn);
-    echo json_encode($promocao[0]);
+    echo json_encode($verdade);
 ?>

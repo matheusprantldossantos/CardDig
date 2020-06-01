@@ -368,7 +368,7 @@ function fListarCategoria(){
 
 
 
-            // Botões para Promoção  -------------------------------------------------------------------------
+                        // Botões para Promoção  -------------------------------------------------------------------------
             $(new Document).ready(function(){
                 $("#prodPromo0").click(function(){
                     $("#janelaPromo").toggleClass("pagPromoAfter");
@@ -376,6 +376,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[0].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[0].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -395,6 +396,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[1].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[1].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -414,6 +416,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[2].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[2].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -433,6 +436,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[3].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[3].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -452,6 +456,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[4].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[5].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -471,6 +476,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[5].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[5].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -490,6 +496,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[6].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[6].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -509,6 +516,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[7].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[7].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -528,6 +536,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[8].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[8].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -547,6 +556,7 @@ function fListarCategoria(){
                     listarInfoPromo(info[9].nome);
 
                     $("#bSalvarPromo").click(function(){
+                        criaPromocao(info[9].nome, "lanches");
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -558,6 +568,7 @@ function fListarCategoria(){
                     });
                 });
             });
+
 
 
             // Botões para Excluir -------------------------------------------------------------------------
@@ -889,4 +900,24 @@ function editarProduto(id, nome, preco, disp, tipo){
         }
 
     });
+}
+function criaPromocao(nome, categoria){
+    let porcentagem = parseInt($("#valorProdutoPromo").val()); 
+    console.log("Ah");
+    /*$.ajax({
+        type : "POST",
+        dataType : "json",
+        url : "../php/criaPromocoes.php",
+        data : {
+            ajax_nome : nome,
+            ajax_categoria : categoria,
+            ajax_porcentagem : porcentagem
+        },
+        success : (resultado) =>{
+            console.log(resultado);
+        },
+        error : () =>{
+            console.log("Cria porcent");
+        }
+    });*/
 }
