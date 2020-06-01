@@ -279,6 +279,20 @@ function listaPedidos() {
             }
     
             $("#divPedidos").html(conteudo);
+            $(new Document).ready(()=>{
+                $("#iconLix0").click(()=>{
+                    Excluir("0");
+                });
+                $("#iconLix1").click(()=>{
+                    Excluir("1");
+                });
+                $("#iconLix2").click(()=>{
+                    Excluir("2");
+                });
+                $("#iconLix3").click(()=>{
+                    Excluir("3");
+                });
+            });
         },
         error : function(info){
             console.log("aiai");
@@ -286,4 +300,22 @@ function listaPedidos() {
 
     }); // ajax
 } // fLista
+function Excluir(position){
+    let nome = $("div#nameProd"+position).text();
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/excluiItem.php",
+        data: {
+            ajax_nome : nome
+        },
+        success : function(condicao){
+            console.log(condicao);
+        },
+        error : function(){
+            console.log("Não excluiu")
+        }
+    });
+}
+
 

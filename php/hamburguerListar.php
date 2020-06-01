@@ -39,7 +39,6 @@
         echo "Erro executando SELECT: " . mysqli_error($conn);
     }
     mysqli_close($conn);
-
     echo json_encode($informacao);
 
 ?>
