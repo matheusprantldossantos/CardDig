@@ -15,7 +15,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 25%;
-    height: 55%;
+    height: 60%;
     background: #363844;
     border-radius: 2px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -31,7 +31,7 @@ body{
 
 input[type = text],[type = number]{
     width: 70%;
-    height: 10%;
+    height: 9%;
     border: solid 1px #b8b8bb;
     border-radius: 3px;
     background-color: transparent;
@@ -71,38 +71,38 @@ input[type=number] {
 
 #precoProd{
     position: absolute;
-    top: 32%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #categoriaProd{
     position: absolute;
-    top: 46%;
+    top: 42%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #disponibilidadeProd{
     position: absolute;
-    top: 60%;
+    top: 54%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #tCategoriaProd{
     position: absolute;
-    top: 74%;
+    top: 66%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #bProduto{
     position: absolute;
-    top: 88%;
-    left: 50%;
+    top: 82%;
+    left: 32%;
     transform: translateX(-50%);
-    width: 25%;
+    width: 34%;
     height: 8%;
     border-radius: 3px;
     border: solid 1px #d858a7;
@@ -117,6 +117,34 @@ input[type=number] {
     background-color: #c44493;
     border: solid 1px #c44493;
     transition: 0.2s;
+}
+
+#bVoltar{
+    position: absolute;
+    top: 82%;
+    left: 68%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 8%;
+    border-radius: 3px;
+    color: #262935;
+    border: solid 1px #c9c8c8;
+    background-color: #c9c8c8;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none; 
+}
+
+
+#bVoltar:hover{
+    border: solid 1px #adadad;
+    background-color: #adadad;
+}
+
+a{
+    color: #262935;
+    text-decoration: none;
+    background: transparent;
 }
 
 #mensagem{

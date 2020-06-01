@@ -16,6 +16,7 @@
                 <input type="text" name="tipoCategoria" id="tCategoriaProd" placeholder="Especificação da categoria do produto"> <br>
                 <input type="number" name="disponibilidade" id="disponibilidadeProd" placeholder="Digite 0 ou 1"> <br>
                 <input type="submit" value="Inserir" id="bProduto"> <br>
+                <button id="bVoltar"><a href="telaDono.html">Voltar</a></button>
             </form>
         </div>
     </body>

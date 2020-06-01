@@ -815,8 +815,8 @@ input[type=number] {
     top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 35%;
-    height: 50%;
+    width: 32%;
+    height: 40%;
     background-color: #e2e2e2;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -830,8 +830,8 @@ input[type=number] {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 35%;
-    height: 50%;
+    width: 32%;
+    height: 40%;
     background-color: #e2e2e2;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -842,7 +842,7 @@ input[type=number] {
 
 #bFecharPromo{
     position: absolute;
-    top: 5%;
+    top: 6%;
     left: 90%;
     color: #353535;
     font-size: 30px;
@@ -851,6 +851,7 @@ input[type=number] {
     opacity: 0.3;
     transition: .3s;
     outline: none;
+    cursor: pointer;
 }
 
 #bFecharPromo:hover{
@@ -861,17 +862,19 @@ input[type=number] {
 
 #titlePagPromo{
     position: absolute;
-    top: 7%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
     font-size: 35px;
     font-family: blank;
     font-weight: bold;
 }
 
-.inputEdit{
+.inputPromo{
     width: 60%;
-    height: 10%;
+    height: 12%;
     outline: none;
     border: solid 1px #1f1f1f;
     border-radius: 2px;
@@ -880,51 +883,51 @@ input[type=number] {
     padding: 2%;
 }
 
+.textInp{
+    font-family: blank;
+    color: #1f1f1f;
+}
+
 #promoNome{
     position: absolute;
-    top: 24%;
-    left: 24%;
-    transform: translateX(-50%);
+    top: 32%;
+    left: 20%;
 }
 
 #nomeProdutoPromo{
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 32%;
+    left: 30%;
 }
 
-#promoPre{
+#promoPreco{
     position: absolute;
-    top: 44%;
-    left: 24%;
-    transform: translateX(-50%);
+    top: 45%;
+    left: 20%;
 }
 
 #precoProdutoPromo{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 45%;
+    left: 30%;
 }
 
-#promoProm{
+#promoText{
     position: absolute;
-    top: 65%;
-    left: 26%;
-    transform: translateX(-50%);
+    top: 57%;
+    left: 20%;
 }
 
 #valorProdutoPromo{
     position: absolute;
-    top: 71%;
+    top: 65%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #bSalvarPromo{
     position: absolute;
-    top: 86%;
+    top: 82%;
     left: 50%;
     transform: translateX(-50%);
     outline:none;
@@ -932,7 +935,7 @@ input[type=number] {
     border-radius: 2px;
     background-color: #ff7ab8;
     width: 20%;
-    height: 9%;
+    height: 11%;
     cursor: pointer;
     text-decoration: none;
     transition: .2s;

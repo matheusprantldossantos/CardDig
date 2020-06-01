@@ -861,9 +861,10 @@ function listarInfoPromo(nome){
             ajax_nome: nome
         },
         success : function(info){
-            console.log("funcionou")
-            $("#nomeProdutoPromo").val(info.nome);
-            $("#precoProdutoPromo").val(info.preco);
+            console.log("puxou dados")
+            $("#bancoNome").html("<div id='nomeProdutoPromo'>" + info.nome + "</div>");
+            $("#bancoPreco").html("<div id='precoProdutoPromo'>" + "R$ " + info.preco + "</div>");
+            
         },
         error : function(){
             console.log("não funcionou")
