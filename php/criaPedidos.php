@@ -37,6 +37,32 @@
             $cont++;
         }
     }
+    //Pega descontos
+    $position = 0;
+    $sqlPromocoes = "SELECT produto_idproduto, valorAtual FROM item_modificado";
+    if($resultModificado = mysqli_query($conn, $sqlPromocoes)){
+        if(mysqli_num_rows($resultModificado) > 0){
+            $condicao = true;
+            while($row = mysqli_fetch_assoc($resultModificado)){
+                $promocao[$position]["id"] = $row["produto_idproduto"];
+                $promocao[$position]["preco"] = $row["valorAtual"];
+            }
+        }
+        else{
+            $condicao = false;
+        }
+    }
+    
+    //verifica se entre os produtos há um com desconto
+    if($condicao){
+        for($i = 0; $i < count($infoProd); $i++){
+            for($j = 0; $j < count($promocao); $j++){
+                if($infoProd[$i]["idproduto"] == $promocao[$j]["id"]){
+                    $infoProd[$i]["preco"] = $promocao[$j]["preco"];
+                }
+            }
+        }
+    }
     $sqlConjunto = "SELECT indexMesa, idConjunto, comandaMesa FROM  conjunto";
     $resultConjunto = mysqli_query($conn, $sqlConjunto);
     $cont = 0;
