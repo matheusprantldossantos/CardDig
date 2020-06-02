@@ -31,5 +31,26 @@ $(document).ready(function(){
         window.location.href = "../pages/Promoções.html";
     });
 
+    $("#enviarMesa").click(function(){
+        $("#bMudar").removeClass("styleMudar").addClass("styleMudarAfter");
+        $("#container").removeClass("styleCont").addClass("styleContAfter");
+        $("#msgAlerta").removeClass("alerta").addClass("alertaAfter");
+        $("#setaAlert").removeClass("seta").addClass("setaAfter");
+
+        $("#bSim").click(function(){
+            window.location.href = "../pages/loginEnviaMesas.html";
+        });
+
+        $("#bNao").click(function(){
+            $("#bMudar").removeClass("styleMudarAfter").addClass("styleMudar");
+            $("#container").removeClass("styleContAfter").addClass("styleCont");
+            $("#msgAlerta").removeClass("alertaAfter").addClass("alerta");
+            $("#setaAlert").removeClass("setaAfter").addClass("seta");
+            setTimeout(function() {
+                location.reload(true);
+            }, 320);
+        });
+    });
+
 });
 
