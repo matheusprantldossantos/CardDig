@@ -63,7 +63,7 @@ function fListaBebidas(){
         dataType: "json",
         url: "../php/bebidaListar.php",
         success : function(info){
-
+            console.log(info);
             // Primeira categoria
             $(new Document).ready(function(){ 
                 let count = 0;

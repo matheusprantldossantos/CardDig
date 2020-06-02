@@ -901,7 +901,7 @@ function editarProduto(id, nome, preco, disp, tipo){
 function criaPromocao(nome, categoria){
     let porcentagem = parseInt($("#valorProdutoPromo").val()); 
     console.log("Ah");
-    /*$.ajax({
+    $.ajax({
         type : "POST",
         dataType : "json",
         url : "../php/criaPromocoes.php",
@@ -916,5 +916,5 @@ function criaPromocao(nome, categoria){
         error : () =>{
             console.log("Cria porcent");
         }
-    });*/
+    });
 }
