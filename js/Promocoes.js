@@ -56,3 +56,16 @@ $(document).ready(function(){
     });
    
 });
+function listaProm(){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/promocoesListar.php",
+        success : (info) =>{
+            console.log(info);
+        },
+        error : () =>{
+            console.log("Não foi possível listar");
+        }
+    });
+}

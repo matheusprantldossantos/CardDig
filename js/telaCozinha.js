@@ -105,26 +105,7 @@ function listaMesas(){
                     indexesMesas.push(0);
                 }
                 else if(info[l].nomeMesa == info[l - 1].nomeMesa){
-                    count = l - 1;
-                    while(count != 0){
-                        if(info[count].nomeMesa != info[count - 1].nomeMesa){
-                            break;
-                        }
-                        else{
-                            count--;
-                        }
-                    }
-                    let colocar = true;
-                    if(count != 0){
-                        for(let z = 0; z < indexesMesas.length - 1; z++){
-                            if(indexesMesas[z] == count){
-                                colocar = false;
-                            }
-                        }
-                    }
-                    if(colocar){
-                        indexesMesas.push(count);
-                    }
+                    $a = 0;
                 }
                 else{
                     indexesMesas.push(l);
