@@ -1,11 +1,6 @@
 $(document).ready(function(){
     fListaBebidas();
     $("#bBebidas").toggleClass("item_botao_after");
-    $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
-    $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
-    $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
-    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
-    $("#bComb").removeClass("item_botao_after").addClass("item_botao");
 
     $("#bPizza").click(function(){
         window.location.href = "../pages/Pizza.html";
@@ -22,11 +17,17 @@ $(document).ready(function(){
     $("#bLanche").click(function(){
         window.location.href = "../pages/Lanches.html";
     });
+
     $("#bComb").click(function(){
         window.location.href = "../pages/Combinações.html";
     });
+
     $("#bPedidos").click(function() {
         window.location.href = "../pages/meusPedidos.html";
+    });
+
+    $("#bPromo").click(function() {
+        window.location.href = "../pages/Promoções.html";
     });
 
     $("#voltarPrinc").click(function() {

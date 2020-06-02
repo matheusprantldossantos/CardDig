@@ -14,6 +14,10 @@ body{
     src: url(../fontes/BebasNeue-Regular.otf);
 }
 
+@font-face{
+    font-family: blank;
+    src: url(../fontes/blank-Regular.otf);
+}
 
 #menuLat{
     position: fixed;
@@ -151,9 +155,9 @@ body{
     display: inline-block;
 }
 
-/* Meus Pedidos Página */
+/* Promoções */
 
-#divPedidos{
+#divPromo{
     position: relative;
     left: 15%;
     width: 84.8%;
@@ -178,352 +182,102 @@ body{
     background-color: #d6d6d6b0; 
 }
 
+/* Promoções */
 
-/* Lista de Pedidos - subtitulos */
+.divProdpromo{
+    width: 40%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: #1d1e25;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
-.subtitles{
-    font-family: Bebas neue;
-    font-size: 30px;
+.styPorc{
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    font-family: monospace;
+    font-weight: bold;
     color: #d6d6d6;
 }
 
-#titleProd{
+.styNome{
     position: absolute;
-    top: 25%;
-    left: 5%;
+    top: 8%;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 65%;
+    color: #d6d6d6;
+    font-size: 20px;
+    font-family: monospace;
 }
 
-#titlePrec{
+.styPreco{
     position: absolute;
-    top: 25%;
-    left: 35%;
-}
-
-#titleQuant{
-    position: absolute;
-    top: 25%;
-    left: 55%;
-}
-
-#titleSub{
-    position: absolute;
-    top: 25%;
-    left: 71.5%;
-}
-
-#titleExc{
-    position: absolute;
-    top: 25%;
-    left: 85%;
-}
-
-.prodElem{
-    color: #7c7a7a;
-    font-size: 15px;
+    top: 30%;
+    left: 10%;
+    font-size: 35px;
+    font-family: Bebas neue;
+    color: #ca862e;
 }
 
 .bContador{
     background: transparent;
-    border: solid 2px #eba243;
-    color: #d6d6d6;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
-    padding: 0.4%;
-}
-
-.iconsLixeira{
-    background-color: #ff4655;
     border: none;
-    border-radius: 5px;
-    color: #e2e2e2e5;
+    color: #da9740;
     cursor: pointer;
-    font-size: 20px;
     outline: none;
-    padding: .8%;
+    padding: 1%;
+    text-align: center;
 }
 
-/* Produto 1 */
-
-#nameProd0{
-    position: absolute;
-    top: 34%;
-    left: 5%;
-}
-
-#procUnit0{
-    position: absolute;
-    top: 34%;
-    left: 37%;
-}
-
-#bDiminuir0{
-    position: absolute;
-    top: 33.5%;
-    left: 55.5%;
-}
-
-#number0{
-    position: absolute;
-    top: 33.5%;
-    left: 58.8%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
-#bAumentar0{
-    position: absolute;
-    top: 33.5%;
-    left: 60.8%;
-}
-
-#precSub0{
-    position: absolute;
-    top: 34%;
-    left: 73.5%;
-}
-
-#iconLix0{
-    position: absolute;
-    top: 32.5%;
-    left: 86.3%;
-}
-
-#linhaPed0{
-    position: absolute;
-    top: 41.5%;
-    left: 4%;
-    width: 90%;
-    height: 0.1%;
-    background-color: #2f3341; 
-}
-
-/* Produto 2 */
-
-
-#nameProd1{
-    position: absolute;
-    top: 46%;
-    left: 5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#procUnit1{
-    position: absolute;
-    top: 46%;
-    left: 37%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#bDiminuir1{
-    position: absolute;
-    top: 45.5%;
-    left: 55.5%;
-}
-
-#number1{
-    position: absolute;
-    top: 45.5%;
-    left: 58.8%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
-#bAumentar1{
-    position: absolute;
-    top: 45.5%;
-    left: 60.8%;
-}
-
-#precSub1{
-    position: absolute;
-    top: 46%;
-    left: 73.5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#iconLix1{
-    position: absolute;
-    top: 44.5%;
-    left: 86.3%;
-}
-
-#linhaPed1{
-    position: absolute;
-    top: 52.5%;
-    left: 4%;
-    width: 90%;
-    height: 0.1%;
-    background-color: #2f3341; 
-}
-
-/* Produto 3 */
-
-#nameProd2{
-    position: absolute;
-    top: 57%;
-    left: 5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#procUnit2{
-    position: absolute;
-    top: 57%;
-    left: 37%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#bDiminuir2{
-    position: absolute;
-    top: 56.5%;
-    left: 55.5%;
-}
-
-#number2{
-    position: absolute;
-    top: 56.5%;
-    left: 58.8%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
-#bAumentar2{
-    position: absolute;
-    top: 56.5%;
-    left: 60.8%;
-}
-
-#precSub2{
-    position: absolute;
-    top: 57%;
-    left: 73.5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#iconLix2{
-    position: absolute;
-    top: 55.5%;
-    left: 86.3%;
-}
-
-#linhaPed2{
-    position: absolute;
-    top: 63.5%;
-    left: 4%;
-    width: 90%;
-    height: 0.1%;
-    background-color: #2f3341; 
-}
-
-/* Produto 4 */
-
-#nameProd3{
-    position: absolute;
-    top: 68%;
-    left: 5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#procUnit3{
-    position: absolute;
-    top: 68%;
-    left: 37%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#bDiminuir3{
-    position: absolute;
-    top: 67.5%;
-    left: 55.5%;
-}
-
-#number3{
-    position: absolute;
-    top: 67.5%;
-    left: 58.8%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
-#bAumentar3{
-    position: absolute;
-    top: 67.5%;
-    left: 60.8%;
-}
-
-#precSub3{
-    position: absolute;
-    top: 68%;
-    left: 73.5%;
-    color: #7c7a7a;
-    font-size: 15px;
-}
-
-#iconLix3{
-    position: absolute;
-    top: 66.5%;
-    left: 86.3%;
-}
-
-#linhaPed3{
-    position: absolute;
-    top: 74.5%;
-    left: 4%;
-    width: 90%;
-    height: 0.1%;
-    background-color: #2f3341; 
-}
-
-
-/* Elementos abaixo da Lista */
-
-#textTotal{
-    position: absolute;
-    top: 82%;
-    left: 80.5%;
-    transform: translateX(-50%);
-    color: #b4b4b4;
-}
-
-#numberTotal{
-    position: absolute;
-    top: 81%;
-    left: 83.5%;
-    transform: translateX(-50%);
-    color: #ca862e;
-    font-size: 30px;
-    font-family: Bebas neue;
-}
-
-#finalizaPedido{
-    position: absolute;
-    top: 90%;
-    left: 80%;
-    width: 10%;
-    height: 5%;
+.buttonAdd{
     background-color: #ca862e;
+    border: solid 2px #ca862e;
     color: #d6d6d6;
-    border: none;
     border-radius: 3px;
     cursor: pointer;
     outline: none;
-    transition: .3s;
+    width: 40%;
+    height: 17%;
 }
 
-#finalizaPedido:hover{
-    background-color: #ca812e;
-    transition: .3s;
+#elemento0{
+    position: absolute;
+    top: 25%;
+    left: 5%;
 }
 
-/* Efeito Blur Container */
+#bDiminuir{
+    position: absolute;
+    top: 77%;
+    left: 10%;
+}
+
+#number{
+    position: absolute;
+    top: 76%;
+    left: 18%;
+    color: #d6d6d6;
+    font-size: 25px;
+}
+
+#bAumentar{
+    position: absolute;
+    top: 77%;
+    left: 25%;
+}
+
+#bAdicionar{
+    position: absolute;
+    top: 75%;
+    left: 55%; 
+}
+
+
+/* Blur da tela */
 
 .styleCont{
     filter: blur(0px);
