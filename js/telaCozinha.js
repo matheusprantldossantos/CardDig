@@ -164,6 +164,15 @@ function listaMesas(){
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
                                     }
+                                    else if(contadorComandas == 4){
+                                        conteudo += "<div class='produtos' id='ComFive_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 5){
+                                        conteudo += "<div class='produtos' id='ComSix_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 6){
+                                        conteudo += "<div class='produtos' id='ComSeven_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
                                     contadorProd++;
                                 }
                                 contadorComandas++;
@@ -329,6 +338,15 @@ function listaMesas(){
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
                                     }
+                                    else if(contadorComandas == 4){
+                                        conteudo += "<div class='produtos' id='ComFive_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 5){
+                                        conteudo += "<div class='produtos' id='ComSix_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 6){
+                                        conteudo += "<div class='produtos' id='ComSeven_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
                                     contadorProd++;
                                 }
                                 contadorComandas++;
@@ -486,6 +504,15 @@ function listaMesas(){
                                     }
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 4){
+                                        conteudo += "<div class='produtos' id='ComFive_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 5){
+                                        conteudo += "<div class='produtos' id='ComSix_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 6){
+                                        conteudo += "<div class='produtos' id='ComSeven_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
                                     }
                                     contadorProd++;
                                 }

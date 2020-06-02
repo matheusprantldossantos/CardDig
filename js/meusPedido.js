@@ -33,6 +33,10 @@ $(new Document).ready(function(){
     $("#bPromo").click(function() {
         window.location.href = "../pages/Promoções.html";
     });
+
+    $("#voltarPrinc").click(function() {
+        window.location.href = "../pages/telaPrincipal.html";
+    });
     
     $("#finalizaPedido").click(function(){
         encerraPedido();
