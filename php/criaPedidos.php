@@ -52,6 +52,9 @@
             $condicao = false;
         }
     }
+    else{
+        $condicao = false;
+    }
     
     //verifica se entre os produtos há um com desconto
     if($condicao){
@@ -73,6 +76,17 @@
             $cont++;
         }
     }
+    $pos = 0;
+    $sqlCozinha = "SELECT idcozinheiro FROM cozinheiro WHERE ativo = 1";
+    if($resultCozinha = mysqli_query($conn, $sqlCozinha)){
+        if(mysqli_num_rows($resultCozinha) > 0){
+            while($row = mysqli_fetch_assoc($resultCozinha)){
+                $cozinheiroAtual[$pos]["id"] = $row["idcozinheiro"];
+                $pos++;
+            }
+        }
+    }
+    $idCozinheiro = intval($cozinheiroAtual[0]["id"]);
     $idmesa = intval($infoConjunto[0]["indexMesa"]);
     $comanda = intval($infoConjunto[0]["comandaMesa"]);
     $sqlComanda = "SELECT comanda FROM  pedido";
@@ -82,7 +96,7 @@
     $precoPrimeio = $precoPrimeio * $quantidadeProd;
     if(mysqli_num_rows($result) == 0){
         $verdade2 = "sem nada";
-        $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa) VALUES ('$comanda', '$precoPrimeio','$idmesa')";
+        $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa, indexCozinha) VALUES ('$comanda', '$precoPrimeio','$idmesa', '$idCozinheiro')";
         if($result = mysqli_query($conn, $sqlPedido)){
             $verdade = "true";
         }
@@ -177,7 +191,7 @@
     else{
         //mais de um pedido;
         $verdade2 = "sem nada";
-        $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa) VALUES ('$comanda', '$precoPrimeio','$idmesa')";
+        $sqlPedido = "INSERT INTO pedido (comanda, valor_total, indexMesa, indexCozinha) VALUES ('$comanda', '$precoPrimeio','$idmesa', '$idCozinheiro')";
         if($result = mysqli_query($conn, $sqlPedido)){
             $verdade = "true";
         }
@@ -199,7 +213,8 @@
     }
 }
     $a = 0;
+    
     mysqli_close($conn);
-    echo json_encode($verdade);
+    echo json_encode($idCozinheiro);
 
 ?>

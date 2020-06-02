@@ -36,6 +36,7 @@
     
     $position = 0;
     $location = 0;
+    $locationMesa = 0;
     $listaNomes = [];
     $listaQuantidades = [];
     $anterior = $position;
@@ -46,7 +47,7 @@
     }
     foreach($mesa as $coisas){
         $idDasMesas = $coisas["id"];
-        $sqlItemPedido = "SELECT pedido_comanda, nome_produto, quantidade FROM item_produto WHERE indexMesa = '$idDasMesas' and andamento = '1'";
+        $sqlItemPedido = "SELECT pedido_comanda, nome_produto, quantidade, indexMesa FROM item_produto WHERE indexMesa = '$idDasMesas' and andamento = '1'";
         if($resultItem = mysqli_query($conn, $sqlItemPedido)){
             if(mysqli_num_rows($resultItem) > 0){
                 $verdade = "Achou2";
@@ -55,7 +56,8 @@
                         array_push($listaNomes, $row["nome_produto"]);
                         array_push($listaQuantidades, $row["quantidade"]);
                         $itens[$location] = array(
-                            "nomeMesa" => $listaNomesMesa[$location],
+                            "nomeMesa" => $listaNomesMesa[$locationMesa],
+                            "indexMesa" => $row["indexMesa"],
                             "comanda" => $row["pedido_comanda"],
                             "infos" => array(
                                 "nome" => $listaNomes,
@@ -70,8 +72,8 @@
                             $itens[$location]["infos"]["nome"] = $listaNomes;
                             $itens[$location]["infos"]["quantidade"] = $listaQuantidades;
                     }
-                    // mudou de comanda
-                    else{
+                    //Nao mudou a mesa
+                    else if($itens[$location]["indexMesa"] == $row["indexMesa"]){
                         $location++;
                         $position = 0;
                         $listaNomes = [];
@@ -79,7 +81,28 @@
                         array_push($listaNomes, $row["nome_produto"]);
                         array_push($listaQuantidades, $row["quantidade"]);
                         $itens[$location] = array(
-                            "nomeMesa" => $listaNomesMesa[$location],
+                            "nomeMesa" => $listaNomesMesa[$locationMesa],
+                            "indexMesa" => $row["indexMesa"],
+                            "comanda" => $row["pedido_comanda"],
+                            "infos" => array(
+                                "nome" => $listaNomes,
+                                "quantidade" => $listaQuantidades
+                            )
+                        );
+                        $position++;
+                    }
+                    // mudou de comanda e mesa
+                    else{
+                        $locationMesa++;
+                        $location++;
+                        $position = 0;
+                        $listaNomes = [];
+                        $listaQuantidades = [];
+                        array_push($listaNomes, $row["nome_produto"]);
+                        array_push($listaQuantidades, $row["quantidade"]);
+                        $itens[$location] = array(
+                            "nomeMesa" => $listaNomesMesa[$locationMesa],
+                            "indexMesa" => $row["indexMesa"],
                             "comanda" => $row["pedido_comanda"],
                             "infos" => array(
                                 "nome" => $listaNomes,
@@ -94,6 +117,7 @@
     }
     
     $x = 0;
+    $contador = 0;
     for($l = 0; $l < count($itens); $l++){
         if($l == 0){
             $itens[$l]["quantidadeComandas"] = 1;
@@ -104,7 +128,7 @@
             }
         }
         else if($itens[$l - 1]["nomeMesa"] == $itens[$l]["nomeMesa"]){
-            $itens[$l - 1]["quantidadeComandas"] += 1;
+            $itens[$contador]["quantidadeComandas"] += 1;
             foreach($itens[$l]["infos"] as $parts){
                 $x = count($parts);
                 $itens[$l]["qntNomes"] = $x;
@@ -112,6 +136,7 @@
             }
         }
         else{
+            $contador = $l;
             $itens[$l]["quantidadeComandas"] = 1;
             foreach($itens[$l]["infos"] as $parts){
                 $x = count($parts);

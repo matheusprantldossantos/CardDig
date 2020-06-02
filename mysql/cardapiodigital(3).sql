@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Maio-2020 às 18:42
+-- Tempo de geração: 02-Jun-2020 às 22:04
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.2.29
 
@@ -54,7 +54,7 @@ CREATE TABLE `cozinheiro` (
 --
 
 INSERT INTO `cozinheiro` (`idcozinheiro`, `funcao`, `email`, `senha`, `ativo`, `nome`) VALUES
-(1, '', 'cozinhaEmail@gmail.com', '1234', 0, 'Antônio Martins da Silva');
+(1, '', 'cozinhaEmail@gmail.com', '1234', 1, 'Antônio Martins da Silva');
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE `dono` (
 --
 
 INSERT INTO `dono` (`iddono`, `email`, `senha`, `ativo`, `nome`) VALUES
-(2, 'donoEmail@gmail.com', '1234', 0, 'Juliana Pereira Paes');
+(2, 'donoEmail@gmail.com', '1234', 1, 'Juliana Pereira Paes');
 
 -- --------------------------------------------------------
 
@@ -116,10 +116,22 @@ CREATE TABLE `item_mesa` (
 --
 
 CREATE TABLE `item_modificado` (
+  `idModificado` int(100) NOT NULL,
   `dono_iddono` int(11) NOT NULL,
   `produto_idproduto` int(11) NOT NULL,
-  `promocao_idpromocao` int(11) NOT NULL
+  `promocao_idpromocao` int(11) NOT NULL,
+  `valorAtual` double NOT NULL,
+  `nome` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
+  `categoria` varchar(40) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `item_modificado`
+--
+
+INSERT INTO `item_modificado` (`idModificado`, `dono_iddono`, `produto_idproduto`, `promocao_idpromocao`, `valorAtual`, `nome`, `categoria`) VALUES
+(7, 2, 9, 12, 9.8, 'pudim', 'sobremesa'),
+(8, 2, 12, 13, 10.29, 'coffee shot', 'bebidas');
 
 -- --------------------------------------------------------
 
@@ -138,7 +150,7 @@ CREATE TABLE `item_pedido` (
 --
 
 INSERT INTO `item_pedido` (`pedido_comanda`, `cliente_cpf`, `quantidade`) VALUES
-(7, '', '2');
+(1, '', '2');
 
 -- --------------------------------------------------------
 
@@ -160,8 +172,8 @@ CREATE TABLE `item_produto` (
 --
 
 INSERT INTO `item_produto` (`pedido_comanda`, `produto_idproduto`, `nome_produto`, `indexMesa`, `quantidade`, `andamento`) VALUES
-(7, 8, 'suco de morango', 10, 1, 1),
-(7, 18, 'pizza portuguesa', 10, 1, 1);
+(1, 10, 'sanduiche de salada', 13, 1, 0),
+(1, 12, 'coffee shot', 13, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -182,7 +194,7 @@ CREATE TABLE `mesa` (
 --
 
 INSERT INTO `mesa` (`idmesa`, `nome`, `andamento`, `terminado`, `indexGarcom`) VALUES
-(10, 'Frente janela', 0, 0, NULL),
+(10, 'Frente janela', 0, 1, NULL),
 (12, 'Meio janela', 0, 1, NULL),
 (13, 'Fundo janela', 0, 1, NULL),
 (14, 'Frente escada', 0, 1, NULL),
@@ -205,6 +217,7 @@ CREATE TABLE `pedido` (
   `comanda` int(200) NOT NULL,
   `valor_total` double NOT NULL,
   `indexMesa` int(100) NOT NULL,
+  `indexCozinha` int(11) NOT NULL,
   `cpf` varchar(11) COLLATE latin1_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
@@ -212,8 +225,8 @@ CREATE TABLE `pedido` (
 -- Extraindo dados da tabela `pedido`
 --
 
-INSERT INTO `pedido` (`comanda`, `valor_total`, `indexMesa`, `cpf`) VALUES
-(7, 43.2, 10, NULL);
+INSERT INTO `pedido` (`comanda`, `valor_total`, `indexMesa`, `indexCozinha`, `cpf`) VALUES
+(1, 27.29, 13, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -261,8 +274,17 @@ INSERT INTO `produto` (`idproduto`, `nome`, `preco`, `categoria`, `disponibilida
 
 CREATE TABLE `promocao` (
   `idpromocao` int(11) NOT NULL,
-  `valor` int(100) NOT NULL
+  `porcentagem` int(100) NOT NULL,
+  `idProdEsp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Extraindo dados da tabela `promocao`
+--
+
+INSERT INTO `promocao` (`idpromocao`, `porcentagem`, `idProdEsp`) VALUES
+(12, 20, 9),
+(13, 2, 12);
 
 --
 -- Índices para tabelas despejadas
@@ -305,6 +327,7 @@ ALTER TABLE `item_mesa`
 -- Índices para tabela `item_modificado`
 --
 ALTER TABLE `item_modificado`
+  ADD PRIMARY KEY (`idModificado`),
   ADD KEY `fk_item_modificado_dono1_idx` (`dono_iddono`),
   ADD KEY `fk_item_modificado_produto1_idx` (`produto_idproduto`),
   ADD KEY `fk_item_modificado_promocao1_idx` (`promocao_idpromocao`);
@@ -337,7 +360,8 @@ ALTER TABLE `mesa`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`comanda`),
-  ADD KEY `mesaPedido` (`indexMesa`);
+  ADD KEY `mesaPedido` (`indexMesa`),
+  ADD KEY `cozinhaPedido` (`indexCozinha`);
 
 --
 -- Índices para tabela `produto`
@@ -349,7 +373,8 @@ ALTER TABLE `produto`
 -- Índices para tabela `promocao`
 --
 ALTER TABLE `promocao`
-  ADD PRIMARY KEY (`idpromocao`);
+  ADD PRIMARY KEY (`idpromocao`),
+  ADD KEY `produtoEspecifico` (`idProdEsp`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -359,7 +384,7 @@ ALTER TABLE `promocao`
 -- AUTO_INCREMENT de tabela `conjunto`
 --
 ALTER TABLE `conjunto`
-  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `cozinheiro`
@@ -380,6 +405,12 @@ ALTER TABLE `garcom`
   MODIFY `idgarcom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de tabela `item_modificado`
+--
+ALTER TABLE `item_modificado`
+  MODIFY `idModificado` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de tabela `mesa`
 --
 ALTER TABLE `mesa`
@@ -395,7 +426,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `promocao`
 --
 ALTER TABLE `promocao`
-  MODIFY `idpromocao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpromocao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restrições para despejos de tabelas
@@ -446,7 +477,14 @@ ALTER TABLE `mesa`
 -- Limitadores para a tabela `pedido`
 --
 ALTER TABLE `pedido`
+  ADD CONSTRAINT `cozinhaPedido` FOREIGN KEY (`indexCozinha`) REFERENCES `cozinheiro` (`idcozinheiro`),
   ADD CONSTRAINT `mesaPedido` FOREIGN KEY (`indexMesa`) REFERENCES `mesa` (`idmesa`);
+
+--
+-- Limitadores para a tabela `promocao`
+--
+ALTER TABLE `promocao`
+  ADD CONSTRAINT `produtoEspecifico` FOREIGN KEY (`idProdEsp`) REFERENCES `produto` (`idproduto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

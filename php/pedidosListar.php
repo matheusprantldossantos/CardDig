@@ -56,6 +56,7 @@
     else {
         echo "Erro executando SELECT: " . mysqli_error($conn);
     }
+
     $sqlPrecoProd = "SELECT preco, idproduto FROM produto";
     $resultProduto = mysqli_query($conn, $sqlPrecoProd);
     $cont = 0;
@@ -64,6 +65,34 @@
         $produtos[$cont]["precoProduto"] = $row["preco"];
         $produtos[$cont]["idProd"] = $row["idproduto"];
         $cont++;
+        }
+    }
+    //Pega descontos
+    $position = 0;
+    $sqlPromocoes = "SELECT produto_idproduto, valorAtual FROM item_modificado";
+    if($resultModificado = mysqli_query($conn, $sqlPromocoes)){
+        if(mysqli_num_rows($resultModificado) > 0){
+            $condicao = true;
+            while($row = mysqli_fetch_assoc($resultModificado)){
+                $promocao[$position]["id"] = $row["produto_idproduto"];
+                $promocao[$position]["preco"] = $row["valorAtual"];
+            }
+        }
+        else{
+            $condicao = false;
+        }
+    }
+    else{
+        $condicao = false;
+    }
+    //verifica se entre os produtos há um com desconto
+    if($condicao){
+        for($i = 0; $i < count($produtos); $i++){
+            for($j = 0; $j < count($promocao); $j++){
+                if($produtos[$i]["idProd"] == $promocao[$j]["id"]){
+                    $produtos[$i]["precoProduto"] = $promocao[$j]["preco"];
+                }
+            }
         }
     }
     
@@ -87,8 +116,8 @@
     $cont = 0;
     for($i = 0; $i < count($especicacaoProdId); $i++){
         for($j = 0; $j < count($informacao); $j++){
-            for($k = 0; $k < count($informacao[$j]["infos"]["idProduto"]); $k++){
-                if($especicacaoProdId[$i] == $informacao[$j]["infos"]["idProduto"][$k]){
+            for($k = 0; $k < count($informacao[count($informacao) - 1]["infos"]["idProduto"]); $k++){
+                if($especicacaoProdId[$i] == $informacao[count($informacao) - 1]["infos"]["idProduto"][$k]){
                         $informacao[$j]["infos"]["precos"][$k] = $especicacaoProdPreco[$i];
                         $idAtual =  $especicacaoProdId[$i];
                         $sqlItemProduto = "SELECT quantidade FROM item_produto WHERE produto_idproduto = '$idAtual'";

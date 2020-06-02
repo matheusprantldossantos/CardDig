@@ -281,7 +281,7 @@ function listaPedidos() {
                     conteudo += "<div class='prodElem' id='precSub" + j +"'>" + "R$ " + info[info.length - 1].infos.subTotal[j] + "</div>";
                     conteudo += "<div class='iconsLixeira' id='iconLix" + j +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
                     conteudo += "<div id='linhaPed" + j +"'>" + "</div>";
-                    conteudo += "<div id='numberTotal'>" + "R$ " + info[0].valor_total + "</div>";
+                    conteudo += "<div id='numberTotal'>" + "R$ " + info[info.length - 1].valor_total + "</div>";
                 }
             }
     
