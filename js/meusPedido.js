@@ -1,12 +1,7 @@
 $(new Document).ready(function(){
     listaPedidos();
     $("#bPedidos").toggleClass("item_botao_after");
-    $("#bLanche").removeClass("item_botao_after").addClass("item_botao");
-    $("#bPizza").removeClass("item_botao_after").addClass("item_botao");
-    $("#bBebidas").removeClass("item_botao_after").addClass("item_botao");
-    $("#bHamb").removeClass("item_botao_after").addClass("item_botao");
-    $("#bSobremesa").removeClass("item_botao_after").addClass("item_botao");
-    $("#bComb").removeClass("item_botao_after").addClass("item_botao");
+
     $("#bBebidas").click(function(){
         window.location.href = "../pages/Bebidas.html";
     });
@@ -26,12 +21,23 @@ $(new Document).ready(function(){
     $("#bSobremesa").click(function(){
         window.location.href = "../pages/Sobremesas.html";
     });
+
     $("#bComb").click(function(){
         window.location.href = "../pages/Combinações.html";
     });
+
     $("#bPedidos").click(function() {
         window.location.href = "../pages/meusPedidos.html";
     });
+
+    $("#bPromo").click(function() {
+        window.location.href = "../pages/Promoções.html";
+    });
+
+    $("#voltarPrinc").click(function() {
+        window.location.href = "../pages/telaPrincipal.html";
+    });
+    
     $("#finalizaPedido").click(function(){
         encerraPedido();
     });
@@ -257,8 +263,8 @@ function listaPedidos() {
 
             var conteudo = "";
 
-            conteudo += "<div id='nomePag'>" + "MEUS PEDIDOS" + "</div>";
-            conteudo += "<div id='linha2'>" + "</div>";
+        /*  conteudo += "<div id='nomePag'>" + "MEUS PEDIDOS" + "</div>";
+            conteudo += "<div id='linha2'>" + "</div>";   */
             conteudo += "<div class='subtitles' id='titleProd'>" + "Produto" + "</div>";
             conteudo += "<div class='subtitles' id='titlePrec'>" + "Preço Unit" + "</div>";
             conteudo += "<div class='subtitles' id='titleQuant'>" + "Quantidade" + "</div>";
@@ -268,17 +274,19 @@ function listaPedidos() {
             for(let i = 0; i < 1; i++){
                 for(let j = 0; j < info[info.length - 1].infos.nome.length; j++){
                     conteudo += "<div class='prodElem' id='nameProd" + j +"'>" + info[info.length - 1].infos.nome[j] +"</div>";
-                    conteudo += "<div class='prodElem' id='procUnit" + j +"'>" + info[info.length - 1].infos.precos[j] + " R$" + "</div>";
+                    conteudo += "<div class='prodElem' id='procUnit" + j +"'>" + " R$ " + info[info.length - 1].infos.precos[j] + "</div>";
                     conteudo += "<button class='bContador' id='bDiminuir" + j +"'>" + "<i class='fas fa-minus'></i>" + "</button>";
                     conteudo += "<div id='number" + j +"'>" + info[info.length - 1].infos.quantidade[j] + "</div>";
                     conteudo += "<button class='bContador' id='bAumentar" + j +"'>" + "<i class='fas fa-plus'></i>" + "</button>";
-                    conteudo += "<div class='prodElem' id='precSub" + j +"'>" + info[info.length - 1].infos.subTotal[j] + "</div>";
+                    conteudo += "<div class='prodElem' id='precSub" + j +"'>" + "R$ " + info[info.length - 1].infos.subTotal[j] + "</div>";
                     conteudo += "<div class='iconsLixeira' id='iconLix" + j +"'>" + "<i class='far fa-trash-alt'></i>" + "</div>";
                     conteudo += "<div id='linhaPed" + j +"'>" + "</div>";
+                    conteudo += "<div id='numberTotal'>" + "R$ " + info[0].valor_total + "</div>";
                 }
             }
     
             $("#divPedidos").html(conteudo);
+
             $(new Document).ready(()=>{
                 $("#iconLix0").click(()=>{
                     Excluir("0");

@@ -103,8 +103,7 @@ function confirma(){
                     }
                 }
             }
-            $mensagem = "<div id='mensagens'>Login não autenticado</div>";
-            $("#mensgErro").html($mensagem);
+            
         },
         error: function(info){
             console.log("Deu ruim");    

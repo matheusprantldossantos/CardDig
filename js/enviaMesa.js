@@ -7,6 +7,12 @@ $(new Document).ready(function(){
     $("#titlePag").click(function(){
         window.location.href = "../pages/telaGarcom.html";
     });
+
+    $("#logout").click(() =>{
+        tornaInativo();
+        window.location.href = "../pages/login.html";
+   });
+
 });
 
 function listaMesasEnvio(){
@@ -378,6 +384,24 @@ function pegaNome(){
             let nome = condicao;
             nome = nome.split(" ");
             $("#nome").html(nome[0].toUpperCase());
+        },
+        error: function(condicao){
+            console.log(condicao);
+        }
+    });
+}
+
+function tornaInativo(){
+    const func = "garcom";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/mudaInatividade.php",
+        data: {
+            ajax_func : func
+        },
+        success : function(condicao){
+            console.log(condicao);
         },
         error: function(condicao){
             console.log(condicao);

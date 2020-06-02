@@ -22,8 +22,14 @@ $(document).ready(function(){
     $("#bSobrem").click(function(){
         window.location.href = "../pages/Sobremesas.html";
     });
+
     $("#bPedidos").click(function() {
         window.location.href = "../pages/meusPedidos.html";
     });
+
+    $("#bPromo").click(function() {
+        window.location.href = "../pages/Promoções.html";
+    });
+
 });
 
