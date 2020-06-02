@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    listaProm();
     $("#bPromo").removeClass("item_botao").addClass("item_botao_after");
     
 
@@ -63,9 +63,110 @@ function listaProm(){
         url: "../php/promocoesListar.php",
         success : (info) =>{
             console.log(info);
+            let conteudo = "";
+            for(let i = 0; i < info.length; i++){
+                conteudo += "<div class='divProdpromo' id='elemento" + i + "'>";
+                conteudo += "<div class='styPorc' id='porcentagem'>" + info[i].porcentagem + "% OFF -" +"</div>";
+                conteudo += "<div class='styNome' id='nomeProduto'>" + info[i].nome + "</div>";
+                conteudo += "<div class='styPreco' id='precoProduto'>" + "R$ " + info[i].valorAtual + "</div>";
+                conteudo += "<button class='bContador' id='bDiminuir'>" + "<i class='fas fa-minus' araia-hidden='true'></i>" + "</button>";
+                conteudo += "<div id='number" + i + "'>0</div>";
+                conteudo += "<button class='bContador' id='bAumentar'>" + "<i class='fas fa-plus' araia-hidden='true'></i>" + "</button>";
+                conteudo += "<button class='buttonAdd' id='bAdicionar" + i + "'>Adicionar</button>";
+                conteudo += "</div>";
+            }
+            $("#divPromo").html(conteudo);
+            $(new Document).ready(function(){
+                $("#bAdicionar0").click(function(){
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido(info[0].nome, "0");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+                $("#bAdicionar1").click(function(){
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido(info[1].nome, "1");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+                $("#bAdicionar2").click(function(){
+                    $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
+                    $("#container").removeClass("styleCont").addClass("styleContAfter");
+
+                    $("#bConfirmar").click(function(){
+                        criaPedido(info[2].nome, "2");
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+
+                    $("#bCancelar").click(function(){
+                        $("#janelaConfirma").removeClass("styConfirmarAfter").addClass("styConfirmar");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
+                    });
+                });
+                
+            
+            });
         },
         error : () =>{
             console.log("Não foi possível listar");
         }
+    });
+    
+}
+function criaPedido(nome, position){
+    let quantidadeAtual = $("div#number"+position).text();
+    let nomeAtual = nome;
+$.ajax({
+    type: "POST",
+    dataType: "json",
+    url: "../php/criaPedidos.php",
+    data:
+    {  
+        ajax_quantidade : quantidadeAtual,
+        ajax_name : nomeAtual
+    },
+    success : function(info){
+        console.log("olá mundo");
+    },
+    error: function(info){
+        console.log("tchau mundo");
+    }
     });
 }

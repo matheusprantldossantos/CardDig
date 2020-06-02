@@ -56,6 +56,7 @@
             while($row = mysqli_fetch_assoc($resultModificado)){
                 $promocao[$position]["id"] = $row["produto_idproduto"];
                 $promocao[$position]["preco"] = $row["valorAtual"];
+                $position++;
             }
         }
         else{

@@ -249,6 +249,11 @@ body{
     top: 25%;
     left: 5%;
 }
+#elemento1{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+}
 
 #bDiminuir{
     position: absolute;

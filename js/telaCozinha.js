@@ -18,13 +18,13 @@ function listaMesas(){
             for(let i = 0; i < info.length; i++){
                 if(i == 0){
                     conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
-                    conteudo += "<div class='textBlack' id='text'>" + info[i].nomeMesa + "</div>";
+                    conteudo += "<div class='textBlack' id='text" + i + "'>" + info[i].nomeMesa + "</div>";
                     conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
                 else if(info[i].nomeMesa != info[i - 1].nomeMesa){
                     conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
-                    conteudo += "<div class='textBlack' id='text'>" + info[i].nomeMesa + "</div>";
+                    conteudo += "<div class='textBlack' id='text" + i + "'>" + info[i].nomeMesa + "</div>";
                     conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
