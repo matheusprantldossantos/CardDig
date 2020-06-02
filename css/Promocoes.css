@@ -187,7 +187,7 @@ body{
 .divProdpromo{
     width: 40%;
     height: 30%;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #1d1e25;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
