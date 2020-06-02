@@ -18,13 +18,13 @@ function listaMesas(){
             for(let i = 0; i < info.length; i++){
                 if(i == 0){
                     conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
-                    conteudo += "<div id='text" + i + "'>" + info[i].nomeMesa + "</div>";
+                    conteudo += "<div class='textBlack' id='text'>" + info[i].nomeMesa + "</div>";
                     conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
                 else if(info[i].nomeMesa != info[i - 1].nomeMesa){
                     conteudo += "<button class='mesas' id='mesaDiv" + i + "'>";
-                    conteudo += "<div id='text" + i + "'>" + info[i].nomeMesa + "</div>";
+                    conteudo += "<div class='textBlack' id='text'>" + info[i].nomeMesa + "</div>";
                     conteudo += "<div id='iconSeta' class='iconGira'><i id='icon" + i + "' class='fas fa-caret-left'></i></div>";
                     conteudo += "</button>";
                 }
@@ -183,40 +183,16 @@ function listaMesas(){
                         conteudo += "</div>";
                         $("#divComandas0").html(conteudo);
 
-                        if(contadorProd <= 3 && contadorComandas == 1){
-                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
-                            $(".comandaAfter0").css({"height":"22%"});
-                            $("#bFinalizar0").css({"margin-top":"0%"});
-                        }
-                        else if(contadorProd == 4 && contadorComandas == 1){
+                        /* Comanda 1 */
+                        if(contadorComandas == 1){
                             $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
                             $(".comandaAfter0").css({"height":"26%"});
                             $("#bFinalizar0").css({"margin-top":"0%"});
                         }
                         /* Comanda 2 */
-                        else if(contadorProd <= 4 && contadorComandas == 2){
+                        else if(contadorComandas == 2){
                             $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
-                            $(".comandaAfter0").css({"height":"32%"});
-                            $("#bFinalizar0").css({"margin-top":"2%"});
-                        }
-                        else if(contadorProd == 5 && contadorComandas == 2){
-                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
-                            $(".comandaAfter0").css({"height":"36%"});
-                            $("#bFinalizar0").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 6 && contadorComandas == 2){
-                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
-                            $(".comandaAfter0").css({"height":"40%"});
-                            $("#bFinalizar0").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 7 && contadorComandas == 2){
-                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
-                            $(".comandaAfter0").css({"height":"44%"});
-                            $("#bFinalizar0").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 8 && contadorComandas == 2){
-                            $("#comd0").removeClass("comanda0").addClass("comandaAfter0");
-                            $(".comandaAfter0").css({"height":"50%"});
+                            $(".comandaAfter0").css({"height":"52%"});
                             $("#bFinalizar0").css({"margin-top":"10%"});
                         }
                         /* Comanda 3 */
@@ -356,35 +332,17 @@ function listaMesas(){
                         conteudo += "<button class='butFinal' id='bFinalizar1'>Finalizar</button>";
                         conteudo += "</div>";
                         $("#divComandas1").html(conteudo);
+
+                        /* Comanda 1 */
                         if(contadorComandas == 1){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
                             $(".comandaAfter1").css({"height":"26%"});
                             $("#bFinalizar1").css({"margin-top":"0%"});
                         }
                         /* Comanda 2 */
-                        else if(contadorProd <= 4 && contadorComandas == 2){
+                        else if(contadorComandas == 2){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
-                            $(".comandaAfter1").css({"height":"32%"});
-                            $("#bFinalizar1").css({"margin-top":"2%"});
-                        }
-                        else if(contadorProd == 5 && contadorComandas == 2){
-                            $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
-                            $(".comandaAfter1").css({"height":"36%"});
-                            $("#bFinalizar1").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 6 && contadorComandas == 2){
-                            $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
-                            $(".comandaAfter1").css({"height":"40%"});
-                            $("#bFinalizar1").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 7 && contadorComandas == 2){
-                            $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
-                            $(".comandaAfter1").css({"height":"44%"});
-                            $("#bFinalizar1").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 8 && contadorComandas == 2){
-                            $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
-                            $(".comandaAfter1").css({"height":"50%"});
+                            $(".comandaAfter1").css({"height":"52%"});
                             $("#bFinalizar1").css({"margin-top":"10%"});
                         }
                         /* Comanda 3 */
@@ -392,7 +350,7 @@ function listaMesas(){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
                             $(".comandaAfter1").css({"height":"78%"});
                             $("#bFinalizar1").css({"margin-top":"25%"});
-                        } 
+                        }
                         /* Comanda 4 */
                         else if(contadorComandas == 4){
                             $("#comd1").removeClass("comanda1").addClass("comandaAfter1");
@@ -524,35 +482,16 @@ function listaMesas(){
                         conteudo += "</div>";
                         $("#divComandas2").html(conteudo);
 
+                        /* Comanda 1 */
                         if(contadorComandas == 1){
                             $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
                             $(".comandaAfter2").css({"height":"26%"});
                             $("#bFinalizar2").css({"margin-top":"0%"});
                         }
                         /* Comanda 2 */
-                        else if(contadorProd <= 4 && contadorComandas == 2){
+                        else if(contadorComandas == 2){
                             $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
-                            $(".comandaAfter2").css({"height":"32%"});
-                            $("#bFinalizar2").css({"margin-top":"2%"});
-                        }
-                        else if(contadorProd == 5 && contadorComandas == 2){
-                            $("#comd2").removeClass("comanda2").addClass("comandaAfter2");;
-                            $(".comandaAfter2").css({"height":"36%"});
-                            $("#bFinalizar2").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 6 && contadorComandas == 2){
-                            $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
-                            $(".comandaAfter2").css({"height":"40%"});
-                            $("#bFinalizar2").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 7 && contadorComandas == 2){
-                            $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
-                            $(".comandaAfter2").css({"height":"44%"});
-                            $("#bFinalizar2").css({"margin-top":"5%"});
-                        }
-                        else if(contadorProd == 8 && contadorComandas == 2){
-                            $("#comd2").removeClass("comanda2").addClass("comandaAfter2");
-                            $(".comandaAfter2").css({"height":"50%"});
+                            $(".comandaAfter2").css({"height":"52%"});
                             $("#bFinalizar2").css({"margin-top":"10%"});
                         }
                         /* Comanda 3 */

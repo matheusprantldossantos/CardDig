@@ -93,13 +93,14 @@ body{
     cursor: pointer;
 }
 
-#text0{
+.textBlack{
     position: relative;
     top: 50%;
     left: 0%;
     transform: translate(-50%,-50%);
     display: inline;
     font-weight: bold;
+    font-family: Bebas neue;
 }
 
 /* Seta da div (Animação) */
@@ -177,6 +178,106 @@ body{
     visibility: visible;
 }
 
+.comanda2{
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    width: 20%;
+    height: 0%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.comandaAfter2{
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    width: 20%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.comanda3{
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    width: 20%;
+    height: 0%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.comandaAfter3{
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    width: 20%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.comanda4{
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    width: 20%;
+    height: 0%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.comandaAfter4{
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    width: 20%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.comanda4{
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    width: 20%;
+    height: 0%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.comandaAfter4{
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    width: 20%;
+    background-color: #c7c5c5;
+    border-radius: 5px;
+    transition: 0.4s;
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Estilo dos elementos */
 
 .nomeC{
@@ -204,7 +305,6 @@ body{
     font-weight: bold;
     cursor: pointer;
     outline: none;
-    margin-top: 0%;
     opacity: 1;
     visibility: visible;
 }
