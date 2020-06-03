@@ -47,25 +47,38 @@ function criaComandas(){
             inputs += "<div id='mensagem'></div>";
 
             $("#conteudo").html(inputs);
-
-            var aumDiv = 0
+            
             // Arruma position 
             for(let i = 0; i < parseInt(quantidade); i++){
-                if(i == 0 || i == 1){
-                    $("#comanda" + i).css({"top":"60%"});
-                    $("#cadastraMesa").css({"top": 80 + "%"});
+                if(i == 0){
+                    $("#conteudo").css({"height":"40%"});
+                    $("#textCom").css({"top":"50%"});
+                    $("#comanda0").css({"position":"absolute","top":"60%"});
                 }
-                else if(i >= 2 && i <= 4){
-                    $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
-                    $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
-                    $("#conteudo").css({"height": 35 + aumDiv + "%"});
-                    $("#conteudo").css({"padding-bottom":"30px"});
+                else if(i == 1){
+                    $("#conteudo").css({"height":"50%"});
+                    $("#textCom").css({"top":"40%"});
+                    $("#comanda0").css({"top":"50%"});
+                    $("#comanda1").css({"top":"65%"});
                 }
-                else if(i >= 5){
-                    $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
-                    $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
-                    $("#conteudo").css({"height": 35 + aumDiv + "%"});
-                    $("#conteudo").css({"padding-bottom":"70px"});
+                else if(i == 2){
+                    $("#conteudo").css({"height":"60%"});
+                    $("#nomeMesa").css({"top":"20%"});
+                    $("#textCom").css({"top":"35%"});
+                    $("#comanda0").css({"top":"45%"});
+                    $("#comanda1").css({"top":"58%"});
+                    $("#comanda2").css({"top":"71%"});
+                    $("#cadastraMesa").css({"top":"85%"});
+                }
+                else if(i == 3){
+                    $("#conteudo").css({"height":"70%"});
+                    $("#nomeMesa").css({"top":"20%"});
+                    $("#textCom").css({"top":"35%"});
+                    $("#comanda0").css({"top":"42%"});
+                    $("#comanda1").css({"top":"52%"});
+                    $("#comanda2").css({"top":"62%"});
+                    $("#comanda3").css({"top":"72%"});
+                    $("#cadastraMesa").css({"top":"85%"});
                 }
                 
             }

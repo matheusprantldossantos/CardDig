@@ -63,7 +63,9 @@ function listaProm(){
         url: "../php/promocoesListar.php",
         success : (info) =>{
             console.log(info);
+
             let conteudo = "";
+
             for(let i = 0; i < info.length; i++){
                 conteudo += "<div class='divProdpromo' id='elemento" + i + "'>";
                 conteudo += "<div class='styPorc' id='porcentagem'>" + info[i].porcentagem + "% OFF -" +"</div>";
@@ -76,6 +78,25 @@ function listaProm(){
                 conteudo += "</div>";
             }
             $("#divPromo").html(conteudo);
+
+            var a = 0;
+            var aumetLEFT = 0;
+            var aumentaTOP = 0;
+            for(let i = 0; i < info.length; i++){
+                if(a % 2 == 0){
+                    $("#elemento" + i).css({"position":"absolute","top": 25 + aumentaTOP + "%","left": 5 + aumetLEFT + "%"});
+                    aumetLEFT += 45;
+                }
+                else{
+                    $("#elemento" + i).css({"position":"absolute","top": 25 + aumentaTOP + "%","left": 5 + aumetLEFT + "%"});
+                    aumetLEFT = 0;
+                    aumentaTOP += 40;
+                }
+                $("#bAdicionar" + i).css({"position":"absolute","top": "75%","left": "55%"});
+                $("#number" + i).css({"position":"absolute","top": "76%","left": "18%","color":"#d6d6d6","font-size":"25px"});
+            }
+
+
             $(new Document).ready(function(){
                 $("#bAdicionar0").click(function(){
                     $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
@@ -98,6 +119,7 @@ function listaProm(){
                         }, 350);
                     });
                 });
+
                 $("#bAdicionar1").click(function(){
                     $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
                     $("#container").removeClass("styleCont").addClass("styleContAfter");
@@ -119,6 +141,7 @@ function listaProm(){
                         }, 350);
                     });
                 });
+
                 $("#bAdicionar2").click(function(){
                     $("#janelaConfirma").removeClass("styConfirmar").addClass("styConfirmarAfter");
                     $("#container").removeClass("styleCont").addClass("styleContAfter");
