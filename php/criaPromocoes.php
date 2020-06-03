@@ -72,12 +72,12 @@
     $valorNovo = $produto[count($produto) - 1]["preco"] - (($promocao[count($promocao) - 1]["porcentagem"] * $produto[count($produto) - 1]["preco"]) / 100.0);
     $donoAtual = $dono[count($dono) - 1];
     $categoria = $produto[count($produto) - 1]["categoria"];
-    $idPromAtual = $promocao[count($idProdAtual) - 1]["idProm"];
+    $idPromAtual = $promocao[count($promocao) - 1]["idProm"];
     $sqlItemModificado = "INSERT INTO item_modificado (dono_iddono, produto_idproduto, promocao_idpromocao, valorAtual, nome, categoria)
     VALUES ('$donoAtual', '$idProdAtual', '$idPromAtual', '$valorNovo', '$nomeDoProd', '$categoriaProd')";
     if(mysqli_query($conn, $sqlItemModificado)){
         $verdade = "Criado item modificado";
-    }ajax_porcentagem
+    }
     mysqli_close($conn);
     echo json_encode($verdade);
 ?>

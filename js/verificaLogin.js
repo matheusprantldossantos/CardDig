@@ -79,27 +79,36 @@ function confirma(){
             }
             if(verificador){
                 $("#iEmail").addClass("ErroEmail");
-                $mensagem = "<div id='mensagens'> Campo preenchido incorretamente </div>";
-                $("#mensgErro").html($mensagem);
-                $("#mensagens").css({"width":"16%"});
+                mensagem = "<div id='mensagens'> Email incorreto! </div>";
+                $("#mensgErro").html(mensagem);
+                $("#mensagens").css({"width":"10%"});
 
                 return 0;
             }
+
             for(var i = 0; i < info.length; i++){
-                if(info[i].senha == senha && info[i].email == usuario){
-                    const hierarquiaFunc = await verificaUsuario();
-                    updateAtividade(info[i].id, hierarquiaFunc);
-                    if(hierarquiaFunc == "dono"){
-                        window.location.href = "../pages/telaDono.html";
-                    }
-                    else if(hierarquiaFunc == "garcom"){
-                        window.location.href = "../pages/telaGarcom.html";
-                    }
-                    else if(hierarquiaFunc == "cozinheiro"){
-                        window.location.href = "../pages/telaCozinha.html";
-                    }
-                    else{
-                        console.log("Sem func");
+                if(info[i].senha != senha && info[i].email != usuario){
+                    mensagem = "<div id='mensagens'> Campos incorretos! </div>";
+                    $("#mensgErro").html(mensagem);
+                    $("#mensagens").css({"width":"12%"});
+                }
+                else{
+                    for(var i = 0; i < info.length; i++){
+                        const hierarquiaFunc = await verificaUsuario();
+                        updateAtividade(info[i].id, hierarquiaFunc);
+                        if(hierarquiaFunc == "dono"){
+                            window.location.href = "../pages/telaDono.html";
+                        }
+                        else if(hierarquiaFunc == "garcom"){
+                            window.location.href = "../pages/telaGarcom.html";
+                        }
+                        else if(hierarquiaFunc == "cozinheiro"){
+                            window.location.href = "../pages/telaCozinha.html";
+                        }
+                        else{
+                            console.log("Sem func");
+                        }
+                        
                     }
                 }
             }

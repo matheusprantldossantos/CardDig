@@ -368,7 +368,7 @@ function fListarCategoria(){
 
 
 
-                        // Botões para Promoção  -------------------------------------------------------------------------
+            // Botões para Promoção  -------------------------------------------------------------------------
             $(new Document).ready(function(){
                 $("#prodPromo0").click(function(){
                     $("#janelaPromo").toggleClass("pagPromoAfter");
@@ -377,6 +377,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[0].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -397,6 +402,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[1].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -417,6 +427,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[2].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -437,6 +452,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[3].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -457,6 +477,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[5].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -477,6 +502,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[5].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -497,6 +527,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[6].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -517,6 +552,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[7].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -537,6 +577,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[8].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){
@@ -557,6 +602,11 @@ function fListarCategoria(){
 
                     $("#bSalvarPromo").click(function(){
                         criaPromocao(info[9].nome, "lanches");
+                        $("#janelaPromo").removeClass("pagPromoAfter").addClass("pagPromo");
+                        $("#container").removeClass("styleContAfter").addClass("styleCont");
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 350);
                     });
 
                     $("#bFecharPromo").click(function(){

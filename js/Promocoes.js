@@ -94,6 +94,7 @@ function listaProm(){
                 }
                 $("#bAdicionar" + i).css({"position":"absolute","top": "75%","left": "55%"});
                 $("#number" + i).css({"position":"absolute","top": "76%","left": "18%","color":"#d6d6d6","font-size":"25px"});
+                a++;
             }
 
 
