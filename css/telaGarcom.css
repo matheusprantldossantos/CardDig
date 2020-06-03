@@ -183,7 +183,7 @@ input[type=number] {
     transform: translate(-50%,-50%);
     background-color: #363844;
     width: 25%;
-    height: 35%;
+    height: 40%;
     border-radius: 2px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     visibility: hidden;
@@ -208,7 +208,7 @@ input[type=number] {
 
 #titleAfter{
     position: absolute;
-    top: 25px;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -236,16 +236,17 @@ input[type=number] {
 
 #nomeMesa{
     position: absolute;
-    top: 70px;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #textCom{
     position: absolute;
-    top: 128px;
-    left: 25%;
+    top: 50%;
+    left: 26%;
     transform: translateX(-50%);
+    /*padding-top: 38%;*/
     color: #e0e0e0;
     font-family: Bebas neue;
     font-size: 20px;

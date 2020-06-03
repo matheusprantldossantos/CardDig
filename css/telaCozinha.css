@@ -99,8 +99,8 @@ body{
     left: 0%;
     transform: translate(-50%,-50%);
     display: inline;
-    font-weight: bold;
     font-family: Bebas neue;
+    font-size: 17px;
 }
 
 /* Seta da div (Animação) */

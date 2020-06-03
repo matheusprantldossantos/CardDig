@@ -33,7 +33,7 @@ function listaMesas(){
             }
             $("#mesas").html(conteudo);
 
-
+            var contadorVerif = 0;
             var posiçãoDiv = 0;
             var posiçãoTop = 50;
             for(let i = 0; i < info.length; i++){
@@ -41,58 +41,63 @@ function listaMesas(){
                     $("#mesaDiv" + i).css({"position":"absolute","top":"20%","left": "5%"});
                 }
                 else if(info[i].nomeMesa != info[i - 1].nomeMesa){
-                    if(i > 0 && i <= 2){
-                        posiçãoDiv += 25;
-                        $("#mesaDiv" + i).css({"position":"absolute","top":"20%","left": 5 + posiçãoDiv + "%"});
-                        posiçãoDiv += 5;
-                        if(i == 2){
+                    contadorVerif++;
+                    if(contadorVerif > 0 && contadorVerif <= 2){
+                        if(contadorVerif == 1){
+                            posiçãoDiv += 25;
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":"20%","left": 5 + posiçãoDiv + "%"});
+                            posiçãoDiv += 5;
+                        }
+                        else if(contadorVerif == 2){
+                            posiçãoDiv += 25;
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":"20%","left": posiçãoDiv + "%"});
                             posiçãoDiv = 0;
                         }
                     }
-                    else if(i >= 3 && i <= 5){
-                        if(i == 3){
-                            $("#mesaDiv" + i).css({"position":"absolute","top": 20 + posiçãoTop + "%","left": "5%"});
+                    else if(contadorVerif >= 3 && contadorVerif <= 5){
+                        if(contadorVerif == 3){
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top": 20 + posiçãoTop + "%","left": "5%"});
                         }
-                        else if(i == 4){
+                        else if(contadorVerif == 4){
                             posiçãoDiv += 25;
-                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
                             posiçãoDiv += 5;
                         }
                         else{
                             posiçãoDiv += 25;
-                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
                             posiçãoTop += 50;
                             posiçãoDiv = 0;
                         }
                     }
-                    else if(i >= 6 && i <= 8){
-                        if(i == 6){
-                            $("#mesaDiv" + i).css({"position":"absolute","top": 20 + posiçãoTop + "%","left": "5%"});
+                    else if(contadorVerif >= 6 && contadorVerif <= 8){
+                        if(contadorVerif == 6){
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top": 20 + posiçãoTop + "%","left": "5%"});
                         }
-                        else if(i == 7){
+                        else if(contadorVerif == 7){
                             posiçãoDiv += 25;
-                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
                             posiçãoDiv += 5;
                         }
                         else{
                             posiçãoDiv += 25;
-                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
                             posiçãoTop += 50;
                             posiçãoDiv = 0;
                         }
                     }
-                    else if(i >= 9 && i <= 11){
-                        if(i == 9){
-                            $("#mesaDiv" + i).css({"position":"absolute","top": 20 + posiçãoTop + "%","left": "5%"});
+                    else if(contadorVerif >= 9 && contadorVerif <= 11){
+                        if(contadorVerif == 9){
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top": 20 + posiçãoTop + "%","left": "5%"});
                         }
-                        else if(i == 10){
+                        else if(contadorVerif == 10){
                             posiçãoDiv += 25;
-                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
                             posiçãoDiv += 5;
                         }
                         else{
                             posiçãoDiv += 25;
-                            $("#mesaDiv" + i).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
+                            $("#mesaDiv" + contadorVerif).css({"position":"absolute","top":20 + posiçãoTop + "%","left": 5 + posiçãoDiv + "%"});
                             posiçãoTop += 50;
                             posiçãoDiv = 0;
                         }
@@ -259,6 +264,9 @@ function listaMesas(){
                     $(new Document).ready(function(){
                         $("#bFinalizar0").click(function(){
                             encerraMesa("0");
+                            setTimeout(function() {
+                                location.reload(true);
+                            }, 350);
                         });
                     });
                 });
@@ -408,6 +416,9 @@ function listaMesas(){
                     $(new Document).ready(function(){
                         $("#bFinalizar1").click(function(){
                             encerraMesa("1");
+                            setTimeout(function() {
+                                location.reload(true);
+                            }, 350);
                         });
                     });
                     a++;
@@ -430,7 +441,7 @@ function listaMesas(){
                         conteudo += "<div id='comd2' class='comanda2'>";
 
                         for(let i = 0; i < info.length; i++){
-                            if(info[indexesMesas[1]].nomeMesa == info[i].nomeMesa){
+                            if(info[indexesMesas[2]].nomeMesa == info[i].nomeMesa){
                                 conteudo += "<div class='nomeC' id='MT_numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
                                 
                                 for(let j = 0; j < info[i].infos.nome.length; j++){
@@ -557,34 +568,167 @@ function listaMesas(){
                     $(new Document).ready(function(){
                         $("#bFinalizar2").click(function(){
                             encerraMesa("2");
+                            setTimeout(function() {
+                                location.reload(true);
+                            }, 350);
                         });
                     });
                     a++;
                 });
             });
 
-/*
 
+            // MESA 3 ------------------------------------------------------------------
+
+            $(new Document).ready(() => {
+                var a = 0;
                 $("#mesaDiv3").click(()=>{
-                    $("#icon3").toggleClass("iconGira");
-                    var conteudo = "";
-                    let contadorProd = 0;
-                    let contadorComandas = 0;
-                    for(let i = 0; i < info.length; i++){
-                        if(info[indexesMesas[3]].nomeMesa == info[i].nomeMesa){
-                            conteudo += "<div class='nomeC' id='numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
-                            contadorComandas++;
-                            for(let j = 0; j < info[i].infos.nome.length; j++){
-                                conteudo += "<div class='produtos' id='listPed" + j + "'>" + info[i].infos.nome[j] + "</div>";
-                                contadorProd++;
+                    if(a % 2 == 0){
+                        $("#icon3").removeClass("iconGira").addClass("iconGiraAfter");
+
+                        var conteudo = "";
+                        let contadorProd = 0;
+                        let contadorComandas = 0
+
+                        conteudo += "<div id='comd3' class='comanda3'>";
+
+                        for(let i = 0; i < info.length; i++){
+                            if(info[indexesMesas[3]].nomeMesa == info[i].nomeMesa){
+                                conteudo += "<div class='nomeC' id='MQ_numComanda"+ contadorComandas +"'>"+ "COMANDA " + info[i].comanda +"</div>";
+                                
+                                for(let j = 0; j < info[i].infos.nome.length; j++){
+                                    if(contadorComandas == 0){
+                                        conteudo += "<div class='produtos' id='ComOne_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 1){
+                                        conteudo += "<div class='produtos' id='ComTwo_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 2){
+                                        conteudo += "<div class='produtos' id='ComThree_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 3){
+                                        conteudo += "<div class='produtos' id='ComFour_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 4){
+                                        conteudo += "<div class='produtos' id='ComFive_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 5){
+                                        conteudo += "<div class='produtos' id='ComSix_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    else if(contadorComandas == 6){
+                                        conteudo += "<div class='produtos' id='ComSeven_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                    }
+                                    contadorProd++;
+                                }
+                                contadorComandas++;
                             }
                         }
-                    }
-                    conteudo += "<button id='bFinalizar3'>Finalizar</button>";
-                    $("#comd3").html(conteudo);
-                    $("#comd3").toggleClass("comandaAfter");
-                });
 
+                        conteudo += "<button class='butFinal' id='bFinalizar3'>Finalizar</button>";
+                        conteudo += "</div>";
+                        $("#divComandas3").html(conteudo);
+
+                        /* Comanda 1 */
+                        if(contadorComandas == 1){
+                            $("#comd3").removeClass("comanda3").addClass("comandaAfter3");
+                            $(".comandaAfter3").css({"height":"26%"});
+                            $("#bFinalizar3").css({"margin-top":"0%"});
+                        }
+                        /* Comanda 2 */
+                        else if(contadorComandas == 2){
+                            $("#comd3").removeClass("comanda3").addClass("comandaAfter3");
+                            $(".comandaAfter3").css({"height":"52%"});
+                            $("#bFinalizar3").css({"margin-top":"10%"});
+                        }
+                        /* Comanda 3 */
+                        else if(contadorComandas == 3){
+                            $("#comd3").removeClass("comanda3").addClass("comandaAfter3");
+                            $(".comandaAfter3").css({"height":"78%"});
+                            $("#bFinalizar3").css({"margin-top":"25%"});
+                        }
+                        /* Comanda 4 */
+                        else if(contadorComandas == 4){
+                            $("#comd3").removeClass("comanda3").addClass("comandaAfter3");
+                            $(".comandaAfter3").css({"height":"104%"});
+                            $("#bFinalizar3").css({"margin-top":"40%"});
+                        }
+                        /* Comanda 5 */
+                        else if(contadorComandas == 5){
+                            $("#comd3").removeClass("comanda3").addClass("comandaAfter3");
+                            $(".comandaAfter3").css({"height":"130%"});
+                            $("#bFinalizar3").css({"margin-top":"50%"});
+                        }
+                        
+
+                        var count = 0
+                        var mudaCom = 0;
+                        var mudaPosProd = 0;
+                        for(let i = 0; i < info.length; i++){
+                            if(info[indexesMesas[3]].nomeMesa == info[i].nomeMesa){
+                                if(mudaCom == 0){
+                                    $("#MQ_numComanda" + mudaCom).css({"position":"relative","top":"0%","left":"0%","padding-top":"6%","padding-left":"5%","padding-bottom":"0%","padding-right":"0%"});
+                                    for(let j = 0; j < info[i].infos.nome.length; j++){
+                                        mudaPosProd += 9;
+                                        if(j == 0){
+                                            $("#ComOne_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            mudaPosProd = mudaPosProd + 6;
+                                        }
+                                        else{
+                                            $("#ComOne_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        }
+                                    }
+                                    mudaCom++;
+                                }   
+                                
+                                else if(mudaCom == 1){
+                                    $("#MQ_numComanda" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 13 + mudaPosProd + "%","padding-left":"5%","padding-bottom":"0%","padding-right":"0%"});
+                                    mudaPosProd += 13;
+                                    for(let j = 0; j < info[i].infos.nome.length; j++){
+                                        mudaPosProd += 9;
+                                        $("#ComTwo_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                    }
+                                    mudaCom++;
+                                }
+                                else if(mudaCom == 2){
+                                    $("#MQ_numComanda" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 13 + mudaPosProd + "%","padding-left":"5%","padding-bottom":"0%","padding-right":"0%"});
+                                    mudaPosProd += 13;
+                                    for(let j = 0; j < info[i].infos.nome.length; j++){
+                                        mudaPosProd += 9;
+                                        $("#ComThree_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                    }
+                                    mudaCom++;
+                                }
+                                else if(mudaCom == 3){
+                                    $("#MQ_numComanda" + mudaCom).css({"position":"absolute","top":"0%","left":"0%","padding-top": 13 + mudaPosProd + "%","padding-left":"5%","padding-bottom":"0%","padding-right":"0%"});
+                                    mudaPosProd += 13;
+                                    for(let j = 0; j < info[i].infos.nome.length; j++){
+                                        mudaPosProd += 9;
+                                        $("#ComFour_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                    }
+                                    mudaCom++;
+                                }
+                            }  
+                        }
+                    }
+
+                    else{
+                        $(".comandaAfter3").css({"height":"0%"});
+                        $("#icon3").removeClass("iconGiraAfter").addClass("iconGira");
+                        $("#comd3").removeClass("comandaAfter3").addClass("comanda3");
+                        $("#bFinalizar3").css({"position":"absolute","top":"0%","margin-top":"0%","transition":"0.4s","visibility":"hidden"});
+                    }
+                    $(new Document).ready(function(){
+                        $("#bFinalizar3").click(function(){
+                            encerraMesa("3");
+                            setTimeout(function() {
+                                location.reload(true);
+                            }, 350);
+                        });
+                    });
+                    a++;
+                });
+            });
+/*
                 $("#mesaDiv4").click(()=>{
                     $("#icon4").toggleClass("iconGira");
                     var conteudo = "";

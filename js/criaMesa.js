@@ -24,8 +24,6 @@ $(new Document).ready(function(){
 function criaComandas(){
     let quantidade = $("#quantidade").val();
     var inputs = "";
-    var aumPosit = 0;
-    var aumDiv = 0;
 
     inputs += "<div id='titleAfter'>Cadastro da Mesa</div>";
     inputs += "<div id='bVoltar'><i class='fas fa-chevron-left'></i></div>";
@@ -41,19 +39,21 @@ function criaComandas(){
                 inputs += "<option value='" + element + "'>" + element +"</option>"
             });
             inputs += "</select>";
-            inputs += "<button id='cadastraMesa'>Cadastrar</button>";
             inputs += "<div id='textCom'>Comanda(s)</div>";
             for(let i = 0; i < parseInt(quantidade); i++){
                 inputs += "<input type='number' class='comd' id='comanda"+ i + "'placeholder='Digite a comanda'>";
             }
+            inputs += "<button id='cadastraMesa'>Cadastrar</button>";
             inputs += "<div id='mensagem'></div>";
+
             $("#conteudo").html(inputs);
+
+            var aumDiv = 0
             // Arruma position 
             for(let i = 0; i < parseInt(quantidade); i++){
                 if(i == 0 || i == 1){
-                    $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
-                    $("#cadastraMesa").css({"top": 205 + aumPosit +"px"});
-                    $("#conteudo").css({"height": 35 + aumDiv + "%"});
+                    $("#comanda" + i).css({"top":"60%"});
+                    $("#cadastraMesa").css({"top": 80 + "%"});
                 }
                 else if(i >= 2 && i <= 4){
                     $("#comanda" + i).css({"top": 155 + aumPosit +"px"});
@@ -67,8 +67,7 @@ function criaComandas(){
                     $("#conteudo").css({"height": 35 + aumDiv + "%"});
                     $("#conteudo").css({"padding-bottom":"70px"});
                 }
-                aumPosit = aumPosit + 50;
-                aumDiv = aumDiv + 5;
+                
             }
 
             $(new Document).ready(function(){
