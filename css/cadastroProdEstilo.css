@@ -149,7 +149,7 @@ a{
 
 #mensagem{
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%);
     width: 15%;
@@ -164,13 +164,13 @@ a{
 
 #errorMensagem{
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%);
     width: 15%;
     height: 3%;
-    background-color: #da372c;
-    border: solid 1px #da372c;
+    background-color: #d14141;
+    border: solid 1px #d14141;
     border-radius: 5px;
     color: #b6b6b6;
     text-align: center;

@@ -244,41 +244,16 @@ body{
     height: 17%;
 }
 
-#elemento0{
-    position: absolute;
-    top: 25%;
-    left: 5%;
-}
-#elemento1{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-}
-
 #bDiminuir{
     position: absolute;
     top: 77%;
     left: 10%;
 }
 
-#number{
-    position: absolute;
-    top: 76%;
-    left: 18%;
-    color: #d6d6d6;
-    font-size: 25px;
-}
-
 #bAumentar{
     position: absolute;
     top: 77%;
     left: 25%;
-}
-
-#bAdicionar{
-    position: absolute;
-    top: 75%;
-    left: 55%; 
 }
 
 
