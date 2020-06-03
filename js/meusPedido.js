@@ -90,6 +90,9 @@ function listaPedidos() {
                     }
 
                     $("#number0").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });    
 
                 $("#bDiminuir0").click(function(){
@@ -103,6 +106,9 @@ function listaPedidos() {
                     }
             
                     $("#number0").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
             });
                 
@@ -121,6 +127,9 @@ function listaPedidos() {
                     }
 
                     $("#number1").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });    
 
                 $("#bDiminuir1").click(function(){
@@ -134,6 +143,9 @@ function listaPedidos() {
                     }
             
                     $("#number1").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 }); 
             });
 
@@ -152,6 +164,9 @@ function listaPedidos() {
                     }
 
                     $("#number2").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });    
 
                 $("#bDiminuir2").click(function(){
@@ -165,6 +180,9 @@ function listaPedidos() {
                     }
             
                     $("#number2").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
             });
 
@@ -183,6 +201,9 @@ function listaPedidos() {
                     }
 
                     $("#number3").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });    
 
                 $("#bDiminuir3").click(function(){
@@ -196,6 +217,9 @@ function listaPedidos() {
                     }
             
                     $("#number3").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
             });
 
@@ -214,6 +238,9 @@ function listaPedidos() {
                     }
 
                     $("#number4").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });    
 
                 $("#bDiminuir4").click(function(){
@@ -227,6 +254,9 @@ function listaPedidos() {
                     }
             
                     $("#number4").html(count);
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
             });
 
@@ -259,15 +289,27 @@ function listaPedidos() {
             $(new Document).ready(()=>{
                 $("#iconLix0").click(()=>{
                     Excluir("0");
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
                 $("#iconLix1").click(()=>{
                     Excluir("1");
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
                 $("#iconLix2").click(()=>{
                     Excluir("2");
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
                 $("#iconLix3").click(()=>{
                     Excluir("3");
+                    setTimeout(function() {
+                        location.reload(true);
+                    }, 350);
                 });
             });
         },

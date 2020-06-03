@@ -142,24 +142,31 @@ function listaMesas(){
                                 for(let j = 0; j < info[i].infos.nome.length; j++){
                                     if(contadorComandas == 0){
                                         conteudo += "<div class='produtos' id='ComOne_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComOne_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 1){
                                         conteudo += "<div class='produtos' id='ComTwo_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComTwo_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 2){
                                         conteudo += "<div class='produtos' id='ComThree_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComThree_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFour_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 4){
                                         conteudo += "<div class='produtos' id='ComFive_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFive_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 5){
                                         conteudo += "<div class='produtos' id='ComSix_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSix_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 6){
                                         conteudo += "<div class='produtos' id='ComSeven_MU_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSeven_MU_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     contadorProd++;
                                 }
@@ -213,10 +220,12 @@ function listaMesas(){
                                         mudaPosProd += 9;
                                         if(j == 0){
                                             $("#ComOne_MU_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MU_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                             mudaPosProd = mudaPosProd + 6;
                                         }
                                         else{
                                             $("#ComOne_MU_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MU_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                         }
                                     }
                                     mudaCom++;
@@ -228,6 +237,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComTwo_MU_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComTwo_MU_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -237,6 +247,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComThree_MU_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComThree_MU_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -246,6 +257,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComFour_MU_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComFour_MU_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -295,24 +307,31 @@ function listaMesas(){
                                 for(let j = 0; j < info[i].infos.nome.length; j++){
                                     if(contadorComandas == 0){
                                         conteudo += "<div class='produtos' id='ComOne_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComOne_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 1){
                                         conteudo += "<div class='produtos' id='ComTwo_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComTwo_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 2){
                                         conteudo += "<div class='produtos' id='ComThree_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComThree_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFour_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 4){
                                         conteudo += "<div class='produtos' id='ComFive_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFive_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 5){
                                         conteudo += "<div class='produtos' id='ComSix_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSix_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 6){
                                         conteudo += "<div class='produtos' id='ComSeven_MD_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSeven_MD_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     contadorProd++;
                                 }
@@ -367,10 +386,12 @@ function listaMesas(){
                                         mudaPosProd += 9;
                                         if(j == 0){
                                             $("#ComOne_MD_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MD_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                             mudaPosProd = mudaPosProd + 6;
                                         }
                                         else{
                                             $("#ComOne_MD_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MD_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                         }
                                     }
                                     mudaCom++;
@@ -382,6 +403,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComTwo_MD_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComTwo_MD_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -391,6 +413,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComThree_MD_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComThree_MD_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -400,6 +423,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComFour_MD_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComFour_MD_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -447,24 +471,31 @@ function listaMesas(){
                                 for(let j = 0; j < info[i].infos.nome.length; j++){
                                     if(contadorComandas == 0){
                                         conteudo += "<div class='produtos' id='ComOne_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComOne_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 1){
                                         conteudo += "<div class='produtos' id='ComTwo_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComTwo_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 2){
                                         conteudo += "<div class='produtos' id='ComThree_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComThree_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFour_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 4){
                                         conteudo += "<div class='produtos' id='ComFive_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFive_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 5){
                                         conteudo += "<div class='produtos' id='ComSix_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSix_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 6){
                                         conteudo += "<div class='produtos' id='ComSeven_MT_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSeven_MT_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     contadorProd++;
                                 }
@@ -519,10 +550,12 @@ function listaMesas(){
                                         mudaPosProd += 9;
                                         if(j == 0){
                                             $("#ComOne_MT_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MT_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                             mudaPosProd = mudaPosProd + 6;
                                         }
                                         else{
                                             $("#ComOne_MT_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MT_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                         }
                                     }
                                     mudaCom++;
@@ -534,6 +567,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComTwo_MT_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComTwo_MT_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -543,6 +577,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComThree_MT_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComThree_MT_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -552,6 +587,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComFour_MT_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComFour_MT_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -599,24 +635,31 @@ function listaMesas(){
                                 for(let j = 0; j < info[i].infos.nome.length; j++){
                                     if(contadorComandas == 0){
                                         conteudo += "<div class='produtos' id='ComOne_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComOne_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 1){
                                         conteudo += "<div class='produtos' id='ComTwo_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComTwo_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 2){
                                         conteudo += "<div class='produtos' id='ComThree_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComThree_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 3){
                                         conteudo += "<div class='produtos' id='ComFour_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFour_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 4){
                                         conteudo += "<div class='produtos' id='ComFive_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComFive_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 5){
                                         conteudo += "<div class='produtos' id='ComSix_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSix_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     else if(contadorComandas == 6){
                                         conteudo += "<div class='produtos' id='ComSeven_MQ_Prod" + j + "'>" + info[i].infos.nome[j] + "</div>";
+                                        conteudo += "<div class='produtos' id='ComSeven_MQ_Prec" + j + "'>" + "x" + info[i].infos.quantidade[j] + "</div>";
                                     }
                                     contadorProd++;
                                 }
@@ -671,10 +714,12 @@ function listaMesas(){
                                         mudaPosProd += 9;
                                         if(j == 0){
                                             $("#ComOne_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MQ_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": 6 + mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                             mudaPosProd = mudaPosProd + 6;
                                         }
                                         else{
                                             $("#ComOne_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                            $("#ComOne_MQ_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                         }
                                     }
                                     mudaCom++;
@@ -686,6 +731,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComTwo_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComTwo_MQ_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -695,6 +741,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComThree_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComThree_MQ_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
@@ -704,6 +751,7 @@ function listaMesas(){
                                     for(let j = 0; j < info[i].infos.nome.length; j++){
                                         mudaPosProd += 9;
                                         $("#ComFour_MQ_Prod" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"10%","padding-bottom":"0%","padding-right":"0%"});
+                                        $("#ComFour_MQ_Prec" + j).css({"position":"absolute","top":"0%","left":"0%","padding-top": mudaPosProd + "%","padding-left":"80%","padding-bottom":"0%","padding-right":"0%"});
                                     }
                                     mudaCom++;
                                 }
