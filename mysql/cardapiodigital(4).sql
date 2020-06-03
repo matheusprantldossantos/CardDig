@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Jun-2020 às 22:04
+-- Tempo de geração: 03-Jun-2020 às 04:35
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.2.29
 
@@ -101,17 +101,6 @@ INSERT INTO `garcom` (`idgarcom`, `email`, `senha`, `ativo`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `item_mesa`
---
-
-CREATE TABLE `item_mesa` (
-  `pedido_comanda` int(11) NOT NULL,
-  `mesa_idmesa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `item_modificado`
 --
 
@@ -145,13 +134,6 @@ CREATE TABLE `item_pedido` (
   `quantidade` varchar(45) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
---
--- Extraindo dados da tabela `item_pedido`
---
-
-INSERT INTO `item_pedido` (`pedido_comanda`, `cliente_cpf`, `quantidade`) VALUES
-(1, '', '2');
-
 -- --------------------------------------------------------
 
 --
@@ -166,14 +148,6 @@ CREATE TABLE `item_produto` (
   `quantidade` int(11) NOT NULL DEFAULT 1,
   `andamento` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Extraindo dados da tabela `item_produto`
---
-
-INSERT INTO `item_produto` (`pedido_comanda`, `produto_idproduto`, `nome_produto`, `indexMesa`, `quantidade`, `andamento`) VALUES
-(1, 10, 'sanduiche de salada', 13, 1, 0),
-(1, 12, 'coffee shot', 13, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -220,13 +194,6 @@ CREATE TABLE `pedido` (
   `indexCozinha` int(11) NOT NULL,
   `cpf` varchar(11) COLLATE latin1_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Extraindo dados da tabela `pedido`
---
-
-INSERT INTO `pedido` (`comanda`, `valor_total`, `indexMesa`, `indexCozinha`, `cpf`) VALUES
-(1, 27.29, 13, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -316,14 +283,6 @@ ALTER TABLE `garcom`
   ADD PRIMARY KEY (`idgarcom`);
 
 --
--- Índices para tabela `item_mesa`
---
-ALTER TABLE `item_mesa`
-  ADD PRIMARY KEY (`pedido_comanda`,`mesa_idmesa`),
-  ADD KEY `fk_pedido_has_mesa_mesa1_idx` (`mesa_idmesa`),
-  ADD KEY `fk_pedido_has_mesa_pedido1_idx` (`pedido_comanda`);
-
---
 -- Índices para tabela `item_modificado`
 --
 ALTER TABLE `item_modificado`
@@ -384,7 +343,7 @@ ALTER TABLE `promocao`
 -- AUTO_INCREMENT de tabela `conjunto`
 --
 ALTER TABLE `conjunto`
-  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `idConjunto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `cozinheiro`
@@ -437,13 +396,6 @@ ALTER TABLE `promocao`
 --
 ALTER TABLE `conjunto`
   ADD CONSTRAINT `conjuntoMesa` FOREIGN KEY (`indexMesa`) REFERENCES `mesa` (`idmesa`);
-
---
--- Limitadores para a tabela `item_mesa`
---
-ALTER TABLE `item_mesa`
-  ADD CONSTRAINT `fk_pedido_has_mesa_mesa1` FOREIGN KEY (`mesa_idmesa`) REFERENCES `mesa` (`idmesa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pedido_has_mesa_pedido1` FOREIGN KEY (`pedido_comanda`) REFERENCES `pedido` (`comanda`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `item_modificado`

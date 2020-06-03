@@ -55,6 +55,9 @@
             $condicao = false;
         }
     }
+    else{
+        $condicao = false;
+    }
     //verifica se entre os produtos há um com desconto
     if($condicao){
         for($i = 0; $i < count($informacao); $i++){

@@ -64,38 +64,7 @@ $(new Document).ready(function(){
     });
     
 });
-function encerraPedido(){
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "../php/RemoveFK.php",
-        success: function(estado){
-            console.log("a");
-            console.log(estado);
-            window.location.href = "../pages/telaPrincipal.html";
-        },
-        error: function(estado){
-            console.log(estado);
-        }
-    });
-}
-function mudaQuantidade(id, quantidade){
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "../php/alteraQuantidadeItemProd.php",
-        data: {
-            ajax_id_prod : id,
-            ajax_quantidade : quantidade
-        },
-        success: function(resultado){
-            console.log(resultado);
-        },
-        error: function(resultado){
-            console.log("Nao alterou  quantidade");
-        }
-    });
-}
+
 function listaPedidos() {
     $.ajax({
         type: "POST",
@@ -106,7 +75,7 @@ function listaPedidos() {
 
             // Primeiro Produto
             $(new Document).ready(function(){ 
-                let count = info[2].quantidade;
+                let count = info[info.length - 1].infos.quantidade[0];
                 console.log("documento pronto")
 
                 $("#bAumentar0").click(function(){
@@ -117,7 +86,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[2].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[0], count, info[info.length - 1].comanda, "1");
                     }
 
                     $("#number0").html(count);
@@ -127,7 +96,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[2].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[0], count, info[info.length - 1].comanda, "0");
                     }
                     else{
                         count = 0;
@@ -139,7 +108,7 @@ function listaPedidos() {
                 
             // Segundo Produto
             $(new Document).ready(function(){ 
-                let count = info[3].quantidade;
+                let count = info[info.length - 1].infos.quantidade[1];
                 $("#bAumentar1").click(function(){
                     console.log("clicou");
                     count ++;
@@ -148,7 +117,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[3].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[1], count, info[info.length - 1].comanda, "1");
                     }
 
                     $("#number1").html(count);
@@ -158,7 +127,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[3].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[1], count, info[info.length - 1].comanda, "0");
                     }
                     else{
                         count = 0;
@@ -170,7 +139,7 @@ function listaPedidos() {
 
             //Terceiro Produto
             $(new Document).ready(function(){ 
-                let count = info[4].quantidade;
+                let count = info[info.length - 1].infos.quantidade[2];
                 $("#bAumentar2").click(function(){
                     console.log("clicou");
                     count ++;
@@ -179,7 +148,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[4].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[2], count, info[info.length - 1].comanda, "1");
                     }
 
                     $("#number2").html(count);
@@ -189,7 +158,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[4].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[2], count, info[info.length - 1].comanda, "0");
                     }
                     else{
                         count = 0;
@@ -201,7 +170,7 @@ function listaPedidos() {
 
             //Quarto Produto
             $(new Document).ready(function(){ 
-                let count = info[5].quantidade;
+                let count = info[info.length - 1].infos.quantidade[3];
                 $("#bAumentar3").click(function(){
                     console.log("clicou");
                     count ++;
@@ -210,7 +179,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[5].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[3], count, info[info.length - 1].comanda, "1");
                     }
 
                     $("#number3").html(count);
@@ -220,7 +189,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[5].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[3], count, info[info.length - 1].comanda, "0");
                     }
                     else{
                         count = 0;
@@ -232,7 +201,7 @@ function listaPedidos() {
 
             //Quinto Produto
             $(new Document).ready(function(){ 
-                let count = info[6].quantidade;
+                let count = info[info.length - 1].infos.quantidade[4];
                 $("#bAumentar4").click(function(){
                     console.log("clicou");
                     count ++;
@@ -241,7 +210,7 @@ function listaPedidos() {
                         count = 9;
                     }
                     else{
-                        mudaQuantidade(info[6].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[4], count, info[info.length - 1].comanda, "1");
                     }
 
                     $("#number4").html(count);
@@ -251,7 +220,7 @@ function listaPedidos() {
                     console.log("clicou menos");
                     if(count > 0){
                         count--;
-                        mudaQuantidade(info[6].idItemProd, count);
+                        mudaQuantidade(info[info.length - 1].infos.idProduto[4], count, info[info.length - 1].comanda, "0");
                     }
                     else{
                         count = 0;
@@ -325,5 +294,38 @@ function Excluir(position){
         }
     });
 }
-
+function encerraPedido(){
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/RemoveFK.php",
+        success: function(estado){
+            console.log("a");
+            console.log(estado);
+            window.location.href = "../pages/telaPrincipal.html";
+        },
+        error: function(estado){
+            console.log(estado);
+        }
+    });
+}
+function mudaQuantidade(id, quantidade, comanda, quesito){
+        $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../php/alteraQuantidadeItemProd.php",
+        data: {
+            ajax_id_prod : id,
+            ajax_quantidade : quantidade,
+            ajax_comanda : comanda,
+            ajax_quesito : quesito
+        },
+        success: function(resultado){
+            console.log(resultado);
+        },
+        error: function(resultado){
+            console.log("Nao alterou  quantidade");
+        }
+    });
+}
 
